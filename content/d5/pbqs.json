@@ -1,0 +1,355 @@
+[
+  {
+    "id": "pbq-5.1-101",
+    "objective": "5.1",
+    "type": "match",
+    "title": "Data roles and responsibilities",
+    "prompt": "A company is formalizing data governance for its employee records, which a cloud payroll vendor also processes. Match each role to its responsibility. One responsibility will not be used.",
+    "leftLabel": "Role",
+    "rightLabel": "Responsibility",
+    "pairs": [
+      {
+        "left": "Data owner",
+        "right": "Senior leader accountable for classification",
+        "why": "The owner is the accountable executive who decides the data's classification and who may access it."
+      },
+      {
+        "left": "Data controller",
+        "right": "Decides why and how personal data is processed",
+        "why": "The controller determines the purposes and means of processing and carries primary legal responsibility."
+      },
+      {
+        "left": "Data processor",
+        "right": "Processes data on the controller's behalf",
+        "why": "The payroll vendor is a processor: it handles the data only as instructed by the controller."
+      },
+      {
+        "left": "Data custodian",
+        "right": "Runs backups and access controls daily",
+        "why": "The custodian performs the day-to-day technical handling the owner's decisions require."
+      },
+      {
+        "left": "Data subject",
+        "right": "Person whom the personal data describes",
+        "why": "The data subject is the individual identified by the data and holds privacy rights over it."
+      }
+    ],
+    "distractors": [
+      "Independently audits data-handling controls"
+    ],
+    "explanation": "Accountability (owner) is separate from implementation (custodian), and the decision-maker for processing (controller) is separate from whoever processes for it (processor). The data subject is the individual the data is about. Independent auditing is an assurance function, not one of these data roles.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "data-roles",
+      "privacy",
+      "governance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-5.2-001",
+    "objective": "5.2",
+    "type": "order",
+    "title": "Risk management process",
+    "prompt": "A new CISO is formalizing how the organization handles risk for a customer-facing payment application. Order the risk management activities from first to last.",
+    "items": [
+      {
+        "text": "Identify assets, threats and vulnerabilities",
+        "why": "Risk identification comes first; a risk that has not been identified cannot be analyzed."
+      },
+      {
+        "text": "Analyze likelihood and impact",
+        "why": "Qualitative or quantitative analysis (e.g. SLE, ARO, ALE) measures how large each risk is."
+      },
+      {
+        "text": "Compare results to risk appetite/tolerance",
+        "why": "Analyzed risks are evaluated against what leadership will accept, showing which ones need action."
+      },
+      {
+        "text": "Select a strategy: mitigate, transfer, avoid, accept",
+        "why": "Only after evaluation can the organization choose a response that fits each risk."
+      },
+      {
+        "text": "Monitor and report residual risk",
+        "why": "Risks and controls are tracked over time and reported to owners and leadership, which feeds the next cycle."
+      }
+    ],
+    "firstLabel": "First",
+    "lastLabel": "Last",
+    "explanation": "Risk management moves from identification, to analysis, to evaluation against risk appetite and tolerance, to treatment with a chosen strategy, and then to ongoing monitoring and risk reporting. The risk register is updated throughout the process rather than at a single step, so it is not one of the ordered items here.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "risk-management",
+      "risk-appetite"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-5.2-002",
+    "objective": "5.2",
+    "type": "order",
+    "title": "Quantitative risk calculation",
+    "prompt": "An analyst must decide whether a $20,000-per-year control is justified to protect a database server. The analyst will use quantitative risk analysis. Order the steps so that each one has the inputs it needs.",
+    "items": [
+      {
+        "text": "Determine the asset value (AV)",
+        "why": "Every later figure depends on what the asset is worth."
+      },
+      {
+        "text": "Calculate SLE = AV × exposure factor",
+        "why": "The single loss expectancy needs the asset value and the percentage lost in one event."
+      },
+      {
+        "text": "Calculate ALE = SLE × ARO",
+        "why": "The annualized loss expectancy needs the SLE multiplied by how often the event is expected each year."
+      },
+      {
+        "text": "Compare the ALE with the control's annual cost",
+        "why": "The control is justified only when the yearly loss it prevents is greater than what it costs each year."
+      }
+    ],
+    "firstLabel": "First",
+    "lastLabel": "Last",
+    "explanation": "Each formula takes its inputs from the step before it: AV feeds SLE (AV × EF), SLE feeds ALE (SLE × ARO), and the ALE (or the reduction in ALE) is compared with the control's annual cost. For example, AV $200,000 × EF 25% gives an SLE of $50,000; with an ARO of 0.5 the ALE is $25,000, so a $20,000 control is justified only if it reduces the ALE by at least $20,000 (80% of the expected loss).",
+    "industryVsComptia": null,
+    "difficulty": 1,
+    "tags": [
+      "risk-analysis",
+      "ale",
+      "sle",
+      "aro"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-5.2-101",
+    "objective": "5.2",
+    "type": "match",
+    "title": "Business impact analysis metrics",
+    "prompt": "A continuity planner is drafting the business impact analysis for an order-processing platform. Match each BIA metric to its definition. Some definitions will not be used.",
+    "leftLabel": "Metric",
+    "rightLabel": "Definition",
+    "pairs": [
+      {
+        "left": "RTO",
+        "right": "Target time to restore service after an outage",
+        "why": "The recovery time objective sets how quickly the system must be back in operation."
+      },
+      {
+        "left": "RPO",
+        "right": "Maximum tolerable data loss, measured in time",
+        "why": "The recovery point objective defines how far back the last usable data may be, which drives backup frequency."
+      },
+      {
+        "left": "MTTR",
+        "right": "Average time to repair a failed component",
+        "why": "Mean time to repair measures how long, on average, a fix takes once a failure occurs."
+      },
+      {
+        "left": "MTBF",
+        "right": "Average operating time between failures",
+        "why": "Mean time between failures measures the reliability of a repairable component."
+      }
+    ],
+    "distractors": [
+      "Expected loss from one occurrence of a risk",
+      "Expected occurrences of a risk per year"
+    ],
+    "explanation": "RTO and RPO are objectives the business sets (time to recover versus acceptable data loss); MTTR and MTBF are measured reliability statistics. The unused definitions describe SLE and ARO, which belong to quantitative risk analysis rather than the BIA.",
+    "industryVsComptia": null,
+    "difficulty": 1,
+    "tags": [
+      "bia",
+      "business-continuity",
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-5.2-201",
+    "objective": "5.2",
+    "type": "categorize",
+    "difficulty": 2,
+    "title": "Pick the risk management strategy",
+    "prompt": "A risk committee reviews the decisions recorded in this quarter's risk register. Classify each decision by the risk management strategy it represents.",
+    "dimensions": [
+      {
+        "id": "strategy",
+        "label": "Strategy",
+        "options": [
+          "Accept",
+          "Avoid",
+          "Transfer",
+          "Mitigate"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "text": "Buys cyber insurance to cover ransomware losses",
+        "answers": {
+          "strategy": "Transfer"
+        },
+        "why": "Shifting the financial impact to a third party is transference."
+      },
+      {
+        "text": "Cancels a product that would store card data",
+        "answers": {
+          "strategy": "Avoid"
+        },
+        "why": "Stopping the activity that creates the risk is avoidance."
+      },
+      {
+        "text": "Shuts down an unneeded legacy FTP service",
+        "answers": {
+          "strategy": "Avoid"
+        },
+        "why": "No business need remains, so ending the activity removes the risk entirely: avoidance, not mitigation."
+      },
+      {
+        "text": "Enforces MFA to curb credential-stuffing",
+        "answers": {
+          "strategy": "Mitigate"
+        },
+        "why": "Adding a control to reduce likelihood or impact is mitigation."
+      },
+      {
+        "text": "Low risk within appetite; documented, no action",
+        "answers": {
+          "strategy": "Accept"
+        },
+        "why": "Knowingly taking on a risk that falls within the appetite is acceptance."
+      },
+      {
+        "text": "Approves a time-limited policy exception",
+        "answers": {
+          "strategy": "Accept"
+        },
+        "why": "SY0-701 lists exceptions and exemptions as forms of risk acceptance."
+      }
+    ],
+    "explanation": "Avoid = stop doing the risky activity. Transfer = shift the impact to someone else (insurance, contracts). Mitigate = apply controls to reduce likelihood or impact. Accept = acknowledge the risk and proceed, including formal exceptions and exemptions to policy. Note that transferring the financial impact does not transfer accountability for the data.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-5.3-101",
+    "objective": "5.3",
+    "type": "match",
+    "title": "Third-party agreement types",
+    "prompt": "The procurement team is onboarding a managed service provider and a new business partner and must pick the right documents. Match each agreement type to its purpose. One purpose will not be used.",
+    "leftLabel": "Agreement",
+    "rightLabel": "Purpose",
+    "pairs": [
+      {
+        "left": "SLA",
+        "right": "Sets measurable service levels, e.g. uptime",
+        "why": "A service-level agreement defines performance targets (availability, response times) and often penalties."
+      },
+      {
+        "left": "MOU",
+        "right": "Informal statement of intent to cooperate",
+        "why": "A memorandum of understanding records shared intent and is generally not a binding contract."
+      },
+      {
+        "left": "MSA",
+        "right": "Umbrella terms that govern future work",
+        "why": "A master service agreement sets the general terms once so later projects can reference it."
+      },
+      {
+        "left": "SOW",
+        "right": "Deliverables and timeline for one project",
+        "why": "A statement of work describes the specific tasks, deliverables and schedule, usually under an MSA."
+      },
+      {
+        "left": "NDA",
+        "right": "Obligation to protect confidential information",
+        "why": "A non-disclosure agreement restricts what each party may disclose about the other's information."
+      },
+      {
+        "left": "BPA",
+        "right": "How partners share profits and decisions",
+        "why": "A business partners agreement defines the partnership: ownership, profit sharing and responsibilities."
+      }
+    ],
+    "distractors": [
+      "Acceptable use of company IT resources"
+    ],
+    "explanation": "The MSA and SOW work together: the MSA holds the long-lived legal terms and each SOW defines one engagement. The SLA measures service quality, the MOU signals intent, the NDA protects information and the BPA governs a partnership. The unused purpose describes an AUP, an internal policy rather than a third-party agreement.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "third-party",
+      "vendor-management",
+      "agreements"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-5.5-201",
+    "objective": "5.5",
+    "type": "categorize",
+    "difficulty": 2,
+    "title": "Penetration test environments",
+    "prompt": "A CISO is reviewing statements of work for several penetration tests. Classify each engagement by its test environment based on what the testers are given in advance.",
+    "dimensions": [
+      {
+        "id": "env",
+        "label": "Environment",
+        "options": [
+          "Known",
+          "Partially known",
+          "Unknown"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "text": "Full source code, network diagrams and admin creds",
+        "answers": {
+          "env": "Known"
+        },
+        "why": "Complete information about the target is a known environment (white box)."
+      },
+      {
+        "text": "A standard user account, but no documentation",
+        "answers": {
+          "env": "Partially known"
+        },
+        "why": "Some insider information without the full picture: partially known."
+      },
+      {
+        "text": "A network diagram, but no credentials or code",
+        "answers": {
+          "env": "Partially known"
+        },
+        "why": "Limited information is shared: partially known (gray box)."
+      },
+      {
+        "text": "Only the company name; no other details",
+        "answers": {
+          "env": "Unknown"
+        },
+        "why": "Testers start with no inside knowledge: unknown (black box)."
+      },
+      {
+        "text": "Only the rules of engagement; no environment info",
+        "answers": {
+          "env": "Unknown"
+        },
+        "why": "Scope and rules are always agreed, but no details about the target are shared: unknown."
+      }
+    ],
+    "explanation": "SY0-701 uses known (formerly white box), partially known (gray box) and unknown (black box) environments. Known tests are the most thorough per hour because no time is spent on discovery; unknown tests best emulate an external attacker; partially known tests balance the two, often simulating a malicious insider or a compromised user account.",
+    "industryVsComptia": null,
+    "tags": [
+      "penetration-testing"
+    ],
+    "status": "reviewed"
+  }
+]

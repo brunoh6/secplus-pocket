@@ -1,0 +1,89 @@
+{
+  "id": "cloud",
+  "title": "Modelos de nube",
+  "description": "Service models, deployment models, and the shared responsibility split.",
+  "objectives": [
+    "3.1",
+    "3.4"
+  ],
+  "columns": [
+    "Model",
+    "Provider manages",
+    "Customer manages",
+    "Example / exam tip"
+  ],
+  "rows": [
+    [
+      "IaaS (Infrastructure as a Service)",
+      "Physical data center, hardware, hypervisor, storage, and network fabric.",
+      "Guest OS and its patching, middleware, applications, data, identities, and network security settings (security groups).",
+      "Virtual machines in a public cloud. Most customer responsibility of the three main models."
+    ],
+    [
+      "PaaS (Platform as a Service)",
+      "Everything in IaaS plus the OS, runtime, and middleware.",
+      "Application code, its configuration, data, and access.",
+      "Managed app hosting or managed databases. Customer still owns secure coding and data."
+    ],
+    [
+      "SaaS (Software as a Service)",
+      "The entire application stack, including the application itself.",
+      "Data, user accounts and access, and the app's security settings.",
+      "Hosted email or CRM. Least customer responsibility, but data and access are always the customer's."
+    ],
+    [
+      "FaaS / serverless",
+      "Servers, OS, runtime, and scaling.",
+      "Function code, its permissions, and data.",
+      "Code runs only when triggered. No servers to patch, but over-permissive function roles are a common risk."
+    ],
+    [
+      "XaaS (Anything as a Service)",
+      "Varies with the specific service.",
+      "Varies; always data and access.",
+      "Umbrella term for any capability delivered as a cloud service."
+    ],
+    [
+      "MaaS (Monitoring as a Service)",
+      "Monitoring platform, collection infrastructure, and often analysts.",
+      "Deciding what to monitor, providing access to sources, and acting on alerts.",
+      "Outsourced monitoring of systems or security events."
+    ],
+    [
+      "Public cloud",
+      "Multi-tenant infrastructure owned and run by the CSP.",
+      "Their own workloads, configuration, and data.",
+      "Shared with other tenants; lowest upfront cost, least physical control."
+    ],
+    [
+      "Private cloud",
+      "The organization itself, or a vendor dedicated to that one organization.",
+      "Effectively everything when self-hosted; if a vendor hosts it, the split follows the contract.",
+      "Single tenant; more control and compliance flexibility at higher cost."
+    ],
+    [
+      "Community cloud",
+      "Shared among organizations with common requirements, run by one of them or a third party.",
+      "Their own workloads; governance is shared among members.",
+      "Example: agencies or hospitals sharing a compliant environment."
+    ],
+    [
+      "Hybrid cloud",
+      "Each environment's provider or owner manages its part.",
+      "Integration, consistent security policy, and identity across environments.",
+      "Mix of public and private/on-premises. Complexity and consistent policy are the classic exam concerns."
+    ],
+    [
+      "Multi-cloud",
+      "Each CSP manages its own platform.",
+      "Policy, identity, and visibility across several providers.",
+      "Avoids vendor lock-in and a single provider outage (a resilience strategy in 3.4)."
+    ],
+    [
+      "Shared responsibility (always)",
+      "Physical security of data centers and the underlying infrastructure in every model.",
+      "Data, classification, and identity/access management in every model.",
+      "CompTIA calls the written split a responsibility matrix. If a question asks who protects the data, the answer is the customer."
+    ]
+  ]
+}

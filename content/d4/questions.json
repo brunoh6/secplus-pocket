@@ -1,0 +1,2994 @@
+[
+  {
+    "id": "q-4.1-001",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company is replacing the shared passphrase on its corporate Wi-Fi. Security requires that each employee authenticate with their own directory credentials and that an account disabled in the directory can no longer connect. Which of the following BEST meets these requirements?",
+    "options": [
+      {
+        "text": "WPA3-Enterprise using 802.1X with a RADIUS server",
+        "why": "Correct: 802.1X carries each user's credentials (via EAP) to RADIUS, which checks the directory, so a disabled account is rejected at its next authentication."
+      },
+      {
+        "text": "WPA3-Personal using SAE with a long passphrase",
+        "why": "SAE hardens the handshake against offline cracking, but every user still shares one passphrase and nothing is checked against the directory."
+      },
+      {
+        "text": "MAC address filtering combined with a hidden SSID",
+        "why": "Neither authenticates a user: MAC addresses are easily spoofed, hidden SSIDs are still discoverable, and nothing ties access to directory accounts."
+      },
+      {
+        "text": "A captive portal that issues a daily shared access code",
+        "why": "A shared code is not individual authentication and is not tied to directory account status; captive portals mainly suit guest access."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Per-user authentication against a central directory is an AAA requirement: 802.1X with EAP to a RADIUS server, which is what WPA2/WPA3-Enterprise means. 'Personal' modes always rely on a pre-shared secret, even with WPA3's SAE.",
+    "industryVsComptia": null,
+    "tags": [
+      "wireless",
+      "aaa",
+      "radius"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-002",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A development team wants to find injection flaws and unsafe function calls by examining the application's source code before it is compiled or executed. Which of the following should the team use?",
+    "options": [
+      {
+        "text": "Static code analysis",
+        "why": "Correct: static analysis inspects source code without running it, which is exactly the requirement."
+      },
+      {
+        "text": "Code signing",
+        "why": "Code signing proves who published the code and that it was not altered; it does not inspect the code for flaws."
+      },
+      {
+        "text": "Fuzzing the running application",
+        "why": "Fuzzing is dynamic testing that sends malformed input to a running program, and the scenario requires analysis before execution."
+      },
+      {
+        "text": "Sandboxing",
+        "why": "Sandboxing isolates code while it runs to contain its effects; it does not review source code for vulnerabilities."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Key phrase: 'source code ... before it is compiled or executed' means static analysis. Dynamic analysis and fuzzing need a running application. Code signing covers integrity and authenticity, not code quality.",
+    "industryVsComptia": null,
+    "tags": [
+      "appsec",
+      "sast"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-003",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "During a penetration test, a tester injects a script into a vulnerable comment field. When other users view the page, the script reads their session cookies through document.cookie and sends them to the tester's server. Which cookie attribute would MOST directly prevent the script from obtaining the cookies?",
+    "options": [
+      {
+        "text": "HttpOnly",
+        "why": "Correct: the browser does not expose HttpOnly cookies to client-side scripts, so document.cookie will not return the session cookie."
+      },
+      {
+        "text": "Secure",
+        "why": "The Secure attribute only ensures the cookie is sent over HTTPS; a script running in the page can still read it."
+      },
+      {
+        "text": "SameSite=Strict",
+        "why": "SameSite controls whether the cookie is sent on cross-site requests, mainly against CSRF; it does not hide the cookie from scripts on the same site."
+      },
+      {
+        "text": "A shorter Max-Age",
+        "why": "A shorter lifetime narrows the window in which a stolen cookie is useful, but the script can still read and exfiltrate it."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Cookie theft through XSS points to HttpOnly; plaintext transmission points to Secure; cross-site request forgery points to SameSite. The underlying flaw still needs input validation and output encoding; the cookie attribute limits the damage.",
+    "industryVsComptia": "CompTIA's objectives list 'secure cookies' as a single bullet, and exam answers may use that phrase generically for protecting session cookies. In practice the protection comes from specific attributes (Secure, HttpOnly, SameSite), each addressing a different threat.",
+    "tags": [
+      "appsec",
+      "cookies",
+      "xss"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-004",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "After new access points are installed in a warehouse, users report dropped connections in some aisles. The network engineer needs a color-coded view of signal strength overlaid on the floor plan to locate the coverage gaps. Which of the following BEST provides this?",
+    "options": [
+      {
+        "text": "A wireless heat map",
+        "why": "Correct: a heat map plots measured signal strength across the floor plan, so weak or dead areas stand out visually."
+      },
+      {
+        "text": "A spectrum analyzer capture",
+        "why": "A spectrum analyzer shows RF energy and interference by frequency at the point where it is taken; it does not map coverage across the building."
+      },
+      {
+        "text": "A protocol analyzer capture",
+        "why": "A protocol analyzer decodes captured frames for troubleshooting traffic; it gives no spatial picture of signal coverage."
+      },
+      {
+        "text": "A WIDS rogue access point report",
+        "why": "A WIDS detects unauthorized or malicious wireless activity; it is not used to visualize legitimate coverage gaps."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "CompTIA's wireless installation considerations are site surveys and heat maps. The site survey is the process of measuring the RF environment (coverage, interference, neighboring networks); the heat map is the visual output that shows signal strength by location and guides AP placement.",
+    "industryVsComptia": null,
+    "tags": [
+      "wireless",
+      "site-survey"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-005",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company will purchase and own the smartphones used by its sales staff. IT will issue the same standard model to everyone, and employees are allowed to install personal apps and make personal calls on the phones. Which deployment model BEST describes this arrangement?",
+    "options": [
+      {
+        "text": "COPE",
+        "why": "Correct: corporate-owned, personally enabled means the company owns and manages the device while allowing personal use."
+      },
+      {
+        "text": "CYOD",
+        "why": "Choose your own device lets employees pick from a list of approved models; here IT issues one standard model to everyone."
+      },
+      {
+        "text": "BYOD",
+        "why": "Bring your own device means the employee owns the phone; in this scenario the company purchases and owns it."
+      },
+      {
+        "text": "COBO",
+        "why": "Corporate-owned, business-only devices do not allow personal use, but these employees may install personal apps and make personal calls."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Sort mobile deployment models by two questions: who owns the device, and who chooses it. BYOD: employee owns. COPE: company owns and chooses, personal use allowed. CYOD: employee chooses from an approved list. Ownership drives how much control (and wipe authority) the company has.",
+    "industryVsComptia": null,
+    "tags": [
+      "mobile",
+      "deployment-models"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-006",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company lets employees read corporate email and files on their personal phones. Legal requires that when an employee leaves, the company can remove all corporate data from the phone without deleting the employee's personal photos and apps. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Enroll the phones in MDM and use containerization with a selective wipe",
+        "why": "Correct: containerization keeps corporate data in a managed, separate space, and a selective wipe removes only that space at offboarding."
+      },
+      {
+        "text": "Enroll the phones in MDM and perform a full remote wipe at offboarding",
+        "why": "A full wipe does remove corporate data, but it also erases the employee's personal photos and apps, which violates the requirement."
+      },
+      {
+        "text": "Require full-device encryption and a six-digit unlock passcode",
+        "why": "Encryption and a passcode protect data if the phone is lost, but corporate data stays on the device after the employee leaves."
+      },
+      {
+        "text": "Apply a geofencing policy that blocks corporate apps off-site",
+        "why": "Geofencing restricts where apps work; the corporate data remains on the phone and is not removed at offboarding."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "On BYOD the company does not own the device, so MDM controls should be scoped to corporate data. Containerization (storage segmentation) plus a selective or enterprise wipe is the standard answer when personal data must be preserved; a full remote wipe fits lost or stolen corporate-owned devices.",
+    "industryVsComptia": null,
+    "tags": [
+      "mobile",
+      "mdm",
+      "byod"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-007",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Field technicians carry company phones to crowded customer sites and trade shows. A security review finds the phones stay in Bluetooth discoverable mode at all times, and the team is concerned about unsolicited pairing attempts and data theft over that connection. Which of the following is the BEST mitigation?",
+    "options": [
+      {
+        "text": "Disable discoverable mode and turn Bluetooth off when not in use",
+        "why": "Correct: a phone that is not discoverable, or has the radio off, cannot be found or targeted for unsolicited pairing and data theft."
+      },
+      {
+        "text": "Keep discoverable mode but rename each phone to a generic label",
+        "why": "A generic name hides who owns the phone, but the device stays discoverable and can still be targeted for pairing attempts."
+      },
+      {
+        "text": "Disable cellular data while technicians are on customer premises",
+        "why": "Cellular data is a separate connection method; turning it off does nothing about attacks over Bluetooth."
+      },
+      {
+        "text": "Require WPA3 for the phones' mobile hotspot feature",
+        "why": "WPA3 protects Wi-Fi connections to the hotspot; it has no effect on Bluetooth pairing or data transfer."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Mobile connection methods (cellular, Wi-Fi, Bluetooth) each need their own controls. Bluetooth attacks such as bluejacking and bluesnarfing depend on the device being reachable, so the core hardening is non-discoverable mode, disabling the radio when unused, and pairing only known devices.",
+    "industryVsComptia": null,
+    "tags": [
+      "mobile",
+      "bluetooth"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-008",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A facilities team installs 40 IP security cameras. A scan shows that every camera has Telnet enabled and still uses the manufacturer's default admin password. Which of the following should be done FIRST to harden the cameras?",
+    "options": [
+      {
+        "text": "Set unique admin passwords and disable unneeded services",
+        "why": "Correct: factory default passwords and cleartext management services such as Telnet are the most common ways IoT devices are compromised, so removing them comes first."
+      },
+      {
+        "text": "Install an EDR agent on each camera",
+        "why": "IoT and embedded devices generally cannot run third-party endpoint agents, and the obvious weaknesses would remain open."
+      },
+      {
+        "text": "Move the cameras to the DMZ for remote viewing",
+        "why": "Placing the cameras in the DMZ increases their exposure while the default passwords and Telnet are still in place."
+      },
+      {
+        "text": "Schedule recurring vulnerability scans of the camera subnet",
+        "why": "Scans would keep reporting the same default password and Telnet exposure; they detect weaknesses but do not harden the cameras."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Hardening IoT and embedded devices starts with the basics: change default credentials, disable unneeded services and protocols (Telnet, UPnP), and apply firmware updates. Because these devices rarely support agents, network segmentation is the usual next layer.",
+    "industryVsComptia": null,
+    "tags": [
+      "hardening",
+      "iot"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-009",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "An infrastructure audit finds that the core switches and routers are managed over Telnet and monitored with SNMPv2c using the community string 'public'. Which of the following BEST hardens the management of these devices?",
+    "options": [
+      {
+        "text": "Use SSH for management and SNMPv3 with authentication and encryption",
+        "why": "Correct: SSH encrypts administrative sessions and SNMPv3 adds user authentication and encryption, removing both cleartext management protocols."
+      },
+      {
+        "text": "Keep Telnet but restrict it with an ACL to the admin subnet",
+        "why": "An ACL limits who can connect, but Telnet still sends credentials in cleartext that anyone on the path can capture."
+      },
+      {
+        "text": "Replace Telnet with SSH and keep SNMPv2c with a new community string",
+        "why": "SSH fixes the administrative sessions, but SNMPv2c still sends the community string in cleartext, so the monitoring traffic remains exposed."
+      },
+      {
+        "text": "Enable port security on all of the switches' access ports",
+        "why": "Port security limits which devices connect to access ports; it does not protect the devices' management traffic."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Hardening switches and routers focuses on the management plane: replace insecure protocols with secure ones (Telnet with SSH, SNMPv1/v2c with SNMPv3, HTTP with HTTPS), change defaults, disable unused ports and services, and keep firmware current. Restricting or strengthening a cleartext protocol is a partial fix, not the BEST one.",
+    "industryVsComptia": null,
+    "tags": [
+      "hardening",
+      "network-devices",
+      "snmp"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-010",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A web application checks the format of a 'quantity' field with JavaScript in the browser before submitting an order. During a penetration test, the tester intercepts the request with a proxy, replaces the value with a SQL payload, and the database returns other customers' orders. Which of the following is the MOST effective fix?",
+    "options": [
+      {
+        "text": "Validate the input on the server against an allow list of expected values",
+        "why": "Correct: server-side validation cannot be skipped by intercepting the request, and an allow list rejects anything that is not a valid quantity."
+      },
+      {
+        "text": "Add stricter format rules to the client-side JavaScript checks",
+        "why": "Any check that runs in the browser can be bypassed with a proxy, exactly as the tester already did."
+      },
+      {
+        "text": "Obfuscate the JavaScript so the validation logic is harder to read",
+        "why": "Obfuscation hides the logic but does not stop an attacker from editing the request after the browser sends it."
+      },
+      {
+        "text": "Set the HttpOnly and Secure attributes on the session cookie",
+        "why": "These attributes protect the session cookie from scripts and cleartext transmission; they do nothing against injected SQL in a form field."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Client-side validation improves usability but is never a security control, because the attacker controls the client. Input validation must happen on the server, and allow lists (accept only what is known good) are stronger than deny lists (block known bad).",
+    "industryVsComptia": "In practice the primary defense against SQL injection is parameterized queries (prepared statements), with server-side allow-list validation as defense in depth. CompTIA's 4.1 bullet frames this as input validation, which is the expected answer when parameterized queries are not offered.",
+    "tags": [
+      "appsec",
+      "input-validation",
+      "sqli"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.1-011",
+    "objective": "4.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An IT team distributes PowerShell scripts that run on every company workstation. Security wants workstations to run only scripts that come from the IT team and to refuse any script that was modified after release. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Sign the scripts with a code-signing certificate and enforce signature checks",
+        "why": "Correct: the signature proves the scripts came from the IT team, and any later change invalidates it, so the workstation refuses to run the script."
+      },
+      {
+        "text": "Run static code analysis on each script before it is released",
+        "why": "Static analysis finds flaws at release time, but it gives workstations no way to verify who published a script or whether it changed afterward."
+      },
+      {
+        "text": "Execute the scripts inside a sandbox on each workstation",
+        "why": "A sandbox contains what a script does while it runs; it does not verify where the script came from or detect tampering."
+      },
+      {
+        "text": "Obfuscate the scripts so they are difficult to read or modify",
+        "why": "Obfuscation slows down analysis but does not prove origin, and a modified script would still run."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Requirements for authenticity (who published it) and integrity (not altered) point to code signing. Remember the trap: a valid signature does not make code safe, it only proves origin and integrity.",
+    "industryVsComptia": null,
+    "tags": [
+      "appsec",
+      "code-signing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.2-001",
+    "objective": "4.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company is returning 200 leased laptops with SSDs to the leasing vendor, which will refurbish and re-lease them. Compliance requires that no company data be recoverable and that the company keep evidence of how this was ensured. Which of the following is the BEST approach?",
+    "options": [
+      {
+        "text": "Cryptographically erase the drives and record a sanitization certificate",
+        "why": "Correct: cryptographic or secure erase makes the data unrecoverable while leaving the SSDs reusable, and the certificate provides the required evidence."
+      },
+      {
+        "text": "Degauss each drive and record the serial numbers in a disposal log",
+        "why": "Degaussing works on magnetic media and is not effective on flash-based SSDs, so data could remain despite the log."
+      },
+      {
+        "text": "Shred the drives and obtain a certificate of destruction from a vendor",
+        "why": "Shredding protects the data, but the laptops belong to the leasing vendor and must be returned in reusable condition."
+      },
+      {
+        "text": "Reformat the drives and reinstall the standard operating system image",
+        "why": "Reformatting and reimaging can leave much of the underlying data recoverable and provide no certification."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Reuse means sanitization; never reused means destruction. Match the method to the media (degaussing only for magnetic media) and close the disposal process with certification as audit evidence.",
+    "industryVsComptia": null,
+    "tags": [
+      "asset-management",
+      "disposal",
+      "sanitization"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.2-002",
+    "objective": "4.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A security analyst runs a network discovery scan and compares the results with the CMDB, finding 14 hosts that do not appear in the asset inventory. Which asset management activity did the analyst perform?",
+    "options": [
+      {
+        "text": "Enumeration",
+        "why": "Correct: enumeration actively discovers and identifies assets on the network, revealing devices missing from the inventory."
+      },
+      {
+        "text": "Classification",
+        "why": "Classification assigns sensitivity labels that determine how an asset is handled; it does not discover devices."
+      },
+      {
+        "text": "Procurement",
+        "why": "Procurement is acquiring assets through approved purchasing channels; it happens before assets reach the network."
+      },
+      {
+        "text": "Decommissioning",
+        "why": "Decommissioning retires assets securely at end of life; the analyst is finding active, unknown hosts."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The inventory is the record; enumeration is the discovery activity that validates it. The unknown hosts now need an assigned owner and classification, or must be removed.",
+    "industryVsComptia": null,
+    "tags": [
+      "asset-management",
+      "inventory"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.2-003",
+    "objective": "4.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "To save money, a branch office bought network switches from an unknown seller on an online marketplace. Several units were later found to be counterfeit with modified firmware. Which asset management control would MOST likely have prevented this?",
+    "options": [
+      {
+        "text": "A procurement policy requiring purchases from approved vendors",
+        "why": "Correct: buying only through vetted vendors and authorized resellers is the control that keeps counterfeit or tampered hardware out of the organization."
+      },
+      {
+        "text": "Regular enumeration scans to discover devices on the network",
+        "why": "Enumeration finds devices after they are connected; it does not verify whether the hardware is genuine."
+      },
+      {
+        "text": "Assigning an owner to each switch in the CMDB",
+        "why": "Ownership creates accountability once the asset is in service, but it does not affect where the hardware was bought."
+      },
+      {
+        "text": "Sanitization procedures for switches at end of life",
+        "why": "Sanitization applies at decommissioning; the problem here was introduced at acquisition."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Security starts at the acquisition/procurement stage of the asset lifecycle: approved vendors, supply-chain vetting and security requirements in purchasing. Controls at later stages (assignment, tracking, disposal) cannot undo a compromised purchase.",
+    "industryVsComptia": null,
+    "tags": [
+      "asset-management",
+      "procurement",
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.2-004",
+    "objective": "4.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An internal HR database appears in the CMDB and is labeled Confidential. When a manager requests access for a new analyst, the help desk cannot find anyone with authority to approve the request, and no one is accountable for the database's protection. Which asset management practice has MOST likely been neglected?",
+    "options": [
+      {
+        "text": "Assigning an owner to the asset",
+        "why": "Correct: the owner is the person accountable for the asset, including approving access and deciding how it is protected."
+      },
+      {
+        "text": "Classifying the asset's data",
+        "why": "The database is already labeled Confidential, so classification has been done; what is missing is someone accountable for it."
+      },
+      {
+        "text": "Enumerating assets on the network",
+        "why": "The database is already recorded in the CMDB, so discovery is not the gap."
+      },
+      {
+        "text": "Approving the asset's procurement",
+        "why": "Procurement approval governs how the asset was acquired, not who is accountable for it in day-to-day operation."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Assignment/accounting gives every asset an owner and a classification. Classification says how sensitive the asset is; ownership says who is accountable and makes decisions such as access approvals. One without the other leaves a gap.",
+    "industryVsComptia": null,
+    "tags": [
+      "asset-management",
+      "ownership"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.2-005",
+    "objective": "4.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A file server that holds financial records is being decommissioned. Regulations require the records to be kept for seven years, and the server's drives will be shredded by a certified vendor. Which of the following should be done FIRST?",
+    "options": [
+      {
+        "text": "Archive the records required by the retention policy to approved storage",
+        "why": "Correct: data that must be retained has to be preserved before the only copy is destroyed, so retention comes before any sanitization or destruction."
+      },
+      {
+        "text": "Obtain a certificate of destruction from the vendor",
+        "why": "The certificate documents that destruction happened, so it can only be issued after the drives are shredded."
+      },
+      {
+        "text": "Remove the server from the asset inventory",
+        "why": "The inventory should be updated once disposal is complete and documented; removing it first loses track of the drives in transit."
+      },
+      {
+        "text": "Degauss the drives before handing them to the vendor",
+        "why": "Degaussing would erase the records before they are archived, breaking the retention requirement."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Decommissioning order: preserve data subject to retention (or legal hold), then sanitize or destroy the media, obtain certification, and finally update the inventory. FIRST questions on disposal usually test that retention obligations come before destruction.",
+    "industryVsComptia": null,
+    "tags": [
+      "asset-management",
+      "disposal",
+      "data-retention"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-001",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A vulnerability scan flags a Linux web server as vulnerable to a critical OpenSSH CVE based on the version string in its banner. The administrator shows that the distribution vendor backported the fix into that package version, and a manual test confirms the flaw cannot be exploited. How should the analyst classify this finding?",
+    "options": [
+      {
+        "text": "False positive",
+        "why": "Correct: the scanner reported a vulnerability that is not actually present on the system."
+      },
+      {
+        "text": "False negative",
+        "why": "A false negative is a real vulnerability the scanner fails to report; here the scanner reported something that is not there."
+      },
+      {
+        "text": "True positive",
+        "why": "A true positive requires the flaw to actually be present, which the backported fix and manual test disproved."
+      },
+      {
+        "text": "True negative",
+        "why": "A true negative means the scanner correctly reported nothing; this scanner raised a finding."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Confirmation is part of vulnerability analysis: validate findings before spending remediation effort. Version-based detection often produces false positives on systems with backported patches; credentialed scans and manual verification reduce them. Document the result so the finding is not re-raised.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "false-positive"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-002",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Two vulnerabilities have the same CVSS base score of 9.8. One affects an internet-facing payment server that stores cardholder data; the other affects an isolated lab workstation that holds no sensitive data. Which of the following BEST justifies remediating the payment server first?",
+    "options": [
+      {
+        "text": "Environmental variables of each affected asset",
+        "why": "Correct: these characteristics of the organization's environment make the real risk on the payment server far higher, even though the base scores match."
+      },
+      {
+        "text": "The CVE identifiers assigned to each vulnerability",
+        "why": "A CVE ID only names a vulnerability uniquely; it carries no information about severity or business impact."
+      },
+      {
+        "text": "The base score published for each vulnerability",
+        "why": "The base scores are identical, so they cannot be what distinguishes the two findings."
+      },
+      {
+        "text": "The release date of each vendor's patch",
+        "why": "When a patch was published says nothing about how exposed or valuable the affected asset is."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The base score describes the vulnerability in the abstract. Prioritization adds environmental variables, industry and organizational impact (PCI DSS scope here) and risk tolerance. Same base score does not mean same priority.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "cvss",
+      "prioritization"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-003",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A hospital's imaging system runs an operating system that its vendor no longer supports, so no patches are available for several known vulnerabilities. The system must remain in clinical use for two more years. Which of the following is the BEST response?",
+    "options": [
+      {
+        "text": "Place the system on an isolated network segment with strict ACLs",
+        "why": "Correct: segmentation acts as a compensating control, limiting who can reach the vulnerable system while it stays in service."
+      },
+      {
+        "text": "Purchase cyber insurance to cover a potential breach of the system",
+        "why": "Insurance transfers financial impact but does nothing to reduce the likelihood of exploiting a patient-care system."
+      },
+      {
+        "text": "Grant a permanent exemption and close the open scan findings",
+        "why": "An exemption with no compensating controls or periodic review leaves known risk unmanaged, and closing the findings hides it."
+      },
+      {
+        "text": "Increase the vulnerability scan frequency for the system to daily",
+        "why": "Scanning more often only reports the same unpatchable vulnerabilities more often; it detects but does not remediate."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "When patching is not possible, the expected answer is a compensating control, most commonly segmentation. A documented exception may also be filed, but only alongside controls and with periodic review.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "compensating-controls",
+      "segmentation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-004",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "An administrator has deployed a patch for a critical vulnerability to 300 servers. Which of the following is the BEST way to validate that the remediation was successful?",
+    "options": [
+      {
+        "text": "Rescan the affected servers",
+        "why": "Correct: a new scan confirms whether the vulnerability is still detectable on each host."
+      },
+      {
+        "text": "Close the tickets when the deployment tool reports success",
+        "why": "A deployment success message shows the patch was pushed, not that the vulnerability is gone; installs can fail or wait for a reboot."
+      },
+      {
+        "text": "Record the residual risk as accepted",
+        "why": "Risk acceptance is a response decision, not a way to confirm that a fix worked."
+      },
+      {
+        "text": "Subscribe to an additional threat feed",
+        "why": "Threat feeds help identify new threats and vulnerabilities; they do not confirm this one was remediated."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "CompTIA's validation of remediation includes rescanning, audit and verification. Failed installs and pending reboots are why 'patch deployed' is not the same as 'vulnerability fixed'.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "validation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-005",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A development team builds its application on dozens of open-source libraries. After a widely publicized flaw in a popular logging library, the team wants to be alerted automatically whenever a newly disclosed vulnerability affects any library version the application uses. Which of the following BEST meets this need?",
+    "options": [
+      {
+        "text": "Package monitoring of the application's dependencies",
+        "why": "Correct: package monitoring tracks third-party components and their versions and flags them as new vulnerabilities are disclosed."
+      },
+      {
+        "text": "Static analysis of the team's own source code",
+        "why": "Static analysis reviews code the team wrote; it does not continuously match third-party library versions against new disclosures."
+      },
+      {
+        "text": "Dynamic analysis of the running application",
+        "why": "Dynamic analysis tests the application's behavior at a point in time; it does not track which library versions are in use."
+      },
+      {
+        "text": "An annual penetration test of the application",
+        "why": "A yearly test is a point-in-time assessment and would not alert the team when a new library vulnerability is published."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "CompTIA lists three application security identification methods: static analysis (source code at rest), dynamic analysis (the running application) and package monitoring (third-party dependencies). Software composition analysis tools and SBOMs are how package monitoring is usually done.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "appsec",
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-006",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A regional hospital wants threat intelligence specific to the healthcare sector. It also wants to contribute its own indicators of compromise to a trusted community of peer hospitals. Which threat intelligence source BEST fits these requirements?",
+    "options": [
+      {
+        "text": "An information-sharing organization such as an ISAC",
+        "why": "Correct: sector ISACs collect and distribute intelligence among member organizations in the same industry, and members contribute their own indicators."
+      },
+      {
+        "text": "OSINT gathered from public websites and social media",
+        "why": "OSINT is freely available to anyone; it is not sector-focused and offers no trusted channel for sharing with peers."
+      },
+      {
+        "text": "A proprietary feed purchased from a commercial vendor",
+        "why": "A commercial feed is a one-way subscription; it does not give the hospital a forum to share indicators with peer hospitals."
+      },
+      {
+        "text": "Monitoring of dark web forums and marketplaces",
+        "why": "Dark web monitoring can reveal leaked data or attacker chatter, but it is not a community for exchanging intelligence with peers."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Threat feed types: OSINT (public, free), proprietary/third-party (commercial, paid), information-sharing organizations (sector communities such as ISACs, two-way sharing among trusted members) and the dark web (underground sources). 'Sector-specific' plus 'share with peers' points to an ISAC.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "threat-intel"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-007",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A software company wants outside security researchers to report vulnerabilities they discover in its products. The company will publish a reporting contact and a safe-harbor policy, but it has no budget to pay for findings. Which of the following should the company establish?",
+    "options": [
+      {
+        "text": "A responsible disclosure program",
+        "why": "Correct: it gives researchers an official channel and rules for reporting flaws privately so the company can fix them before public disclosure, without requiring payment."
+      },
+      {
+        "text": "A bug bounty program",
+        "why": "A bug bounty pays researchers for valid findings, and the company has no budget for rewards."
+      },
+      {
+        "text": "A contracted penetration test",
+        "why": "A penetration test is a paid, scoped engagement with a specific firm, not an open channel for any outside researcher."
+      },
+      {
+        "text": "A proprietary threat feed subscription",
+        "why": "A threat feed delivers intelligence to the company; it does not let researchers report flaws in the company's products."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Both programs invite outside researchers. A responsible disclosure program defines how to report and what the researcher can expect (safe harbor, coordinated timeline). A bug bounty adds monetary rewards for valid, in-scope findings.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "disclosure",
+      "bug-bounty"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-008",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Quarterly vulnerability scans report several medium-severity findings on an e-commerce platform. Leadership now wants to know whether an attacker could actually exploit and chain these weaknesses to reach the customer database. Which of the following BEST answers this question?",
+    "options": [
+      {
+        "text": "A penetration test",
+        "why": "Correct: a penetration test actively exploits weaknesses and attempts lateral movement, showing whether they can be chained to reach the database."
+      },
+      {
+        "text": "A credentialed vulnerability scan",
+        "why": "A credentialed scan detects vulnerabilities more accurately, but it still only reports them; it does not attempt to exploit or chain them."
+      },
+      {
+        "text": "A system and process audit",
+        "why": "An audit checks configurations and records against policy or standards; it does not show whether the weaknesses can be exploited."
+      },
+      {
+        "text": "Package monitoring of the platform",
+        "why": "Package monitoring flags vulnerable third-party components; it does not test exploitability or attack paths."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A vulnerability scan answers 'what weaknesses exist?'; a penetration test answers 'what can an attacker actually do with them?'. Several medium findings chained together can produce a critical impact that no single scan result shows.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "pentest"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-009",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A critical vulnerability is found on a server that controls a production line. Policy requires critical findings to be remediated within 14 days, but the equipment vendor will not certify the patch for 60 days, and installing an uncertified patch voids vendor support. Which of the following is the BEST course of action?",
+    "options": [
+      {
+        "text": "File a formal exception with compensating controls and an expiration date",
+        "why": "Correct: a documented, risk-owner-approved exception handles the policy deviation, compensating controls reduce the risk meanwhile, and the expiration forces a revisit when the patch is certified."
+      },
+      {
+        "text": "Install the uncertified patch now to meet the 14-day deadline",
+        "why": "This risks the availability of the production line and voids support, when the policy's exception process exists for exactly this situation."
+      },
+      {
+        "text": "Mark the finding as a false positive until the patch is certified",
+        "why": "The vulnerability is real, so calling it a false positive misrepresents the risk and hides it from reporting."
+      },
+      {
+        "text": "Purchase cyber insurance and close the finding as transferred",
+        "why": "Insurance offsets financial loss but does not reduce the chance of exploitation, and closing the finding removes it from tracking."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "When remediation cannot meet policy, CompTIA expects an exception or exemption: formally documented, approved by the risk owner, paired with compensating controls (for example segmentation or stricter ACLs) and reviewed periodically or at expiration.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "exceptions",
+      "compensating-controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.3-010",
+    "objective": "4.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A small company has no budget for commercial threat intelligence, so its analyst tracks emerging threats using public vendor advisories, government security alerts and security researchers' blogs. Which type of threat feed is the analyst PRIMARILY using?",
+    "options": [
+      {
+        "text": "OSINT",
+        "why": "Correct: open-source intelligence comes from publicly available sources such as advisories, alerts and blogs."
+      },
+      {
+        "text": "Proprietary third-party feed",
+        "why": "Proprietary feeds are commercial, paid services, which the company has no budget for."
+      },
+      {
+        "text": "Information-sharing organization",
+        "why": "Information-sharing organizations such as ISACs are membership communities; the analyst is reading public sources."
+      },
+      {
+        "text": "Dark web monitoring",
+        "why": "Dark web monitoring watches underground forums and marketplaces, not public advisories and blogs."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "OSINT is the free, public category of threat feed. It is a solid baseline, but it requires the analyst to collect, filter and correlate the information manually.",
+    "industryVsComptia": null,
+    "tags": [
+      "vuln-management",
+      "threat-intel",
+      "osint"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.4-001",
+    "objective": "4.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A network team wants core switches to notify the network management station immediately when an interface goes down, instead of waiting for the next scheduled poll. Which of the following should be configured?",
+    "options": [
+      {
+        "text": "SNMP traps",
+        "why": "Correct: a trap is an unsolicited message the device sends to the manager (UDP 162) as soon as the event occurs."
+      },
+      {
+        "text": "NetFlow export",
+        "why": "NetFlow exports traffic flow metadata such as addresses, ports and byte counts; it is not an event-notification mechanism for interface state."
+      },
+      {
+        "text": "A shorter SNMP polling interval",
+        "why": "Polling is still manager-initiated; a shorter interval reduces but does not eliminate the delay, and it adds load."
+      },
+      {
+        "text": "Agentless vulnerability scanning",
+        "why": "Vulnerability scans look for weaknesses on a schedule; they do not report link events in real time."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Polling means the manager asks (UDP 161); a trap means the device tells (UDP 162). Use SNMPv3 to add authentication and encryption.",
+    "industryVsComptia": null,
+    "tags": [
+      "monitoring",
+      "snmp"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.4-002",
+    "objective": "4.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "An organization wants to automatically check thousands of servers against CIS benchmark settings and report the results in a standardized, machine-readable format that different security tools can exchange. Which of the following BEST supports this goal?",
+    "options": [
+      {
+        "text": "SCAP",
+        "why": "Correct: SCAP defines standard formats (XCCDF, OVAL, CCE, CPE, among others) so tools can check and report configuration compliance consistently."
+      },
+      {
+        "text": "SIEM",
+        "why": "A SIEM aggregates and correlates logs for alerting; it does not define the standard format for configuration checks."
+      },
+      {
+        "text": "NetFlow",
+        "why": "NetFlow describes network traffic flows; it has nothing to do with configuration compliance."
+      },
+      {
+        "text": "DLP",
+        "why": "DLP detects and prevents sensitive data from leaving; it does not assess server configurations."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Benchmarks define what a hardened configuration looks like; SCAP lets scanners express and check those settings in a common, automatable way.",
+    "industryVsComptia": null,
+    "tags": [
+      "monitoring",
+      "scap",
+      "benchmarks"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.4-003",
+    "objective": "4.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A SIEM correlation rule for large outbound data transfers fires more than 300 times per day. Nearly every alert is caused by a nightly backup job that sends data to the company's approved cloud storage, and analysts have started ignoring the rule. Which of the following is the BEST action?",
+    "options": [
+      {
+        "text": "Tune the rule to exclude the known backup source and destination",
+        "why": "Correct: tuning removes the known-good traffic while keeping the rule able to detect real exfiltration."
+      },
+      {
+        "text": "Disable the rule until the backup job can be redesigned",
+        "why": "Disabling removes the noise but also removes all detection of genuine large outbound transfers."
+      },
+      {
+        "text": "Quarantine the backup server pending a full investigation",
+        "why": "The traffic is already identified as legitimate; quarantining would break backups without fixing the rule."
+      },
+      {
+        "text": "Archive older alerts to long-term storage more frequently",
+        "why": "Archiving manages retention; it does nothing to reduce the false positives analysts are facing."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Alert fatigue leads to missed true positives. Alert tuning, part of alert response and remediation, reduces false positives while preserving detection. Disabling a rule is rarely the BEST answer.",
+    "industryVsComptia": null,
+    "tags": [
+      "monitoring",
+      "siem",
+      "alert-tuning"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.4-004",
+    "objective": "4.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During an incident review, analysts spent hours logging in to the VPN concentrator, the domain controllers and the file servers separately to piece together one attack: repeated failed VPN logins, then a successful login, then mass file access. The CISO wants these events collected in one place and automatically linked so the pattern raises an alert as it happens. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "A SIEM with correlation rules across the log sources",
+        "why": "Correct: a SIEM aggregates and normalizes logs from many sources and correlation rules link related events across them into a single real-time alert."
+      },
+      {
+        "text": "A centralized syslog server that stores all device logs",
+        "why": "A syslog server aggregates logs in one place, but it does not correlate events across sources or raise alerts on multi-step patterns."
+      },
+      {
+        "text": "A NetFlow collector monitoring traffic between the sites",
+        "why": "NetFlow shows who talked to whom and how much, but it contains no authentication or file-access events to correlate."
+      },
+      {
+        "text": "A scheduled vulnerability scan of the affected servers",
+        "why": "Scanning finds weaknesses on hosts; it does not collect logs or detect an attack sequence as it unfolds."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Log aggregation alone solves the 'one place' half; the 'automatically linked and alerted' half is correlation, which is the defining SIEM capability. Watch for the word correlate or a multi-source pattern in the stem.",
+    "industryVsComptia": null,
+    "tags": [
+      "siem",
+      "log-aggregation",
+      "alerting"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.4-005",
+    "objective": "4.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A regulation requires the company to keep security logs for seven years and produce them on request. The SIEM license only allows 90 days of searchable data, and the budget does not allow a larger license. Which of the following BEST meets the requirement?",
+    "options": [
+      {
+        "text": "Archive older logs to low-cost long-term storage",
+        "why": "Correct: archiving moves logs older than 90 days out of the SIEM's hot storage to cheaper retained storage, meeting the retention requirement within budget while keeping them retrievable; integrity protection keeps them usable as evidence."
+      },
+      {
+        "text": "Increase the SIEM's searchable retention period to seven years",
+        "why": "This is exactly what the budget rules out; hot, searchable SIEM storage for seven years is the expensive option."
+      },
+      {
+        "text": "Generate monthly summary reports and then purge the raw logs",
+        "why": "Reports summarize activity but are not the original logs; purging the raw data would violate the retention requirement."
+      },
+      {
+        "text": "Reduce the number of systems that forward logs to the SIEM",
+        "why": "Collecting less data creates monitoring blind spots and does nothing to keep the required logs for seven years."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Archiving is a distinct monitoring activity: long-term, lower-cost retention for compliance and later investigations. Protect archived logs (hashing, WORM storage) so they remain trustworthy as evidence.",
+    "industryVsComptia": null,
+    "tags": [
+      "archiving",
+      "siem",
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.4-006",
+    "objective": "4.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Threat intelligence reports that an external IP address is a known command-and-control server. The security team must determine which internal hosts communicated with it over the past 30 days, when, and how much data was exchanged. Storage limits rule out keeping full packet captures. Which of the following data sources BEST answers these questions?",
+    "options": [
+      {
+        "text": "NetFlow records exported by the edge routers",
+        "why": "Correct: flow records store source and destination IPs and ports, timestamps and byte counts with no payload, so 30 days of them is affordable and shows exactly who talked to the IP, when and how much."
+      },
+      {
+        "text": "SNMP polling of the edge router interface counters",
+        "why": "Interface counters show total traffic per interface over time, but not which internal host communicated with which external address."
+      },
+      {
+        "text": "Antivirus logs collected from all endpoints",
+        "why": "Antivirus logs record malware detections; they do not record network conversations with a given IP, and a C2 beacon may never trigger a detection."
+      },
+      {
+        "text": "Packet captures taken from now on at the internet edge",
+        "why": "The stem rules out full captures, and starting captures now cannot show the past 30 days of communication."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Who talked to whom, when and how much, without the content, is the classic description of NetFlow. Choose packet capture only when the question needs payload, and SNMP when it needs device health or counters.",
+    "industryVsComptia": null,
+    "tags": [
+      "netflow",
+      "monitoring",
+      "network"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.4-007",
+    "objective": "4.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "The antivirus agent on a finance workstation raises a low-confidence heuristic alert on a macro-enabled spreadsheet that the finance team uses daily. The analyst must stop the file from being opened right away but be able to restore it if the alert turns out to be a false positive. Which of the following is the BEST response?",
+    "options": [
+      {
+        "text": "Quarantine the file",
+        "why": "Correct: quarantine moves the file to an isolated location where it cannot run, while keeping it intact for analysis and restoration if it proves benign."
+      },
+      {
+        "text": "Delete the file from the workstation",
+        "why": "Deletion stops execution but destroys the file, so it cannot be analyzed or restored if the alert is a false positive."
+      },
+      {
+        "text": "Add the file to the antivirus exclusion list",
+        "why": "Excluding the file before analysis would allow a possibly malicious macro to run and suppress future detections."
+      },
+      {
+        "text": "Leave the file in place and monitor the workstation",
+        "why": "Monitoring alone does not meet the requirement to prevent the file from being opened right away."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Quarantine is the alert-response step CompTIA pairs with remediation and validation: contain the item without destroying it, analyze, then either remediate or restore it and tune the detection.",
+    "industryVsComptia": null,
+    "tags": [
+      "quarantine",
+      "antivirus",
+      "alert-response"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.4-009",
+    "objective": "4.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A retailer's security team must be alerted whenever an employee emails, uploads or copies to USB storage any file containing customer credit card numbers. Which of the following tools is BEST suited to detect this activity?",
+    "options": [
+      {
+        "text": "Data loss prevention",
+        "why": "Correct: DLP inspects content in email, web uploads and endpoint transfers, matches patterns such as card numbers and alerts on or blocks the transfer."
+      },
+      {
+        "text": "NetFlow analysis",
+        "why": "NetFlow records connection metadata without payload, so it cannot tell whether a transfer contained card numbers, and it does not see USB copies."
+      },
+      {
+        "text": "File integrity monitoring",
+        "why": "FIM detects changes to monitored files; it does not inspect what data is leaving the organization."
+      },
+      {
+        "text": "SNMP traps from network devices",
+        "why": "SNMP traps report device events such as a link going down, not the content of files users send."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "When the trigger is the content of the data (card numbers, health records, keywords) across email, web and removable media, the tool is DLP. Metadata-only sources like NetFlow cannot see content.",
+    "industryVsComptia": null,
+    "tags": [
+      "dlp",
+      "monitoring",
+      "alerting"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.4-010",
+    "objective": "4.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A manufacturer needs health and configuration monitoring for hundreds of network switches and industrial sensors. The vendors do not allow any third-party software to be installed on these devices. Which of the following approaches BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Agentless monitoring over SNMP and vendor APIs",
+        "why": "Correct: agentless monitoring collects data remotely over existing interfaces, so nothing needs to be installed on the devices."
+      },
+      {
+        "text": "EDR agents deployed to each switch and sensor",
+        "why": "EDR requires installing an agent on each device, which the vendors prohibit and which these devices usually cannot run."
+      },
+      {
+        "text": "Host-based antivirus with centralized management",
+        "why": "Antivirus is software installed on the host, which is not allowed, and it does not provide health or configuration monitoring."
+      },
+      {
+        "text": "A monitoring agent pushed through Group Policy",
+        "why": "This is still agent-based, and Group Policy manages Windows domain members, not switches or industrial sensors."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "If software cannot be installed, the answer is agentless. The trade-off is less depth than an agent and dependence on network reachability and credentials.",
+    "industryVsComptia": null,
+    "tags": [
+      "agentless",
+      "monitoring",
+      "infrastructure"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-001",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Customers are receiving phishing emails that appear to come from the company's domain. The company already publishes an SPF record and signs outbound mail with DKIM, but receiving mail servers still deliver the spoofed messages. Which of the following should the company implement NEXT?",
+    "options": [
+      {
+        "text": "A DMARC record with a reject policy",
+        "why": "Correct: DMARC tells receiving servers to reject mail that fails SPF/DKIM alignment with the From domain and sends reports back to the company."
+      },
+      {
+        "text": "Additional IP ranges in the SPF record",
+        "why": "Adding senders makes SPF more permissive; the real gap is that receivers have no instruction for failing messages."
+      },
+      {
+        "text": "A secure email gateway for inbound mail",
+        "why": "An inbound gateway filters mail arriving at the company, but the spoofed messages are going to customers' servers."
+      },
+      {
+        "text": "DKIM signing with a longer key length",
+        "why": "A longer key strengthens signatures, yet receivers still have no policy for spoofed messages that are unsigned or fail."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SPF and DKIM produce pass/fail signals; DMARC is the published policy (none, quarantine, reject) plus reporting that tells receivers what to do. Organizations typically start at p=none to monitor, then move to quarantine or reject.",
+    "industryVsComptia": "In practice you would not jump straight to p=reject: publish p=none, review the aggregate reports to find legitimate third-party senders, then move to quarantine and reject. The exam expects DMARC as the control that makes receivers act on SPF/DKIM failures.",
+    "tags": [
+      "email-security",
+      "dmarc"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-002",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company enforces web filtering through a proxy at headquarters. Most employees now work from home and connect to the VPN only when they need internal applications, so their browsing is unfiltered most of the day. Which of the following BEST enforces the web filtering policy regardless of user location?",
+    "options": [
+      {
+        "text": "Deploy an agent-based web filter on all endpoints",
+        "why": "Correct: the agent enforces the policy on the device itself, so filtering applies at home, while traveling and off the VPN."
+      },
+      {
+        "text": "Add more categories to the central proxy's block list",
+        "why": "Blocking more categories only affects traffic that reaches the proxy, which remote browsing bypasses."
+      },
+      {
+        "text": "Enable DNS filtering on the internal DNS servers",
+        "why": "Remote users off the VPN resolve names through home or ISP resolvers, so the internal DNS servers never see those queries."
+      },
+      {
+        "text": "Configure URL reputation checks on the perimeter firewall",
+        "why": "The perimeter firewall only inspects traffic that passes through the corporate network."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Location-independent enforcement requires the control to travel with the device. A centralized proxy, internal DNS filtering and perimeter devices all depend on traffic being routed through the corporate network.",
+    "industryVsComptia": "Many organizations now meet this with a cloud-delivered secure web gateway (SSE/SASE) whose endpoint client steers traffic to the cloud proxy. CompTIA's objectives frame the choice as agent-based versus centralized proxy, and the location-independent answer is agent-based.",
+    "tags": [
+      "web-filter",
+      "remote-work"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-003",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An administrator adds a rule to stop host 10.1.5.20 from reaching the internet, but the host can still browse websites. The firewall ACL, in evaluation order, is: rule 1 allows TCP 443 from 10.1.5.0/24 to any; rule 2 allows TCP 80 from 10.1.5.0/24 to any; rule 3 denies all traffic from 10.1.5.20; rule 4 denies all traffic. Which of the following is the MOST likely reason the host can still browse?",
+    "options": [
+      {
+        "text": "The broader allow rules match the traffic before the deny rule",
+        "why": "Correct: ACLs are processed top-down and the first match wins, so rules 1 and 2 permit the host's web traffic before rule 3 is reached."
+      },
+      {
+        "text": "The final deny-all rule cancels out the host-specific rule",
+        "why": "Rule 4 only applies to traffic that no earlier rule matched; it neither overrides nor cancels rule 3."
+      },
+      {
+        "text": "The deny rule should list ports 80 and 443 instead of all ports",
+        "why": "Denying all traffic already includes ports 80 and 443; the problem is the rule's position, not its scope."
+      },
+      {
+        "text": "The firewall processes its rules from the bottom of the list upward",
+        "why": "Firewall ACLs are evaluated top-down; if they were processed bottom-up, rule 4 would block everything."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "First match wins. Specific rules, such as a single-host deny, belong above broad allows. Rule-table questions on the exam almost always test rule order.",
+    "industryVsComptia": null,
+    "tags": [
+      "firewall",
+      "acl"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-004",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A finance employee's account normally signs in from the office during business hours. Last night it signed in at 3:00 a.m. from another country and downloaded ten times its usual volume of files. No malware was found and the credentials were valid. Which of the following capabilities is MOST likely to detect this activity?",
+    "options": [
+      {
+        "text": "User behavior analytics",
+        "why": "Correct: UBA baselines each account's normal time, location and data volume and alerts on significant deviations like this one."
+      },
+      {
+        "text": "File integrity monitoring",
+        "why": "FIM detects changes to protected files; reading or downloading files does not modify them."
+      },
+      {
+        "text": "Signature-based IPS",
+        "why": "No known-bad signature is involved; the activity is authenticated traffic that looks legitimate."
+      },
+      {
+        "text": "Network access control",
+        "why": "NAC checks device identity and posture when it connects; it does not baseline a user's behavior over time."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Valid credentials, no malware and an abnormal pattern (time, location, volume) indicate a behavioral anomaly, which is what UBA is designed to catch. Signature-based tools only recognize known-bad patterns.",
+    "industryVsComptia": null,
+    "tags": [
+      "uba",
+      "insider-threat"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-005",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A company is deploying a public web server that must be reachable from the internet. If the server is compromised, the attacker must not gain direct access to the internal network. Which of the following is the BEST placement for the server?",
+    "options": [
+      {
+        "text": "In a screened subnet between the external and internal firewalls",
+        "why": "Correct: a screened subnet (DMZ) hosts public-facing services in a segment that the internet can reach but that has tightly restricted access into the internal network."
+      },
+      {
+        "text": "On the internal network with port forwarding from the edge firewall",
+        "why": "Port forwarding exposes an internal host, so a compromise of the server lands the attacker directly on the internal network."
+      },
+      {
+        "text": "Behind the VPN concentrator with the internal servers",
+        "why": "Behind the VPN, anonymous internet users could not reach the server, which breaks the requirement for public access."
+      },
+      {
+        "text": "On the internal network behind a host-based firewall",
+        "why": "A host firewall runs on the server itself, so an attacker who compromises the server can disable it, and the server already sits on the internal network."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Screened subnet is CompTIA's current term for a DMZ: the place for internet-facing services, with firewall rules that limit what those hosts can initiate toward the internal network.",
+    "industryVsComptia": null,
+    "tags": [
+      "firewall",
+      "screened-subnet",
+      "segmentation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-006",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Attackers breached a company using a new exploit variant. The network IPS, which relies only on signatures, generated no alerts because no matching signature existed yet. The team wants the IPS to catch future attacks of this kind before any vendor has published a signature for them. Which of the following should the team enable to BEST meet this goal?",
+    "options": [
+      {
+        "text": "Anomaly-based detection against a traffic baseline",
+        "why": "Correct: anomaly (behavior or trend) based detection compares traffic with a learned baseline, so it can flag new attacks that no signature describes."
+      },
+      {
+        "text": "More frequent signature updates from the vendor",
+        "why": "Faster updates help only after a signature has been written; they still miss an attack for which no signature exists yet."
+      },
+      {
+        "text": "Passive IDS mode instead of inline IPS mode",
+        "why": "Changing placement from inline to passive affects whether traffic can be blocked, not whether unknown attacks are detected."
+      },
+      {
+        "text": "An additional signature set from a second vendor",
+        "why": "A second signature set still only detects known patterns, so a brand-new variant can slip past both."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Every option except anomaly detection still depends on someone having written a signature, so it is the BEST fit for unknown attacks. Signature-based detection is precise for known attacks but blind to new ones; anomaly/behavior-based detection catches deviations from trends at the cost of more false positives, which then need tuning.",
+    "industryVsComptia": null,
+    "tags": [
+      "ids-ips",
+      "anomaly",
+      "signatures"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-007",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A sensor connected to a switch SPAN port correctly alerts on exploit attempts against the web servers, but several attacks have still succeeded before analysts could respond. Management wants malicious packets stopped automatically before they reach the servers. Which of the following is the BEST change?",
+    "options": [
+      {
+        "text": "Replace the sensor with an inline IPS",
+        "why": "Correct: an IPS placed inline in front of the servers sits in the traffic path, so it can drop malicious packets as they arrive instead of only reporting them."
+      },
+      {
+        "text": "Tune the existing sensor's signatures to reduce false positives",
+        "why": "Tuning improves alert quality, but a sensor on a SPAN port only receives copies of traffic and still cannot block anything."
+      },
+      {
+        "text": "Add SPAN ports so the sensor sees more switch traffic",
+        "why": "More visibility means more alerts, but a passive sensor still cannot stop packets from reaching the servers."
+      },
+      {
+        "text": "Configure the sensor to send SNMP traps to the NMS",
+        "why": "Traps only change how alerts are delivered; a human still has to respond after the attack has arrived."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "IDS = passive (tap or SPAN copy), detects and alerts. IPS = inline, detects and prevents. When the requirement is to stop traffic automatically, the device must be in the path.",
+    "industryVsComptia": null,
+    "tags": [
+      "ids-ips",
+      "inline",
+      "network"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-008",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A hotel wants to block access to known malware and phishing domains for every device on its guest and IoT networks. Guests' devices cannot have software installed or their proxy settings changed, but every device obtains its network settings from the hotel's DHCP servers. Which of the following BEST meets the requirement?",
+    "options": [
+      {
+        "text": "Use a DNS filtering service as the network's resolver",
+        "why": "Correct: DNS filtering refuses to resolve known-malicious domains, and because DHCP hands every device the resolver address, all of them are covered with no software or proxy configuration."
+      },
+      {
+        "text": "Deploy an agent-based web filter to all connected devices",
+        "why": "Agents must be installed on each device, which is not possible for guest devices or most IoT hardware."
+      },
+      {
+        "text": "Require all devices to use an explicit centralized web proxy",
+        "why": "An explicit proxy has to be configured on each client, which the hotel cannot do on guest devices."
+      },
+      {
+        "text": "Enable host-based firewalls on every connected device",
+        "why": "The hotel does not control guest devices, and a host firewall does not block domains by reputation anyway."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "DNS filtering works at name resolution, so it covers any device that uses the assigned resolver without touching the device. Its limit: clients that hard-code another resolver or use encrypted DNS can bypass it unless outbound DNS is restricted.",
+    "industryVsComptia": null,
+    "tags": [
+      "dns-filtering",
+      "web-filter",
+      "iot"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-009",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Employees keep receiving phishing emails with malicious attachments and links. The messages come from look-alike external domains that pass their own SPF and DKIM checks. The company already publishes a DMARC reject policy for its own domain. Which of the following would MOST reduce these messages reaching users' inboxes?",
+    "options": [
+      {
+        "text": "A secure email gateway with attachment sandboxing",
+        "why": "Correct: an email gateway inspects inbound mail content, detonating attachments and checking links and sender reputation, so it can stop malicious messages even from properly authenticated domains."
+      },
+      {
+        "text": "A stricter SPF record for the company's own domain",
+        "why": "The company's SPF record protects its own domain from spoofing; it has no effect on mail sent from someone else's look-alike domain."
+      },
+      {
+        "text": "Rotating the company's DKIM signing keys",
+        "why": "Key rotation strengthens the company's own outbound signatures but does nothing to inspect inbound messages from other domains."
+      },
+      {
+        "text": "Changing the company's DMARC policy to quarantine",
+        "why": "The DMARC policy applies only to mail claiming to be from the company's domain, and quarantine is weaker than the current reject."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SPF, DKIM and DMARC authenticate the sending domain; a look-alike domain the attacker owns can pass all three. Inspecting what the message contains is the job of the email gateway.",
+    "industryVsComptia": null,
+    "tags": [
+      "email-security",
+      "gateway",
+      "phishing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-010",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A Linux web server hosts a public application. The security team requires that, even if the web service is compromised and the attacker gains root, the web server process cannot read files outside its own content directories. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Enforce an SELinux policy confining the web server",
+        "why": "Correct: in enforcing mode, SELinux applies mandatory access control in the kernel, so the confined process is limited by its security context even when it runs as root."
+      },
+      {
+        "text": "Apply a Group Policy Object restricting file system access",
+        "why": "Group Policy configures Windows domain systems through Active Directory; it does not control a Linux web server."
+      },
+      {
+        "text": "Tighten discretionary file permissions on sensitive directories",
+        "why": "Discretionary permissions do not stop root, which can read or change any file regardless of owner and mode settings."
+      },
+      {
+        "text": "Restrict the server's outbound connections with a host firewall",
+        "why": "A host firewall controls network traffic; it does not limit which local files the process can read."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Root bypasses discretionary access control; mandatory access control does not. SELinux (in enforcing mode, not permissive) is the Linux OS-security answer for confining processes.",
+    "industryVsComptia": null,
+    "tags": [
+      "os-security",
+      "selinux",
+      "linux"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-011",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A compliance standard requires the payment servers to raise an alert whenever a system binary or critical configuration file is changed, including changes made by administrators outside approved change windows. Which of the following controls BEST meets this requirement?",
+    "options": [
+      {
+        "text": "File integrity monitoring",
+        "why": "Correct: FIM compares hashes of monitored files with a known-good baseline and alerts on any change, whoever made it and whether or not malware is involved."
+      },
+      {
+        "text": "Real-time antivirus scanning",
+        "why": "Antivirus looks for malicious code; an administrator editing a configuration file is not malware and would not be flagged."
+      },
+      {
+        "text": "Data loss prevention",
+        "why": "DLP watches sensitive data leaving the organization, not changes to system files on the server."
+      },
+      {
+        "text": "User behavior analytics",
+        "why": "UBA flags unusual user activity patterns; it does not track whether specific files changed."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Any change to specific critical files is FIM's job. Pair the alerts with change management so authorized changes can be matched to approved tickets.",
+    "industryVsComptia": null,
+    "tags": [
+      "fim",
+      "integrity",
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-012",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Contractors regularly plug their own laptops into conference room network jacks. Policy states that only devices with current OS patches and running antivirus may reach internal resources, and noncompliant devices must be placed in a remediation network. Which of the following BEST enforces this policy?",
+    "options": [
+      {
+        "text": "Network access control with posture assessment",
+        "why": "Correct: NAC checks a device's health (patch level, antivirus status) when it connects and can grant access or move it to a remediation network."
+      },
+      {
+        "text": "Port security limiting each jack to one MAC address",
+        "why": "Port security restricts which or how many MAC addresses may use a port; it does not check patches or antivirus and MACs are easy to spoof."
+      },
+      {
+        "text": "EDR agents on all company-owned workstations",
+        "why": "EDR on company devices does not evaluate contractors' laptops or decide whether they may join the network."
+      },
+      {
+        "text": "A static VLAN assignment for the conference room ports",
+        "why": "A static VLAN places every device in the same segment regardless of whether it complies with the policy."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Access decided by device health plus quarantine to a remediation segment is the signature of NAC. Port security controls who may connect by MAC address, not whether the device is compliant.",
+    "industryVsComptia": null,
+    "tags": [
+      "nac",
+      "posture",
+      "network"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.5-013",
+    "objective": "4.5",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company is replacing its FTP service for partner file exchange. The firewall policy permits exactly one inbound TCP port for the service, and both credentials and file contents must be encrypted in transit. Which of the following BEST meets these requirements?",
+    "options": [
+      {
+        "text": "SFTP over TCP port 22",
+        "why": "Correct: SFTP runs inside a single SSH session on TCP 22, encrypting authentication, commands and data over one port."
+      },
+      {
+        "text": "FTPS in implicit mode on TCP port 990",
+        "why": "FTPS encrypts traffic, but it keeps FTP's separate data channel, which needs additional ports beyond the single permitted one."
+      },
+      {
+        "text": "TFTP over UDP port 69",
+        "why": "TFTP has no authentication or encryption and uses UDP, failing both requirements."
+      },
+      {
+        "text": "FTP on TCP port 21 with complex passwords",
+        "why": "FTP sends credentials and data in cleartext; stronger passwords do not add encryption."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Implementing secure protocols means choosing the protocol, the port and the transport together. SFTP is the one-port encrypted option; FTPS also encrypts but inherits FTP's multi-channel design, which complicates firewall rules.",
+    "industryVsComptia": null,
+    "tags": [
+      "secure-protocols",
+      "ports",
+      "firewall"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-001",
+    "objective": "4.6",
+    "type": "multi",
+    "difficulty": 1,
+    "stem": "A security team is reviewing proposed login methods for a new application. Which of the following combinations provide multifactor authentication? (Choose TWO.)",
+    "options": [
+      {
+        "text": "Password and a code from a hardware token",
+        "why": "Correct: combines something you know with something you have."
+      },
+      {
+        "text": "Fingerprint scan and a PIN",
+        "why": "Correct: combines something you are with something you know."
+      },
+      {
+        "text": "Password and a security question answer",
+        "why": "Both are something you know, so this is still single-factor authentication."
+      },
+      {
+        "text": "Smart card and a proximity badge",
+        "why": "Both are something you have, so this is still single-factor authentication."
+      },
+      {
+        "text": "PIN and a memorized passphrase",
+        "why": "Both are something you know, so this is still single-factor authentication."
+      }
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "MFA requires factors from different categories: something you know, have, are, or somewhere you are. Count categories, not credentials.",
+    "industryVsComptia": null,
+    "tags": [
+      "mfa",
+      "authentication"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-002",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company wants access to its HR application granted only when the user belongs to the HR department, connects from a compliant company-managed device, and is located in an approved country. The policy must evaluate all of these conditions on every request. Which access control model BEST fits this requirement?",
+    "options": [
+      {
+        "text": "Attribute-based access control",
+        "why": "Correct: ABAC evaluates attributes of the user, resource and environment (department, device posture, location) together on each request."
+      },
+      {
+        "text": "Role-based access control",
+        "why": "Role-based access grants permissions by job role alone; it does not natively combine device compliance and location into the decision."
+      },
+      {
+        "text": "Rule-based access control",
+        "why": "Rule-based access applies administrator-defined rules uniformly to all subjects, such as an ACL or time window, rather than combining identity, device and environment attributes."
+      },
+      {
+        "text": "Discretionary access control",
+        "why": "DAC lets the resource owner grant access at their discretion, with no central policy evaluating device or location."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Multiple attributes of the subject, object and environment evaluated per request is the definition of ABAC. It is the model behind conditional access and zero trust policy engines.",
+    "industryVsComptia": null,
+    "tags": [
+      "access-control",
+      "abac"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-003",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "An audit finds that six administrators are permanent members of the Domain Admins group, although each needs those rights only a few hours a month. The CISO wants to eliminate standing privileged access while still allowing approved administrative tasks. Which of the following BEST meets this goal?",
+    "options": [
+      {
+        "text": "Just-in-time permissions with approval and automatic expiration",
+        "why": "Correct: elevation is granted on request for a limited window and removed automatically, so no account holds admin rights between tasks."
+      },
+      {
+        "text": "Password vaulting with checkout for the Domain Admins accounts",
+        "why": "Vaulting protects, rotates and logs privileged credentials, but the accounts themselves still hold standing privileges."
+      },
+      {
+        "text": "Stronger complexity and expiration rules for admin passwords",
+        "why": "Stronger passwords make the credentials harder to guess but do not reduce how long the privileges exist."
+      },
+      {
+        "text": "Quarterly attestation of membership in the Domain Admins group",
+        "why": "Attestation confirms whether access is still needed, but the admins would keep permanent membership between reviews."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "'Eliminate standing privileges' is the trigger phrase for JIT. Password vaulting and ephemeral credentials are related PAM tools and are often combined with JIT, but only JIT removes the standing access itself.",
+    "industryVsComptia": null,
+    "tags": [
+      "pam",
+      "jit",
+      "least-privilege"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-004",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company wants employees to sign in to a third-party SaaS application with their corporate credentials. The SaaS provider must never receive users' passwords; instead, the company's identity provider will send it a digitally signed XML assertion after authenticating the user. Which of the following is being implemented?",
+    "options": [
+      {
+        "text": "SAML",
+        "why": "Correct: SAML federation uses signed XML assertions from an identity provider to a service provider for web SSO."
+      },
+      {
+        "text": "OAuth",
+        "why": "OAuth delegates authorization through access tokens so an app can call APIs on a user's behalf; it is not the XML assertion standard described."
+      },
+      {
+        "text": "LDAP",
+        "why": "LDAP is a directory query protocol; authenticating through it would require the SaaS application to handle users' credentials."
+      },
+      {
+        "text": "RADIUS",
+        "why": "RADIUS provides AAA for network access such as VPN and Wi-Fi, not browser-based federation with a SaaS provider."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Federated web SSO with XML assertions from an IdP to a service provider is SAML. OAuth answers 'what may this app access?'; OpenID Connect adds authentication on top of OAuth.",
+    "industryVsComptia": null,
+    "tags": [
+      "federation",
+      "sso",
+      "saml"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-005",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An employee was terminated this morning. The legal department requires that her mailbox and home directory be preserved for a pending investigation, and HR wants her access to end immediately. Which of the following should the identity administrator do FIRST?",
+    "options": [
+      {
+        "text": "Disable the user account",
+        "why": "Correct: disabling blocks all sign-ins right away while keeping the account, its mailbox, files and audit history intact for legal review."
+      },
+      {
+        "text": "Delete the user account",
+        "why": "Deleting ends access but can destroy the mailbox, files and identifiers that legal has asked to preserve."
+      },
+      {
+        "text": "Reset the account password",
+        "why": "The account stays enabled, so existing sessions, tokens or anyone who learns the new password could still use it."
+      },
+      {
+        "text": "Flag the account for the next attestation",
+        "why": "Waiting for a periodic access review leaves a terminated user with working access for weeks."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Deprovisioning at termination starts with disabling the account so access ends at once. Deletion, if it happens at all, comes later under the retention policy, after data has been preserved or transferred.",
+    "industryVsComptia": null,
+    "tags": [
+      "iam",
+      "lifecycle",
+      "deprovisioning"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-006",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During an access review, an auditor finds that an analyst who moved from finance to marketing and then to sales over five years still has access to the finance and marketing file shares. Her manager confirms she needs only sales resources. Which security principle is MOST directly violated?",
+    "options": [
+      {
+        "text": "Least privilege",
+        "why": "Correct: permissions from earlier roles were never removed, so she holds more access than her current job requires (privilege creep)."
+      },
+      {
+        "text": "Non-repudiation",
+        "why": "Non-repudiation ensures a user cannot deny an action they performed; it is not about how much access an account holds."
+      },
+      {
+        "text": "Defense in depth",
+        "why": "Defense in depth layers multiple controls; the finding is excess permissions on one account, not a missing layer."
+      },
+      {
+        "text": "Implicit deny",
+        "why": "Implicit deny blocks anything not explicitly allowed; here access was explicitly granted and simply never revoked."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Accumulating permissions through transfers is privilege creep, a violation of least privilege. Prevent it by revoking old-role permissions as part of every transfer and confirming access through periodic attestation.",
+    "industryVsComptia": null,
+    "tags": [
+      "iam",
+      "least-privilege",
+      "permissions"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-007",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Before an online bank creates a customer's login, the applicant must upload a photo of a government-issued ID and take a live selfie that is compared with the ID photo. Which IAM process does this step BEST represent?",
+    "options": [
+      {
+        "text": "Identity proofing",
+        "why": "Correct: the bank verifies that the applicant really is the person they claim to be before issuing any credentials."
+      },
+      {
+        "text": "Attestation",
+        "why": "Attestation is a periodic review confirming that existing access is still appropriate, not a check done before an account exists."
+      },
+      {
+        "text": "Federation",
+        "why": "Federation lets one organization trust authentication performed by another; it does not verify a new customer's real-world identity."
+      },
+      {
+        "text": "Deprovisioning",
+        "why": "Deprovisioning removes access when it is no longer needed; this step happens before any account is created."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Identity proofing establishes that a claimed identity belongs to a real person, using evidence such as government ID, document checks or a liveness test. Only after proofing is the account provisioned.",
+    "industryVsComptia": null,
+    "tags": [
+      "iam",
+      "identity-proofing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-008",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A domain password policy remembers each user's last ten passwords. The help desk discovers that several users change their password eleven times within a few minutes so they can return to the password they had before. Which policy setting would BEST stop this behavior?",
+    "options": [
+      {
+        "text": "Set a minimum password age",
+        "why": "Correct: requiring a password to be kept for a period, such as one day, before it can change again makes cycling through the history impractical."
+      },
+      {
+        "text": "Shorten the maximum password age",
+        "why": "This forces more frequent changes, which increases the incentive to cycle back to a favorite password rather than stopping it."
+      },
+      {
+        "text": "Increase the minimum password length",
+        "why": "Longer passwords resist guessing, but users can still cycle through the history to reuse their old password."
+      },
+      {
+        "text": "Require additional character complexity",
+        "why": "Complexity rules change what a password must contain; the reused password already meets them and can still be restored."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Password history blocks reuse only if users cannot burn through it quickly. Minimum password age closes that gap; maximum password age (expiration) controls how long a password may be used.",
+    "industryVsComptia": "NIST SP 800-63B recommends against forced periodic expiration and favors length, breached-password screening and changes only on evidence of compromise. CompTIA still tests expiration, age and history as standard policy settings.",
+    "tags": [
+      "passwords",
+      "password-policy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-009",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Attackers are sending employees links to a phishing proxy that relays both their passwords and their one-time MFA codes to the real login page in real time. The CISO wants an MFA implementation that would still block these sign-ins even if an employee enters everything on the fake page. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "FIDO2 hardware security keys",
+        "why": "Correct: the key signs a challenge bound to the genuine site's origin, so a response captured on a look-alike domain cannot be replayed against the real one."
+      },
+      {
+        "text": "TOTP codes from an authenticator app",
+        "why": "A soft token code is typed by the user, so the proxy can capture it and use it before it expires."
+      },
+      {
+        "text": "One-time codes sent by SMS",
+        "why": "SMS codes are typed into the page like any other code and can be relayed; they are also exposed to SIM swapping."
+      },
+      {
+        "text": "Key fobs that display rotating codes",
+        "why": "A hard authentication token still produces a code the user types, which the proxy can relay in real time."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Any factor that produces a code the user types can be relayed by an adversary-in-the-middle proxy. Security keys using FIDO2/WebAuthn are phishing-resistant because the cryptographic response is tied to the site's origin.",
+    "industryVsComptia": null,
+    "tags": [
+      "mfa",
+      "security-keys",
+      "phishing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-010",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "The same local administrator password is used on 300 servers and is known by a dozen administrators and several former contractors. The security team wants privileged credentials stored centrally, released only to authorized administrators through a logged checkout, and changed automatically after each use. Which of the following BEST meets these requirements?",
+    "options": [
+      {
+        "text": "Password vaulting",
+        "why": "Correct: a PAM vault stores privileged credentials, controls and logs checkout, and rotates each password after use."
+      },
+      {
+        "text": "Just-in-time permissions",
+        "why": "JIT grants temporary elevation to a user's own account; it does not store, check out or rotate shared administrator passwords."
+      },
+      {
+        "text": "Single sign-on",
+        "why": "SSO lets users authenticate once for many applications; it does not manage or rotate shared local admin passwords."
+      },
+      {
+        "text": "Stronger password complexity rules",
+        "why": "A more complex shared password is still known by everyone who has it and is never rotated after use."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Central storage, controlled checkout, logging and automatic rotation are the features of password vaulting. JIT removes standing privileges; ephemeral credentials create short-lived accounts or keys; vaulting protects the privileged credentials that must exist.",
+    "industryVsComptia": null,
+    "tags": [
+      "pam",
+      "password-vaulting"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.6-011",
+    "objective": "4.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A user connects a third-party scheduling app to her corporate cloud calendar. A consent screen asks her to allow the app to read and create calendar events, and the app then receives an access token limited to that scope. The app never sees her password. Which of the following is MOST likely being used?",
+    "options": [
+      {
+        "text": "OAuth",
+        "why": "Correct: OAuth delegates scoped authorization to a third-party app through access tokens, without sharing the user's password."
+      },
+      {
+        "text": "SAML",
+        "why": "SAML sends signed XML assertions from an IdP to a service provider to log the user in; it is not built for granting an app scoped API access."
+      },
+      {
+        "text": "LDAP",
+        "why": "LDAP queries and updates a directory; it has no consent screen or delegated access tokens."
+      },
+      {
+        "text": "TACACS+",
+        "why": "TACACS+ provides AAA for administrators of network devices, not delegated access for a web application."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Consent screen, scopes and access tokens are the signature of OAuth. Remember that OAuth is authorization; OpenID Connect adds an identity layer when the app also needs to authenticate the user.",
+    "industryVsComptia": null,
+    "tags": [
+      "oauth",
+      "federation",
+      "sso"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.7-001",
+    "objective": "4.7",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A SOC routes every automated containment action through a single SOAR server. When that server failed over a weekend, no playbooks ran and analysts had to isolate infected hosts by hand. Which automation consideration does this BEST illustrate?",
+    "options": [
+      {
+        "text": "Single point of failure",
+        "why": "Correct: one component's failure stopped the entire automated response process."
+      },
+      {
+        "text": "Technical debt",
+        "why": "Technical debt is accumulated shortcuts that need rework later; the scenario describes an outage caused by lack of redundancy."
+      },
+      {
+        "text": "Cost",
+        "why": "Cost concerns licensing, tools and development effort; the scenario describes an availability failure."
+      },
+      {
+        "text": "Complexity",
+        "why": "Complexity makes automation harder to design and troubleshoot, but the defining problem here is that one failure halted everything."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "When one component's failure halts the whole automated process, that is a single point of failure. Mitigate it with redundancy and documented manual fallback procedures.",
+    "industryVsComptia": null,
+    "tags": [
+      "automation",
+      "soar"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.7-002",
+    "objective": "4.7",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "After a new SOAR playbook went live, an EDR ransomware detection now automatically isolates the host, disables the user's account and opens a ticket. The average time from detection to containment dropped from 40 minutes to under one minute. Which benefit of automation is MOST directly demonstrated?",
+    "options": [
+      {
+        "text": "Reaction time",
+        "why": "Correct: the measured improvement is how quickly the organization responds once a threat is detected."
+      },
+      {
+        "text": "Employee retention",
+        "why": "Removing repetitive work can help retain staff, but the metric in the scenario is response speed."
+      },
+      {
+        "text": "Enforcing baselines",
+        "why": "Enforcing baselines keeps configurations consistent and secure; it is not about incident response speed."
+      },
+      {
+        "text": "Standard infrastructure configurations",
+        "why": "Standard configurations concern consistent builds and deployments of systems, not how fast incidents are contained."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Match the benefit to the metric in the stem: time from detection to containment is reaction time.",
+    "industryVsComptia": null,
+    "tags": [
+      "automation",
+      "soar"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.7-003",
+    "objective": "4.7",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A cloud team lets developers deploy their own infrastructure through templates. The security team adds automated policies that block any deployment creating a publicly accessible storage bucket or an unencrypted database, while allowing all other deployments to proceed. Which automation use case does this BEST describe?",
+    "options": [
+      {
+        "text": "Guard rails",
+        "why": "Correct: automated policies keep self-service deployments within safe limits by blocking noncompliant configurations as they are attempted."
+      },
+      {
+        "text": "Security groups",
+        "why": "Security groups filter network traffic to and from resources; they do not reject deployments based on storage or encryption settings."
+      },
+      {
+        "text": "Escalation",
+        "why": "Escalation routes an issue to a higher tier or a manager; here the violation is blocked automatically without involving anyone."
+      },
+      {
+        "text": "Resource provisioning",
+        "why": "Provisioning creates the resources themselves; the scenario describes policies that limit what provisioning is allowed to create."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Guard rails let teams move quickly with automation while preventing them from leaving secure boundaries. Think of them as preventive policy checks wrapped around self-service actions.",
+    "industryVsComptia": null,
+    "tags": [
+      "automation",
+      "guard-rails",
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.7-004",
+    "objective": "4.7",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A SOC of four analysts used to clear only a third of its daily alerts. After automating enrichment, deduplication and closure of known false positives, the same four analysts now handle the full queue, and management cancels plans to hire six more. Which benefit of automation is MOST directly demonstrated?",
+    "options": [
+      {
+        "text": "Workforce multiplier",
+        "why": "Correct: automation lets the existing team do the work that would otherwise need many more people."
+      },
+      {
+        "text": "Employee retention",
+        "why": "Less repetitive work may help keep staff, but the scenario measures how much work the current team can handle."
+      },
+      {
+        "text": "Enforcing baselines",
+        "why": "Enforcing baselines keeps system configurations at an approved secure state; it is unrelated to alert-handling capacity."
+      },
+      {
+        "text": "Standard infrastructure configurations",
+        "why": "Standard configurations make builds consistent; they do not explain a small team absorbing a larger workload."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "When the stem focuses on doing more with the same headcount, the benefit is workforce multiplier. If it focused on faster detection-to-containment, the answer would be reaction time.",
+    "industryVsComptia": null,
+    "tags": [
+      "automation",
+      "soar",
+      "benefits"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.7-005",
+    "objective": "4.7",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "To meet a deadline, an engineer wrote firewall automation scripts with hard-coded IP addresses, embedded credentials and no error handling, planning to clean them up later. A year later, every network change requires manually editing dozens of these scripts. Which automation consideration does this BEST illustrate?",
+    "options": [
+      {
+        "text": "Technical debt",
+        "why": "Correct: shortcuts taken to deliver quickly have accumulated into ongoing rework that grows with every change."
+      },
+      {
+        "text": "Single point of failure",
+        "why": "A single point of failure is one component whose outage stops everything; the scripts still run but are costly to change."
+      },
+      {
+        "text": "Cost",
+        "why": "Cost covers tools, licensing and development effort; the scenario centers on deferred shortcuts that now demand rework."
+      },
+      {
+        "text": "Scaling in a secure manner",
+        "why": "This is a benefit of automation, not a consideration; the scenario describes a drawback of poorly built automation."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Technical debt is the future cost of quick-and-dirty implementation choices. Automation built without standards, documentation or parameterization trades short-term speed for long-term rework.",
+    "industryVsComptia": null,
+    "tags": [
+      "automation",
+      "considerations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.7-006",
+    "objective": "4.7",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A SOAR playbook opens a ticket for every phishing report. If the ticket is rated critical, or if no analyst acknowledges it within 15 minutes, the playbook automatically pages the on-call incident manager. Which automation use case does the paging step BEST represent?",
+    "options": [
+      {
+        "text": "Escalation",
+        "why": "Correct: the playbook moves the issue to a higher level of responsibility based on severity or a missed response time."
+      },
+      {
+        "text": "Ticket creation",
+        "why": "Ticket creation is the first step of the playbook; the question asks about the step that notifies the incident manager."
+      },
+      {
+        "text": "Guard rails",
+        "why": "Guard rails block actions that would violate policy; paging a manager does not restrict anything."
+      },
+      {
+        "text": "Disabling access",
+        "why": "Disabling access revokes a user's or service's ability to connect; the paging step only notifies a person."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Automated escalation applies consistent rules (severity, SLA timers) to decide when an incident goes up the chain, so critical issues are not left waiting in a queue.",
+    "industryVsComptia": null,
+    "tags": [
+      "automation",
+      "soar",
+      "escalation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.7-007",
+    "objective": "4.7",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Every time a developer commits code, the build pipeline automatically compiles the application, checks each function against its expected results, runs a static code analysis scan, and rejects the merge if critical findings appear. Which automation use case does this BEST describe?",
+    "options": [
+      {
+        "text": "Continuous integration and testing",
+        "why": "Correct: each commit is automatically built, tested and scanned so defects and vulnerabilities are caught early."
+      },
+      {
+        "text": "Resource provisioning",
+        "why": "Resource provisioning creates servers, storage or other infrastructure; the pipeline is testing code, not building infrastructure."
+      },
+      {
+        "text": "Enabling/disabling services and access",
+        "why": "This automatically turns services or access on or off in response to events; the pipeline is validating code changes, not changing what is enabled."
+      },
+      {
+        "text": "User provisioning",
+        "why": "User provisioning creates accounts and assigns access; it has nothing to do with validating code changes."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "With CI, developers merge changes into a shared repository frequently, and each change is automatically built and tested. Adding security scans to CI shifts security left and enforces quality gates before code reaches production.",
+    "industryVsComptia": null,
+    "tags": [
+      "automation",
+      "ci-cd",
+      "devsecops"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.8-001",
+    "objective": "4.8",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Analysts have confirmed that ransomware is actively encrypting shares on two file servers and have identified the strain. According to the incident response process, which of the following should the team do FIRST?",
+    "options": [
+      {
+        "text": "Disconnect the affected servers from the network",
+        "why": "Correct: this is containment, which stops the ransomware from spreading to other systems and shares."
+      },
+      {
+        "text": "Reimage the affected servers from a golden image",
+        "why": "Reimaging is eradication; doing it before containment lets the infection keep spreading in the meantime and destroys evidence."
+      },
+      {
+        "text": "Restore the encrypted files from offline backups",
+        "why": "Restoring is recovery; files restored to systems that are still infected would simply be encrypted again."
+      },
+      {
+        "text": "Perform a root cause analysis of the initial access",
+        "why": "Root cause analysis is valuable but does not stop the ongoing encryption; it comes after containment."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Detection and analysis are complete (the incident is confirmed and identified), so the next step is containment. CompTIA order: preparation, detection, analysis, containment, eradication, recovery, lessons learned.",
+    "industryVsComptia": "NIST SP 800-61 Rev. 2 combines detection and analysis into one phase and containment, eradication and recovery into another; Rev. 3 (2025) maps incident response to the CSF 2.0 functions instead. The answer here is containment under any of them, but on the exam use CompTIA's seven separate steps.",
+    "tags": [
+      "ir",
+      "containment"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.8-002",
+    "objective": "4.8",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "The legal department tells the security team that a former employee is expected to file a lawsuit against the company. The employee's mailbox and file share are scheduled to be purged next week under the standard 90-day retention policy. Which of the following should the security team do FIRST?",
+    "options": [
+      {
+        "text": "Place the employee's data under a legal hold",
+        "why": "Correct: a legal hold suspends the normal deletion schedule so that potentially relevant data is preserved."
+      },
+      {
+        "text": "Begin e-discovery collection of the employee's data",
+        "why": "Collection and production happen later in e-discovery; the first priority is formally stopping the scheduled destruction."
+      },
+      {
+        "text": "Create forensic images and start a chain of custody",
+        "why": "Imaging may be useful later, but without a legal hold the routine purge of the source data and its backups could still proceed."
+      },
+      {
+        "text": "Let the purge proceed as the retention policy requires",
+        "why": "Once litigation is reasonably anticipated, destroying relevant data could be spoliation; the hold overrides the retention schedule."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A legal hold is triggered when litigation is reasonably anticipated and overrides normal retention and destruction. E-discovery (identifying, collecting and producing ESI) and forensic acquisition follow.",
+    "industryVsComptia": null,
+    "tags": [
+      "forensics",
+      "legal-hold",
+      "e-discovery"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.8-003",
+    "objective": "4.8",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An analyst is responding to a compromised Linux server that is still powered on. Management wants the evidence collected in a way that preserves as much information as possible. Which of the following should the analyst collect FIRST?",
+    "options": [
+      {
+        "text": "Contents of system memory",
+        "why": "Correct: RAM holds running processes, network connections and other data that is lost when the system powers off, so it is the most volatile item listed."
+      },
+      {
+        "text": "A bit-for-bit image of the local disk",
+        "why": "Disk contents persist after power-off, so the image should be taken after volatile memory is captured."
+      },
+      {
+        "text": "Logs already forwarded to the central SIEM",
+        "why": "Remote logs are stored on another system and are not at risk from the compromised server's state."
+      },
+      {
+        "text": "Archived backup media for the server",
+        "why": "Archival media is the least volatile evidence source and can safely be collected last."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Order of volatility (RFC 3227): CPU registers and cache; routing, ARP and process tables, kernel statistics and RAM; temporary file systems and swap; disk; remote logs and monitoring data; physical configuration and network topology; archival media. Hash each acquisition and maintain chain of custody.",
+    "industryVsComptia": null,
+    "tags": [
+      "forensics",
+      "order-of-volatility"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.8-004",
+    "objective": "4.8",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Senior managers want to practice their roles in a ransomware incident by talking through a written scenario in a conference room, without touching any production systems and at minimal cost. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Tabletop exercise",
+        "why": "Correct: a tabletop is a discussion-based walkthrough of a scenario that involves no live systems."
+      },
+      {
+        "text": "Simulation",
+        "why": "A simulation is a hands-on exercise that mimics a real incident with tools and systems, requiring more effort than a discussion."
+      },
+      {
+        "text": "Penetration test",
+        "why": "A penetration test attacks systems to test technical controls; it does not rehearse managers' incident roles."
+      },
+      {
+        "text": "Threat hunting",
+        "why": "Threat hunting is a proactive search for adversaries already in the environment, not a training exercise."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Discussion-based with no systems involved means tabletop; hands-on and realistic means simulation. Both are testing activities within CompTIA's incident response objective.",
+    "industryVsComptia": null,
+    "tags": [
+      "ir",
+      "exercises"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.8-005",
+    "objective": "4.8",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "For the third time this quarter, the same web server has been compromised with a cryptominer. Each time, the team removed the malware, reimaged the server and restored service, but the attacker returned within weeks. Which of the following should the team perform to MOST effectively prevent another recurrence?",
+    "options": [
+      {
+        "text": "Root cause analysis",
+        "why": "Correct: identifying the underlying weakness that keeps allowing the attacker in (for example an unpatched plugin or a reused credential) is the only way to stop the cycle."
+      },
+      {
+        "text": "Tabletop exercise",
+        "why": "A tabletop rehearses roles and procedures through discussion; it does not reveal the technical flaw being exploited on this server."
+      },
+      {
+        "text": "Order of volatility collection",
+        "why": "Collecting evidence in volatility order preserves data for analysis, but on its own it does not identify or fix why the compromise recurs."
+      },
+      {
+        "text": "E-discovery",
+        "why": "E-discovery identifies and produces electronically stored information for legal proceedings; it is not a technical investigation of cause."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Repeated eradication and recovery without addressing the cause treats symptoms. Root cause analysis determines why the incident happened so the cause can be remediated, and its findings feed lessons learned.",
+    "industryVsComptia": null,
+    "tags": [
+      "ir",
+      "root-cause-analysis"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.8-006",
+    "objective": "4.8",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A threat intelligence report describes a group targeting the company's industry that persists through scheduled tasks and uses living-off-the-land binaries. None of the company's security tools have generated alerts. The SOC lead assigns analysts to search endpoint and network telemetry for these behaviors, assuming the group may already be inside. Which of the following BEST describes the activity the SOC is performing?",
+    "options": [
+      {
+        "text": "Threat hunting",
+        "why": "Correct: a proactive, hypothesis-driven search for an adversary that has evaded existing detections, guided by threat intelligence and TTPs."
+      },
+      {
+        "text": "Penetration testing",
+        "why": "A penetration test simulates an attacker to find exploitable weaknesses; it does not search for a real adversary already present."
+      },
+      {
+        "text": "Root cause analysis",
+        "why": "Root cause analysis follows a confirmed incident to find why it happened; here no incident has been confirmed yet."
+      },
+      {
+        "text": "Vulnerability scanning",
+        "why": "A vulnerability scan looks for missing patches and misconfigurations, not for attacker behaviors such as malicious scheduled tasks."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The giveaways are no alert, an intelligence-driven hypothesis and an assumption of compromise. That combination BEST matches threat hunting, which complements alert-driven detection; penetration testing and scanning look for weaknesses, not for an adversary already present.",
+    "industryVsComptia": null,
+    "tags": [
+      "ir",
+      "threat-hunting"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.8-007",
+    "objective": "4.8",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During a criminal case, the defense challenges a forensic disk image. The image's hash still matches the value recorded at acquisition, but the evidence log has no entries for the two days between an analyst signing the drive out and a contractor returning it. Which of the following was MOST likely compromised?",
+    "options": [
+      {
+        "text": "Chain of custody",
+        "why": "Correct: the gap in the record means the organization cannot show who held the evidence during those two days, which gives grounds to challenge its admissibility."
+      },
+      {
+        "text": "Legal hold",
+        "why": "A legal hold prevents the deletion of potentially relevant data; nothing in the scenario suggests data was purged."
+      },
+      {
+        "text": "Order of volatility",
+        "why": "Order of volatility governs which evidence is collected first; the issue here arose after acquisition."
+      },
+      {
+        "text": "E-discovery",
+        "why": "E-discovery is the process of identifying and producing ESI for litigation; the gap concerns evidence handling, not production."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Hashing proves the data did not change; chain of custody proves who controlled the evidence at every moment. Both are needed, and an undocumented gap in custody can make evidence inadmissible even when the hash still matches.",
+    "industryVsComptia": null,
+    "tags": [
+      "forensics",
+      "chain-of-custody"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.8-008",
+    "objective": "4.8",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "After a breach, the malware has been removed from all affected hosts and the compromised accounts have been disabled. The team is now rebuilding servers from known-good backups, returning them to production one at a time and closely monitoring them for signs of reinfection. Which of the following BEST describes the incident response phase the team is in?",
+    "options": [
+      {
+        "text": "Recovery",
+        "why": "Correct: restoring systems to normal operation and monitoring them to confirm they are clean is recovery."
+      },
+      {
+        "text": "Eradication",
+        "why": "Eradication removes the threat (malware, attacker accounts and persistence); the scenario says that work is already complete."
+      },
+      {
+        "text": "Containment",
+        "why": "Containment limits the spread of an active incident, for example by isolating hosts; the threat has already been removed here."
+      },
+      {
+        "text": "Lessons learned",
+        "why": "Lessons learned is the post-incident review that follows recovery; systems are still being returned to service."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Containment stops the spread, eradication removes the cause, recovery restores and validates normal operations, and lessons learned reviews the response. Watch for the past tense in the stem: the earlier phases are described as finished.",
+    "industryVsComptia": null,
+    "tags": [
+      "ir",
+      "recovery"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-001",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An analyst suspects a workstation sent confidential documents to an external server over an unencrypted protocol. The analyst needs to reconstruct the actual files that were transferred. Which of the following data sources is BEST?",
+    "options": [
+      {
+        "text": "Packet captures",
+        "why": "Correct: packet captures contain full payloads, so the transferred files can be reassembled from the unencrypted session."
+      },
+      {
+        "text": "NetFlow records",
+        "why": "NetFlow shows addresses, ports, byte counts and timing, but contains no payload to rebuild files from."
+      },
+      {
+        "text": "Firewall logs",
+        "why": "Firewall logs record allowed and blocked connections and rule hits, not the contents of the traffic."
+      },
+      {
+        "text": "Vulnerability scan results",
+        "why": "Scan results describe weaknesses on the workstation, not what data it sent."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Metadata sources such as NetFlow, firewall and network logs answer who, when and how much; only packet captures answer what was sent. Had the session been encrypted, the content would not be recoverable without the keys.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "pcap"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-002",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A user reports a suspicious email that appears to come from the CEO. The analyst needs to determine which mail servers relayed the message and whether it passed SPF and DKIM checks on arrival. Which data source should the analyst examine FIRST?",
+    "options": [
+      {
+        "text": "The email's header metadata",
+        "why": "Correct: Received headers list each relay hop, and the Authentication-Results header records the SPF, DKIM and DMARC outcomes."
+      },
+      {
+        "text": "Endpoint logs from the user's workstation",
+        "why": "Endpoint logs record local events such as processes and logons, not the message's delivery path or authentication results."
+      },
+      {
+        "text": "IPS alerts from the network perimeter",
+        "why": "IPS alerts flag traffic that matched signatures; they do not record a message's relay path or authentication results."
+      },
+      {
+        "text": "The SIEM's executive summary dashboard",
+        "why": "Dashboards summarize trends and key metrics; they lack the per-message detail needed here."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Metadata is data about data: email headers, file properties, image EXIF. For email investigations, headers are the primary source of routing and authentication evidence.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "metadata",
+      "email-security"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-003",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An analyst learns that a workstation was infected with malware that beacons to a known command-and-control IP address. The analyst needs to determine whether the perimeter permitted or denied the workstation's outbound connections to that IP over the past week. Which of the following data sources would BEST show this?",
+    "options": [
+      {
+        "text": "Firewall logs",
+        "why": "Correct: firewall logs record each connection's source, destination and port, the rule that matched, and whether it was allowed or blocked."
+      },
+      {
+        "text": "IPS logs",
+        "why": "IPS logs record traffic that matched a signature or anomaly rule; connections that triggered no rule would not appear."
+      },
+      {
+        "text": "Application logs",
+        "why": "Application logs capture events inside a specific application, not the perimeter's decisions on outbound connections."
+      },
+      {
+        "text": "Vulnerability scan results",
+        "why": "Scan results list weaknesses found on hosts; they contain no record of connections or allow/deny decisions."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Allowed or denied connections by IP and port is the core content of firewall logs. IDS/IPS logs answer whether traffic matched a known attack pattern, a different question.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "firewall-logs"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-004",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "An analyst suspects someone tried to guess the password of a local administrator account on a Windows file server overnight. Which of the following would BEST show each failed logon attempt and its timestamp?",
+    "options": [
+      {
+        "text": "The server's Security event log",
+        "why": "Correct: this OS-specific security log records successful and failed logons (event IDs 4624 and 4625) with the account, time and logon type."
+      },
+      {
+        "text": "The perimeter firewall logs",
+        "why": "Firewall logs show connections crossing the perimeter, not authentication results on an internal server."
+      },
+      {
+        "text": "NetFlow records for the server",
+        "why": "NetFlow shows traffic volume and endpoints, but not whether a logon succeeded or failed or which account was used."
+      },
+      {
+        "text": "The server's latest vulnerability scan",
+        "why": "A vulnerability scan reports weaknesses at scan time; it does not record logon attempts."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Logon success and failure are recorded by the operating system's own security log: the Security log on Windows, auth.log or secure on Linux. A burst of 4625 events against one account suggests password guessing.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "os-logs",
+      "windows"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-005",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A vendor's bank details in the company's HTTPS-only procurement application were changed, and a payment was diverted. The investigator needs to identify which application user account made the change and when. Which of the following data sources is BEST?",
+    "options": [
+      {
+        "text": "The procurement application's audit logs",
+        "why": "Correct: application logs record actions performed inside the application, such as which user edited a vendor record and when."
+      },
+      {
+        "text": "Packet captures from the procurement server's segment",
+        "why": "The traffic is encrypted with TLS, so captures would not reveal the in-app action or the user without the session keys."
+      },
+      {
+        "text": "The procurement server's OS security log",
+        "why": "The OS security log records OS-level logons and privilege use, not which application user edited a record in the app."
+      },
+      {
+        "text": "Firewall logs for the procurement server",
+        "why": "Firewall logs show which IP addresses connected, not which application account changed a specific record."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "When the question is about an action within an application (who changed what record), the application's own logs are the authoritative source. Network-level sources show connections, not business-level actions, and encryption hides the content.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "application-logs"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-006",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A new remote code execution exploit is circulating for the VPN appliance the company uses. The analyst needs to know whether any inbound traffic over the last 48 hours matched the published exploit signature and whether the inline sensor dropped it. Which of the following data sources would BEST answer this?",
+    "options": [
+      {
+        "text": "IPS logs",
+        "why": "Correct: an inline IPS logs traffic that matched a signature along with the action taken, such as alerting or dropping."
+      },
+      {
+        "text": "NetFlow records",
+        "why": "NetFlow shows source, destination, ports and volume, but it does not inspect content against exploit signatures."
+      },
+      {
+        "text": "VPN appliance connection logs",
+        "why": "Connection logs show sessions and authentications on the appliance; they do not say whether traffic matched an exploit signature or was dropped upstream."
+      },
+      {
+        "text": "A vulnerability scan report",
+        "why": "A scan shows whether the appliance is vulnerable, not whether anyone actually attempted the exploit."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Signature matches and the block or alert action are exactly what IDS/IPS logs contain. Combine them with a vulnerability scan to judge whether an attempt against an unpatched device may have succeeded.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "ids-ips"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-007",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An attacker gained a foothold on an internet-facing server, and the analyst is trying to determine the initial access vector. Firewall logs show only the expected HTTPS and SSH traffic reaching the server. Which of the following data sources would BEST reveal exploitable weaknesses in the services the server exposed?",
+    "options": [
+      {
+        "text": "The server's most recent vulnerability scan",
+        "why": "Correct: scan results list missing patches, vulnerable services and misconfigurations that existed on the server, pointing to likely entry points."
+      },
+      {
+        "text": "A dashboard of SIEM alert volume",
+        "why": "A dashboard summarizes trends at a high level; it does not list specific weaknesses on this server."
+      },
+      {
+        "text": "Metadata from files on the server",
+        "why": "File metadata shows properties such as creation and modification times; it can help build a timeline but does not identify exploitable flaws."
+      },
+      {
+        "text": "NetFlow records for the server",
+        "why": "NetFlow confirms which hosts communicated and how much, which the firewall logs already cover; it does not reveal weaknesses."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Vulnerability scans are an investigation data source as well as a prevention tool: they show which known weaknesses existed, which helps narrow the initial access vector and feeds root cause analysis.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "vulnerability-scans"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-008",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A sales employee's laptop was compromised while connected to hotel Wi-Fi, without using the corporate VPN. The analyst needs to determine which process launched PowerShell and what files it then wrote to disk. Which of the following data sources is MOST likely to contain this information?",
+    "options": [
+      {
+        "text": "Endpoint logs from the EDR agent",
+        "why": "Correct: the endpoint agent records process creation, parent-child relationships and file writes locally, regardless of which network the laptop is on."
+      },
+      {
+        "text": "Network IDS logs from the head office",
+        "why": "The laptop's traffic never crossed the corporate network, so office sensors saw nothing, and IDS logs do not record process activity anyway."
+      },
+      {
+        "text": "Corporate perimeter firewall logs",
+        "why": "The traffic did not traverse the corporate perimeter, and firewall logs do not record processes or file writes."
+      },
+      {
+        "text": "Packet captures from the data center",
+        "why": "Data center captures would not include traffic from a hotel network, and captures do not show which process ran on a host."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Process lineage and file activity are host events, so they come from endpoint logs. Endpoint telemetry is also the only source that follows a device off the corporate network.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "endpoint-logs",
+      "edr"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-009",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "The compliance manager wants a summary of privileged account activity delivered by email every Monday morning, without anyone on the SOC having to run queries. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Automated reports",
+        "why": "Correct: the SIEM can generate and distribute a scheduled report from saved queries with no manual effort."
+      },
+      {
+        "text": "Dashboards",
+        "why": "Dashboards give a live, at-a-glance view, but someone must open them; they are not a scheduled emailed summary."
+      },
+      {
+        "text": "SIEM alerts",
+        "why": "Alerts fire on individual events as they happen and go to analysts for triage; they do not produce a scheduled weekly summary for a manager."
+      },
+      {
+        "text": "Vulnerability scans",
+        "why": "Vulnerability scans report weaknesses on systems, not privileged account activity."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Scheduled, distributed and hands-off BEST matches automated reports; real-time and on-screen means dashboards, and per-event notifications mean alerts.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "reporting",
+      "siem"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-4.9-010",
+    "objective": "4.9",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An IDS alert from yesterday at 02:14 shows internal IP address 10.20.4.37 scanning other hosts. Addresses on that VLAN are assigned dynamically with short leases. Which of the following would BEST identify the device that held that address at the time of the alert?",
+    "options": [
+      {
+        "text": "DHCP server logs",
+        "why": "Correct: DHCP lease records map each IP address to a MAC address (and often a hostname) with the lease start and end times."
+      },
+      {
+        "text": "The current ARP table on the core switch",
+        "why": "The ARP table shows current IP-to-MAC mappings only; with short leases, the address may now belong to a different device."
+      },
+      {
+        "text": "Firewall logs for the VLAN",
+        "why": "Firewall logs record connections by IP address; they do not reveal which physical device held the address."
+      },
+      {
+        "text": "Last month's vulnerability scan",
+        "why": "The scan reflects whichever device held the address at scan time, which may not be the device seen at 02:14 yesterday."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Logs from network infrastructure services such as DHCP and DNS are valuable investigation sources. To attribute a dynamic IP address to a device at a past moment, use time-stamped lease records rather than current state.",
+    "industryVsComptia": null,
+    "tags": [
+      "investigation",
+      "network-logs",
+      "dhcp"
+    ],
+    "status": "reviewed"
+  }
+]

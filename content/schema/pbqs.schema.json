@@ -1,0 +1,316 @@
+{
+  "$ref": "#/definitions/pbqs",
+  "definitions": {
+    "pbqs": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^pbq-[1-5]\\.[1-9]-\\d{3}$"
+              },
+              "objective": {
+                "type": "string",
+                "pattern": "^[1-5]\\.[1-9]$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 5,
+                "maxLength": 80
+              },
+              "prompt": {
+                "type": "string",
+                "minLength": 20
+              },
+              "explanation": {
+                "type": "string",
+                "minLength": 20
+              },
+              "industryVsComptia": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "difficulty": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3,
+                "default": 2
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "default": []
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "draft",
+                  "reviewed"
+                ],
+                "default": "reviewed"
+              },
+              "type": {
+                "type": "string",
+                "const": "order"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "why": {
+                      "type": "string",
+                      "minLength": 5
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "why"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 3,
+                "maxItems": 8
+              },
+              "firstLabel": {
+                "type": "string",
+                "minLength": 2
+              },
+              "lastLabel": {
+                "type": "string",
+                "minLength": 2
+              }
+            },
+            "required": [
+              "id",
+              "objective",
+              "title",
+              "prompt",
+              "explanation",
+              "type",
+              "items",
+              "firstLabel",
+              "lastLabel"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/id"
+              },
+              "objective": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/objective"
+              },
+              "title": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/title"
+              },
+              "prompt": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/prompt"
+              },
+              "explanation": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/explanation"
+              },
+              "industryVsComptia": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/industryVsComptia"
+              },
+              "difficulty": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/difficulty"
+              },
+              "tags": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/tags"
+              },
+              "status": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/status"
+              },
+              "type": {
+                "type": "string",
+                "const": "match"
+              },
+              "leftLabel": {
+                "type": "string",
+                "minLength": 2
+              },
+              "rightLabel": {
+                "type": "string",
+                "minLength": 2
+              },
+              "pairs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "left": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "right": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "why": {
+                      "type": "string",
+                      "minLength": 5
+                    }
+                  },
+                  "required": [
+                    "left",
+                    "right",
+                    "why"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 3,
+                "maxItems": 8
+              },
+              "distractors": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "maxItems": 4,
+                "default": []
+              }
+            },
+            "required": [
+              "id",
+              "objective",
+              "title",
+              "prompt",
+              "explanation",
+              "type",
+              "leftLabel",
+              "rightLabel",
+              "pairs"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/id"
+              },
+              "objective": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/objective"
+              },
+              "title": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/title"
+              },
+              "prompt": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/prompt"
+              },
+              "explanation": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/explanation"
+              },
+              "industryVsComptia": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/industryVsComptia"
+              },
+              "difficulty": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/difficulty"
+              },
+              "tags": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/tags"
+              },
+              "status": {
+                "$ref": "#/definitions/pbqs/items/anyOf/0/properties/status"
+              },
+              "type": {
+                "type": "string",
+                "const": "categorize"
+              },
+              "dimensions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9-]*$"
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 2
+                    },
+                    "options": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "minItems": 2,
+                      "maxItems": 7
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 2
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "answers": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    },
+                    "why": {
+                      "type": "string",
+                      "minLength": 5
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "answers",
+                    "why"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 3,
+                "maxItems": 10
+              }
+            },
+            "required": [
+              "id",
+              "objective",
+              "title",
+              "prompt",
+              "explanation",
+              "type",
+              "dimensions",
+              "items"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

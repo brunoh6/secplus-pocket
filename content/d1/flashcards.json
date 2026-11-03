@@ -1,0 +1,462 @@
+[
+  {
+    "id": "fc-1.1-001",
+    "objective": "1.1",
+    "front": "The four control CATEGORIES (SY0-701)",
+    "back": "Technical: enforced by systems (firewall rules, MFA, encryption, EDR)\nManagerial: governance and risk decisions (policies, risk assessments, security planning)\nOperational: carried out by people day to day (awareness training, procedures followed by staff)\nPhysical: tangible barriers and protections (fences, locks, bollards, badge readers)",
+    "comptiaNote": "Category = HOW/WHO implements the control. Type = WHAT it does (preventive, detective...). Every control has one of each, e.g. a badge reader is physical + preventive.",
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.1-002",
+    "objective": "1.1",
+    "front": "The six control TYPES (SY0-701)",
+    "back": "Preventive: stops the event (firewall deny rule, door lock)\nDeterrent: discourages the attempt (warning sign, visible camera)\nDetective: identifies/records it (IDS, log review, motion sensor)\nCorrective: fixes or restores after it (restore from backup, reimage)\nCompensating: alternative when the primary control is not feasible\nDirective: tells people what to do (policy, procedure, 'authorized personnel only' sign)",
+    "comptiaNote": "Classic trap: a sign that warns of consequences is deterrent; a sign or policy that instructs a behavior is directive.",
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.1-003",
+    "objective": "1.1",
+    "front": "Compensating vs corrective control",
+    "back": "Compensating: used INSTEAD of a required control that cannot be implemented (e.g. legacy host cannot do MFA, so isolate it and add monitoring).\nCorrective: acts AFTER an event to repair damage or restore normal operation (e.g. restore from backup, quarantine and reimage).",
+    "comptiaNote": "Keyword clues: 'cannot support', 'not feasible', 'until it can be replaced' = compensating. 'After the incident', 'restore', 'recover' = corrective.",
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.1-004",
+    "objective": "1.1",
+    "front": "Preventive vs deterrent vs directive",
+    "back": "Preventive: physically or technically blocks the action, regardless of intent.\nDeterrent: does not block; makes the attacker decide not to try (consequences, visibility).\nDirective: does not block; instructs or requires a behavior (policy, standard, instruction sign).",
+    "comptiaNote": "An automatic screen-lock GPO is preventive; a policy saying 'lock your screen' is directive.",
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-001",
+    "objective": "1.2",
+    "front": "What provides non-repudiation?",
+    "back": "A digital signature created with the sender's PRIVATE key: only the key holder could have produced it, so they cannot credibly deny it.\nNot sufficient alone: hashes (integrity only), HMAC or symmetric keys (shared, so either party could have produced it), encryption (confidentiality).",
+    "comptiaNote": "Non-repudiation = proof of origin + integrity. If a secret is shared by two parties, there is no non-repudiation.",
+    "tags": [
+      "non-repudiation",
+      "crypto"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-002",
+    "objective": "1.2",
+    "front": "AAA: authentication vs authorization vs accounting",
+    "back": "Authentication: proving identity (people and systems, e.g. password + MFA, device certificate)\nAuthorization: what the authenticated identity may do (authorization models, permissions)\nAccounting: recording what was done (sessions, commands, data used) for audit and billing",
+    "comptiaNote": "SY0-701 lists authenticating people, authenticating systems, and authorization models under AAA. RADIUS and TACACS+ are typical AAA servers.",
+    "tags": [
+      "aaa"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-003",
+    "objective": "1.2",
+    "front": "Zero trust: control plane vs data plane",
+    "back": "Control plane (makes decisions):\n- Adaptive identity\n- Threat scope reduction\n- Policy-driven access control\n- Policy Engine (decides grant/deny)\n- Policy Administrator (sets up/tears down the session, issues tokens)\nData plane (carries traffic):\n- Implicit trust zones\n- Subject/System\n- Policy Enforcement Point (allows, monitors, terminates the connection)",
+    "comptiaNote": "Terms come from NIST SP 800-207. Engine DECIDES, Administrator EXECUTES the decision, Enforcement Point is the GATE in the data path.",
+    "tags": [
+      "zero-trust"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-004",
+    "objective": "1.2",
+    "front": "Honeypot vs honeynet vs honeyfile vs honeytoken",
+    "back": "Honeypot: a single decoy system\nHoneynet: a network of decoy systems\nHoneyfile: a decoy file with an enticing name (e.g. passwords.xlsx); opening it alerts\nHoneytoken: a fake data element (credential, API key, database record, email address) whose use or appearance signals a compromise",
+    "comptiaNote": "Grouped under 'deception and disruption technology'. Any interaction with a decoy is suspicious by definition, so alerts are high-fidelity.",
+    "tags": [
+      "deception"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-005",
+    "objective": "1.2",
+    "front": "Gap analysis",
+    "back": "Compares the current security posture against a desired state (a framework, standard, or baseline) to identify missing or weak controls, then prioritizes remediation.\nOutput: list of gaps + plan to close them.",
+    "comptiaNote": "Not the same as a vulnerability scan (technical flaws) or a BIA (impact of losing business functions). Gap analysis is about controls vs a target.",
+    "tags": [
+      "governance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-006",
+    "objective": "1.2",
+    "front": "CIA triad: what each protects + example controls",
+    "back": "Confidentiality: prevents unauthorized disclosure (encryption, access controls)\nIntegrity: prevents unauthorized modification (hashing, digital signatures, file integrity monitoring)\nAvailability: keeps systems and data accessible when needed (redundancy, backups, load balancing, DDoS protection)",
+    "comptiaNote": "Map the impact: data leaked = confidentiality; data altered = integrity; service down = availability.",
+    "tags": [
+      "cia"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-008",
+    "objective": "1.2",
+    "front": "Adaptive identity vs threat scope reduction vs policy-driven access",
+    "back": "Adaptive identity: evaluates identity with real-time context (device, location, behavior) and raises authentication as risk rises\nThreat scope reduction: limits what an attacker can reach (least privilege, microsegmentation, smaller attack surface)\nPolicy-driven access control: access rules defined centrally as policy and applied consistently to every request",
+    "tags": [
+      "zero-trust"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-009",
+    "objective": "1.2",
+    "front": "Zero trust data plane: subject/system and implicit trust zone",
+    "back": "Subject/System: the entity requesting access (a user, application or device)\nImplicit trust zone: the area behind a PEP where entities are trusted without further checks; zero trust aims to make it as small as possible",
+    "comptiaNote": "The PEP sits between the subject/system and the resource it is trying to reach.",
+    "tags": [
+      "zero-trust"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-010",
+    "objective": "1.2",
+    "front": "Access control vestibule + access badge",
+    "back": "Access badge: identifies and authenticates the holder at a reader (and logs the entry)\nAccess control vestibule: two interlocking doors; the second opens only after the first closes, so each person must authenticate on their own\nTogether they defeat tailgating and piggybacking",
+    "comptiaNote": "Older material calls the vestibule a 'mantrap'; SY0-701 uses 'access control vestibule'.",
+    "tags": [
+      "physical"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-011",
+    "objective": "1.2",
+    "front": "Sensors: infrared vs pressure vs microwave vs ultrasonic",
+    "back": "Infrared: detects body heat moving in its field of view (line of sight)\nPressure: detects force or weight change on a surface (floor mat, pedestal, window)\nMicrowave: emits radio waves and detects motion from reflections; covers large areas\nUltrasonic: emits high-frequency sound and detects motion from changes in the echoes",
+    "comptiaNote": "Infrared, microwave and ultrasonic detect movement in a space; pressure detects contact with a specific object or surface.",
+    "tags": [
+      "physical",
+      "sensors"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.2-012",
+    "objective": "1.2",
+    "front": "Fencing vs lighting vs video surveillance vs security guard",
+    "back": "Fencing: defines and blocks the perimeter, channels people to controlled entrances\nLighting: deters intruders and makes detection by people and cameras possible at night\nVideo surveillance: records and detects activity, deters when visible\nSecurity guard: a person who can verify IDs, escort visitors, judge unusual situations and respond",
+    "comptiaNote": "When the scenario needs human judgment or an immediate response, the answer is usually a security guard rather than a camera.",
+    "tags": [
+      "physical"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.3-001",
+    "objective": "1.3",
+    "front": "Change management business processes (SY0-701 list)",
+    "back": "Approval process (e.g. CAB authorizes)\nOwnership (one accountable owner)\nStakeholders (who is affected and must be consulted)\nImpact analysis (risk and effects of the change)\nTest results (evidence it works in a test environment)\nBackout plan (how to roll back)\nMaintenance window (approved time to implement)\nStandard operating procedure (documented repeatable steps)",
+    "comptiaNote": "Exam scenarios often describe a failed change and ask which element was missing: no rollback = backout plan, outage during business hours = maintenance window.",
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.3-002",
+    "objective": "1.3",
+    "front": "Change management: technical implications",
+    "back": "Allow lists / deny lists (may need updating for the change)\nRestricted activities (what the change scope does NOT permit)\nDowntime\nService restart\nApplication restart\nLegacy applications (may break or not support the change)\nDependencies (other systems relying on the changed component)",
+    "comptiaNote": "A change that unexpectedly breaks another system is usually a missed dependency.",
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.3-003",
+    "objective": "1.3",
+    "front": "Change management: documentation and version control",
+    "back": "Documentation: update network diagrams, policies, and procedures to reflect every implemented change.\nVersion control: track revisions of configurations, code, and documents so you know what changed, when, by whom, and can revert.",
+    "comptiaNote": "Stale diagrams after a change are a documentation failure, not an approval failure.",
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.3-004",
+    "objective": "1.3",
+    "front": "Impact analysis vs test results vs backout plan",
+    "back": "Impact analysis: BEFORE approval; risk of the change, what/who it affects, and the risk of NOT changing.\nTest results: evidence the change worked in a test environment that mirrors production.\nBackout plan: how to return to the previous working state if the change fails.",
+    "comptiaNote": "All three are inputs the CAB reviews before approving. \"How do we undo it?\" = backout plan, not test results.",
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.3-005",
+    "objective": "1.3",
+    "front": "Approval process vs ownership vs stakeholders",
+    "back": "Approval process: formal authorization of the change, typically by the change advisory board (CAB).\nOwnership: the person or team accountable for the change (often the owner of the affected system or process); manages it through the process but may not perform it.\nStakeholders: everyone affected by the change who must be consulted or informed (business units, app owners, customers, vendors).",
+    "comptiaNote": "The owner is accountable for and manages the change; the CAB (or other designated approver) authorizes it; stakeholders are consulted or informed.",
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.3-006",
+    "objective": "1.3",
+    "front": "Service/app restarts and downtime in a change",
+    "back": "Many changes only take effect after a service or application restart.\nA restart can cause downtime, drop user sessions, or fail to come back up.\nPlan it: schedule in the maintenance window, notify stakeholders, and have a backout plan if the service does not restart cleanly.",
+    "comptiaNote": "Security angle: a patch or config change that was applied but never restarted may not actually be in effect.",
+    "tags": [
+      "change-management",
+      "downtime"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.3-007",
+    "objective": "1.3",
+    "front": "Allow lists and deny lists as a change implication",
+    "back": "Allow list: only listed items run or connect; a new binary, hash, IP, or port must be ADDED or it will be blocked.\nDeny list: listed items are blocked; check the change does not use something already denied, and add newly prohibited items.\nUpdate both lists as part of the change, not after it breaks.",
+    "comptiaNote": "Classic scenario: an upgrade breaks because the new version's hash was never added to the application allow list.",
+    "tags": [
+      "change-management",
+      "allow-list"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-001",
+    "objective": "1.4",
+    "front": "CRL vs OCSP vs OCSP stapling",
+    "back": "CRL: signed list of revoked serial numbers published by the CA; client downloads the whole list periodically.\nOCSP: client asks the CA's responder about ONE certificate; near real-time good/revoked/unknown.\nOCSP stapling: the web server fetches the signed OCSP response and attaches it to the TLS handshake, reducing responder load and client privacy leakage.",
+    "comptiaNote": "'Real time, single certificate' = OCSP. 'Server provides status, reduce load on CA' = stapling.",
+    "tags": [
+      "pki",
+      "certificates"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-002",
+    "objective": "1.4",
+    "front": "PKI hierarchy and chain of trust",
+    "back": "Root CA: trust anchor (root of trust); self-signed; usually kept offline.\nIntermediate (issuing) CA: signed by the root; issues end-entity certificates.\nLeaf certificate: server, user, or device.\nClient validates leaf -> intermediate -> trusted root. A compromised intermediate can be revoked without replacing the root.",
+    "comptiaNote": "CSR generation: the requester creates the key pair, keeps the private key, and sends the CSR (public key + identity info) to the CA.",
+    "tags": [
+      "pki"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-003",
+    "objective": "1.4",
+    "front": "Wildcard vs SAN vs self-signed certificate",
+    "back": "Wildcard: *.example.com covers any single-level subdomain of ONE domain (does not cover the bare example.com or a.b.example.com).\nSAN: lists multiple specific names, even different domains, in one certificate.\nSelf-signed: signed by its own key; not trusted by clients unless manually added. Third-party: signed by a public CA already trusted by clients.",
+    "comptiaNote": "Different domains in one certificate (example.com + example.net) = SAN, never wildcard.",
+    "tags": [
+      "pki",
+      "certificates"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-004",
+    "objective": "1.4",
+    "front": "HSM vs TPM vs secure enclave vs KMS",
+    "back": "HSM: dedicated tamper-resistant appliance or card for high-volume key generation, storage, and crypto operations (CA keys, payment keys); can be network-attached and shared.\nTPM: chip on a single device's motherboard; stores keys, measured boot, binds disk-encryption keys to that hardware.\nSecure enclave: isolated, protected area of a processor/SoC that keeps sensitive data (e.g. biometrics, keys) away from the main OS.\nKMS: service that manages key lifecycle (create, rotate, revoke) centrally, often backed by HSMs.",
+    "comptiaNote": "One device, boot integrity, BitLocker = TPM. Enterprise/CA scale, shared, high throughput = HSM.",
+    "tags": [
+      "crypto",
+      "hardware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-005",
+    "objective": "1.4",
+    "front": "Salting vs key stretching",
+    "back": "Salting: adds a unique random value to each password before hashing, so identical passwords produce different hashes and precomputed (rainbow) tables are useless.\nKey stretching: runs the hash many times or uses a deliberately slow algorithm (PBKDF2, bcrypt) so each guess costs more, slowing brute force.",
+    "comptiaNote": "Salt defeats PRECOMPUTED attacks; stretching slows EVERY guess. A salt does not need to be secret.",
+    "tags": [
+      "crypto",
+      "passwords"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-006",
+    "objective": "1.4",
+    "front": "How a digital signature works",
+    "back": "1. Sender hashes the message.\n2. Sender encrypts the hash with the sender's PRIVATE key = signature.\n3. Receiver decrypts the signature with the sender's PUBLIC key and compares it with its own hash of the message.\nProvides: integrity, authentication of origin, non-repudiation.\nDoes NOT provide: confidentiality.",
+    "comptiaNote": "Sign with your private key; encrypt for someone with THEIR public key. Mixing these up is a classic trap.",
+    "tags": [
+      "crypto",
+      "non-repudiation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-007",
+    "objective": "1.4",
+    "front": "Steganography vs tokenization vs data masking",
+    "back": "Steganography: hides data inside another medium (image, audio, video) so its existence is concealed.\nTokenization: replaces sensitive data with a random surrogate that has no mathematical relationship to the original; the mapping lives in a secured token vault.\nData masking: shows a partially hidden or altered version of data (XXX-XX-1234) to users or non-production systems.",
+    "comptiaNote": "All three are listed under 'obfuscation'. Tokenization is NOT encryption: there is no key that reverses a token, only the vault lookup.",
+    "tags": [
+      "crypto",
+      "obfuscation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-008",
+    "objective": "1.4",
+    "front": "Encryption levels (SY0-701)",
+    "back": "Full-disk: entire drive, protects a lost/stolen device\nPartition: one partition of a drive\nVolume: a logical volume (may span disks)\nFile: individual files\nDatabase: the whole database at rest (e.g. TDE), transparent to authorized queries\nRecord: individual records or columns encrypted with separate keys; only holders of the right key see plaintext\n(Separate 1.4 item) Transport/communication: data in motion (TLS, IPsec, VPN)",
+    "comptiaNote": "Full-disk and database-level encryption protect data at rest from offline theft; once the system is running and unlocked, authorized users see plaintext.",
+    "tags": [
+      "crypto",
+      "encryption"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-009",
+    "objective": "1.4",
+    "front": "Key escrow",
+    "back": "A copy of an encryption key is held by a trusted third party (or a designated internal custodian) so data can be recovered if the key is lost, an employee leaves, or a lawful request requires access.\nRisk: the escrow holder becomes a high-value target and must be tightly controlled.",
+    "comptiaNote": "Escrow = custody for recovery. Do not confuse with key exchange (securely sharing a key between parties) or key stretching (password hardening).",
+    "tags": [
+      "pki",
+      "keys"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-010",
+    "objective": "1.4",
+    "front": "Blockchain / open public ledger",
+    "back": "A distributed, append-only ledger replicated across many participants. Each block contains the hash of the previous block, so altering a past record breaks the chain and is detected.\nProvides: integrity, transparency, no single controlling party.\nOpen public ledger: anyone can view and verify the entries.",
+    "comptiaNote": "Exam angle is integrity and tamper evidence, not confidentiality: public ledger entries are visible to all.",
+    "tags": [
+      "crypto",
+      "blockchain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-011",
+    "objective": "1.4",
+    "front": "Symmetric vs asymmetric encryption",
+    "back": "Symmetric: one shared secret key encrypts and decrypts; fast, used for bulk data (AES). Problem: securely distributing the key.\nAsymmetric: key pair (public + private); slow, used for key exchange, digital signatures, and certificates (RSA, ECC).\nHybrid (e.g. TLS): asymmetric to establish/authenticate, symmetric for the data.",
+    "comptiaNote": "\"Encrypt large amounts of data quickly\" = symmetric. \"No pre-shared secret\" or \"non-repudiation\" = asymmetric.",
+    "tags": [
+      "crypto",
+      "symmetric",
+      "asymmetric"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-012",
+    "objective": "1.4",
+    "front": "Which key? Public vs private key uses",
+    "back": "Encrypt TO someone: use the RECIPIENT's public key; they decrypt with their private key.\nSign: use YOUR OWN private key; others verify with your public key.\nThe private key stays under its owner's control (ideally in an HSM or TPM); only the public key is shared.",
+    "comptiaNote": "Trap: signing does not use the recipient's key, and nobody encrypts a message with their own private key to keep it confidential.",
+    "tags": [
+      "crypto",
+      "asymmetric",
+      "pki"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-013",
+    "objective": "1.4",
+    "front": "Key exchange: Diffie-Hellman and forward secrecy",
+    "back": "Diffie-Hellman (DH/ECDH): two parties derive the same shared secret over an untrusted network without ever sending the secret itself.\nEphemeral versions (DHE/ECDHE) use new temporary keys per session = forward (perfect forward) secrecy: stealing the server's long-term key later does not decrypt recorded sessions.\nRSA key exchange (removed in TLS 1.3) lacks forward secrecy.",
+    "comptiaNote": "DH provides key agreement, not authentication; pair it with certificates/signatures to stop on-path attacks.",
+    "tags": [
+      "crypto",
+      "key-exchange"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-014",
+    "objective": "1.4",
+    "front": "Common algorithms by category",
+    "back": "Symmetric: AES (current standard), 3DES (legacy), ChaCha20.\nAsymmetric: RSA, ECC; DH/ECDH for key exchange; DSA/ECDSA for signatures.\nHashing: SHA-2 (SHA-256/512), SHA-3; MD5 and SHA-1 are broken (collisions).\nPassword key stretching: PBKDF2, bcrypt.",
+    "comptiaNote": "Know which category an algorithm belongs to: a hash (SHA) never provides confidentiality.",
+    "tags": [
+      "crypto"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-015",
+    "objective": "1.4",
+    "front": "Key length",
+    "back": "Longer key = larger keyspace = more resistant to brute force (each extra bit doubles the keyspace), at some performance cost.\nAES: 128, 192, or 256 bits.\nECC achieves equivalent strength with much shorter keys than RSA (roughly ECC 256-bit ~ RSA 3072-bit).",
+    "comptiaNote": "Compare key lengths only within the same algorithm family; a 256-bit ECC key is not weaker than a 2048-bit RSA key.",
+    "tags": [
+      "crypto"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-016",
+    "objective": "1.4",
+    "front": "Hashing: properties and uses",
+    "back": "One-way function: input of any size -> fixed-length digest; cannot be reversed.\nSame input always gives the same digest; a tiny change gives a completely different one.\nCollision = two inputs with the same digest (breaks MD5, SHA-1).\nUses: integrity checks, password storage (with salt + stretching), digital signatures.",
+    "comptiaNote": "Hashing provides integrity, not confidentiality. A hash from an untrusted source proves nothing about origin; that needs a digital signature.",
+    "tags": [
+      "crypto",
+      "hashing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-017",
+    "objective": "1.4",
+    "front": "CSR generation steps",
+    "back": "1. Generate a key pair on the server (or in its HSM).\n2. Create the CSR: public key + subject details (CN, SANs, organization), signed with the private key.\n3. Send the CSR to the CA, which validates the requester.\n4. CA returns the signed certificate; install it with the intermediate chain.",
+    "comptiaNote": "The private key is never sent to the CA. If the private key is lost, you need a new key pair and a new CSR.",
+    "tags": [
+      "pki",
+      "certificates"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-1.4-018",
+    "objective": "1.4",
+    "front": "Transport/communication encryption",
+    "back": "Protects data in motion between systems.\nExamples: TLS (HTTPS, secure email protocols), IPsec (site-to-site and remote-access VPNs), SSH (remote administration, SFTP).\nTypically hybrid: asymmetric crypto authenticates and establishes keys, symmetric crypto encrypts the session.",
+    "comptiaNote": "Transport encryption does not protect data at rest on either endpoint; combine with disk, file, or database encryption.",
+    "tags": [
+      "crypto",
+      "tls"
+    ],
+    "status": "reviewed"
+  }
+]

@@ -1,0 +1,258 @@
+{
+  "id": "ports",
+  "title": "Puertos y protocolos",
+  "description": "Well-known ports that show up in SY0-701 scenarios, with the secure replacement to pick when a question asks you to harden or replace a protocol.",
+  "objectives": [
+    "4.5",
+    "3.2",
+    "2.5"
+  ],
+  "columns": [
+    "Port",
+    "Protocol",
+    "Transport",
+    "Secure alternative / notes"
+  ],
+  "rows": [
+    [
+      "20, 21",
+      "FTP (20 data, 21 control)",
+      "TCP",
+      "Cleartext credentials and data. Replace with SFTP (22) or FTPS (explicit TLS on 21, implicit on 989/990)."
+    ],
+    [
+      "22",
+      "SSH, SFTP, SCP",
+      "TCP",
+      "Encrypted remote shell and file transfer. The secure answer when replacing Telnet, rlogin, or FTP."
+    ],
+    [
+      "23",
+      "Telnet",
+      "TCP",
+      "Cleartext remote shell. Disable and use SSH."
+    ],
+    [
+      "25",
+      "SMTP (server-to-server relay)",
+      "TCP",
+      "Mail relay between servers; STARTTLS adds opportunistic encryption. Clients should submit on 587 or 465."
+    ],
+    [
+      "49",
+      "TACACS+",
+      "TCP",
+      "Cisco AAA for device administration; encrypts the entire payload (RADIUS only hides the password)."
+    ],
+    [
+      "53",
+      "DNS",
+      "UDP and TCP",
+      "UDP for normal queries, TCP for zone transfers and large responses. DNSSEC adds integrity; DNS over TLS uses 853, DNS over HTTPS uses 443."
+    ],
+    [
+      "67, 68",
+      "DHCP (67 server, 68 client)",
+      "UDP",
+      "No authentication; rogue DHCP servers enable on-path attacks. Mitigate with DHCP snooping."
+    ],
+    [
+      "69",
+      "TFTP",
+      "UDP",
+      "No authentication or encryption; used for device configs and PXE boot. Restrict to management networks."
+    ],
+    [
+      "80",
+      "HTTP",
+      "TCP",
+      "Cleartext web. Redirect to HTTPS on 443 and use HSTS."
+    ],
+    [
+      "88",
+      "Kerberos",
+      "TCP and UDP",
+      "Ticket-based authentication in Active Directory. Requires synchronized clocks (NTP)."
+    ],
+    [
+      "110",
+      "POP3",
+      "TCP",
+      "Cleartext mail retrieval. Use POP3S on 995."
+    ],
+    [
+      "123",
+      "NTP",
+      "UDP",
+      "Time sync for log correlation and Kerberos. Unsecured NTP servers can be abused for amplification."
+    ],
+    [
+      "135",
+      "Microsoft RPC (endpoint mapper)",
+      "TCP",
+      "Windows remote procedure calls; should never be exposed to the internet."
+    ],
+    [
+      "137-139",
+      "NetBIOS (137 name, 138 datagram, 139 session)",
+      "UDP 137-138, TCP 139",
+      "Legacy Windows networking; disable where possible and block at the perimeter."
+    ],
+    [
+      "143",
+      "IMAP",
+      "TCP",
+      "Cleartext mail retrieval that keeps mail on the server. Use IMAPS on 993."
+    ],
+    [
+      "161, 162",
+      "SNMP (161 agent queries, 162 traps)",
+      "UDP",
+      "v1/v2c send community strings in cleartext. Use SNMPv3 for authentication and encryption."
+    ],
+    [
+      "389",
+      "LDAP",
+      "TCP and UDP",
+      "Directory queries in cleartext. Use LDAPS on 636 or StartTLS on 389."
+    ],
+    [
+      "443",
+      "HTTPS",
+      "TCP (UDP for QUIC/HTTP/3)",
+      "HTTP over TLS. Also carries TLS VPNs and DNS over HTTPS, which makes it hard to filter by port alone."
+    ],
+    [
+      "445",
+      "SMB (direct over TCP)",
+      "TCP",
+      "Windows file sharing; exploited by worms (e.g., EternalBlue). Disable SMBv1, block at the perimeter."
+    ],
+    [
+      "465",
+      "SMTPS (implicit TLS submission)",
+      "TCP",
+      "Mail submission with TLS from the first byte."
+    ],
+    [
+      "500",
+      "IKE / ISAKMP",
+      "UDP",
+      "Negotiates IPSec security associations and keys."
+    ],
+    [
+      "514",
+      "Syslog",
+      "UDP",
+      "Cleartext, unauthenticated log transport. Use syslog over TLS on 6514."
+    ],
+    [
+      "587",
+      "SMTP submission",
+      "TCP",
+      "Authenticated client mail submission, upgraded with STARTTLS."
+    ],
+    [
+      "636",
+      "LDAPS",
+      "TCP",
+      "LDAP over TLS; the secure choice for directory lookups."
+    ],
+    [
+      "989, 990",
+      "FTPS implicit (989 data, 990 control)",
+      "TCP",
+      "FTP over TLS. Not the same as SFTP, which runs over SSH on 22."
+    ],
+    [
+      "993",
+      "IMAPS",
+      "TCP",
+      "IMAP over TLS."
+    ],
+    [
+      "995",
+      "POP3S",
+      "TCP",
+      "POP3 over TLS."
+    ],
+    [
+      "1433",
+      "Microsoft SQL Server",
+      "TCP",
+      "Database listener; keep off the internet and restrict to app servers."
+    ],
+    [
+      "1645, 1646",
+      "RADIUS (legacy: auth, accounting)",
+      "UDP",
+      "Older port assignment still seen on some devices."
+    ],
+    [
+      "1701",
+      "L2TP",
+      "UDP",
+      "No encryption of its own; normally deployed as L2TP/IPSec."
+    ],
+    [
+      "1723",
+      "PPTP",
+      "TCP (plus GRE, IP protocol 47)",
+      "Legacy VPN with weak MS-CHAPv2 authentication; replace with IPSec or TLS VPN."
+    ],
+    [
+      "1812, 1813",
+      "RADIUS (auth, accounting)",
+      "UDP",
+      "AAA for Wi-Fi (802.1X), VPN, and NAC. Only the password attribute is protected."
+    ],
+    [
+      "3306",
+      "MySQL",
+      "TCP",
+      "Database listener; restrict access and require TLS."
+    ],
+    [
+      "3389",
+      "RDP",
+      "TCP and UDP",
+      "Windows remote desktop; a top ransomware entry point. Put behind VPN or a jump server with MFA."
+    ],
+    [
+      "4500",
+      "IPSec NAT traversal (NAT-T)",
+      "UDP",
+      "Encapsulates ESP in UDP so IPSec works through NAT."
+    ],
+    [
+      "5060",
+      "SIP",
+      "TCP and UDP",
+      "VoIP call signaling in cleartext."
+    ],
+    [
+      "5061",
+      "SIP over TLS (SIPS)",
+      "TCP",
+      "Encrypted call signaling; pair with SRTP to protect the media stream."
+    ],
+    [
+      "6514",
+      "Syslog over TLS",
+      "TCP",
+      "Encrypted, reliable log forwarding to a SIEM."
+    ],
+    [
+      "8080, 8443",
+      "Alternate HTTP / HTTPS",
+      "TCP",
+      "Common for proxies, admin consoles, and app servers; often forgotten during hardening."
+    ],
+    [
+      "IP protocol 50 / 51",
+      "IPSec ESP / AH",
+      "IP (no port)",
+      "ESP encrypts and authenticates; AH authenticates only. Firewalls must allow the protocol numbers, not a port."
+    ]
+  ]
+}

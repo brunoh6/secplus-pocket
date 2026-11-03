@@ -1,0 +1,409 @@
+[
+  {
+    "id": "pbq-4.2-001",
+    "objective": "4.2",
+    "type": "order",
+    "title": "Hardware asset lifecycle",
+    "prompt": "A company buys new laptops that will store confidential data and will eventually be retired. Order the asset management activities from first to last across the laptops' lifecycle.",
+    "items": [
+      {
+        "text": "Purchase through the approved procurement process",
+        "why": "Acquisition comes first; approved vendors and processes reduce supply chain and shadow IT risk."
+      },
+      {
+        "text": "Assign an owner and a data classification",
+        "why": "Once received, each asset gets an accountable owner and a classification that drives its protection."
+      },
+      {
+        "text": "Audit the inventory periodically while in use",
+        "why": "Once the laptop is assigned and in use, monitoring and asset tracking (periodic inventory audits, enumeration) keep it visible until it is retired."
+      },
+      {
+        "text": "Archive data required by the retention policy",
+        "why": "At decommissioning, data that must be retained is preserved before the media is touched; wiping it first could breach legal or policy obligations."
+      },
+      {
+        "text": "Sanitize or destroy the storage media",
+        "why": "Data is removed (wiping, crypto-erase) or the media is physically destroyed so it cannot be recovered."
+      },
+      {
+        "text": "Obtain a certificate of sanitization/destruction",
+        "why": "Certification is the final proof that disposal was carried out, and it is kept for audit purposes."
+      }
+    ],
+    "firstLabel": "Start of lifecycle",
+    "lastLabel": "End of lifecycle",
+    "explanation": "SY0-701 4.2 follows the asset from acquisition/procurement, through assignment/accounting (ownership, classification) and monitoring/asset tracking, to disposal/decommissioning. During disposal, data covered by retention requirements is archived before sanitization or destruction (wiping first would destroy it), and certification documents the result. The objectives list these as bullets, not a sequence, so order them by what each step depends on.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "asset-management",
+      "disposal",
+      "sanitization"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-4.3-001",
+    "objective": "4.3",
+    "type": "order",
+    "title": "Vulnerability management lifecycle",
+    "prompt": "A security team is running its monthly vulnerability management cycle for the server fleet. Order the activities from first to last.",
+    "items": [
+      {
+        "text": "Run a credentialed vulnerability scan",
+        "why": "Identification comes first: you cannot fix what you have not found."
+      },
+      {
+        "text": "Confirm findings to rule out false positives",
+        "why": "Analysis begins by confirming each finding, so no effort is wasted on issues that do not exist."
+      },
+      {
+        "text": "Prioritize by CVSS, exposure and asset value",
+        "why": "Confirmed findings are ranked using severity and environmental factors, so the riskiest are fixed first."
+      },
+      {
+        "text": "Patch or apply a compensating control",
+        "why": "Response and remediation address the prioritized vulnerabilities, using patching, segmentation, an exception or insurance."
+      },
+      {
+        "text": "Rescan to validate remediation",
+        "why": "Validation proves that the fix worked; a remediation is not finished until it has been verified."
+      },
+      {
+        "text": "Report results to stakeholders",
+        "why": "Reporting closes the cycle by documenting status, trends and accepted exceptions for management."
+      }
+    ],
+    "firstLabel": "First",
+    "lastLabel": "Last",
+    "explanation": "SY0-701 4.3 structures vulnerability management as identification, analysis (confirmation, then prioritization with CVSS, exposure factor, environmental variables and risk tolerance), response and remediation, validation of remediation (rescanning, audit, verification) and reporting. A remediation is only complete after a rescan confirms it.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "vulnerability-management",
+      "cvss",
+      "scanning"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-4.5-101",
+    "objective": "4.5",
+    "type": "match",
+    "title": "Secure protocols and default ports",
+    "prompt": "A firewall administrator is writing the allow list for a hardened server zone that may only use encrypted protocols. Match each secure protocol to its default port. Some ports will not be used.",
+    "leftLabel": "Secure protocol",
+    "rightLabel": "Default port",
+    "pairs": [
+      {
+        "left": "SSH (also SFTP and SCP)",
+        "right": "TCP 22",
+        "why": "SSH listens on TCP 22; SFTP and SCP run inside SSH, so they share the port."
+      },
+      {
+        "left": "HTTPS",
+        "right": "TCP 443",
+        "why": "HTTP over TLS uses TCP 443, replacing cleartext HTTP on TCP 80."
+      },
+      {
+        "left": "LDAPS",
+        "right": "TCP 636",
+        "why": "LDAP over TLS uses TCP 636; cleartext LDAP uses TCP 389."
+      },
+      {
+        "left": "IMAPS",
+        "right": "TCP 993",
+        "why": "IMAP over TLS uses TCP 993; cleartext IMAP uses TCP 143."
+      },
+      {
+        "left": "POP3S",
+        "right": "TCP 995",
+        "why": "POP3 over TLS uses TCP 995; cleartext POP3 uses TCP 110."
+      }
+    ],
+    "distractors": [
+      "TCP 389",
+      "TCP 143",
+      "TCP 990"
+    ],
+    "explanation": "Port selection is part of enforcing secure protocols: the allow list should permit the TLS/SSH ports and block the cleartext equivalents (LDAP 389, IMAP 143, POP3 110). Two unused ports are cleartext LDAP and IMAP; TCP 990 is implicit FTPS, which is encrypted but is not one of the listed protocols. Knowing each secure port next to its insecure counterpart is the fastest way to spot a misconfigured rule on the exam.",
+    "industryVsComptia": null,
+    "difficulty": 1,
+    "tags": [
+      "ports",
+      "protocols",
+      "tls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-4.6-101",
+    "objective": "4.6",
+    "type": "match",
+    "title": "Access control models in practice",
+    "prompt": "An identity architect is documenting how access decisions are made across several systems. Match each scenario to the access control model it describes. One option will not be used.",
+    "leftLabel": "Scenario",
+    "rightLabel": "Access control model",
+    "pairs": [
+      {
+        "left": "System enforces Secret/Top Secret labels",
+        "right": "Mandatory access control",
+        "why": "MAC compares administrator-assigned labels and clearances; users cannot change them."
+      },
+      {
+        "left": "A file's creator chooses who may read it",
+        "right": "Discretionary access control",
+        "why": "DAC lets the owner of the object grant or revoke access at their discretion."
+      },
+      {
+        "left": "All nurses get the same chart permissions",
+        "right": "Role-based access control",
+        "why": "RBAC assigns permissions to a job role, and users inherit them by being placed in that role."
+      },
+      {
+        "left": "Allow if dept=HR, device=managed, on-site",
+        "right": "Attribute-based access control",
+        "why": "ABAC evaluates multiple attributes of the user, device and context in a policy."
+      },
+      {
+        "left": "Router ACL applies equally to every user",
+        "right": "Rule-based access control",
+        "why": "Rule-based access control applies administrator-defined rules to all subjects regardless of identity."
+      }
+    ],
+    "distractors": [
+      "Time-of-day restrictions"
+    ],
+    "explanation": "Look for the deciding factor: labels and clearances mean MAC, owner choice means DAC, job function means RBAC, a combination of user/device/context attributes means ABAC, and a uniform rule set such as an ACL means rule-based access control. Time-of-day restrictions are unused because no scenario limits access by time.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "access-control",
+      "iam"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-4.6-201",
+    "objective": "4.6",
+    "type": "categorize",
+    "difficulty": 1,
+    "title": "MFA factor categories",
+    "prompt": "An IAM engineer is designing MFA policies and must make sure each login combines different factor categories. Classify each authenticator by its factor.",
+    "dimensions": [
+      {
+        "id": "factor",
+        "label": "Factor",
+        "options": [
+          "Something you know",
+          "Something you have",
+          "Something you are",
+          "Somewhere you are"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "text": "A PIN",
+        "answers": {
+          "factor": "Something you know"
+        },
+        "why": "A memorized secret: something you know."
+      },
+      {
+        "text": "Answer to a security question",
+        "answers": {
+          "factor": "Something you know"
+        },
+        "why": "Recalled information: something you know."
+      },
+      {
+        "text": "TOTP code from an authenticator app",
+        "answers": {
+          "factor": "Something you have"
+        },
+        "why": "The code proves possession of the device holding the seed: something you have."
+      },
+      {
+        "text": "Smart card inserted into a reader",
+        "answers": {
+          "factor": "Something you have"
+        },
+        "why": "A physical token in the user's possession: something you have."
+      },
+      {
+        "text": "FIDO2 hardware security key",
+        "answers": {
+          "factor": "Something you have"
+        },
+        "why": "A hardware authenticator the user carries: something you have."
+      },
+      {
+        "text": "Fingerprint scan",
+        "answers": {
+          "factor": "Something you are"
+        },
+        "why": "A physical characteristic of the user: biometric, something you are."
+      },
+      {
+        "text": "GPS shows the device inside headquarters",
+        "answers": {
+          "factor": "Somewhere you are"
+        },
+        "why": "The user's physical location is the factor: somewhere you are."
+      }
+    ],
+    "explanation": "MFA requires factors from different categories; a password plus a PIN is still single-factor because both are something you know. Codes from authenticator apps, SMS or hardware tokens count as something you have because they prove possession of a device, even though the user types them. Location (GPS, IP geolocation) is somewhere you are.",
+    "industryVsComptia": null,
+    "tags": [
+      "mfa",
+      "iam"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-4.8-001",
+    "objective": "4.8",
+    "type": "order",
+    "title": "Order of volatility on a live server",
+    "prompt": "A responder arrives at a compromised web server that is still powered on and connected. Policy requires preserving as much evidence as possible. Order the evidence sources from the one that must be collected first to the one that can be collected last.",
+    "items": [
+      {
+        "text": "CPU registers and cache",
+        "why": "Contents change within nanoseconds as instructions execute, so they are the most volatile source."
+      },
+      {
+        "text": "RAM contents (processes, network connections)",
+        "why": "Survives only while the system stays powered; lost at shutdown and constantly overwritten."
+      },
+      {
+        "text": "Temporary file systems",
+        "why": "Short-lived by design (often RAM-backed, or cleared at reboot or by routine cleanup), so they rank above regular disk data."
+      },
+      {
+        "text": "Local disk data",
+        "why": "Persists across reboots; changes slowly unless actively overwritten."
+      },
+      {
+        "text": "Remote log and monitoring data",
+        "why": "Stored off the host (e.g. SIEM/syslog), so the attacker on this server is less likely to alter it, but retention windows still apply."
+      },
+      {
+        "text": "Archival backup media",
+        "why": "Offline or long-term storage that changes least; it can safely be collected last."
+      }
+    ],
+    "firstLabel": "Collect first",
+    "lastLabel": "Collect last",
+    "explanation": "The order of volatility (as described in RFC 3227 and used by CompTIA) says to collect the evidence that disappears fastest first. Pulling the plug before capturing memory destroys running processes, injected code, keys and open connections. Remote logs and archives are least volatile, so they are collected after the volatile data on the host.",
+    "industryVsComptia": null,
+    "difficulty": 1,
+    "tags": [
+      "forensics",
+      "order-of-volatility",
+      "ir"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-4.8-002",
+    "objective": "4.8",
+    "type": "order",
+    "title": "Incident response process",
+    "prompt": "A company is writing its incident response plan and wants the phases to match CompTIA's incident response process. Order the phases from first to last.",
+    "items": [
+      {
+        "text": "Preparation",
+        "why": "Plans, playbooks, tooling and training are put in place before any incident occurs."
+      },
+      {
+        "text": "Detection",
+        "why": "An alert, report or anomaly reveals that a possible incident is occurring."
+      },
+      {
+        "text": "Analysis",
+        "why": "Responders confirm it is a real incident and work out its scope, impact and severity."
+      },
+      {
+        "text": "Containment",
+        "why": "Limits the spread and damage (isolate hosts, block IOCs) before the threat is removed."
+      },
+      {
+        "text": "Eradication",
+        "why": "Removes the cause: malware, persistence, compromised accounts and the exploited vulnerability."
+      },
+      {
+        "text": "Recovery",
+        "why": "Restores systems to normal, validated operation and monitors for recurrence."
+      },
+      {
+        "text": "Lessons learned",
+        "why": "A post-incident review improves the plan, controls and preparation for the next incident."
+      }
+    ],
+    "firstLabel": "First phase",
+    "lastLabel": "Last phase",
+    "explanation": "SY0-701 lists the process as Preparation, Detection, Analysis, Containment, Eradication, Recovery and Lessons learned. Exam technique: when a question asks what to do FIRST after an incident is confirmed, the answer is usually containment, which comes before eradication and recovery.",
+    "industryVsComptia": "NIST SP 800-61 Rev. 2 groups these into four phases (Preparation; Detection and Analysis; Containment, Eradication and Recovery; Post-incident activity). The SY0-701 objectives list each step separately, so use the seven-step order on the exam.",
+    "difficulty": 1,
+    "tags": [
+      "ir",
+      "incident-response"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-4.9-101",
+    "objective": "4.9",
+    "type": "match",
+    "title": "Investigation questions and data sources",
+    "prompt": "An analyst is investigating a suspected intrusion and has several specific questions. Match each question to the data source that BEST answers it. One source will not be used.",
+    "leftLabel": "Question",
+    "rightLabel": "Data source",
+    "pairs": [
+      {
+        "left": "Was traffic to TCP 445 allowed or denied?",
+        "right": "Firewall log",
+        "why": "Firewall logs record the allow/deny decision for each connection, with source, destination and port."
+      },
+      {
+        "left": "What exact payload crossed the wire?",
+        "right": "Packet capture",
+        "why": "Only a packet capture contains the full contents of the traffic, not just a summary of it."
+      },
+      {
+        "left": "Which mail servers relayed this email?",
+        "right": "Metadata",
+        "why": "Email headers are metadata; the Received lines show each relay hop and timestamp."
+      },
+      {
+        "left": "Did a known exploit signature fire?",
+        "right": "IDS/IPS log",
+        "why": "IDS/IPS logs record signature matches for known attack patterns."
+      },
+      {
+        "left": "Which unpatched CVEs exist on the servers?",
+        "right": "Vulnerability scan",
+        "why": "A vulnerability scan enumerates missing patches and known CVEs on each host."
+      },
+      {
+        "left": "Who logged on to the workstation at 2 a.m.?",
+        "right": "OS security log",
+        "why": "The operating system's security log records interactive logon events with account and time."
+      }
+    ],
+    "distractors": [
+      "Dashboard"
+    ],
+    "explanation": "Match the question to the source that records that evidence natively: decisions in firewall logs, content in packet captures, routing details in email metadata, signature hits in IDS/IPS logs, weaknesses in scan results and logons in OS security logs. A dashboard aggregates other sources for visibility but is not the BEST source for any single detailed question.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "logs",
+      "investigation",
+      "siem"
+    ],
+    "status": "reviewed"
+  }
+]

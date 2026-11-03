@@ -1,0 +1,199 @@
+[
+  {
+    "id": "pbq-3.1-201",
+    "objective": "3.1",
+    "type": "categorize",
+    "difficulty": 2,
+    "title": "Shared responsibility by cloud model",
+    "prompt": "A company runs workloads on IaaS, PaaS and SaaS offerings from a public cloud provider. Under the shared responsibility model, classify who is responsible for each task.",
+    "dimensions": [
+      {
+        "id": "owner",
+        "label": "Responsible party",
+        "options": [
+          "Customer",
+          "Cloud provider"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "text": "IaaS: patching the VM's guest OS",
+        "answers": {
+          "owner": "Customer"
+        },
+        "why": "In IaaS the customer manages everything from the OS up, including patching."
+      },
+      {
+        "text": "IaaS: patching the hypervisor",
+        "answers": {
+          "owner": "Cloud provider"
+        },
+        "why": "The virtualization layer is part of the provider's infrastructure in every model."
+      },
+      {
+        "text": "PaaS: patching the managed runtime and OS",
+        "answers": {
+          "owner": "Cloud provider"
+        },
+        "why": "In PaaS the provider runs the platform (OS, runtime, middleware)."
+      },
+      {
+        "text": "PaaS: fixing flaws in the app code you deploy",
+        "answers": {
+          "owner": "Customer"
+        },
+        "why": "The customer always owns the code it writes and deploys on a platform."
+      },
+      {
+        "text": "SaaS: patching the application itself",
+        "answers": {
+          "owner": "Cloud provider"
+        },
+        "why": "In SaaS the provider runs the entire application stack."
+      },
+      {
+        "text": "SaaS: granting and revoking user access",
+        "answers": {
+          "owner": "Customer"
+        },
+        "why": "Even in SaaS, the customer manages its own users, permissions and data."
+      },
+      {
+        "text": "Any model: physical datacenter security",
+        "answers": {
+          "owner": "Cloud provider"
+        },
+        "why": "Facilities, hardware and physical access are always the provider's job."
+      }
+    ],
+    "explanation": "The provider's share grows from IaaS to PaaS to SaaS. IaaS: provider owns facilities, hardware and hypervisor; the customer owns OS, apps and data. PaaS: the provider also owns the OS and runtime; the customer owns its code and data. SaaS: the provider owns the whole application; the customer still owns its data, identities and access configuration. A responsibility matrix in the contract should spell out the split.",
+    "industryVsComptia": null,
+    "tags": [
+      "cloud",
+      "shared-responsibility"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-3.3-201",
+    "objective": "3.3",
+    "type": "categorize",
+    "difficulty": 1,
+    "title": "Data states: at rest, in transit, in use",
+    "prompt": "A data protection officer is mapping where customer records exist so the right protection can be applied to each. Classify each situation by the state of the data.",
+    "dimensions": [
+      {
+        "id": "state",
+        "label": "Data state",
+        "options": [
+          "Data at rest",
+          "Data in transit",
+          "Data in use"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "text": "Database files on an encrypted SAN volume",
+        "answers": {
+          "state": "Data at rest"
+        },
+        "why": "Stored on media and not actively moving or being processed: at rest."
+      },
+      {
+        "text": "Backup tapes kept in an offsite vault",
+        "answers": {
+          "state": "Data at rest"
+        },
+        "why": "Archived on storage media: at rest."
+      },
+      {
+        "text": "Web form submitted over HTTPS",
+        "answers": {
+          "state": "Data in transit"
+        },
+        "why": "Moving across the network between client and server: in transit."
+      },
+      {
+        "text": "Site-to-site replication over an IPsec tunnel",
+        "answers": {
+          "state": "Data in transit"
+        },
+        "why": "Crossing a network link between locations: in transit."
+      },
+      {
+        "text": "Record loaded into app memory for processing",
+        "answers": {
+          "state": "Data in use"
+        },
+        "why": "Decrypted in RAM while the application works on it: in use."
+      },
+      {
+        "text": "Values in CPU registers during a calculation",
+        "answers": {
+          "state": "Data in use"
+        },
+        "why": "Actively being processed by the CPU: in use."
+      }
+    ],
+    "explanation": "Data at rest is stored (disks, databases, backups) and is protected with full-disk, volume, database or file encryption plus permissions. Data in transit moves across a network and is protected with TLS, IPsec or VPNs. Data in use sits in memory or CPU while being processed and is the hardest to protect; secure enclaves and trusted execution environments address it.",
+    "industryVsComptia": null,
+    "tags": [
+      "data-protection",
+      "encryption"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-3.4-101",
+    "objective": "3.4",
+    "type": "match",
+    "title": "Resilience requirements and strategies",
+    "prompt": "A CIO lists resilience requirements for several systems. Match each requirement to the strategy that BEST meets it.",
+    "leftLabel": "Requirement",
+    "rightLabel": "Strategy",
+    "pairs": [
+      {
+        "left": "Fail over in minutes with live replicated data",
+        "right": "Hot site",
+        "why": "A hot site is fully equipped and kept in sync, so operations can move almost immediately."
+      },
+      {
+        "left": "Some gear ready; restore backups in hours to days",
+        "right": "Warm site",
+        "why": "A warm site has hardware and connectivity but needs current data loaded before it can take over."
+      },
+      {
+        "left": "Lowest cost; space and power only",
+        "right": "Cold site",
+        "why": "A cold site is an empty facility; equipment must be delivered and configured, so recovery is slowest."
+      },
+      {
+        "left": "One regional disaster must not hit both sites",
+        "right": "Geographic dispersion",
+        "why": "Placing sites far apart keeps a single flood, storm or grid failure from affecting both."
+      },
+      {
+        "left": "One provider outage must not stop service",
+        "right": "Multi-cloud systems",
+        "why": "Running across more than one cloud provider removes dependence on a single provider."
+      },
+      {
+        "left": "One OS flaw must not affect every server",
+        "right": "Platform diversity",
+        "why": "Using different operating systems or platforms means one vulnerability cannot compromise them all."
+      }
+    ],
+    "distractors": [],
+    "explanation": "Site types trade cost for recovery speed: hot is fastest and most expensive, cold is cheapest and slowest, and warm sits between. The other strategies remove a single point of failure at a different layer: location (geographic dispersion), provider (multi-cloud) and technology (platform diversity).",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "resilience",
+      "disaster-recovery",
+      "sites"
+    ],
+    "status": "reviewed"
+  }
+]

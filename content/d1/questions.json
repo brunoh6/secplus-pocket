@@ -1,0 +1,1737 @@
+[
+  {
+    "id": "q-1.1-001",
+    "objective": "1.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A logistics company mounts signs along its warehouse perimeter fence that read: 'Warning: 24-hour video surveillance. Trespassers will be prosecuted.' Which of the following control types do the signs BEST represent?",
+    "options": [
+      {
+        "text": "Deterrent",
+        "why": "Correct: the signs do not block anyone; they discourage intruders by advertising surveillance and consequences."
+      },
+      {
+        "text": "Detective",
+        "why": "The cameras would be detective, but the signs themselves record nothing; their purpose is to change an intruder's decision."
+      },
+      {
+        "text": "Preventive",
+        "why": "The fence is preventive; a sign cannot physically or technically stop someone who decides to climb over."
+      },
+      {
+        "text": "Directive",
+        "why": "A directive sign instructs a required behavior (e.g. 'Visitors must sign in'); this one warns of consequences to discourage an attempt."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Classify by what the control itself does. Warning of surveillance and prosecution aims to make the attacker decide not to try, which is the definition of a deterrent. Watch the trap: the sign mentions cameras, but the question asks about the sign.",
+    "industryVsComptia": null,
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.1-002",
+    "objective": "1.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Policy requires MFA for all administrative access, but a plant-floor controller running a legacy OS cannot support it and will not be replaced for 18 months. Because MFA cannot be applied, the security team instead places the controller on an isolated VLAN reachable only through a monitored jump server. Which of the following BEST describes these measures in relation to the MFA requirement?",
+    "options": [
+      {
+        "text": "Compensating controls",
+        "why": "Correct: they are alternative safeguards put in place because the required control (MFA) is not feasible on this system."
+      },
+      {
+        "text": "Corrective controls",
+        "why": "Corrective controls restore or repair after an event; nothing has happened yet and nothing is being restored."
+      },
+      {
+        "text": "Directive controls",
+        "why": "Directive controls instruct people what to do; segmentation and a jump server are enforced technically, not by instruction."
+      },
+      {
+        "text": "Deterrent controls",
+        "why": "Deterrents discourage attempts without blocking them; these measures actively restrict and monitor the access path."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Keyword clues: 'cannot support', 'will not be replaced for 18 months' and 'instead' point to a compensating control, an alternative that reduces the risk the primary control was meant to address. Segmentation is also preventive and the jump-server monitoring is detective, but the question asks how the measures relate to the unmet MFA requirement, and that relationship is compensating.",
+    "industryVsComptia": null,
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.1-003",
+    "objective": "1.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Following an annual risk assessment, the CISO approves a new data classification policy and assigns risk owners to each business unit. Which of the following control categories do these actions represent?",
+    "options": [
+      {
+        "text": "Managerial",
+        "why": "Correct: risk assessments, policy approval, and assigning risk ownership are governance and oversight activities."
+      },
+      {
+        "text": "Operational",
+        "why": "Operational controls are tasks people carry out day to day; this scenario is about leadership deciding and documenting governance."
+      },
+      {
+        "text": "Technical",
+        "why": "Technical controls are enforced by systems, such as DLP rules; nothing here is implemented in software or hardware."
+      },
+      {
+        "text": "Physical",
+        "why": "Physical controls protect facilities and assets with tangible barriers; a policy and risk ownership are not physical."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Managerial controls focus on managing risk and setting direction: risk assessments, policies, security planning, and governance decisions.",
+    "industryVsComptia": null,
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.1-004",
+    "objective": "1.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "The security team runs a quarterly program in which staff complete phishing-recognition sessions and practice reporting suspicious emails through the mail client's report button. An auditor asks how this control is categorized. Which of the following is the BEST answer using CompTIA's control categories?",
+    "options": [
+      {
+        "text": "Operational",
+        "why": "Correct: awareness training is delivered and carried out by people as a recurring activity, which is CompTIA's operational category."
+      },
+      {
+        "text": "Managerial",
+        "why": "Managerial covers governance decisions such as the policy that mandates training; delivering and performing the training itself is operational."
+      },
+      {
+        "text": "Technical",
+        "why": "The report button is a tool, but the control being assessed is the human training program, not a system-enforced mechanism."
+      },
+      {
+        "text": "Corrective",
+        "why": "Corrective is a control type, not a category, and the program aims to prevent or detect phishing rather than repair damage."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Separate category (who or what implements it) from type (what it does). The training program is implemented by people, so it is operational. The policy requiring the training would be managerial.",
+    "industryVsComptia": "Many practitioners lump policies, procedures, and training together as 'administrative' controls. CompTIA splits them: managerial for governance and risk decisions, operational for activities people perform day to day, such as training delivery.",
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.1-005",
+    "objective": "1.1",
+    "type": "multi",
+    "difficulty": 3,
+    "stem": "An auditor asks the security manager to list controls that are both TECHNICAL in category and PREVENTIVE in type. Which of the following meet BOTH criteria? (Choose TWO.)",
+    "options": [
+      {
+        "text": "A host-based firewall that drops unsolicited inbound connections",
+        "why": "Correct: enforced by software (technical) and blocks the traffic before it reaches the service (preventive)."
+      },
+      {
+        "text": "An application allow list that blocks unapproved executables",
+        "why": "Correct: enforced by the endpoint (technical) and stops unapproved code from running (preventive)."
+      },
+      {
+        "text": "A SIEM correlation rule that alerts on impossible travel logins",
+        "why": "Technical, but it identifies an event after it occurs, so it is detective rather than preventive."
+      },
+      {
+        "text": "An acceptable use policy signed by every new employee",
+        "why": "This is a directive control documented by management; it tells employees what is acceptable but enforces nothing technically."
+      },
+      {
+        "text": "Bollards in front of the data center's loading dock",
+        "why": "Preventive, but bollards are a physical control protecting a facility, not a technical control enforced by a system."
+      }
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "Evaluate both dimensions separately. Category: technical vs managerial vs operational vs physical. Type: preventive vs detective and the rest. Only the firewall and the allow list are system-enforced and block the action outright.",
+    "industryVsComptia": null,
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.1-006",
+    "objective": "1.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "The employee handbook states that workers must lock their workstations whenever they step away from their desks. No technical setting enforces this yet. Which of the following control types BEST describes the handbook requirement?",
+    "options": [
+      {
+        "text": "Directive",
+        "why": "Correct: the requirement instructs people on the expected behavior without technically enforcing it."
+      },
+      {
+        "text": "Preventive",
+        "why": "A GPO that locks the screen after inactivity would be preventive; a written instruction does not by itself stop access."
+      },
+      {
+        "text": "Deterrent",
+        "why": "A deterrent discourages attackers through visible consequences; this rule tells employees what they must do."
+      },
+      {
+        "text": "Compensating",
+        "why": "Compensating controls replace a required control that is not feasible; nothing here is substituting for another control."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Directive controls specify required actions or behavior, typically through policies, procedures, and instructional signage. The phrase 'no technical setting enforces this' rules out preventive.",
+    "industryVsComptia": null,
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.1-007",
+    "objective": "1.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Ransomware encrypted several file servers overnight. After the malware is removed, the operations team rebuilds the servers and restores their data from offline backups so the business can resume normal work. Which of the following control types BEST describes the restoration?",
+    "options": [
+      {
+        "text": "Detective",
+        "why": "Detective controls identify or record an event (IDS alerts, log review); restoring data happens after detection and does not identify anything."
+      },
+      {
+        "text": "Corrective",
+        "why": "Correct: corrective controls act after an incident to repair damage and return systems to normal operation, which is exactly what restoring from backup does."
+      },
+      {
+        "text": "Compensating",
+        "why": "A compensating control substitutes for a required control that cannot be implemented; the backup restore is not standing in for another control."
+      },
+      {
+        "text": "Preventive",
+        "why": "Preventive controls stop an event before it happens; the encryption already occurred, so the restore did not prevent it."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Classify a control by WHEN and HOW it acts relative to the event. Restore from backup, reimaging and rebuilding after an incident are the textbook corrective examples: they limit the impact and bring the environment back to a known-good state.",
+    "industryVsComptia": null,
+    "tags": [
+      "controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.1-008",
+    "objective": "1.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A data center auditor is mapping each control to both a category and a type. Which of the following is BEST classified as a physical control of the detective type?",
+    "options": [
+      {
+        "text": "Bollards installed in front of the building's main entrance",
+        "why": "Bollards are physical but preventive: they block vehicles from reaching the entrance rather than identifying an intrusion."
+      },
+      {
+        "text": "A network IDS that alerts on traffic to known malicious hosts",
+        "why": "An IDS is detective, but it is a technical control implemented in software and network devices, not a physical one."
+      },
+      {
+        "text": "Motion sensors in the server room that trigger an alarm",
+        "why": "Correct: the sensors are physical devices and their purpose is to detect and signal an intrusion, making them physical and detective."
+      },
+      {
+        "text": "A sign on the cage door warning that intruders will be prosecuted",
+        "why": "The sign is physical, but it discourages the attempt rather than identifying one, so its type is deterrent."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Category answers WHAT implements the control (technical, managerial, operational, physical); type answers WHAT IT DOES (preventive, deterrent, detective, corrective, compensating, directive). Evaluate both dimensions separately: two distractors here are physical but the wrong type, and one is detective but the wrong category.",
+    "industryVsComptia": null,
+    "tags": [
+      "controls",
+      "physical"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-001",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company is implementing a zero trust architecture. The architect describes a component that evaluates each access request against enterprise policy, device posture, and threat intelligence feeds, and then makes the final grant or deny decision. Which of the following components is being described?",
+    "options": [
+      {
+        "text": "Policy Engine",
+        "why": "Correct: the Policy Engine is the control plane component that makes and logs the access decision."
+      },
+      {
+        "text": "Policy Administrator",
+        "why": "The Policy Administrator acts on the Engine's decision, setting up or tearing down the session and issuing credentials; it does not decide."
+      },
+      {
+        "text": "Policy Enforcement Point",
+        "why": "The Enforcement Point sits in the data plane and allows, monitors, or terminates the connection as instructed; it does not evaluate policy."
+      },
+      {
+        "text": "Implicit trust zone",
+        "why": "An implicit trust zone is the area behind the Enforcement Point where traffic is trusted; it is not a decision-making component."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Remember the chain: the Policy Engine decides, the Policy Administrator executes the decision, and the Policy Enforcement Point is the gate in the traffic path. Engine and Administrator are control plane; Enforcement Point, subject/system, and implicit trust zones are data plane.",
+    "industryVsComptia": null,
+    "tags": [
+      "zero-trust"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-002",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A security team inserts a fabricated customer record with a unique email address into the production CRM database. No legitimate process ever uses that record. If the address ever receives mail or appears in a breach dump, the team will know the database was exfiltrated. Which of the following deception techniques is this?",
+    "options": [
+      {
+        "text": "Honeytoken",
+        "why": "Correct: a fake data element planted among real data whose use or appearance elsewhere signals compromise."
+      },
+      {
+        "text": "Honeyfile",
+        "why": "A honeyfile is a decoy file with an enticing name that alerts when opened; here the decoy is a single record inside a real database."
+      },
+      {
+        "text": "Honeypot",
+        "why": "A honeypot is an entire decoy system meant to attract attackers; this is a marker inside a genuine production system."
+      },
+      {
+        "text": "Honeynet",
+        "why": "A honeynet is a network of decoy systems; no fake systems or networks are deployed in this scenario."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Match the size of the decoy: system = honeypot, network of systems = honeynet, file = honeyfile, data element such as a record, credential, or API key = honeytoken.",
+    "industryVsComptia": null,
+    "tags": [
+      "deception"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-003",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Finance requires proof that a specific regional manager approved each large wire transfer, so that the manager cannot later claim someone else approved it. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Have the manager digitally sign each approval with a private key",
+        "why": "Correct: only the holder of the private key could create the signature, which provides integrity, origin authentication, and non-repudiation."
+      },
+      {
+        "text": "Attach an HMAC generated with a key shared by finance and the manager",
+        "why": "Both parties hold the HMAC key, so either could have generated the value; the manager could plausibly deny it."
+      },
+      {
+        "text": "Store a SHA-256 hash of each approval alongside the transfer request",
+        "why": "A hash shows the approval was not altered but contains nothing that ties it to a specific person."
+      },
+      {
+        "text": "Encrypt each approval with AES-256 before sending it to finance",
+        "why": "Symmetric encryption provides confidentiality, and the shared key means it does not prove who created the message."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Non-repudiation requires something only one party possesses. Asymmetric signatures meet that bar; anything based on a shared secret or an unkeyed hash does not.",
+    "industryVsComptia": null,
+    "tags": [
+      "non-repudiation",
+      "crypto"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-004",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A mid-sized company plans to align with the NIST Cybersecurity Framework. Before building a roadmap, leadership wants to know which framework outcomes the current controls already meet and which are missing. Which of the following should the security team perform FIRST?",
+    "options": [
+      {
+        "text": "Gap analysis",
+        "why": "Correct: it compares the current state of controls against the target framework and identifies what is missing."
+      },
+      {
+        "text": "Penetration test",
+        "why": "A penetration test shows whether specific defenses can be exploited, not how the control set maps to a framework."
+      },
+      {
+        "text": "Business impact analysis",
+        "why": "A BIA measures the effect of losing business functions to set recovery priorities, not framework control coverage."
+      },
+      {
+        "text": "Vulnerability scan",
+        "why": "A scan finds technical weaknesses on hosts; it does not evaluate policies, processes, or framework alignment."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Current state versus desired state, producing a list of gaps to prioritize, is the definition of a gap analysis. It is the natural first step before a remediation roadmap.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-005",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A hospital wants to stop vehicles from being driven into the glass entrance of its emergency department while still letting pedestrians and wheelchairs pass freely. Which of the following is the BEST control?",
+    "options": [
+      {
+        "text": "Bollards",
+        "why": "Correct: spaced posts stop vehicles while leaving gaps that people and wheelchairs can move through."
+      },
+      {
+        "text": "Access control vestibule",
+        "why": "A vestibule controls individual entry to stop tailgating; it does not stop a vehicle and would restrict emergency foot traffic."
+      },
+      {
+        "text": "Pressure sensors",
+        "why": "Sensors detect presence or weight; they would report an impact, not prevent it."
+      },
+      {
+        "text": "Perimeter fencing",
+        "why": "Fencing would block pedestrians as well, which the requirement explicitly rules out."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Bollards are the standard answer for vehicle-borne threats when pedestrian access must remain open. Note that sensors are detective, while the requirement is preventive.",
+    "industryVsComptia": null,
+    "tags": [
+      "physical"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-006",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "After a misconfiguration took down a core router, investigators used TACACS+ logs to confirm which administrator logged in, but they could not determine which commands that administrator ran during the session. Which of the following AAA functions MOST needs to be improved?",
+    "options": [
+      {
+        "text": "Accounting",
+        "why": "Correct: accounting records what an identity did, such as executed commands; that record is what is missing."
+      },
+      {
+        "text": "Authentication",
+        "why": "Authentication worked: the logs already prove which administrator logged in."
+      },
+      {
+        "text": "Authorization",
+        "why": "Authorization defines which commands an admin may run; it does not record which ones were actually run."
+      },
+      {
+        "text": "Non-repudiation",
+        "why": "Non-repudiation is a security property, not one of the three AAA functions, and it would not by itself log commands."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Authentication answers who, authorization answers what is allowed, and accounting answers what was done. TACACS+ supports per-command accounting, which would have closed this gap.",
+    "industryVsComptia": null,
+    "tags": [
+      "aaa"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-007",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During an investigation, a hospital finds that an attacker who gained access to its records system did not copy or delete any data. Instead, the attacker silently changed medication dosages in several patient charts. Which of the following security principles was PRIMARILY violated?",
+    "options": [
+      {
+        "text": "Confidentiality",
+        "why": "No data was copied or exfiltrated; any viewing of records was incidental, and the stated harm is that the data was changed, not disclosed."
+      },
+      {
+        "text": "Availability",
+        "why": "The records system remained up and the charts were still accessible, so availability was not the main impact."
+      },
+      {
+        "text": "Non-repudiation",
+        "why": "Non-repudiation concerns proving who performed an action; the harm described is that the data itself was altered."
+      },
+      {
+        "text": "Integrity",
+        "why": "Correct: integrity means data is accurate and has not been altered without authorization; unauthorized changes to dosages are a direct integrity violation."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Map the impact to the CIA triad: disclosure = confidentiality, unauthorized modification = integrity, loss of access = availability. Controls that protect integrity include hashing, digital signatures, file integrity monitoring and strict write permissions.",
+    "industryVsComptia": null,
+    "tags": [
+      "cia"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-008",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A utility is deploying 2,000 unattended field sensors that publish telemetry to a central message broker. The broker must verify the identity of each individual sensor before accepting its data, and a compromised sensor must be revocable without affecting the others. Which of the following BEST meets these requirements?",
+    "options": [
+      {
+        "text": "A unique certificate issued to each sensor by the internal CA",
+        "why": "Correct: per-device certificates authenticate each system individually (for example with mutual TLS), and a single compromised sensor's certificate can be revoked on its own."
+      },
+      {
+        "text": "A pre-shared key embedded in the firmware of every sensor",
+        "why": "One shared key cannot distinguish one sensor from another, and revoking it after a compromise would break all 2,000 devices."
+      },
+      {
+        "text": "A single wildcard certificate installed on every sensor",
+        "why": "Every sensor would present the same certificate, so the broker could not tell one sensor from another, and revoking it after one compromise would cut off all 2,000 devices."
+      },
+      {
+        "text": "An allow list of sensor MAC addresses on the broker's network",
+        "why": "MAC addresses are easily spoofed and are not cryptographic proof of identity; this is a filtering measure, not strong system authentication."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Authentication in AAA covers systems as well as people. For machines with no human present, certificate-based authentication gives each device a unique, cryptographically verifiable identity that can be revoked individually through the PKI.",
+    "industryVsComptia": null,
+    "tags": [
+      "aaa",
+      "authentication",
+      "pki"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-009",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "An HR specialist signs in to the HR portal with a valid password and an MFA code. When the specialist then tries to open the executive payroll report, the portal displays 'Access denied: insufficient permissions.' Which of the following functions is MOST directly responsible for this result?",
+    "options": [
+      {
+        "text": "Authentication",
+        "why": "Authentication already succeeded when the password and MFA code were accepted; the denial happened afterward."
+      },
+      {
+        "text": "Accounting",
+        "why": "Accounting records what the user did (and would log this denied attempt), but it does not decide whether access is allowed."
+      },
+      {
+        "text": "Authorization",
+        "why": "Correct: authorization determines what an authenticated identity is permitted to access, and the specialist's permissions do not include the executive payroll report."
+      },
+      {
+        "text": "Identification",
+        "why": "Identification is claiming an identity (such as entering a username), which occurred before authentication and is not what blocked the report."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Order of AAA: authenticate (prove who you are), authorize (decide what you can do, based on an authorization model such as roles or attributes), account (record what you did). A successful login followed by 'insufficient permissions' points to authorization. Accounting would log the denied attempt, but authorization is what MOST directly blocked it.",
+    "industryVsComptia": null,
+    "tags": [
+      "aaa",
+      "authorization"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-010",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "In a company's zero trust design, the access decision for each login takes into account the user's role, the health of the device, the geographic location and the time of day. When these signals indicate higher risk, the user is required to complete step-up authentication. Which of the following zero trust concepts does this BEST describe?",
+    "options": [
+      {
+        "text": "Threat scope reduction",
+        "why": "Threat scope reduction limits how far an attacker can reach (least privilege, microsegmentation); it does not adjust authentication based on contextual risk."
+      },
+      {
+        "text": "Implicit trust zone",
+        "why": "An implicit trust zone is the area behind an enforcement point where entities are trusted; the scenario describes continuous risk evaluation of the user instead."
+      },
+      {
+        "text": "Adaptive identity",
+        "why": "Correct: adaptive identity uses context such as device posture, location and behavior to evaluate the identity and raise authentication requirements as risk increases."
+      },
+      {
+        "text": "Policy Enforcement Point",
+        "why": "The PEP enforces the decision by allowing or terminating the connection; it does not itself weigh contextual signals about the user."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Adaptive identity is a control plane concept: identity is not a one-time yes/no but is re-evaluated with real-time context, and authentication strength scales with the calculated risk.",
+    "industryVsComptia": null,
+    "tags": [
+      "zero-trust"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-011",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A zero trust architecture has just decided to grant a contractor's laptop access to a source code repository. A separate component now instructs the gateway in front of the repository to open a session for that laptop and generates a session-specific token, and it will tear the session down if the decision is later revoked. Which of the following components is MOST likely performing these actions?",
+    "options": [
+      {
+        "text": "Policy Engine",
+        "why": "The Policy Engine made the grant decision; the scenario describes a different component carrying that decision out by setting up and tearing down the session."
+      },
+      {
+        "text": "Policy Administrator",
+        "why": "Correct: the Policy Administrator executes the Policy Engine's decision by establishing or shutting down the communication path, issuing session credentials and commanding the PEP."
+      },
+      {
+        "text": "Policy Enforcement Point",
+        "why": "The PEP is the gateway that receives the instructions and allows, monitors or terminates the traffic; it is not the component issuing them."
+      },
+      {
+        "text": "Subject/System",
+        "why": "The subject/system is the requester (here, the contractor's laptop), not a component that manages sessions."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Remember the chain: Policy Engine DECIDES, Policy Administrator EXECUTES the decision (session setup/teardown, tokens) and tells the PEP, and the Policy Enforcement Point ENFORCES it on the data plane. The PE and PA sit in the control plane; the PEP, subject/system and implicit trust zones sit in the data plane.",
+    "industryVsComptia": null,
+    "tags": [
+      "zero-trust"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-012",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Badge logs at a research lab show single swipes, but camera footage reveals that unauthorized visitors regularly walk in behind employees through the main door. The lab wants to physically ensure that only one authenticated person can pass through per badge use. Which of the following is the BEST control to implement?",
+    "options": [
+      {
+        "text": "Additional video surveillance at the door",
+        "why": "Cameras already captured the tailgating; more of them would improve detection but would not physically stop the next person from following."
+      },
+      {
+        "text": "An access control vestibule",
+        "why": "Correct: a vestibule uses two interlocking doors so that the second opens only after the first closes, forcing each person to authenticate individually and preventing tailgating."
+      },
+      {
+        "text": "Brighter lighting around the entrance",
+        "why": "Lighting deters and aids observation at night, but it does nothing to stop someone from walking in behind an employee."
+      },
+      {
+        "text": "Perimeter fencing around the building",
+        "why": "Fencing controls access to the grounds, not the building door, and visitors who are already on the grounds would still tailgate."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Tailgating/piggybacking is defeated by controls that physically separate people at the entry point. The access control vestibule (formerly called a mantrap) is the CompTIA answer when the requirement is one person per authentication.",
+    "industryVsComptia": null,
+    "tags": [
+      "physical"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-013",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Security guards patrol a museum gallery overnight, so the motion-detection alarms in the room generate constant false alerts and have been disabled. The museum still needs an alarm that triggers only if a small artifact is lifted off its display stand. Which of the following sensors is the BEST choice?",
+    "options": [
+      {
+        "text": "Infrared sensor",
+        "why": "A passive infrared sensor detects body heat moving through its field of view, so it would trigger on every patrolling guard."
+      },
+      {
+        "text": "Microwave sensor",
+        "why": "Microwave sensors detect motion from reflected radio waves across a wide area, which would again alarm on the guards' movement."
+      },
+      {
+        "text": "Ultrasonic sensor",
+        "why": "Ultrasonic sensors detect motion from changes in reflected sound waves in the room, so they share the same false-alarm problem."
+      },
+      {
+        "text": "Pressure sensor",
+        "why": "Correct: a pressure sensor under the artifact responds to a change in weight or force, so it triggers only when the object is moved, not when people walk nearby."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Infrared, microwave and ultrasonic sensors all detect movement in a space; a pressure sensor detects force applied to or removed from a specific surface (a floor mat, a pedestal, a window). Match the sensor to what must be detected.",
+    "industryVsComptia": null,
+    "tags": [
+      "physical",
+      "sensors"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.2-014",
+    "objective": "1.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A threat research team wants to study how intruders move laterally after an initial compromise. It plans to build an isolated environment containing decoy workstations, file servers and a fake domain controller, all instrumented to record attacker activity. Which of the following BEST describes what the team is building?",
+    "options": [
+      {
+        "text": "Honeypot",
+        "why": "A honeypot is a single decoy system; observing lateral movement requires several interconnected decoys."
+      },
+      {
+        "text": "Honeynet",
+        "why": "Correct: a honeynet is a network of decoy systems, which lets the team watch attackers pivot from one host to another."
+      },
+      {
+        "text": "Honeyfile",
+        "why": "A honeyfile is a single decoy file that alerts when opened; it cannot show how attackers move between systems."
+      },
+      {
+        "text": "Honeytoken",
+        "why": "A honeytoken is a fake data element such as a credential or record whose use signals compromise, not an environment of decoy hosts."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Scale is the differentiator: honeytoken (a piece of data) < honeyfile (a file) < honeypot (one system) < honeynet (a network of systems). Lateral movement implies multiple hosts, so the answer is a honeynet.",
+    "industryVsComptia": null,
+    "tags": [
+      "deception"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-001",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "During review of a request to upgrade the firmware on the perimeter firewalls, a CAB member asks the engineer exactly how the firewalls will be returned to their previous working state if the upgrade fails. Which of the following is the CAB member asking for?",
+    "options": [
+      {
+        "text": "Backout plan",
+        "why": "Correct: the backout plan documents the steps to roll back to the last known good state if the change fails."
+      },
+      {
+        "text": "Impact analysis",
+        "why": "Impact analysis evaluates the risks and effects of the change; it does not define rollback steps."
+      },
+      {
+        "text": "Test results",
+        "why": "Test results show how the change behaved in a test environment, not how to reverse it in production."
+      },
+      {
+        "text": "Maintenance window",
+        "why": "The maintenance window sets when the change is allowed to happen, not how to undo it."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "'Return to previous state if it fails' is the textbook description of a backout plan, which should be ready before approval.",
+    "industryVsComptia": null,
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-002",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An approved change upgraded the TLS library on a central authentication service during the maintenance window. Within an hour, an internal reporting application that relied on that service for logins began failing. Which of the following technical implications was MOST likely overlooked during planning?",
+    "options": [
+      {
+        "text": "Dependencies",
+        "why": "Correct: the reporting application depended on the changed service, and that relationship was not identified or tested."
+      },
+      {
+        "text": "Restricted activities",
+        "why": "Restricted activities define what the change scope does not permit; nothing suggests the team exceeded scope."
+      },
+      {
+        "text": "Service restart",
+        "why": "A restart may have been needed, but the failure was in a separate application that relied on the service."
+      },
+      {
+        "text": "Deny lists",
+        "why": "Nothing in the scenario indicates traffic or software was blocked by a deny list."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "When a change to one component breaks a different system, the exam is pointing at dependencies. Identifying them is part of impact analysis and should drive what gets tested.",
+    "industryVsComptia": null,
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-003",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A change to the payroll database will affect HR, finance, and an external payroll provider. The CAB requires that one named individual be accountable for coordinating the change, tracking it through approval, and reporting its outcome. Which of the following change management elements does this requirement address?",
+    "options": [
+      {
+        "text": "Ownership",
+        "why": "Correct: ownership assigns a single accountable person responsible for the change from request to completion."
+      },
+      {
+        "text": "Stakeholders",
+        "why": "HR, finance, and the provider are stakeholders who must be consulted and informed, but they are not the accountable party."
+      },
+      {
+        "text": "Approval process",
+        "why": "The approval process is how the CAB authorizes the change; it does not assign who manages and answers for it."
+      },
+      {
+        "text": "Standard operating procedure",
+        "why": "An SOP documents repeatable steps for a task; it does not designate an accountable individual for this change."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Distinguish the roles: the owner is accountable, stakeholders are affected parties, and the CAB approves. The words 'one named individual' and 'accountable' point to ownership.",
+    "industryVsComptia": null,
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-004",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During an incident, responders lost time because the network diagram they used did not show a VLAN that had been added three months earlier through an approved, successful change. Which of the following practices would MOST likely have prevented this delay?",
+    "options": [
+      {
+        "text": "Updating documentation as part of closing each change",
+        "why": "Correct: documentation such as diagrams must be updated to reflect every implemented change, or it drifts from reality."
+      },
+      {
+        "text": "Scheduling the change within a maintenance window",
+        "why": "Timing affects disruption during implementation, not whether documentation reflects the change afterwards."
+      },
+      {
+        "text": "Performing an impact analysis before approval",
+        "why": "The change was approved and succeeded; the failure happened afterwards, when records were not updated."
+      },
+      {
+        "text": "Running the change in a test environment first",
+        "why": "Testing validates the change works; it does nothing to keep production diagrams current."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The change process itself worked; the documentation step did not. SY0-701 lists updating diagrams and updating policies and procedures, along with version control, as part of change management.",
+    "industryVsComptia": null,
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-005",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "After an approved change upgraded the endpoint backup agent to a new version, the agent stopped running on every workstation. Investigation shows the endpoint protection platform only permits executables whose hashes have been explicitly approved, and the new binaries were never added. Which of the following technical implications was MOST likely overlooked?",
+    "options": [
+      {
+        "text": "Allow lists",
+        "why": "Correct: the endpoint control only runs approved hashes, so the new agent binaries had to be added to the application allow list as part of the change."
+      },
+      {
+        "text": "Deny lists",
+        "why": "A deny list blocks only items explicitly listed as bad; new, unlisted binaries would not have been blocked by it."
+      },
+      {
+        "text": "Legacy applications",
+        "why": "The agent is a current, supported product being upgraded; nothing indicates an outdated application that cannot support the change."
+      },
+      {
+        "text": "Restricted activities",
+        "why": "Restricted activities define what the change scope does not permit; the failure came from a control that was not updated, not from out-of-scope work."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Any change that introduces new executables, IP addresses, or ports must account for allow lists and deny lists that could block or permit them. Here the hash-based application allow list was never updated, so the upgraded agent could not run.",
+    "industryVsComptia": null,
+    "tags": [
+      "change-management",
+      "allow-list"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-006",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "During an approved maintenance window to replace a failed power supply in a core switch, an engineer notices that the switch still uses a default SNMP community string. The fix would take two minutes and the engineer already has console access. Which of the following is the BEST action for the engineer to take?",
+    "options": [
+      {
+        "text": "Complete only the approved work and submit a separate change request for the SNMP fix",
+        "why": "Correct: the SNMP change is outside the approved scope, so it is a restricted activity and needs its own review and approval."
+      },
+      {
+        "text": "Complete the approved work, then fix the string in the next maintenance window",
+        "why": "A maintenance window only authorizes a time slot for approved changes; without its own change request, the SNMP fix would still be unreviewed and unapproved."
+      },
+      {
+        "text": "Get verbal approval from the on-call manager, then fix it before the window ends",
+        "why": "A manager's verbal OK is not the change approval process; the fix would still skip impact analysis, testing, a backout plan, and CAB review."
+      },
+      {
+        "text": "Complete the approved work, fix the string, and note both in the change record",
+        "why": "Recording an unapproved change afterward does not make it approved; the backout plan and approval covered only the power supply replacement."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Restricted activities limit work to what the change request approved. Anything else, even a small security fix, goes through the change process so its impact, testing, and backout can be evaluated. Expect CompTIA to reward staying in scope.",
+    "industryVsComptia": "Real organizations often have an emergency change path for urgent security fixes, but it still requires authorization (for example, an emergency CAB); it is not a license for an engineer to make unapproved changes on the spot.",
+    "tags": [
+      "change-management",
+      "restricted-activities"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-007",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Before the CAB will consider a request to migrate the company's VPN concentrator, it requires the requester to describe the risks of the change, which systems and users could be affected, and the consequences of not making the change at all. Which of the following is the CAB MOST likely asking for?",
+    "options": [
+      {
+        "text": "Impact analysis",
+        "why": "Correct: impact analysis evaluates the risk of the change, who and what it affects, and the risk of leaving things as they are."
+      },
+      {
+        "text": "Test results",
+        "why": "Test results show the change worked in a test environment; they do not assess business risk or the cost of not changing."
+      },
+      {
+        "text": "Backout plan",
+        "why": "A backout plan describes how to return to the previous state if the change fails, not the change's overall risk and reach."
+      },
+      {
+        "text": "Standard operating procedure",
+        "why": "An SOP documents the repeatable steps to perform a task; it is not an assessment of this change's risks."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Impact analysis feeds the approval decision: it weighs the risk of making the change against the risk of not making it and identifies affected systems and users.",
+    "industryVsComptia": null,
+    "tags": [
+      "change-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-008",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An approved security patch for the customer portal's web servers requires restarting the web service, which will make the portal unavailable for about 20 minutes. Which of the following BEST limits the business impact of this change?",
+    "options": [
+      {
+        "text": "Implement the change during the approved maintenance window",
+        "why": "Correct: the maintenance window is a pre-agreed period of low business activity, so the expected downtime from the restart affects the fewest users."
+      },
+      {
+        "text": "Add the service restart steps to the backout plan",
+        "why": "The backout plan restores the previous state if the change fails; it does not reduce the downtime the planned restart causes."
+      },
+      {
+        "text": "Record the patched configuration in version control",
+        "why": "Version control tracks revisions so changes can be compared and reverted; it does nothing to reduce the outage."
+      },
+      {
+        "text": "Obtain a second approval from the change advisory board",
+        "why": "The change is already approved; another approval does not change when or how long the portal is unavailable."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Service and application restarts cause downtime, which is a technical implication of the change. Scheduling that work inside the agreed maintenance window is how change management minimizes the business impact.",
+    "industryVsComptia": null,
+    "tags": [
+      "change-management",
+      "downtime"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-009",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Two network engineers edited the same firewall rule base several times over a week. After an outage, the team cannot tell which edit introduced the faulty rule, who made it, or what the last known-good rule set looked like. Which of the following would BEST address this problem going forward?",
+    "options": [
+      {
+        "text": "Version control for the firewall configuration",
+        "why": "Correct: version control records each revision with its author and time, allows comparing versions, and makes reverting to a known-good configuration simple."
+      },
+      {
+        "text": "Updating the network diagram after each change",
+        "why": "Diagrams show topology; they would not record individual rule edits, who made them, or the prior rule set."
+      },
+      {
+        "text": "A standard operating procedure for firewall changes",
+        "why": "An SOP standardizes how changes are performed but does not keep a history of revisions to compare or restore."
+      },
+      {
+        "text": "A recurring maintenance window for firewall changes",
+        "why": "A maintenance window controls when changes happen, not what was changed or how to recover a previous version."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Version control applies to configurations and documents as well as code: it answers what changed, when, and by whom, and allows rollback to any earlier revision.",
+    "industryVsComptia": null,
+    "tags": [
+      "change-management",
+      "version-control"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.3-010",
+    "objective": "1.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A change request proposes disabling SMBv1 on all file servers. While reviewing it, the CAB learns that a lab instrument controller running an unsupported operating system can transfer results only over SMBv1, and its vendor is no longer in business. Which of the following technical implications does this finding BEST represent?",
+    "options": [
+      {
+        "text": "Legacy applications",
+        "why": "Correct: an outdated, unsupported system that cannot work with the new configuration is the classic legacy-application implication of a change."
+      },
+      {
+        "text": "Restricted activities",
+        "why": "Restricted activities limit what work the change may include; they do not describe a system that cannot support the change."
+      },
+      {
+        "text": "Application restart",
+        "why": "The issue is protocol incompatibility, not a restart needed for the change to take effect."
+      },
+      {
+        "text": "Deny lists",
+        "why": "Nothing is being blocked by a list of prohibited items; the controller simply cannot use any protocol other than SMBv1."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Legacy applications often lack vendor support and cannot adopt newer protocols, so changes can break them. The CAB must plan for this, for example by isolating the system or approving a documented exception.",
+    "industryVsComptia": null,
+    "tags": [
+      "change-management",
+      "legacy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-001",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A high-traffic e-commerce site wants browsers to receive timely revocation status for its TLS certificate. The CA has complained about load on its responder, and the privacy team does not want the CA to learn which customers visit the site. Which of the following BEST meets all of these requirements?",
+    "options": [
+      {
+        "text": "Enable OCSP stapling on the web servers",
+        "why": "Correct: the server fetches a signed OCSP response and includes it in the handshake, so clients get current status without contacting the CA."
+      },
+      {
+        "text": "Have each browser query the CA's OCSP responder",
+        "why": "This gives timely status but increases responder load and reveals each visitor's lookup to the CA, failing two requirements."
+      },
+      {
+        "text": "Publish delta CRLs from the CA more frequently",
+        "why": "Clients would still have to download and process lists from the CA, and status is only as fresh as the publishing interval."
+      },
+      {
+        "text": "Replace the certificate with a wildcard certificate",
+        "why": "A wildcard changes which hostnames the certificate covers; it has nothing to do with how revocation status is delivered."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "OCSP alone solves timeliness; stapling also solves responder load and client privacy, because the server makes one periodic request on behalf of all visitors. When a question lists several constraints, pick the option that satisfies every one.",
+    "industryVsComptia": "In practice, browsers often soft-fail OCSP and some large public CAs have retired OCSP in favor of CRL-based approaches. For the exam, OCSP is the real-time answer and stapling is the scalable, privacy-preserving one.",
+    "tags": [
+      "pki",
+      "certificates"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-002",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company needs a single publicly trusted TLS certificate for www.example.com, shop.example.com, and example.net, which it acquired last year. Which of the following certificate types should the administrator request?",
+    "options": [
+      {
+        "text": "A certificate with multiple SAN entries",
+        "why": "Correct: Subject Alternative Name entries can list specific hostnames across different domains in one certificate."
+      },
+      {
+        "text": "A wildcard certificate for *.example.com",
+        "why": "It would cover the two example.com subdomains but cannot cover a separate domain such as example.net."
+      },
+      {
+        "text": "A self-signed certificate with all three names",
+        "why": "It could list the names, but browsers would not trust it, failing the publicly trusted requirement."
+      },
+      {
+        "text": "A certificate issued by an internal root CA",
+        "why": "Public clients do not trust a private root, so visitors would receive certificate warnings."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A wildcard is limited to one level of subdomains under a single domain. When names span different domains, a SAN certificate is the answer. 'Publicly trusted' rules out self-signed and internal CAs.",
+    "industryVsComptia": null,
+    "tags": [
+      "pki",
+      "certificates"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-003",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An organization is designing an internal PKI. The architect recommends keeping the root CA powered off and disconnected, using an online intermediate CA to issue all end-entity certificates. Which of the following is the PRIMARY reason for this design?",
+    "options": [
+      {
+        "text": "A compromised intermediate can be revoked without replacing the root of trust",
+        "why": "Correct: the root key stays protected, so a breach of the issuing CA is contained by revoking and reissuing the intermediate."
+      },
+      {
+        "text": "An offline root lets clients validate certificates without a full chain",
+        "why": "Clients still build the full chain to the root; keeping the root offline does not change path validation."
+      },
+      {
+        "text": "Intermediate CAs allow certificates to be issued without generating a CSR",
+        "why": "Requesters still generate a CSR for the issuing CA; the hierarchy does not remove that step."
+      },
+      {
+        "text": "An offline root removes the need to publish CRLs or run OCSP",
+        "why": "Revocation checking is still required; the root itself must also publish a CRL for the intermediates it signs."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The root is the trust anchor; if its key is compromised, every certificate beneath it is untrustworthy. Isolating it and delegating daily issuance to intermediates limits the blast radius of a compromise.",
+    "industryVsComptia": null,
+    "tags": [
+      "pki"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-004",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "After a database breach, investigators find that the attackers recovered most user passwords within hours using precomputed hash tables. Many users with the same password had identical hash values. Which of the following would have BEST prevented this attack technique?",
+    "options": [
+      {
+        "text": "Adding a unique random salt to each password before hashing",
+        "why": "Correct: per-user salts make identical passwords hash differently and render precomputed tables useless."
+      },
+      {
+        "text": "Replacing SHA-256 with SHA-512 for all stored password hashes",
+        "why": "Without a salt, attackers can still precompute tables for SHA-512, and identical passwords still match."
+      },
+      {
+        "text": "Enabling transparent database encryption on the user table",
+        "why": "The data is decrypted for authorized queries, so stolen query results would still contain the unsalted hashes."
+      },
+      {
+        "text": "Masking the password hash column in application reports",
+        "why": "Masking changes what users see on screen; the stored hashes would remain identical and vulnerable."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "'Precomputed tables' and 'identical hashes for identical passwords' are the two clues for salting. Salting defeats precomputation; key stretching addresses the speed of each guess.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "passwords"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-005",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A leaked password table uses a unique salt per user with a single round of SHA-256. Attackers with GPU rigs can test billions of candidate passwords per second against each hash. Which of the following changes would MOST effectively slow this offline attack?",
+    "options": [
+      {
+        "text": "Apply key stretching such as PBKDF2 with a high iteration count",
+        "why": "Correct: deliberately making each hash computation expensive cuts the attacker's guess rate dramatically."
+      },
+      {
+        "text": "Increase the salt length from 16 bytes to 64 bytes",
+        "why": "The salts are already unique; a longer salt does not make each individual guess slower to compute."
+      },
+      {
+        "text": "Replace SHA-256 with the SHA-3 family of hash functions",
+        "why": "SHA-3 is also designed to be fast, so GPU guessing speed would remain extremely high."
+      },
+      {
+        "text": "Shorten the password expiration period to 30 days",
+        "why": "Expiration does not change how fast the already-leaked hashes can be cracked offline."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Salting is already in place, so precomputation is not the problem; raw guessing speed is. Key stretching (PBKDF2, bcrypt) increases the work factor of every guess.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "passwords"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-006",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company's issuing CA must generate and store its private signing key in dedicated, tamper-resistant hardware. The hardware must sustain a high volume of signing operations and be reachable by several clustered CA servers over the network. Which of the following BEST meets these requirements?",
+    "options": [
+      {
+        "text": "Hardware security module",
+        "why": "Correct: an HSM is purpose-built, tamper-resistant hardware for high-volume key storage and crypto operations, and can be network-attached."
+      },
+      {
+        "text": "Trusted Platform Module",
+        "why": "A TPM is bound to a single device's motherboard and is not designed to be shared by a cluster or to handle high signing volume."
+      },
+      {
+        "text": "Secure enclave",
+        "why": "A secure enclave is an isolated area within one device's processor; it cannot serve keys to multiple servers over the network."
+      },
+      {
+        "text": "Key escrow",
+        "why": "Escrow is an arrangement for holding key copies for recovery; it is not hardware that performs cryptographic operations."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Enterprise scale, shared access, and high throughput point to an HSM. A TPM and a secure enclave both protect keys for one device.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "hardware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-007",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A company deploys full-disk encryption on its Windows laptops. The encryption key must be protected by a chip on each laptop's motherboard and released only if boot measurements show the startup process has not been tampered with. Which of the following provides this capability?",
+    "options": [
+      {
+        "text": "Trusted Platform Module",
+        "why": "Correct: a TPM is a motherboard chip that stores keys and can seal them to measured boot values."
+      },
+      {
+        "text": "Hardware security module",
+        "why": "An HSM is a dedicated appliance or card for enterprise key operations, not a per-laptop boot integrity chip."
+      },
+      {
+        "text": "Key management system",
+        "why": "A KMS manages key lifecycles centrally; it does not measure a laptop's boot process locally."
+      },
+      {
+        "text": "Certificate signing request",
+        "why": "A CSR is a request sent to a CA for a certificate; it does not store or release disk encryption keys."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "One device, motherboard chip, measured boot, disk encryption key: all signals for a TPM.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "hardware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-008",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A retailer wants to reduce PCI DSS scope. Card numbers will be replaced throughout its order systems with random surrogate values that have no mathematical relationship to the original number, while the real numbers are kept in a separately secured vault. Which of the following techniques is being used?",
+    "options": [
+      {
+        "text": "Tokenization",
+        "why": "Correct: tokens are random substitutes mapped to the real values in a secured vault, with no key that can reverse them."
+      },
+      {
+        "text": "Data masking",
+        "why": "Masking hides part of a value when displayed; downstream systems would still store and process the real card number."
+      },
+      {
+        "text": "Hashing",
+        "why": "A hash is derived mathematically from the card number, which conflicts with the 'no mathematical relationship' requirement."
+      },
+      {
+        "text": "Steganography",
+        "why": "Steganography conceals data inside other media; it does not replace values in business systems."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "'Random surrogate', 'no mathematical relationship', and 'vault' are the clues for tokenization. Systems that only hold tokens fall out of scope because they never store real card data.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "obfuscation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-009",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "The payroll application must keep each employee's full SSN stored in its database for tax filings. Help desk agents use the same application to verify callers and should see only the last four digits, displayed as XXX-XX-1234. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Data masking",
+        "why": "Correct: masking presents a partially obscured value to users who do not need the full SSN, while the stored data is unchanged."
+      },
+      {
+        "text": "Tokenization",
+        "why": "Tokenization would replace the stored SSN with a surrogate, which conflicts with keeping the full SSN in the database."
+      },
+      {
+        "text": "Record-level encryption",
+        "why": "Encryption protects the stored value, but agents would see either full plaintext or ciphertext, not a partial view."
+      },
+      {
+        "text": "Steganography",
+        "why": "Steganography hides the existence of data inside other media; it does not control how a field is displayed."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The requirement is about what a particular audience sees, not how the value is stored, which points to data masking. Read the constraints carefully: 'full SSN must remain stored' eliminates tokenization.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "obfuscation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-010",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A healthcare provider already uses transparent database encryption. An audit finds that database administrators with legitimate query access can read patients' diagnosis fields in plaintext. Only the application should be able to decrypt those fields, and other columns must remain readable for maintenance. Which of the following should be implemented?",
+    "options": [
+      {
+        "text": "Record-level encryption",
+        "why": "Correct: the sensitive fields of each record are encrypted with their own keys, held by the application rather than the database engine, so DBAs querying the table see ciphertext while other columns stay readable."
+      },
+      {
+        "text": "Database-level encryption",
+        "why": "This is what transparent database encryption already provides; it decrypts automatically for anyone authorized to query."
+      },
+      {
+        "text": "Full-disk encryption",
+        "why": "FDE protects against theft of the physical drive; once the server is running, data is readable to authorized users."
+      },
+      {
+        "text": "Volume encryption",
+        "why": "Like FDE, volume encryption protects data at rest offline and is transparent to the running database and its admins."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Full-disk, volume, and database-level encryption all protect against offline theft, but are transparent to privileged users of the running system. Protecting specific fields from insiders with query access requires the finest granularity in the SY0-701 list, record-level encryption, with keys the DBAs cannot use.",
+    "industryVsComptia": "SY0-701 lists encryption levels as full-disk, partition, file, volume, database and record; study material describes record level as encrypting individual records or columns with separate keys. Practitioners usually call this column-level, field-level or application-layer encryption.",
+    "tags": [
+      "crypto",
+      "encryption"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-011",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A financial firm encrypts employee mailboxes. Regulators require that the firm be able to decrypt any mailbox during an investigation, even if the employee has left or lost the private key. Which of the following BEST supports this requirement?",
+    "options": [
+      {
+        "text": "Key escrow",
+        "why": "Correct: a trusted custodian holds copies of the keys so data can be recovered when the original holder cannot provide them."
+      },
+      {
+        "text": "Key stretching",
+        "why": "Key stretching strengthens password-derived keys against guessing; it provides no way to recover a lost key."
+      },
+      {
+        "text": "Key exchange",
+        "why": "Key exchange lets parties securely agree on or share a session key; it does not retain keys for later recovery."
+      },
+      {
+        "text": "Certificate revocation",
+        "why": "Revoking a certificate marks it untrusted; it does not help decrypt data protected by the associated key."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Recovery of encrypted data when the key holder is unavailable is the purpose of key escrow. The trade-off is that escrowed keys must be tightly protected.",
+    "industryVsComptia": null,
+    "tags": [
+      "pki",
+      "keys"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-012",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Several competing shipping companies want a shared record of container custody transfers. Every member must be able to view and verify the history, any attempt to alter a past entry must be evident, and no single company should control the record. Which of the following BEST meets these requirements?",
+    "options": [
+      {
+        "text": "A distributed blockchain ledger shared among members",
+        "why": "Correct: each block is chained by hash and replicated across members, so tampering is evident and no one party controls it."
+      },
+      {
+        "text": "A central database with record-level encryption",
+        "why": "Encryption protects confidentiality, but whoever operates the central database controls the record."
+      },
+      {
+        "text": "An escrow agent holding signed copies of each entry",
+        "why": "This places custody with a single third party, contradicting the requirement that no one entity controls the record."
+      },
+      {
+        "text": "An internal PKI with an offline root CA",
+        "why": "PKI can authenticate members, but on its own it does not provide a shared, tamper-evident transaction history."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Shared visibility, tamper evidence, and no single owner are the defining traits of a blockchain or open public ledger. Its value is integrity and transparency, not confidentiality.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "blockchain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-013",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A bank wants to ensure that if an attacker records today's encrypted TLS sessions and later steals the web server's long-term private key, the recorded sessions still cannot be decrypted. Which of the following should the security team require in the TLS configuration to BEST meet this goal?",
+    "options": [
+      {
+        "text": "Ephemeral Diffie-Hellman key exchange such as ECDHE",
+        "why": "Correct: each session derives its key from temporary key pairs that are discarded, so a later theft of the long-term key does not expose past sessions (forward secrecy)."
+      },
+      {
+        "text": "RSA key exchange with a 4096-bit key",
+        "why": "With RSA key exchange, the session secret is encrypted with the server's long-term key; stealing that key decrypts recorded sessions regardless of key length."
+      },
+      {
+        "text": "AES-256 as the bulk encryption cipher",
+        "why": "The bulk cipher's strength does not help if the session key itself can be recovered from the recorded key exchange."
+      },
+      {
+        "text": "OCSP stapling for the server certificate",
+        "why": "OCSP stapling delivers revocation status; it has no effect on whether past session keys can be recovered."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Forward secrecy comes from ephemeral key exchange (DHE/ECDHE). The long-term key only authenticates the server; it is never used to protect the session key, so compromising it later does not reveal recorded traffic. TLS 1.3 removed static RSA key exchange for this reason.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "key-exchange",
+      "tls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-014",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A company must encrypt 4 TB of nightly backup data as quickly as possible before the tapes are shipped offsite. Which of the following algorithms is MOST appropriate for encrypting the data itself?",
+    "options": [
+      {
+        "text": "AES-256",
+        "why": "Correct: AES is a fast symmetric block cipher designed for encrypting large volumes of data."
+      },
+      {
+        "text": "RSA-4096",
+        "why": "RSA is asymmetric and far too slow for bulk data; it is used to protect small values such as keys or for signatures."
+      },
+      {
+        "text": "SHA-512",
+        "why": "SHA-512 is a one-way hash; it cannot be decrypted, so it cannot protect data that must be restored."
+      },
+      {
+        "text": "ECDSA",
+        "why": "ECDSA is a digital signature algorithm; it proves origin and integrity but does not encrypt data."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Symmetric encryption is used for bulk data because it is much faster than asymmetric encryption. Asymmetric algorithms are typically used to exchange or protect the symmetric key.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "symmetric"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-015",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An administrator needs a publicly trusted TLS certificate for a new web server and has just generated a key pair on that server. Which of the following should the administrator submit to the certificate authority NEXT?",
+    "options": [
+      {
+        "text": "A CSR containing the public key and the server's identifying details",
+        "why": "Correct: the certificate signing request carries the public key and subject information; the CA validates it and returns a signed certificate."
+      },
+      {
+        "text": "The private key, so the CA can bind it to the issued certificate",
+        "why": "The private key must never leave the server's control; the CA only needs the public key to issue a certificate."
+      },
+      {
+        "text": "A self-signed certificate for the CA to add to its trust store",
+        "why": "A CA does not trust or countersign a customer's self-signed certificate; it issues a new certificate from a CSR."
+      },
+      {
+        "text": "The bare public key, without any subject or domain details",
+        "why": "The CA must know which identity (CN/SANs) to bind and validate, and needs proof of private-key possession; a CSR packages both with the public key."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "CSR generation: create the key pair, build a CSR with the public key and subject/SAN details signed by the private key, send the CSR to the CA, then install the returned certificate. The private key stays on the server (or in its HSM).",
+    "industryVsComptia": null,
+    "tags": [
+      "pki",
+      "certificates"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-016",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Customers report browser warnings saying the certificate is not trusted when visiting a company's newly launched public website. The administrator confirms the certificate's hostname and validity dates are correct, and that it was generated and signed on the web server itself. Which of the following is the BEST fix?",
+    "options": [
+      {
+        "text": "Replace it with a certificate issued by a third-party CA",
+        "why": "Correct: the certificate is self-signed, and only a certificate chaining to a CA already in browsers' trust stores removes the warning for the public."
+      },
+      {
+        "text": "Reissue it as a wildcard certificate signed by the same server",
+        "why": "A wildcard changes which names are covered, but a certificate signed by the server itself is still self-signed and untrusted."
+      },
+      {
+        "text": "Regenerate the certificate using a longer key length",
+        "why": "Key length affects resistance to brute force, not trust; a longer self-signed certificate still triggers the warning."
+      },
+      {
+        "text": "Enable OCSP stapling on the web server",
+        "why": "Stapling delivers revocation status from a CA; it cannot make an untrusted self-signed certificate trusted."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Self-signed certificates are acceptable for internal testing or where the organization distributes its own root, but public visitors' browsers only trust certificates that chain to a root of trust in their stores, which means a third-party public CA.",
+    "industryVsComptia": null,
+    "tags": [
+      "pki",
+      "certificates"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-017",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A software vendor distributes updates through third-party mirror sites. Each mirror hosts the update file and a text file containing its SHA-256 hash. The security team worries that an attacker who compromises a mirror could replace both files. Which of the following BEST allows customers to verify that an update is authentic and unmodified?",
+    "options": [
+      {
+        "text": "Verify a digital signature on the update using the vendor's public key",
+        "why": "Correct: only the vendor's private key can produce a valid signature, so a mirror attacker cannot forge one for a modified file."
+      },
+      {
+        "text": "Compare the file's SHA-256 hash with the value published on the mirror",
+        "why": "An attacker who controls the mirror can replace the hash file too, so a matching hash proves nothing about origin."
+      },
+      {
+        "text": "Download the update over HTTPS from the mirror",
+        "why": "HTTPS protects the transfer and authenticates the mirror, but the compromised mirror itself is serving the malicious file."
+      },
+      {
+        "text": "Recompute the hash with SHA-512 instead of SHA-256",
+        "why": "A stronger hash still provides only integrity against a reference value the attacker can also change; it adds no authentication."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A hash alone provides integrity only if the reference value comes from a trusted channel. A digital signature (hash encrypted with the signer's private key) adds authentication of origin and non-repudiation, which is what code signing provides.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "digital-signatures",
+      "hashing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-1.4-018",
+    "objective": "1.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A DLP review finds that an engineer regularly emails vacation photos to a personal account. The images open and display normally, but forensic analysis reveals compressed source code archives embedded within the image data. Which of the following techniques was MOST likely used?",
+    "options": [
+      {
+        "text": "Steganography",
+        "why": "Correct: steganography conceals data inside another medium, such as an image, so that the carrier looks normal and the hidden data's existence is not obvious."
+      },
+      {
+        "text": "Tokenization",
+        "why": "Tokenization replaces sensitive values with random surrogates stored in a vault; it does not hide files inside images."
+      },
+      {
+        "text": "Data masking",
+        "why": "Data masking partially hides or alters displayed data, such as showing only the last four digits; it does not embed data in a carrier file."
+      },
+      {
+        "text": "Hashing",
+        "why": "Hashing produces a fixed-length digest that cannot be reversed, so it could not be used to carry recoverable source code."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Steganography is an obfuscation technique that hides the existence of data rather than making it unreadable. Unusual file sizes and embedded content in otherwise normal media are typical indicators.",
+    "industryVsComptia": null,
+    "tags": [
+      "crypto",
+      "obfuscation"
+    ],
+    "status": "reviewed"
+  }
+]

@@ -1,0 +1,179 @@
+[
+  {
+    "id": "pbq-2.2-101",
+    "objective": "2.2",
+    "type": "match",
+    "title": "Human vectors and social engineering",
+    "prompt": "During awareness training, employees review recent social engineering attempts against the company. Match each human vector to the description that fits it. One description will not be used.",
+    "leftLabel": "Human vector",
+    "rightLabel": "Description",
+    "pairs": [
+      {
+        "left": "Vishing",
+        "right": "Fraudulent phone call or voicemail",
+        "why": "Vishing is voice phishing: the lure arrives as a call or voicemail."
+      },
+      {
+        "left": "Smishing",
+        "right": "Text message with a fake delivery link",
+        "why": "Smishing is SMS phishing: the lure arrives as a text message."
+      },
+      {
+        "left": "Watering hole",
+        "right": "Compromising a site the targets often visit",
+        "why": "The attacker infects a third-party site the target group trusts and waits for victims to come to it."
+      },
+      {
+        "left": "Typosquatting",
+        "right": "Registering a misspelled lookalike domain",
+        "why": "Typosquatting relies on users mistyping or misreading a URL, landing on the attacker's domain."
+      },
+      {
+        "left": "Pretexting",
+        "right": "Invented scenario to justify a request",
+        "why": "Pretexting is the fabricated story (an audit, an urgent vendor issue) that makes the request seem legitimate."
+      },
+      {
+        "left": "Business email compromise",
+        "right": "Hijacked executive mailbox requests a wire",
+        "why": "BEC uses a compromised or spoofed legitimate business account, often to redirect payments."
+      }
+    ],
+    "distractors": [
+      "Deliberately spreading false information"
+    ],
+    "explanation": "Vishing and smishing are defined by the channel, watering hole and typosquatting by where the victim is lured, pretexting by the story, and BEC by the abuse of a trusted business mailbox. The unused description is disinformation, which is a separate human vector.",
+    "industryVsComptia": null,
+    "difficulty": 1,
+    "tags": [
+      "social-engineering",
+      "phishing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-2.4-201",
+    "objective": "2.4",
+    "type": "categorize",
+    "difficulty": 2,
+    "title": "Identify the malware from its behavior",
+    "prompt": "An incident responder is summarizing findings from several malware cases. Classify each observed behavior by the type of malware it MOST likely indicates. One type will not be used.",
+    "dimensions": [
+      {
+        "id": "malware",
+        "label": "Malware type",
+        "options": [
+          "Ransomware",
+          "Worm",
+          "Virus",
+          "Trojan",
+          "Logic bomb",
+          "Rootkit",
+          "Keylogger"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "text": "Encrypts file shares and demands payment",
+        "answers": {
+          "malware": "Ransomware"
+        },
+        "why": "Holding data hostage for payment is the defining trait of ransomware."
+      },
+      {
+        "text": "Spreads host to host via an SMB flaw, no clicks",
+        "answers": {
+          "malware": "Worm"
+        },
+        "why": "Self-propagation across the network without user action is a worm."
+      },
+      {
+        "text": "Infects an executable; runs when the user opens it",
+        "answers": {
+          "malware": "Virus"
+        },
+        "why": "Attaching to a host file and needing user execution to spread is a virus."
+      },
+      {
+        "text": "Free PDF converter that secretly opens a backdoor",
+        "answers": {
+          "malware": "Trojan"
+        },
+        "why": "Malicious code disguised as legitimate software is a Trojan."
+      },
+      {
+        "text": "Wipes payroll DB once its author's account is disabled",
+        "answers": {
+          "malware": "Logic bomb"
+        },
+        "why": "Dormant code that fires when a specific condition is met is a logic bomb."
+      },
+      {
+        "text": "Modifies the kernel to hide its files and processes",
+        "answers": {
+          "malware": "Rootkit"
+        },
+        "why": "Concealing itself at a privileged level to evade detection is a rootkit."
+      }
+    ],
+    "explanation": "Focus on the distinguishing behavior: worms self-propagate while viruses need a host file and user action; Trojans rely on disguise; logic bombs wait for a trigger (date, event, account change); rootkits hide at the kernel or firmware level; ransomware extorts through encryption; keyloggers capture input, but no behavior here describes one, so Keylogger is unused. Rootkits often require reimaging because the infected OS cannot be trusted to report on itself.",
+    "industryVsComptia": null,
+    "tags": [
+      "malware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-2.5-101",
+    "objective": "2.5",
+    "type": "match",
+    "title": "Assessment findings and mitigation techniques",
+    "prompt": "A security manager is triaging findings from a recent assessment. Match each finding to the mitigation technique that BEST addresses it. One technique will not be used.",
+    "leftLabel": "Finding",
+    "rightLabel": "Mitigation technique",
+    "pairs": [
+      {
+        "left": "Kiosk PCs run portable, unapproved executables",
+        "right": "Application allow list",
+        "why": "Only an allow list blocks execution of anything not explicitly approved, including portable apps that need no installation rights."
+      },
+      {
+        "left": "IoT cameras share a flat network with finance",
+        "right": "Segmentation",
+        "why": "Placing the cameras in their own segment (VLAN/subnet with filtering) stops them from reaching finance systems."
+      },
+      {
+        "left": "Retired file server is still online",
+        "right": "Decommissioning",
+        "why": "A system with no business purpose should be formally decommissioned (data sanitized, removed from the network), not maintained."
+      },
+      {
+        "left": "Vendor fix exists for an exploited web CVE",
+        "right": "Patching",
+        "why": "When the vendor has released a fix for a known exploited flaw, applying the patch removes the vulnerability itself."
+      },
+      {
+        "left": "Help desk staff are domain administrators",
+        "right": "Least privilege",
+        "why": "Help desk tasks do not require domain admin rights; least privilege reduces them to only what the job needs."
+      },
+      {
+        "left": "Data on frequently lost laptops is readable",
+        "right": "Encryption",
+        "why": "Full-disk encryption keeps data on a lost or stolen laptop confidential without the key."
+      }
+    ],
+    "distractors": [
+      "Monitoring"
+    ],
+    "explanation": "Each finding has a root cause that one 2.5 technique removes directly: uncontrolled execution, a flat network, an unneeded asset, a known flaw, excessive rights and unprotected data at rest. Monitoring is detective; it would show the problems but would not BEST fix any of them.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "mitigation",
+      "hardening"
+    ],
+    "status": "reviewed"
+  }
+]

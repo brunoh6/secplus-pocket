@@ -1,0 +1,1881 @@
+[
+  {
+    "id": "q-3.1-001",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company moved its customer portal to virtual machines hosted by an IaaS provider. An internal audit finds that the operating systems on those VMs are missing several months of security patches. Which party is PRIMARILY responsible for remediating this finding?",
+    "options": [
+      {
+        "text": "The company, because it manages the guest operating systems",
+        "why": "Correct: in IaaS the customer owns everything from the guest OS upward, including patching, applications, data, and access."
+      },
+      {
+        "text": "The provider, because it owns the hypervisor and host hardware",
+        "why": "The provider does secure the hypervisor and physical hosts, but the guest OS running on top of them is the customer's layer in IaaS."
+      },
+      {
+        "text": "The provider, because OS patching is part of every cloud model",
+        "why": "OS patching shifts to the provider only in PaaS and SaaS; in IaaS the guest OS remains the customer's job."
+      },
+      {
+        "text": "Both parties equally, because IaaS splits each OS task in half",
+        "why": "The responsibility matrix assigns each layer to one party; it does not split guest OS patching between them."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The responsibility matrix shifts more layers to the provider as you move from IaaS to PaaS to SaaS. In IaaS the provider stops at the hypervisor, so guest OS patching belongs to the customer.",
+    "industryVsComptia": null,
+    "tags": [
+      "cloud",
+      "shared-responsibility"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-003",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A hosting company runs workloads for multiple unrelated customers on shared physical servers. A new contract requires that a kernel-level exploit in one customer's workload must not be able to affect any other customer's workload. Which of the following architectures BEST meets this requirement?",
+    "options": [
+      {
+        "text": "A separate container for each customer on a shared container host",
+        "why": "Containers share the host's OS kernel, so a kernel-level exploit in one container can affect every container on that host."
+      },
+      {
+        "text": "A separate virtual machine for each customer, each with its own OS",
+        "why": "Correct: each VM runs its own guest kernel on the hypervisor, so a kernel exploit is contained to that guest unless the attacker also achieves a VM escape."
+      },
+      {
+        "text": "A separate VLAN for each customer's workloads on the same host",
+        "why": "VLANs separate network traffic, but workloads on the same host and kernel still share the component being exploited."
+      },
+      {
+        "text": "A separate microservice for each customer behind one API gateway",
+        "why": "Microservices decompose an application; they say nothing about kernel isolation and usually run as containers on shared hosts."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "The deciding factor is the shared kernel. Virtualization gives each tenant its own OS kernel, while containerization trades that isolation for lower overhead and faster startup.",
+    "industryVsComptia": null,
+    "tags": [
+      "virtualization",
+      "containers",
+      "multi-tenancy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-004",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "An operations team builds cloud environments by hand through the provider's console. Audits keep finding configuration drift between staging and production, and there is no record of who changed what. Which of the following would BEST address both problems?",
+    "options": [
+      {
+        "text": "Serverless functions",
+        "why": "Serverless removes server management for code, but it does not define or version the surrounding infrastructure that is drifting."
+      },
+      {
+        "text": "Software-defined networking",
+        "why": "SDN centralizes network control, but it covers only the network layer and does not by itself give versioned, repeatable builds of whole environments."
+      },
+      {
+        "text": "Infrastructure as code",
+        "why": "Correct: templates kept in version control produce identical environments every time and leave a reviewable history of each change."
+      },
+      {
+        "text": "Containerization",
+        "why": "Containers make application packaging consistent, but the cloud infrastructure they run on would still be configured by hand."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "IaC turns infrastructure into reviewed, versioned code. That removes manual drift and creates an audit trail through the repository history.",
+    "industryVsComptia": null,
+    "tags": [
+      "iac",
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-005",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company keeps its ERP system in its own data center and runs customer analytics in a public cloud, replicating data between the two every night. Each environment has its own identity store and its own firewall rule sets, managed by different teams. Which of the following is the GREATEST security concern created by this hybrid architecture?",
+    "options": [
+      {
+        "text": "Inconsistent security policy and visibility across environments",
+        "why": "Correct: two identity stores and two independently managed rule sets make it easy for controls, logging, and access reviews to drift apart, leaving gaps an attacker can use."
+      },
+      {
+        "text": "Loss of customer responsibility for data stored in the public cloud",
+        "why": "The customer never loses responsibility for its data in any cloud model, so this is not a real consequence of going hybrid."
+      },
+      {
+        "text": "Inability to encrypt the replicated data while it is in transit",
+        "why": "Replication between sites can be protected with a VPN, TLS, or a dedicated encrypted link; hybrid does not prevent encryption in transit."
+      },
+      {
+        "text": "Dependence on one provider's proprietary analytics services",
+        "why": "Vendor lock-in is a portability and business concern; it does not create the control and visibility gaps caused by separate identity stores and rule sets."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Hybrid cloud mixes two operating models with different responsibilities and tooling. The characteristic risk is inconsistency: separate identities, policies, and monitoring. Federating identity and applying one policy and logging baseline across both sides addresses it.",
+    "industryVsComptia": null,
+    "tags": [
+      "cloud",
+      "hybrid"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-006",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A company moves its email from on-premises servers to a cloud provider. The contract includes an SLA under which the provider pays service credits and covers breach-notification costs when an outage or breach is caused by the provider's infrastructure. Which architecture consideration does this contract term PRIMARILY address?",
+    "options": [
+      {
+        "text": "Risk transference",
+        "why": "Correct: the contract shifts part of the financial impact of outages and breaches from the company to the provider."
+      },
+      {
+        "text": "Ease of deployment",
+        "why": "Ease of deployment is about how quickly and repeatably a service can be stood up, not who pays when it fails."
+      },
+      {
+        "text": "Scalability",
+        "why": "Scalability is the ability to add or remove capacity as demand changes; the SLA term says nothing about capacity."
+      },
+      {
+        "text": "Patch availability",
+        "why": "Patch availability concerns whether fixes exist for a system; the clause is about financial liability, not patching."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Contracts, SLAs, and insurance are classic risk transference. Remember that transferring the financial impact does not transfer accountability: the company is still accountable for its customers' data.",
+    "industryVsComptia": null,
+    "tags": [
+      "cloud",
+      "considerations",
+      "risk-transference"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-007",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A development team moves an image-processing job from a VM to functions on a serverless platform. The functions run whenever a file is uploaded to cloud storage. Which of the following BEST describes what remains the team's responsibility after the move?",
+    "options": [
+      {
+        "text": "The function code and the permissions granted to the function",
+        "why": "Correct: in serverless the customer still owns its code, its secrets, and the IAM role or permissions each function runs with."
+      },
+      {
+        "text": "Patching the operating system that runs the function runtime",
+        "why": "The serverless provider manages and patches the underlying operating system and runtime environment."
+      },
+      {
+        "text": "Hardening the hypervisor that hosts the function environments",
+        "why": "The hypervisor and host infrastructure are the provider's responsibility in every cloud service model."
+      },
+      {
+        "text": "Scaling the number of servers when uploads increase sharply",
+        "why": "The platform scales function instances automatically; the team does not manage servers at all."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Serverless removes server, OS, and runtime management from the customer, but not application security. Over-permissioned function roles and vulnerable function code are the main serverless risks the customer must control.",
+    "industryVsComptia": null,
+    "tags": [
+      "serverless",
+      "cloud",
+      "shared-responsibility"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-008",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A retailer splits its monolithic e-commerce application into dozens of microservices that call each other over internal APIs. The perimeter firewall and WAF remain unchanged. Which of the following is the MOST important additional control for this architecture?",
+    "options": [
+      {
+        "text": "Authenticate and authorize every service-to-service API call",
+        "why": "Correct: microservices create many internal API paths; requiring each service to prove its identity and be authorized (e.g. mTLS, tokens) stops a compromised service from freely calling the rest."
+      },
+      {
+        "text": "Use one shared service account for all internal API calls",
+        "why": "A shared credential violates least privilege: stealing it from any one service would grant access to every other service."
+      },
+      {
+        "text": "Place a load balancer in front of each microservice",
+        "why": "Load balancers spread requests and improve availability, but they do not verify which service is calling or whether it is allowed to."
+      },
+      {
+        "text": "Add a second perimeter firewall in front of the existing WAF",
+        "why": "Service-to-service calls are east-west traffic that never crosses the perimeter, so another perimeter device would not see them."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Microservices contain failures and compromises to one service only if the services do not implicitly trust each other. The larger API attack surface requires per-call authentication and authorization inside the application.",
+    "industryVsComptia": null,
+    "tags": [
+      "microservices",
+      "api"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-009",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A data center uses software-defined networking, with a central controller pushing forwarding and segmentation policy to all switches. An assessment produces the findings below. Which of the following represents the GREATEST risk?",
+    "options": [
+      {
+        "text": "The controller's management API is reachable from the user network",
+        "why": "Correct: anyone who can reach and abuse the controller API can rewrite forwarding and segmentation policy for the entire network at once."
+      },
+      {
+        "text": "Several data plane switches have unused access ports enabled",
+        "why": "Unused enabled ports are a real but local weakness, limited to the switches and segments they connect to."
+      },
+      {
+        "text": "Several switches run firmware one minor release behind the latest",
+        "why": "Slightly outdated switch firmware is a routine patching item; with no known exploited flaw, it is far less severe than an exposed controller."
+      },
+      {
+        "text": "The standby controller is in the same data center as the primary",
+        "why": "Co-locating the controllers weakens resilience to a site outage, but it does not let anyone rewrite network policy."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SDN centralizes the control plane, so the controller and its APIs are the highest-value target. Restrict controller access to a dedicated management network, require strong authentication, and log every change.",
+    "industryVsComptia": null,
+    "tags": [
+      "sdn",
+      "network-infrastructure"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-010",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A defense contractor keeps its weapons-design workstations on an air-gapped network with no wired or wireless connection to any other network. Engineers occasionally carry in vendor software updates. Which of the following is the MOST likely way malware would reach this network?",
+    "options": [
+      {
+        "text": "Removable media used to carry files into the network",
+        "why": "Correct: with no network path, the remaining entry point is the media used to transfer files, which is why it must be scanned and tightly controlled."
+      },
+      {
+        "text": "A misconfigured VLAN trunk shared with the corporate LAN",
+        "why": "VLAN misconfiguration threatens logical segmentation on shared switches; an air-gapped network shares no switching hardware."
+      },
+      {
+        "text": "DNS tunneling from an infected workstation to the internet",
+        "why": "DNS tunneling needs a network path to a resolver; an air-gapped network has no route to the internet."
+      },
+      {
+        "text": "A split-tunnel VPN connection from a remote engineer's laptop",
+        "why": "An air-gapped network accepts no VPN connections, so there is no tunnel to misconfigure."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Physical isolation removes network attack paths but shifts the risk to removable media and insiders. Controls include dedicated scanning stations, approved and encrypted media, and strict transfer procedures.",
+    "industryVsComptia": null,
+    "tags": [
+      "air-gap",
+      "network-infrastructure"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-011",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company with 40 branch offices plans to replace the locally managed firewalls and directory servers at each branch with a single centrally managed security platform at headquarters. Which of the following is the PRIMARY security drawback of this centralized approach?",
+    "options": [
+      {
+        "text": "It creates a single point of failure and a high-value target",
+        "why": "Correct: if the central platform fails or is compromised, every branch is affected at once, so it needs redundancy and strong protection."
+      },
+      {
+        "text": "Security policies become inconsistent from branch to branch",
+        "why": "Inconsistent policy is a drawback of the current decentralized model; centralization fixes it."
+      },
+      {
+        "text": "Logs are harder to aggregate for correlation and auditing",
+        "why": "Centralization makes log aggregation easier; scattered logs are a decentralized problem."
+      },
+      {
+        "text": "More local staff need privileged administrative access",
+        "why": "Central management reduces the number of local administrators; many privileged local admins is a decentralized issue."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Centralized: consistent policy and easier monitoring, but a single point of failure and an attractive target. Decentralized: resilient and autonomous, but inconsistent and harder to monitor. Mitigate centralization with high availability and hardened access.",
+    "industryVsComptia": null,
+    "tags": [
+      "centralized",
+      "decentralized"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-012",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "An online retailer runs its storefront on on-premises servers sized for holiday-season peaks. For most of the year that capacity sits idle, yet during flash sales the site still slows down. Which characteristic of a cloud architecture would BEST address this?",
+    "options": [
+      {
+        "text": "Scalability, adding or removing capacity as demand changes",
+        "why": "Correct: cloud resources can grow for a flash sale and shrink afterward, fixing both the idle cost and the slowdowns."
+      },
+      {
+        "text": "Risk transference, shifting outage liability to the provider",
+        "why": "Moving liability to a provider does not add capacity, so the site would still slow down under peak load."
+      },
+      {
+        "text": "Ease of recovery, restoring service quickly after a failure",
+        "why": "The problem is insufficient and wasted capacity, not recovery from a failure."
+      },
+      {
+        "text": "Patch availability, receiving vendor fixes more promptly",
+        "why": "Patching affects vulnerabilities, not the mismatch between capacity and demand."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Fixed on-premises capacity forces a choice between overspending and underperforming. Cloud scalability improves cost and responsiveness together.",
+    "industryVsComptia": null,
+    "tags": [
+      "cloud",
+      "considerations",
+      "scalability"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-013",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A manufacturer's robotic welding cells are controlled by devices running a real-time operating system. A security engineer proposes installing the company's standard EDR agent on these controllers, but the equipment vendor refuses. Which of the following is the MOST likely reason?",
+    "options": [
+      {
+        "text": "The agent could consume scarce resources and cause missed deadlines",
+        "why": "Correct: an RTOS must complete tasks within strict time limits on limited compute; extra processing from an agent could break that determinism and create a safety hazard."
+      },
+      {
+        "text": "The controllers' data is not sensitive enough to justify protection",
+        "why": "Even with no sensitive data, a compromised controller threatens integrity and physical safety, so protection still matters."
+      },
+      {
+        "text": "The controllers could not send telemetry to the EDR console",
+        "why": "Many RTOS-based controllers are networked; reporting is not the vendor's concern, which is about the controller's real-time operation."
+      },
+      {
+        "text": "The RTOS's built-in malware protection would conflict with the agent",
+        "why": "An RTOS is optimized for predictable timing, not security features; it does not normally include anti-malware for an agent to conflict with."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "RTOS and embedded devices are constrained by timing, power, and compute. Security must usually be added around them (segmentation, traffic monitoring, physical controls) rather than on them.",
+    "industryVsComptia": null,
+    "tags": [
+      "rtos",
+      "embedded",
+      "considerations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-014",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A power utility wants to build an inventory of the PLCs and HMIs on its SCADA network and identify outdated firmware. Some of these devices have crashed in the past when they received unexpected traffic. Which of the following approaches is BEST?",
+    "options": [
+      {
+        "text": "Passive monitoring of ICS traffic to fingerprint the devices",
+        "why": "Correct: listening to existing traffic reveals devices and firmware versions without sending anything that could disrupt fragile controllers."
+      },
+      {
+        "text": "An authenticated vulnerability scan of every PLC and HMI",
+        "why": "Even an authenticated scan actively sends traffic to each device, which is exactly what has crashed these fragile controllers before."
+      },
+      {
+        "text": "A full TCP port scan of each SCADA subnet after business hours",
+        "why": "Utilities operate around the clock, so after hours is still live operation, and a port scan generates the unexpected traffic that crashes these devices."
+      },
+      {
+        "text": "Installing endpoint agents on each PLC to report firmware versions",
+        "why": "PLCs are embedded controllers that generally cannot run third-party agents."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "In ICS/SCADA, availability and safety come first. Prefer passive discovery and monitoring, and schedule any active testing with operations staff during approved maintenance windows.",
+    "industryVsComptia": "Real-world ICS teams also use carefully throttled queries in native industrial protocols, but for the exam passive monitoring is the safe, expected answer when devices are fragile.",
+    "tags": [
+      "ics",
+      "scada",
+      "availability"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.1-015",
+    "objective": "3.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Developers build container images from whatever base images they find on a public registry. A scan of production finds several containers built on images with known critical vulnerabilities and one image with an embedded cryptominer. Which of the following would BEST prevent this going forward?",
+    "options": [
+      {
+        "text": "Allow only approved, scanned base images from a trusted internal registry",
+        "why": "Correct: controlling and scanning the image supply chain stops vulnerable or malicious images from being deployed in the first place."
+      },
+      {
+        "text": "Move each container into its own virtual machine for stronger isolation",
+        "why": "Stronger isolation limits blast radius but still runs the same vulnerable and malicious image content."
+      },
+      {
+        "text": "Run all containers on a separate VLAN from the rest of the network",
+        "why": "Network segmentation does not change what is inside the images; the cryptominer would still run."
+      },
+      {
+        "text": "Restart the containers daily so they always start from a clean state",
+        "why": "Containers restart from the same image, so a flaw or malware baked into the image comes right back."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A container is only as trustworthy as its image. Use trusted registries, image signing, and vulnerability scanning in the build pipeline.",
+    "industryVsComptia": null,
+    "tags": [
+      "containers",
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-001",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A SOC wants to inspect traffic on a critical production segment for signs of lateral movement. Management insists that the new solution must not add latency to the segment or become a point of failure for it. Which of the following deployments BEST meets these requirements?",
+    "options": [
+      {
+        "text": "An inline IPS configured to fail-open",
+        "why": "Fail-open keeps traffic flowing if the device dies, but an inline device still adds processing latency to every packet."
+      },
+      {
+        "text": "An IDS fed by a network TAP",
+        "why": "Correct: a TAP sends the IDS a copy of the traffic, so the live flow is unaffected by the sensor's latency or failure."
+      },
+      {
+        "text": "An NGFW placed in front of the segment",
+        "why": "A firewall inserted into the path is inline by definition, adding latency and a potential point of failure."
+      },
+      {
+        "text": "An inline IPS in detection-only mode",
+        "why": "Turning off blocking makes it behave passively, but traffic still physically passes through it, so latency and failure risk remain."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Inline vs tap/monitor is about placement, while active vs passive is about behavior. Only a tap/monitor placement takes the sensor out of the traffic path entirely; it works on a copy of the traffic.",
+    "industryVsComptia": null,
+    "tags": [
+      "ids",
+      "device-placement"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-002",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A firewall protects a segment that stores cardholder data. Policy states that protecting this data takes priority over keeping the segment reachable. Which of the following is the BEST behavior for the firewall if it suffers a hardware fault?",
+    "options": [
+      {
+        "text": "Fail-open, passing all traffic until the device is repaired",
+        "why": "Fail-open keeps the segment reachable but removes all filtering, which contradicts a policy that puts data protection first."
+      },
+      {
+        "text": "Switch to passive mode, logging traffic without filtering it",
+        "why": "Logging without enforcement still exposes the segment; it only records the exposure."
+      },
+      {
+        "text": "Fail-closed, blocking all traffic until the device is repaired",
+        "why": "Correct: fail-closed sacrifices availability to keep the protected segment unreachable while the control is down."
+      },
+      {
+        "text": "Revert to a default rule set that permits outbound sessions",
+        "why": "Allowing any traffic through a faulty device weakens protection, and outbound sessions are a common exfiltration path."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "The failure mode should follow the stated priority. Confidentiality first means fail-closed; uptime first would mean fail-open.",
+    "industryVsComptia": null,
+    "tags": [
+      "failure-modes",
+      "firewall"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-003",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Visitors have been plugging laptops into open wall jacks in conference rooms and getting network access. The company wants every device to authenticate with a corporate-issued certificate before the switch port forwards any traffic. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "MAC address filtering on the conference room switch ports",
+        "why": "MAC filtering uses no certificates, and MAC addresses are easy to spoof by copying one from an allowed device."
+      },
+      {
+        "text": "802.1X with EAP-TLS and a RADIUS authentication server",
+        "why": "Correct: 802.1X keeps the port closed until the supplicant authenticates, and EAP-TLS uses certificates validated by RADIUS."
+      },
+      {
+        "text": "Mirroring the conference room ports to an IDS for review",
+        "why": "Port mirroring lets an IDS watch traffic but grants access first; it detects rather than prevents and involves no authentication."
+      },
+      {
+        "text": "Assigning the conference room jacks to a screened subnet",
+        "why": "A screened subnet limits what connected devices reach, but anyone plugging in still gets access without authenticating."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Port-based NAC with 802.1X uses three roles: supplicant, authenticator (the switch), and authentication server (RADIUS). EAP-TLS adds the certificate requirement stated in the scenario.",
+    "industryVsComptia": null,
+    "tags": [
+      "802.1x",
+      "eap",
+      "port-security"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-004",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Administrators currently connect by RDP from their own workstations directly to servers in a restricted management zone. The security team wants to shrink the attack surface of that zone and enforce MFA and session logging for every administrative connection in one place. Which of the following is the BEST solution?",
+    "options": [
+      {
+        "text": "Give administrators a remote access VPN into the management zone",
+        "why": "A VPN encrypts the path and can require MFA at login, but once connected every admin workstation can still reach every server directly, so the zone's exposure does not shrink and individual RDP sessions are not brokered or recorded."
+      },
+      {
+        "text": "Route administrator workstations through a forward proxy server",
+        "why": "A forward proxy brokers outbound client requests such as web traffic; it is not designed to control or record RDP sessions into a protected zone."
+      },
+      {
+        "text": "Allow only a hardened jump server to connect to the management zone",
+        "why": "Correct: forcing all admin sessions through one hardened host shrinks what can reach the zone and centralizes MFA, logging, and recording."
+      },
+      {
+        "text": "Place a load balancer in front of the management zone servers",
+        "why": "A load balancer distributes connections for availability; it does not restrict who connects or add MFA and session logging."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "The key requirement is a single chokepoint for administrative access. A jump server provides it; the VPN option secures transport but leaves many direct paths into the zone.",
+    "industryVsComptia": "In practice this role is often filled by a bastion host or a PAM session broker, sometimes combined with privileged access workstations. CompTIA's objective term is 'jump server'.",
+    "tags": [
+      "jump-server",
+      "admin-access"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-005",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A public web application is receiving a steady stream of SQL injection attempts over HTTPS. The perimeter firewall is a stateful layer 4 device that permits TCP 443 to the web servers from any source. Which of the following would MOST effectively block these attacks while allowing legitimate customers through?",
+    "options": [
+      {
+        "text": "A web application firewall in front of the web servers",
+        "why": "Correct: a WAF inspects HTTP requests at layer 7 and can block injection patterns while letting normal requests pass."
+      },
+      {
+        "text": "A layer 4 rule limiting connections per source IP address",
+        "why": "Rate limiting by IP and port cannot see the request contents, so a single well-formed injection request still gets through."
+      },
+      {
+        "text": "A network IDS attached to the web segment's SPAN port",
+        "why": "An IDS on a SPAN port is passive and cannot block, and it cannot read the encrypted HTTPS payloads anyway."
+      },
+      {
+        "text": "A load balancer that performs TLS offloading for the servers",
+        "why": "TLS offloading decrypts traffic for performance, but a load balancer alone does not inspect requests for injection attacks."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SQL injection lives in application-layer content. Only a layer 7 control that can inspect the decrypted HTTP request, such as a WAF, can block it selectively.",
+    "industryVsComptia": null,
+    "tags": [
+      "waf",
+      "firewall"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-006",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company's workforce is mostly remote and uses many SaaS applications. All user traffic is backhauled through a VPN concentrator at headquarters for inspection, causing heavy latency. Leadership wants secure web gateway, CASB, ZTNA, and firewall policies enforced close to users wherever they work. Which of the following BEST meets this goal?",
+    "options": [
+      {
+        "text": "Deploy SD-WAN to choose the best path between offices",
+        "why": "SD-WAN optimizes connectivity between sites and to the cloud, but on its own it does not deliver the cloud security stack to individual remote users."
+      },
+      {
+        "text": "Adopt SASE to deliver networking and security from the cloud",
+        "why": "Correct: SASE combines network access with cloud-delivered SWG, CASB, ZTNA, and firewall services enforced at points of presence near the user."
+      },
+      {
+        "text": "Upgrade the VPN concentrator and enable split tunneling",
+        "why": "Split tunneling reduces latency by sending SaaS traffic straight to the internet, which bypasses the inspection leadership wants to keep."
+      },
+      {
+        "text": "Replace the headquarters firewall with a larger UTM appliance",
+        "why": "A bigger appliance at headquarters still requires backhauling remote traffic, so the latency problem remains."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "The giveaways are remote users, SaaS, and security enforced near the user. SD-WAN is the connectivity piece; SASE adds the cloud-delivered security services.",
+    "industryVsComptia": null,
+    "tags": [
+      "sase",
+      "sd-wan",
+      "remote-access"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-007",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company is deploying a public-facing web server that must query an internal database server. The security architect wants to limit the damage if the web server is ever compromised. Which of the following placements is BEST?",
+    "options": [
+      {
+        "text": "Web server in the screened subnet, database in the internal zone",
+        "why": "Correct: the internet reaches only the screened subnet, and a firewall rule lets just the web server reach the database on its database port."
+      },
+      {
+        "text": "Web server and database both in the screened subnet",
+        "why": "Putting the database in the screened subnet exposes sensitive data in a zone designed for internet-facing systems."
+      },
+      {
+        "text": "Web server and database both in the internal zone",
+        "why": "Forwarding internet traffic into the internal zone means a compromised web server puts the attacker inside the trusted network."
+      },
+      {
+        "text": "Web server in the internal zone, database in the screened subnet",
+        "why": "This inverts the zones: the internet-facing system sits in the trusted zone and the data sits in the less trusted one."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Device placement follows trust levels: internet-facing systems in the screened subnet, data in more restricted zones, with only the specific required flows allowed between zones.",
+    "industryVsComptia": null,
+    "tags": [
+      "device-placement",
+      "security-zones",
+      "screened-subnet"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-008",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A company's public web application runs on four identical servers. Users see errors whenever one server goes down, and traffic is spread unevenly, so one server is often overloaded. Which of the following BEST addresses both problems?",
+    "options": [
+      {
+        "text": "A load balancer with health checks in front of the servers",
+        "why": "Correct: it distributes requests across the pool and stops sending traffic to a server that fails its health check."
+      },
+      {
+        "text": "A forward proxy that caches web content for internal users",
+        "why": "A forward proxy serves internal clients going out, not public users coming in to the application."
+      },
+      {
+        "text": "A jump server that controls administrative access to the servers",
+        "why": "A jump server secures admin connections; it does nothing to distribute or reroute user traffic."
+      },
+      {
+        "text": "An IDS sensor that monitors traffic reaching the servers",
+        "why": "An IDS detects malicious traffic but neither balances load nor routes around failed servers."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Load balancers improve availability and performance by spreading load and removing unhealthy nodes from the pool.",
+    "industryVsComptia": null,
+    "tags": [
+      "load-balancer",
+      "availability"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-009",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Management wants all employee web browsing to be logged, filtered by URL category, and sent to the internet from a single company address. Which of the following BEST meets these requirements?",
+    "options": [
+      {
+        "text": "A forward proxy server at the internet edge",
+        "why": "Correct: a forward proxy makes requests on behalf of internal clients, so it can log, filter by category, and present one source address."
+      },
+      {
+        "text": "A reverse proxy server in front of the web servers",
+        "why": "A reverse proxy handles inbound requests to the company's own servers, not employees' outbound browsing."
+      },
+      {
+        "text": "A NAT gateway on the perimeter router",
+        "why": "NAT can present a single company address, but it cannot filter by URL category or log which sites users browse."
+      },
+      {
+        "text": "A web application firewall at the network perimeter",
+        "why": "A WAF protects the company's own web applications from inbound attacks, not outbound user requests."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Direction is the key: forward proxy = inside clients going out; reverse proxy and WAF = outside clients coming in to your servers.",
+    "industryVsComptia": null,
+    "tags": [
+      "proxy",
+      "network-appliances"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-010",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company's IDS, fed by a SPAN port, regularly alerts on exploit attempts against an internal application server, but analysts often see the alerts only after the attack has finished. The company wants matching traffic dropped automatically before it reaches the server. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "An IPS deployed inline in front of the server",
+        "why": "Correct: traffic passes through an inline IPS, so it can actively drop malicious packets before they reach the server."
+      },
+      {
+        "text": "An additional IDS sensor fed by a network TAP",
+        "why": "A TAP-fed IDS still receives only a copy of traffic; it is passive and cannot block anything."
+      },
+      {
+        "text": "A SIEM correlation rule that pages the on-call analyst",
+        "why": "Paging a person still depends on a human response after the alert, which is the delay the company wants to remove."
+      },
+      {
+        "text": "A forward proxy for the server's outbound connections",
+        "why": "A forward proxy handles outbound requests and does not inspect inbound exploit traffic to the server."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Blocking requires an active device placed inline. Passive (IDS, TAP, SPAN) deployments only detect. The trade-off is added latency and a potential point of failure, so choose fail-open or fail-closed deliberately.",
+    "industryVsComptia": null,
+    "tags": [
+      "ips",
+      "inline",
+      "active-passive"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-011",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Employees are using an unapproved file-sharing application that tunnels over TCP 443 alongside normal web browsing. The current stateful firewall makes decisions only on IP addresses and ports. Which of the following would BEST block the application without disrupting other web traffic?",
+    "options": [
+      {
+        "text": "An NGFW policy that identifies the app regardless of port",
+        "why": "Correct: an NGFW is application-aware at layer 7, so it can block this one app while still allowing ordinary HTTPS."
+      },
+      {
+        "text": "A layer 4 rule that blocks outbound TCP 443 for all users",
+        "why": "A port-based rule cannot tell the app from normal browsing, so blocking 443 would break all secure web access."
+      },
+      {
+        "text": "A WAF placed in front of the company's public web servers",
+        "why": "A WAF protects the company's own web applications from inbound attacks; it does not control employees' outbound apps."
+      },
+      {
+        "text": "A reverse proxy that load-balances the company's web servers",
+        "why": "A reverse proxy handles inbound requests to company servers and does not see or filter outbound user traffic."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Layer 4 devices see only addresses, ports, and protocol. When unwanted traffic rides an allowed port, you need layer 7 application awareness, such as an NGFW.",
+    "industryVsComptia": null,
+    "tags": [
+      "ngfw",
+      "firewall",
+      "layer7"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-012",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A small company with one IT generalist needs firewalling, antimalware scanning, URL filtering, and VPN termination at its only office. Budget and staff time are limited. Which of the following BEST fits these needs?",
+    "options": [
+      {
+        "text": "A UTM appliance",
+        "why": "Correct: unified threat management combines firewall, antimalware, URL filtering, VPN, and more in one device with one console."
+      },
+      {
+        "text": "A web application firewall",
+        "why": "A WAF protects web applications from attacks like SQL injection; it does not provide VPN or user URL filtering."
+      },
+      {
+        "text": "A hardened jump server",
+        "why": "A jump server controls administrative access to a protected zone; it is not a perimeter security platform."
+      },
+      {
+        "text": "An IDS fed by a network TAP",
+        "why": "A TAP-fed IDS only detects and alerts; it cannot filter, scan, or terminate VPNs."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "UTM suits small sites that want many functions in one box. Its trade-offs are that it becomes a single point of failure and can bottleneck performance as traffic grows.",
+    "industryVsComptia": null,
+    "tags": [
+      "utm",
+      "firewall"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-013",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Traveling employees connect to the corporate network with an IPSec remote access VPN. In many hotels the connection fails because the guest network allows only outbound TCP 80 and 443. Which of the following would BEST let these users connect securely?",
+    "options": [
+      {
+        "text": "A TLS VPN that tunnels traffic over TCP 443",
+        "why": "Correct: a TLS (SSL) VPN uses the same port as HTTPS, which restrictive guest networks almost always allow."
+      },
+      {
+        "text": "IPSec in transport mode instead of tunnel mode",
+        "why": "Transport mode changes what is encapsulated, not the transport; IKE and ESP or NAT traversal on UDP are still blocked."
+      },
+      {
+        "text": "A site-to-site IPSec VPN to the hotel's gateway",
+        "why": "Site-to-site VPNs connect gateways the company controls; the company cannot build one with each hotel."
+      },
+      {
+        "text": "Split tunneling so only corporate traffic uses the VPN",
+        "why": "Split tunneling decides which traffic enters the tunnel; it cannot help when the tunnel itself cannot be established."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "IPSec relies on IKE (UDP 500), ESP, and NAT traversal (UDP 4500), which restrictive networks often block. TLS VPNs ride TCP 443 and pass almost anywhere.",
+    "industryVsComptia": "Some IPSec products can encapsulate IKE and ESP in TCP to traverse such networks, but the exam expects a TLS VPN as the answer for port-restricted networks.",
+    "tags": [
+      "vpn",
+      "remote-access",
+      "tls",
+      "ipsec"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-014",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A network IDS sensor is placed on the internet side of the perimeter firewall. Analysts are overwhelmed by alerts for scans and exploits that the firewall already blocks. They want to focus on malicious traffic that actually gets past the firewall. Which of the following is the BEST change?",
+    "options": [
+      {
+        "text": "Move the sensor to the internal side of the firewall",
+        "why": "Correct: a sensor behind the firewall sees only traffic the firewall allowed, so its alerts reflect threats that actually got in."
+      },
+      {
+        "text": "Convert the sensor to an inline IPS in its current position",
+        "why": "An inline IPS outside the firewall would still see and alert on all the internet noise the firewall already blocks."
+      },
+      {
+        "text": "Disable the sensor's scan-detection signatures",
+        "why": "Suppressing whole signature classes also hides scans that do get past the firewall, and exploit noise the firewall blocks would remain."
+      },
+      {
+        "text": "Add a second sensor beside the first to share the alert load",
+        "why": "A second sensor in the same place sees the same traffic and duplicates the alerts rather than focusing them."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Sensor placement determines what you see. Outside the firewall shows every attempt; inside shows what passed the firewall. Place sensors where the data answers the question you are asking.",
+    "industryVsComptia": null,
+    "tags": [
+      "sensors",
+      "ids",
+      "device-placement"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.2-015",
+    "objective": "3.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company opens a branch office and needs all traffic between the branch and headquarters encrypted across the internet. Users and servers at both sites must not need any VPN software or configuration. Which of the following BEST meets these requirements?",
+    "options": [
+      {
+        "text": "A site-to-site IPSec VPN between the two gateways",
+        "why": "Correct: the gateways encrypt and encapsulate whole packets between sites, so hosts behind them need no changes."
+      },
+      {
+        "text": "A TLS remote access VPN client on every branch workstation",
+        "why": "A per-user client requires software on every workstation, which the requirements rule out."
+      },
+      {
+        "text": "IPSec transport mode configured between each pair of hosts",
+        "why": "Transport mode is host-to-host and must be configured on every endpoint, which the requirements rule out."
+      },
+      {
+        "text": "A jump server at headquarters for branch users to log in to",
+        "why": "A jump server controls administrative sessions; it does not encrypt general traffic between sites."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Site-to-site VPNs are built between gateways and are transparent to users. Tunnel mode protects the entire original packet, including internal addresses.",
+    "industryVsComptia": null,
+    "tags": [
+      "vpn",
+      "ipsec",
+      "tunneling"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-001",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An online retailer wants to reduce its PCI DSS scope by ensuring that its order database never contains real card numbers. The payment processor must still be able to charge returning customers. Which of the following BEST meets these requirements?",
+    "options": [
+      {
+        "text": "Hash each card number with SHA-256 before storing it",
+        "why": "Hashing is one-way, so the card number could never be recovered to charge the customer, and the small card number space makes hashes guessable."
+      },
+      {
+        "text": "Encrypt each card number with AES before storing it",
+        "why": "Encrypted card numbers are still cardholder data, so the database and its key management stay in PCI scope."
+      },
+      {
+        "text": "Mask all but the last four digits in the order database",
+        "why": "A masked value cannot be used to process a charge, so the retailer would need to keep the full number elsewhere."
+      },
+      {
+        "text": "Replace each card number with a token mapped in a vault",
+        "why": "Correct: the database holds only tokens with no mathematical link to the card, and the processor's vault maps them back when a charge is needed."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Tokenization removes the sensitive value from the environment while keeping it usable through the vault. That is why it is the classic answer for PCI scope reduction.",
+    "industryVsComptia": null,
+    "tags": [
+      "tokenization",
+      "pci"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-002",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A healthcare provider in Germany is evaluating a cloud storage vendor whose lowest-cost tier automatically replicates data to data centers in several non-EU countries. The legal team objects because patient records could become subject to foreign laws. Which concept is the legal team PRIMARILY concerned with?",
+    "options": [
+      {
+        "text": "Data classification",
+        "why": "Classification assigns sensitivity labels; the objection here is about which country's laws apply, not how the records are labeled."
+      },
+      {
+        "text": "Geographic dispersion",
+        "why": "Geographic dispersion is a resilience strategy for surviving regional disasters; the replication it implies is what creates the legal problem, not the concern itself."
+      },
+      {
+        "text": "Data sovereignty",
+        "why": "Correct: data sovereignty means data is subject to the laws of the country where it is stored, which is exactly the legal team's objection."
+      },
+      {
+        "text": "Data retention",
+        "why": "Retention governs how long records are kept, not the jurisdiction they fall under."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Any mention of data becoming subject to another country's laws because of where it is stored points to data sovereignty.",
+    "industryVsComptia": null,
+    "tags": [
+      "sovereignty",
+      "compliance",
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-003",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A financial firm encrypts its database volumes at rest and requires TLS 1.3 for every client connection. A threat assessment warns that malware on the database server could read plaintext records from memory while queries are being processed. Which of the following would BEST address this remaining gap?",
+    "options": [
+      {
+        "text": "Enable transparent data encryption on the database tables",
+        "why": "TDE protects data files at rest; records are decrypted into memory for processing, which is where the threat operates."
+      },
+      {
+        "text": "Process the sensitive records inside a secure enclave",
+        "why": "Correct: a secure enclave (trusted execution environment) keeps data protected in memory during processing, addressing data in use."
+      },
+      {
+        "text": "Require IPSec between the app servers and the database",
+        "why": "IPSec protects data in transit, which TLS already covers; it does nothing for plaintext in the server's memory."
+      },
+      {
+        "text": "Store a salted hash of each record instead of the record",
+        "why": "Hashing is one-way, so the firm could no longer read or query the original records it needs to process."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "At rest and in transit are already covered, so the gap is data in use. Protecting data while the CPU processes it requires techniques such as secure enclaves.",
+    "industryVsComptia": null,
+    "tags": [
+      "data-states",
+      "secure-enclave"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-004",
+    "objective": "3.3",
+    "type": "multi",
+    "difficulty": 2,
+    "stem": "A company stores HR files in a cloud file share. Policy requires that the files be accessible only to members of the HR department, and only from within the country where the company operates. Which TWO methods BEST meet these requirements? (Choose TWO.)",
+    "options": [
+      {
+        "text": "Permission restrictions",
+        "why": "Correct: access controls such as RBAC group membership limit the files to HR staff."
+      },
+      {
+        "text": "Geographic restrictions",
+        "why": "Correct: geolocation-based policies can deny access attempts that originate outside the approved country."
+      },
+      {
+        "text": "Hashing",
+        "why": "Hashing produces a one-way digest used for integrity checks or storing secrets; it does not control who can open the files or from where."
+      },
+      {
+        "text": "Tokenization",
+        "why": "Tokenization replaces specific sensitive fields; it does not decide which users or locations can open the files."
+      },
+      {
+        "text": "Masking",
+        "why": "Masking hides parts of values for display; it does not restrict access by department or location."
+      }
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "The policy has two conditions: who (department) and where (country). Permission restrictions cover who; geographic restrictions cover where.",
+    "industryVsComptia": null,
+    "tags": [
+      "access-control",
+      "geolocation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-005",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A manufacturer is labeling its data. The production scheduling database contains nothing that would embarrass the company or harm individuals if disclosed, but if it became unavailable for even a few hours the factory lines would stop. Which classification BEST fits this data?",
+    "options": [
+      {
+        "text": "Critical",
+        "why": "Correct: critical data is essential to keeping the business operating, so its label is driven by the impact of losing access to it rather than by disclosure."
+      },
+      {
+        "text": "Confidential",
+        "why": "Confidential data is limited to people with a need to know because disclosure would cause harm, and the scenario says disclosure would not be harmful."
+      },
+      {
+        "text": "Restricted",
+        "why": "Restricted data has tightly limited access, usually because of law, contract, or special approval; nothing in the scenario requires that."
+      },
+      {
+        "text": "Private",
+        "why": "Private data concerns individuals or internal matters that should not be released; the concern here is availability, not privacy."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Most classification labels are about the harm caused by disclosure. Critical is the label that reflects how much the business depends on the data being available. When the stem stresses that operations would stop without the data, pick critical.",
+    "industryVsComptia": null,
+    "tags": [
+      "classification",
+      "availability"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-006",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A DLP solution reliably blocks emails that contain customer account numbers typed in the message body or in attached spreadsheets. During a test, an analyst exfiltrates the same account numbers by attaching an image of a QR code and a Base64-encoded export file, and neither is flagged. Which of the following MOST likely explains why the DLP missed them?",
+    "options": [
+      {
+        "text": "The data was in transit, which DLP cannot inspect",
+        "why": "The DLP inspected and blocked the other emails while they were in transit, so the data state is not what made the difference."
+      },
+      {
+        "text": "The data was in non-human-readable formats",
+        "why": "Correct: QR codes and encoded files are non-human-readable formats; unless DLP decodes or performs OCR on them, its content patterns never see the account numbers."
+      },
+      {
+        "text": "The account numbers were regulated financial data",
+        "why": "Being regulated is why the DLP rule exists; it does not explain why the same numbers escaped detection in other formats."
+      },
+      {
+        "text": "The DLP policy was running in monitor-only mode",
+        "why": "The same policy blocked the account numbers in message text and spreadsheets, so it is enforcing; a monitor-only mode would not explain why only the image and encoded file slipped through."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "SY0-701 distinguishes human-readable data (text people can read directly) from non-human-readable data (binary, encoded, barcodes, QR codes). Controls that match patterns in readable text must first decode non-human-readable data or they miss it entirely.",
+    "industryVsComptia": null,
+    "tags": [
+      "data-types",
+      "dlp"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-008",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A development team is designing how a web application stores user passwords. The application must be able to check a password at login, but no one, including database administrators, should ever be able to recover the original passwords from the database. Which method BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Symmetric encryption with AES-256",
+        "why": "Encryption is reversible: anyone holding the key, including an administrator, could decrypt the stored passwords."
+      },
+      {
+        "text": "Tokenization through a secure vault",
+        "why": "A token vault maps tokens back to the original values, so the passwords would still be recoverable through the vault."
+      },
+      {
+        "text": "Salted hashing with a slow algorithm",
+        "why": "Correct: a hash is one-way, so the login check compares digests without ever storing a recoverable password, and the salt defeats precomputed tables."
+      },
+      {
+        "text": "Masking all but the first character",
+        "why": "Masking only changes what is displayed; the full password would still sit in the database, and a partial value cannot be checked at login."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Verify but never recover is the definition of a hashing use case. Encryption and tokenization are both reversible by design.",
+    "industryVsComptia": null,
+    "tags": [
+      "hashing",
+      "passwords"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-009",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A software vendor distributes a JavaScript client that runs in customers' browsers and contains a proprietary pricing algorithm. The vendor wants to make it much harder for competitors to read the shipped code and work out the algorithm, while the code must still run normally. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Hash the script files and publish the digests",
+        "why": "Published hashes let customers verify the files were not altered, but the code itself stays fully readable."
+      },
+      {
+        "text": "Serve the client only over TLS 1.3 connections",
+        "why": "TLS protects the code while it is downloaded; once it arrives in the browser, the competitor can read it in full."
+      },
+      {
+        "text": "Obfuscate the code before each release build",
+        "why": "Correct: obfuscation renames, restructures, and scrambles the code so it still executes but is far harder for a person to understand."
+      },
+      {
+        "text": "Tokenize the pricing values in the database",
+        "why": "Tokenization protects stored data values; the logic of the algorithm in the shipped code would remain readable."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Obfuscation makes information difficult to understand without preventing its use. It raises the effort required for reverse engineering but is not a strong control on its own, because a determined analyst can still work through it.",
+    "industryVsComptia": null,
+    "tags": [
+      "obfuscation",
+      "intellectual-property"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-010",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A retailer's server that stores cardholder data sits on a flat network and can be reached from every office workstation, which places the entire network in scope for its PCI DSS assessment. The application vendor does not allow any change to how the application stores card data. Which of the following would BEST reduce the assessment scope?",
+    "options": [
+      {
+        "text": "Replace stored card numbers with vault tokens",
+        "why": "Tokenization would reduce scope, but it changes how the application stores card data, which the vendor does not allow."
+      },
+      {
+        "text": "Place the server in an isolated network segment",
+        "why": "Correct: segmentation with controlled access limits which systems can reach the cardholder data, so only that segment and its connected systems stay in scope."
+      },
+      {
+        "text": "Mask the card numbers on all report screens",
+        "why": "Masking only changes what is displayed; the full numbers remain stored and reachable from every workstation."
+      },
+      {
+        "text": "Apply geographic restrictions to the server",
+        "why": "Location-based rules do not help, because all of the workstations that can reach the server are inside the same offices."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Segmentation protects data by limiting the paths to it. The constraint in the stem rules out tokenization, the other classic way to reduce PCI scope, so read constraints carefully before choosing the textbook answer.",
+    "industryVsComptia": null,
+    "tags": [
+      "segmentation",
+      "pci"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-011",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Auditors at an accounting firm carry laptops that store clients' financial statements. Several laptops have been stolen from vehicles, and the firm must ensure that a thief cannot read the files even after removing the drive and attaching it to another computer. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Configure a BIOS/UEFI password on every laptop",
+        "why": "A firmware password stops the laptop from booting, but a drive moved into another computer can be read without it."
+      },
+      {
+        "text": "Enroll the laptops in MDM with remote wipe",
+        "why": "Remote wipe only works if the device comes online; a thief who pulls the drive can read it without ever connecting the laptop."
+      },
+      {
+        "text": "Enable full-disk encryption with pre-boot unlock",
+        "why": "Correct: encrypting the whole drive protects data at rest, so the files stay unreadable without the key wherever the drive is attached."
+      },
+      {
+        "text": "Require an always-on VPN for all laptop traffic",
+        "why": "A VPN protects data in transit across networks; it does nothing for files stored on a stolen drive."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "A stolen device is a data at rest problem. Only encryption keeps the data unreadable once an attacker has physical possession of the storage.",
+    "industryVsComptia": null,
+    "tags": [
+      "encryption",
+      "data-states"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.3-012",
+    "objective": "3.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A marketing team has finalized product datasheets that management approved for posting on the company website and handing out at trade shows. Which data classification label is MOST appropriate for these documents?",
+    "options": [
+      {
+        "text": "Private",
+        "why": "Private data is about individuals or internal matters and is not meant for release, while these documents are meant to be distributed."
+      },
+      {
+        "text": "Sensitive",
+        "why": "Sensitive data could cause harm if disclosed; approved marketing material carries no such impact."
+      },
+      {
+        "text": "Public",
+        "why": "Correct: public data has been approved for release, and disclosure has little or no impact on the organization."
+      },
+      {
+        "text": "Restricted",
+        "why": "Restricted data has tightly controlled access, the opposite of material intended for anyone to read."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Public is the label for information intentionally released to anyone. It still needs integrity protection (no one should alter it), but confidentiality controls are not required.",
+    "industryVsComptia": null,
+    "tags": [
+      "classification"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-001",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A distributor's order system must be operational again within two days of a disaster at its primary data center. The budget does not allow a second facility that runs fully mirrored systems at all times. Which recovery site option BEST balances these requirements?",
+    "options": [
+      {
+        "text": "A hot site with live replicated systems",
+        "why": "A hot site meets the recovery time easily, but keeping fully current systems at all times is the cost the budget rules out."
+      },
+      {
+        "text": "A warm site with hardware ready for restore",
+        "why": "Correct: hardware and connectivity are in place, so restoring data and configuration fits a recovery window of about a day or two at moderate cost."
+      },
+      {
+        "text": "A cold site with space and power only",
+        "why": "A cold site needs equipment to be procured and installed, which typically takes longer than two days."
+      },
+      {
+        "text": "Offsite backups copied to a second cloud region",
+        "why": "Storing backups in another region gives geographic dispersion of data, but provides no systems to restore them onto."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Site selection is a trade-off between recovery time and cost: hot is fastest and most expensive, cold is cheapest and slowest, and warm sits in between.",
+    "industryVsComptia": null,
+    "tags": [
+      "dr",
+      "sites"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-002",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company synchronously replicates its file server to a secondary site. Ransomware encrypts the files on the primary server, and administrators discover that the secondary copy is encrypted as well. Which of the following would BEST have allowed recovery of the files?",
+    "options": [
+      {
+        "text": "Increasing replication to continuous, block-level updates",
+        "why": "Faster replication copies the encrypted data to the secondary site even sooner, so it makes the problem worse."
+      },
+      {
+        "text": "Clustering the file server across both sites for failover",
+        "why": "Clustered nodes share the same data, so failing over would simply present the same encrypted files."
+      },
+      {
+        "text": "Keeping isolated point-in-time backups on a regular schedule",
+        "why": "Correct: backups taken at intervals and kept offsite or offline preserve clean versions from before the attack."
+      },
+      {
+        "text": "Rebuilding the primary server's storage array with RAID 6",
+        "why": "RAID protects against disk failure, not logical corruption; the encrypted files would be stored redundantly."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Replication and clustering provide availability, not recoverability: they faithfully copy corruption and ransomware. Point-in-time, isolated backups let you return to a known-good state.",
+    "industryVsComptia": null,
+    "tags": [
+      "backups",
+      "replication",
+      "ransomware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-003",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "The CISO wants department leads and IT staff to validate the disaster recovery plan by gathering in a conference room and talking through a ransomware scenario step by step. No production systems may be affected. Which type of test is this?",
+    "options": [
+      {
+        "text": "Fail over",
+        "why": "A fail over test actually switches workloads to redundant systems or an alternate site, which affects real infrastructure."
+      },
+      {
+        "text": "Simulation",
+        "why": "A simulation is a hands-on, realistic exercise of the scenario; this one is limited to discussion around a table."
+      },
+      {
+        "text": "Tabletop exercise",
+        "why": "Correct: participants walk through the scenario verbally and discuss their roles without touching any systems."
+      },
+      {
+        "text": "Parallel processing",
+        "why": "Parallel processing involves systems actually running workloads, not a discussion among staff."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Discussion-only, conference room, no systems touched: those are the markers of a tabletop exercise, the lowest-cost and lowest-risk test.",
+    "industryVsComptia": null,
+    "tags": [
+      "testing",
+      "dr"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-004",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "An organization runs every workload with a single cloud provider across multiple availability zones. A provider-wide identity outage and, months later, a critical flaw in the provider's hypervisor platform each disrupted all of its services. Leadership wants to reduce the chance that one vendor's failure or flaw affects every system. Which of the following BEST meets this goal?",
+    "options": [
+      {
+        "text": "Spread workloads across more availability zones",
+        "why": "Additional zones still depend on the same provider's identity service and hypervisor, which is the shared failure in both incidents."
+      },
+      {
+        "text": "Purchase a higher SLA tier from the current provider",
+        "why": "A better SLA transfers some financial risk through service credits but does not prevent the next provider-wide outage."
+      },
+      {
+        "text": "Add load balancing across more VMs in the region",
+        "why": "More VMs from the same provider share the same platform, so a provider-wide failure takes them all down together."
+      },
+      {
+        "text": "Deploy critical workloads across multiple cloud providers",
+        "why": "Correct: a multi-cloud design adds platform diversity, so one vendor's outage or vulnerability no longer affects every service."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Both incidents share a single dependency: one vendor. Platform diversity through multi-cloud removes that common point of failure; options within one provider do not.",
+    "industryVsComptia": null,
+    "tags": [
+      "multi-cloud",
+      "platform-diversity"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-005",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company's resilience review finds that only two administrators know how to restore the ERP system, and both are often on the same flight to trade shows. Hardware, network links, and the data center are all rated as adequate for recovery. Which area of capacity planning MOST needs attention?",
+    "options": [
+      {
+        "text": "Technology",
+        "why": "The review rated the systems and tools as adequate; the gap is not in the technology itself."
+      },
+      {
+        "text": "Infrastructure",
+        "why": "The network links and data center were found adequate, so the underlying infrastructure is not the weakness."
+      },
+      {
+        "text": "People",
+        "why": "Correct: capacity planning for people ensures enough trained staff are available, through cross-training and succession, to run and recover systems."
+      },
+      {
+        "text": "Platform diversity",
+        "why": "Platform diversity spreads risk across different vendors and technologies; it does not address a shortage of skilled staff."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "SY0-701 lists three areas of capacity planning: people, technology, and infrastructure. Knowledge held by too few people is a single point of failure that cross-training and documentation fix.",
+    "industryVsComptia": null,
+    "tags": [
+      "capacity-planning"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-006",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A hospital's electronic health record system goes offline for 18 hours. While IT works to restore it, clinicians switch to pre-printed paper charts, a designated runner carries lab results between departments, and patient care continues without interruption. Which of the following do these manual procedures BEST represent?",
+    "options": [
+      {
+        "text": "Disaster recovery",
+        "why": "Disaster recovery covers restoring the IT systems and data, which is what IT was doing; the paper process is the business keeping going meanwhile."
+      },
+      {
+        "text": "Continuity of operations",
+        "why": "Correct: continuity of operations keeps essential functions running during a disruption, including manual workarounds while systems are down."
+      },
+      {
+        "text": "Incident response",
+        "why": "Incident response handles detecting, containing, and eradicating security incidents, not keeping patient care running during an outage."
+      },
+      {
+        "text": "Capacity planning",
+        "why": "Capacity planning ensures enough people and resources ahead of demand; it is not the workaround used during an outage."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Continuity keeps the business functioning; disaster recovery restores the technology. Both run at the same time during an outage, so look at what the people in the scenario are actually doing.",
+    "industryVsComptia": null,
+    "tags": [
+      "continuity",
+      "dr"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-007",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A legacy database application cannot have its work split across independent servers, because only one instance may write to the data files at a time. The company needs a second server that automatically takes over the shared storage and the service's network identity if the primary fails. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "A load balancer distributing round-robin requests",
+        "why": "Load balancing spreads requests across independent servers that are all active, which the single-writer limit rules out."
+      },
+      {
+        "text": "A two-node active/passive failover cluster",
+        "why": "Correct: the passive node monitors the active one and takes over the shared storage and cluster address if it fails, so only one instance writes at a time."
+      },
+      {
+        "text": "Hourly snapshots of the database server VM",
+        "why": "Snapshots allow a rollback to a previous point, but they do not provide a standby server that takes over automatically."
+      },
+      {
+        "text": "A warm site with matching database hardware",
+        "why": "A warm site requires a manual restore and configuration effort, not automatic takeover of the running service."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Load balancing fits stateless services where any server can answer any request. Clustering makes several servers act as one logical system, and active/passive is the typical design when only one node may own the data at a time.",
+    "industryVsComptia": null,
+    "tags": [
+      "high-availability",
+      "clustering"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-008",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A regional bank keeps its primary data center and its hot site 15 miles apart along the same coastline. A hurricane causes extended power and network outages at both facilities simultaneously. Which resilience concept did the bank's design MOST clearly lack?",
+    "options": [
+      {
+        "text": "Platform diversity",
+        "why": "Using different vendors or operating systems would not have helped, because both sites lost power and connectivity to the same storm."
+      },
+      {
+        "text": "Clustering",
+        "why": "Clustering across the two sites would still fail, because the storm took down both of the locations hosting the nodes."
+      },
+      {
+        "text": "Capacity planning",
+        "why": "Capacity planning ensures enough people and resources for demand; the failure here came from where the sites were placed."
+      },
+      {
+        "text": "Geographic dispersion",
+        "why": "Correct: placing the alternate site far enough away that a single regional disaster cannot affect both is the point of geographic dispersion."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "A hot site only helps if it survives the event that took down the primary. Geographic dispersion places sites in different regions so that weather, power grid, or seismic events do not hit both.",
+    "industryVsComptia": null,
+    "tags": [
+      "geographic-dispersion",
+      "sites"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-009",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "The security team stages a mock ransomware outbreak in an isolated lab that mirrors production. Responders receive realistic alerts, isolate the affected hosts, and restore servers from backup while observers time each step. Production systems are never touched. Which of the following BEST describes this test?",
+    "options": [
+      {
+        "text": "Tabletop exercise",
+        "why": "A tabletop exercise is a discussion only; here responders actually perform the isolation and restore steps."
+      },
+      {
+        "text": "Simulation",
+        "why": "Correct: a simulation has participants respond hands-on to a realistic, staged scenario in a controlled environment without a real outage."
+      },
+      {
+        "text": "Fail over test",
+        "why": "A fail over test moves production workloads to redundant systems or an alternate site, but production is never touched here."
+      },
+      {
+        "text": "Parallel processing",
+        "why": "Parallel processing runs the same workload on multiple systems at once (for example, alternate systems alongside production) to compare results; it does not stage an incident for responders to practice on."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Tabletop exercises are talk-through only. Simulations add hands-on actions against a realistic but controlled scenario. Fail over tests touch the real production environment.",
+    "industryVsComptia": null,
+    "tags": [
+      "testing",
+      "ir"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-010",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A data center's UPS units can carry the full server load for about 15 minutes. Utility outages in the area often last several hours, and each time the servers must be shut down once the batteries run low. Which of the following should be added to BEST keep the servers running during these outages?",
+    "options": [
+      {
+        "text": "Additional UPS units in parallel",
+        "why": "More batteries extend the runtime somewhat, but batteries alone are not a practical way to carry a data center for several hours."
+      },
+      {
+        "text": "A standby generator",
+        "why": "Correct: a fuel-powered generator can run for hours or days, and the existing UPS covers the gap while it starts up."
+      },
+      {
+        "text": "Dual power supplies in servers",
+        "why": "Redundant power supplies protect against a failed supply unit, but both still draw from the same failed utility feed."
+      },
+      {
+        "text": "A managed power distribution unit",
+        "why": "A PDU distributes and monitors power within racks; it does not generate any power when the utility fails."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "UPS and generator work together: the UPS takes over instantly for minutes, and the generator carries the load for long outages once it is running.",
+    "industryVsComptia": null,
+    "tags": [
+      "power"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-011",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company ships its weekly backup tapes to an offsite vault using a third-party courier. One tape was lost in transit, and the company had to notify customers because the tape contained customers' personal information. Which control would BEST have prevented the need for notification?",
+    "options": [
+      {
+        "text": "Signed chain-of-custody forms for each handoff",
+        "why": "Custody records show who handled the tape and when, but they do not stop a lost tape from being read."
+      },
+      {
+        "text": "Daily instead of weekly backup frequency",
+        "why": "More frequent backups reduce potential data loss, but every tape would still contain readable personal information."
+      },
+      {
+        "text": "Encrypting the backups before they leave the site",
+        "why": "Correct: encrypted backup media are unreadable without the key, so a lost tape no longer exposes the data."
+      },
+      {
+        "text": "Keeping storage snapshots instead of tapes",
+        "why": "Snapshots normally stay on the same storage system, which would remove the offsite protection the tapes provide."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Backups are copies of production data and need the same protection. Encrypting backup media, with keys stored separately, protects them in transit and in storage.",
+    "industryVsComptia": null,
+    "tags": [
+      "backups",
+      "encryption"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-012",
+    "objective": "3.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "For eight months, nightly backup jobs for a file server reported success in the backup console. When a disk controller failure corrupted the server, administrators discovered that the backup set had silently excluded a newly added data volume. Which practice would MOST likely have revealed this problem before the outage?",
+    "options": [
+      {
+        "text": "Reviewing the backup job logs every morning",
+        "why": "The jobs reported success every night; a log review looks for errors and would not reveal a volume that was never selected for backup."
+      },
+      {
+        "text": "Performing regular test restores of the backups",
+        "why": "Correct: restoring the data and checking the result proves the backups are complete and recoverable, which would have exposed the missing volume."
+      },
+      {
+        "text": "Encrypting all backup media at the source",
+        "why": "Encryption protects backup confidentiality, but it does not check whether the backups contain everything they should."
+      },
+      {
+        "text": "Running backup jobs twice a night instead",
+        "why": "Higher frequency would only create more copies of the same incomplete backup set."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "A backup is only as good as the ability to recover from it. Regular restore testing verifies completeness and integrity, which job success messages cannot.",
+    "industryVsComptia": null,
+    "tags": [
+      "backups",
+      "recovery",
+      "testing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-3.4-013",
+    "objective": "3.4",
+    "type": "multi",
+    "difficulty": 2,
+    "stem": "A small engineering firm needs to restore accidentally deleted project files within minutes, and it must also be able to recover all of its data if a fire destroys its only office. Which TWO of the following together BEST meet these requirements? (Choose TWO.)",
+    "options": [
+      {
+        "text": "Onsite backups to a local backup appliance",
+        "why": "Correct: a local copy can be restored quickly over the LAN, which meets the requirement to recover deleted files within minutes."
+      },
+      {
+        "text": "Offsite backups to a remote location",
+        "why": "Correct: a copy stored away from the office survives a fire or other disaster that destroys the building."
+      },
+      {
+        "text": "RAID 10 on the file server's disks",
+        "why": "RAID protects against disk failure, but a deleted file is deleted on every mirror and the array burns with the building."
+      },
+      {
+        "text": "Synchronous mirroring to a backup NAS in the office",
+        "why": "Despite being called a backup, a synchronous mirror deletes a file the moment the original is deleted, and a second device in the same office is lost in the same fire."
+      },
+      {
+        "text": "A UPS for the file server and network gear",
+        "why": "A UPS keeps systems running through short power outages; it provides no copy of the data to restore."
+      }
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "Onsite backups give fast restores; offsite backups survive site-wide disasters. Most organizations use both. Redundancy such as RAID and mirroring keeps systems available but is not a backup.",
+    "industryVsComptia": null,
+    "tags": [
+      "backups"
+    ],
+    "status": "reviewed"
+  }
+]

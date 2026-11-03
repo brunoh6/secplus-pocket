@@ -1,0 +1,155 @@
+{
+  "id": "ir",
+  "title": "Respuesta a incidentes y forense",
+  "description": "CompTIA's incident response phases in order, the order of volatility, and digital forensics terms.",
+  "objectives": [
+    "4.8",
+    "4.9"
+  ],
+  "columns": [
+    "Item",
+    "Group",
+    "Description",
+    "Exam tip"
+  ],
+  "rows": [
+    [
+      "1. Preparation",
+      "IR phase",
+      "Build the plan, team, tools, communication paths, and training before an incident.",
+      "CompTIA lists seven phases; NIST SP 800-61 groups them differently. Use CompTIA's names on the exam."
+    ],
+    [
+      "2. Detection",
+      "IR phase",
+      "Recognize that an event may be an incident through alerts, reports, or monitoring.",
+      "Detection is noticing; analysis is confirming."
+    ],
+    [
+      "3. Analysis",
+      "IR phase",
+      "Validate the incident, determine scope and severity, and prioritize.",
+      "Rule out false positives before acting."
+    ],
+    [
+      "4. Containment",
+      "IR phase",
+      "Limit the spread and damage, for example by isolating hosts or segments.",
+      "If an infection is active and spreading, containment comes FIRST, before eradication."
+    ],
+    [
+      "5. Eradication",
+      "IR phase",
+      "Remove the cause: malware, attacker accounts, persistence, and the exploited weakness.",
+      "Removing malware without closing the entry point invites reinfection."
+    ],
+    [
+      "6. Recovery",
+      "IR phase",
+      "Restore systems to normal operation and monitor for recurrence.",
+      "Restore from known-good backups or images and validate before returning to production."
+    ],
+    [
+      "7. Lessons learned",
+      "IR phase",
+      "Post-incident review to improve the plan, controls, and training.",
+      "Held after recovery; feeds back into preparation."
+    ],
+    [
+      "Root cause analysis",
+      "IR activity",
+      "Determining the underlying reason an incident happened.",
+      "Fixes the cause, not just the symptom; supports lessons learned."
+    ],
+    [
+      "Threat hunting",
+      "IR activity",
+      "Proactively searching for threats that evaded existing detections.",
+      "Starts from a hypothesis, not from an alert."
+    ],
+    [
+      "Tabletop exercise",
+      "IR testing",
+      "Discussion-based walkthrough of a scenario with key stakeholders.",
+      "No systems are touched; lowest cost and disruption."
+    ],
+    [
+      "Simulation",
+      "IR testing",
+      "Hands-on exercise that mimics a real incident to test people and tools.",
+      "More realistic than a tabletop, more effort to run."
+    ],
+    [
+      "1. CPU registers and cache",
+      "Order of volatility",
+      "Contents lost almost instantly.",
+      "Most volatile: collect first."
+    ],
+    [
+      "2. Memory (RAM), routing and ARP tables, process table",
+      "Order of volatility",
+      "Running state, network connections, and loaded malware.",
+      "Lost on shutdown, so capture memory before powering off."
+    ],
+    [
+      "3. Temporary file systems and swap/page file",
+      "Order of volatility",
+      "Transient files and paged-out memory.",
+      "Can be overwritten during normal operation."
+    ],
+    [
+      "4. Disk (persistent storage)",
+      "Order of volatility",
+      "Files, logs, and artifacts on local drives.",
+      "Image with a write blocker and hash the image."
+    ],
+    [
+      "5. Remote logs and monitoring data",
+      "Order of volatility",
+      "Logs held on SIEMs and other systems.",
+      "Subject to retention and rotation limits."
+    ],
+    [
+      "6. Archival media and backups",
+      "Order of volatility",
+      "Tapes, offline backups, and printouts.",
+      "Least volatile: collect last."
+    ],
+    [
+      "Legal hold",
+      "Forensics",
+      "Order to preserve all relevant data and suspend normal deletion and retention schedules.",
+      "Overrides the normal retention policy until released."
+    ],
+    [
+      "Chain of custody",
+      "Forensics",
+      "Documented record of who handled evidence, when, and why, from collection to court.",
+      "A gap in custody can make evidence inadmissible."
+    ],
+    [
+      "Acquisition",
+      "Forensics",
+      "Collecting evidence in a forensically sound way, such as bit-for-bit images.",
+      "Hash before and after to prove integrity; follow the order of volatility."
+    ],
+    [
+      "Preservation",
+      "Forensics",
+      "Protecting evidence from alteration or loss once collected.",
+      "Work on copies, never the original."
+    ],
+    [
+      "E-discovery",
+      "Forensics",
+      "Identifying, collecting, and producing electronically stored information for legal proceedings.",
+      "Driven by legal requests, often following a legal hold."
+    ],
+    [
+      "Reporting",
+      "Forensics",
+      "Documenting findings, methods, and timeline for stakeholders or court.",
+      "Must be repeatable and defensible, not just conclusions."
+    ]
+  ]
+}

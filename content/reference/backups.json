@@ -1,0 +1,76 @@
+{
+  "id": "backups",
+  "title": "Tipos de respaldo",
+  "description": "Backup and data protection methods with speed trade-offs and archive bit behavior.",
+  "objectives": [
+    "3.4"
+  ],
+  "columns": [
+    "Type",
+    "What it copies",
+    "Backup speed / restore speed",
+    "Notes"
+  ],
+  "rows": [
+    [
+      "Full",
+      "All selected data, every time.",
+      "Slowest backup / fastest restore (one set).",
+      "Clears the archive bit. Baseline that incremental and differential backups depend on."
+    ],
+    [
+      "Incremental",
+      "Data changed since the last backup of any type (full or incremental).",
+      "Fastest backup / slowest restore (last full plus every incremental in order).",
+      "Clears the archive bit. Losing one incremental in the chain breaks later restores."
+    ],
+    [
+      "Differential",
+      "Data changed since the last full backup.",
+      "Backup gets slower as the week goes on / restore needs only the last full plus the latest differential.",
+      "Does NOT clear the archive bit, so each differential grows until the next full."
+    ],
+    [
+      "Snapshot",
+      "Point-in-time image of a volume, VM, or storage system state.",
+      "Near-instant to create / fast rollback.",
+      "Often stored on the same system, so pair with copies elsewhere. Common for VMs and before changes."
+    ],
+    [
+      "Replication",
+      "Continuous or scheduled copying of data to another system or site.",
+      "Ongoing / near-immediate availability at the target.",
+      "Supports very low RPOs, but faithfully replicates corruption or ransomware encryption too; it is not a substitute for backups."
+    ],
+    [
+      "Journaling",
+      "Log of every change written before it is applied.",
+      "Low overhead / allows replay or rollback to a precise point.",
+      "Lets you recover to a moment just before corruption; used by file systems and databases."
+    ],
+    [
+      "Onsite",
+      "Backups kept at the same location as the source.",
+      "Fastest access for restores.",
+      "Vulnerable to the same fire, flood, or theft that hits the primary site."
+    ],
+    [
+      "Offsite",
+      "Backups stored at a separate location or in the cloud.",
+      "Slower to retrieve / survives a site-wide disaster.",
+      "Consider distance, transport security, and encryption. Industry often summarizes this as the 3-2-1 rule (three copies, two media, one offsite)."
+    ],
+    [
+      "Encryption of backups",
+      "Protects backup media and files at rest and in transit.",
+      "Small overhead / requires the keys at restore time.",
+      "Losing the keys means losing the backup; manage keys separately from the data."
+    ],
+    [
+      "Recovery testing",
+      "Restoring backups to verify they actually work.",
+      "Not applicable.",
+      "A backup that has never been restored is unverified; test restores regularly."
+    ]
+  ]
+}

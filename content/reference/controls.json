@@ -1,0 +1,82 @@
+{
+  "id": "controls",
+  "title": "Tipos y categorías de controles",
+  "description": "A control has one category (how it is implemented) and one or more types (what it achieves). Questions often ask for one dimension only.",
+  "objectives": [
+    "1.1"
+  ],
+  "columns": [
+    "Term",
+    "Kind",
+    "Definition",
+    "Examples"
+  ],
+  "rows": [
+    [
+      "Technical",
+      "Category",
+      "Implemented by systems through hardware, software, or firmware (CompTIA's term; other frameworks say logical).",
+      "Firewall rules, encryption, MFA, EDR, OS permissions"
+    ],
+    [
+      "Managerial",
+      "Category",
+      "Administrative controls focused on governing and managing risk and the security program.",
+      "Policies, risk assessments, security planning, vendor reviews"
+    ],
+    [
+      "Operational",
+      "Category",
+      "Carried out day to day by people rather than by systems.",
+      "Security awareness training, configuration management, log review procedures, incident handling by staff"
+    ],
+    [
+      "Physical",
+      "Category",
+      "Tangible measures that protect facilities, equipment, and people.",
+      "Fences, bollards, door locks, badge readers, mantraps (access control vestibules)"
+    ],
+    [
+      "Preventive",
+      "Type",
+      "Stops an incident from happening in the first place.",
+      "Firewall deny rule, door lock, account lockout, least privilege"
+    ],
+    [
+      "Deterrent",
+      "Type",
+      "Discourages an attacker psychologically without physically stopping them.",
+      "Warning signs, login banners, visible cameras, bright lighting"
+    ],
+    [
+      "Detective",
+      "Type",
+      "Identifies and records an incident while or after it happens.",
+      "IDS, SIEM alerts, log review, motion sensors, recorded video"
+    ],
+    [
+      "Corrective",
+      "Type",
+      "Reduces impact and restores normal operation after an incident.",
+      "Restoring from backup, reimaging a host, patching an exploited flaw, IR playbook"
+    ],
+    [
+      "Compensating",
+      "Type",
+      "Alternative control used when the primary control is not feasible, providing similar protection.",
+      "Isolating an unpatchable legacy system on its own VLAN; extra monitoring when separation of duties is impossible"
+    ],
+    [
+      "Directive",
+      "Type",
+      "Tells people what they must or must not do; relies on compliance rather than enforcement.",
+      "Policies, AUP, procedures, \"Authorized personnel only\" signs"
+    ],
+    [
+      "Exam tip",
+      "Both",
+      "Answer the dimension asked: a firewall is technical (category) and preventive (type). Deterrent discourages; directive instructs.",
+      "A camera is a physical control whose type is detective (recording) and deterrent (when visible)."
+    ]
+  ]
+}

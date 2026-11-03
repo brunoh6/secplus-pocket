@@ -1,0 +1,245 @@
+[
+  {
+    "id": "pbq-1.1-201",
+    "objective": "1.1",
+    "type": "categorize",
+    "difficulty": 2,
+    "title": "Security controls: category and type",
+    "prompt": "During a control-gap review, a security analyst catalogs the controls already in place at a regional office. Classify each control by its category and by the type that BEST describes its primary purpose.",
+    "dimensions": [
+      {
+        "id": "category",
+        "label": "Category",
+        "options": [
+          "Technical",
+          "Managerial",
+          "Operational",
+          "Physical"
+        ]
+      },
+      {
+        "id": "type",
+        "label": "Type",
+        "options": [
+          "Preventive",
+          "Deterrent",
+          "Detective",
+          "Corrective",
+          "Compensating",
+          "Directive"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "text": "Firewall rule blocking inbound Telnet",
+        "answers": {
+          "category": "Technical",
+          "type": "Preventive"
+        },
+        "why": "Enforced by a system (technical) and stops the connection before it happens (preventive)."
+      },
+      {
+        "text": "Steel bollards in front of the lobby",
+        "answers": {
+          "category": "Physical",
+          "type": "Preventive"
+        },
+        "why": "A tangible barrier (physical) that stops vehicles from reaching the building (preventive)."
+      },
+      {
+        "text": "Motion sensors in the server room after hours",
+        "answers": {
+          "category": "Physical",
+          "type": "Detective"
+        },
+        "why": "A physical-security device that does not stop entry; it raises an alert when movement is sensed (detective)."
+      },
+      {
+        "text": "SIEM alert on impossible-travel logins",
+        "answers": {
+          "category": "Technical",
+          "type": "Detective"
+        },
+        "why": "Implemented in software (technical) and identifies suspicious activity after it occurs (detective)."
+      },
+      {
+        "text": "Acceptable use policy employees must sign",
+        "answers": {
+          "category": "Managerial",
+          "type": "Directive"
+        },
+        "why": "A policy set by management (managerial) that tells people what they must and must not do (directive)."
+      },
+      {
+        "text": "Unpatchable legacy host moved to an isolated VLAN",
+        "answers": {
+          "category": "Technical",
+          "type": "Compensating"
+        },
+        "why": "Segmentation is enforced by network devices (technical) and stands in for the patch that cannot be applied (compensating)."
+      }
+    ],
+    "explanation": "Category describes HOW a control is implemented: technical (systems), managerial (policy and governance), operational (carried out by people) or physical (tangible). Type describes WHAT it does relative to an incident: prevent it, deter it, detect it, correct it, compensate for a missing control, or direct behavior. Classify the category first, then pick the type that matches the control's primary purpose in the scenario.",
+    "industryVsComptia": "In practice many controls serve several types at once (a camera can deter and detect). On the exam, choose the type that matches the control's primary purpose as described.",
+    "tags": [
+      "security-controls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-1.3-001",
+    "objective": "1.3",
+    "type": "order",
+    "title": "Change management workflow",
+    "prompt": "An administrator needs to change firewall rules on a production perimeter firewall. The organization follows a formal change management process. Order the steps from first to last.",
+    "items": [
+      {
+        "text": "Submit a change request with an owner",
+        "why": "The process starts with a documented request that names the change, its owner and the reason for it."
+      },
+      {
+        "text": "Perform an impact analysis",
+        "why": "The requested change is assessed for risk, affected systems, stakeholders and downtime before anyone approves it."
+      },
+      {
+        "text": "Obtain change advisory board approval",
+        "why": "The CAB reviews the request, impact analysis, test results and backout plan, then authorizes the change."
+      },
+      {
+        "text": "Implement during the maintenance window",
+        "why": "Approved changes are made only in the scheduled window to limit disruption, with the backout plan ready."
+      },
+      {
+        "text": "Verify the change and update documentation",
+        "why": "Confirm that it works as intended, then update diagrams, policies and version records so documentation matches reality."
+      }
+    ],
+    "firstLabel": "First step",
+    "lastLabel": "Last step",
+    "explanation": "Formal change management controls risk: a documented request, an impact analysis, and approval come before any production change. Implementation happens in an agreed maintenance window with a backout plan in place. Afterwards, the change is verified and the documentation is updated. Skipping approval or documentation creates unauthorized changes and configuration drift, which are security problems in their own right.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "change-management",
+      "cab"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-1.4-001",
+    "objective": "1.4",
+    "type": "order",
+    "title": "Obtaining a TLS server certificate",
+    "prompt": "An administrator needs a publicly trusted TLS certificate for a new web server. Order the steps from first to last.",
+    "items": [
+      {
+        "text": "Generate a public/private key pair",
+        "why": "The key pair must exist first; the private key never leaves the server (or HSM)."
+      },
+      {
+        "text": "Create a CSR containing the public key",
+        "why": "The certificate signing request bundles the public key and subject details, signed with the private key."
+      },
+      {
+        "text": "RA/CA validates the requester's identity",
+        "why": "The registration authority or CA checks domain control or organization identity before signing anything."
+      },
+      {
+        "text": "CA signs and issues the certificate",
+        "why": "After validation, the CA binds the public key to the subject with its digital signature."
+      },
+      {
+        "text": "Install certificate and chain on the server",
+        "why": "The server is configured with the issued certificate and its intermediate chain so clients can validate the path."
+      }
+    ],
+    "firstLabel": "First step",
+    "lastLabel": "Last step",
+    "explanation": "A certificate is a CA-signed binding of a public key to an identity, so the key pair comes first and the CSR carries the public key to the CA. The RA/CA validates the identity, then the CA signs and issues the certificate, and the administrator installs it with the intermediate chain. The private key is never sent to the CA.",
+    "industryVsComptia": null,
+    "difficulty": 2,
+    "tags": [
+      "pki",
+      "csr",
+      "certificates"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pbq-1.4-201",
+    "objective": "1.4",
+    "type": "categorize",
+    "difficulty": 1,
+    "title": "Symmetric, asymmetric or hashing?",
+    "prompt": "A developer is documenting the cryptographic primitives referenced in a TLS library and a password-storage module. Classify each algorithm by its family.",
+    "dimensions": [
+      {
+        "id": "family",
+        "label": "Algorithm family",
+        "options": [
+          "Symmetric",
+          "Asymmetric",
+          "Hashing"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "text": "AES-256",
+        "answers": {
+          "family": "Symmetric"
+        },
+        "why": "Block cipher where the same shared key encrypts and decrypts: symmetric."
+      },
+      {
+        "text": "ChaCha20",
+        "answers": {
+          "family": "Symmetric"
+        },
+        "why": "Stream cipher using one shared secret key for both directions: symmetric."
+      },
+      {
+        "text": "RSA-2048",
+        "answers": {
+          "family": "Asymmetric"
+        },
+        "why": "Uses a mathematically related public/private key pair for encryption and signatures: asymmetric."
+      },
+      {
+        "text": "ECDSA",
+        "answers": {
+          "family": "Asymmetric"
+        },
+        "why": "Elliptic-curve digital signature algorithm based on a public/private key pair: asymmetric."
+      },
+      {
+        "text": "Diffie-Hellman",
+        "answers": {
+          "family": "Asymmetric"
+        },
+        "why": "Key-exchange algorithm in which each party has a public and private value: asymmetric."
+      },
+      {
+        "text": "SHA-256",
+        "answers": {
+          "family": "Hashing"
+        },
+        "why": "One-way function producing a fixed-length digest with no key and no decryption: hashing."
+      },
+      {
+        "text": "MD5",
+        "answers": {
+          "family": "Hashing"
+        },
+        "why": "Legacy one-way digest algorithm (collision-prone, but still a hash): hashing."
+      }
+    ],
+    "explanation": "Symmetric algorithms share one secret key and are fast enough for bulk data. Asymmetric algorithms use key pairs and handle key exchange and digital signatures. Hashing is one-way, keyless and fixed-length, so it provides integrity, not confidentiality. In TLS, asymmetric cryptography (ECDHE key exchange, RSA/ECDSA authentication) establishes a session key that a symmetric cipher (AES, ChaCha20) then uses.",
+    "industryVsComptia": null,
+    "tags": [
+      "cryptography"
+    ],
+    "status": "reviewed"
+  }
+]

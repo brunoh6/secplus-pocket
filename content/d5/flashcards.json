@@ -1,0 +1,719 @@
+[
+  {
+    "id": "fc-5.1-001",
+    "objective": "5.1",
+    "front": "Policy vs standard vs procedure vs guideline",
+    "back": "Policy: high-level management statement of intent; mandatory (e.g., AUP, information security, business continuity, disaster recovery, incident response, SDLC, change management)\nStandard: mandatory, specific requirement that supports a policy (e.g., password, access control, physical security, encryption)\nProcedure: mandatory step-by-step instructions (e.g., change management, onboarding/offboarding, playbooks)\nGuideline: recommended, non-mandatory advice",
+    "comptiaNote": "Only guidelines are optional. \"All laptops use AES-256 full-disk encryption\" is a standard, not a policy. A playbook is a procedure.",
+    "tags": [
+      "governance",
+      "policy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-002",
+    "objective": "5.1",
+    "front": "Data owner vs data custodian/steward",
+    "back": "Owner: senior business leader accountable for the data; sets classification, approves access, defines protection requirements\nCustodian/steward: implements and maintains the controls the owner defines (backups, permissions, storage, day-to-day handling)",
+    "comptiaNote": "Accountability stays with the owner; the custodian does the hands-on work. IT is usually the custodian, not the owner.",
+    "tags": [
+      "governance",
+      "roles"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-003",
+    "objective": "5.1",
+    "front": "Data controller vs data processor",
+    "back": "Controller: decides why and how personal data is processed (purpose and means); accountable to regulators and data subjects\nProcessor: processes personal data on the controller's behalf and under its instructions (e.g., a payroll provider or cloud email-marketing platform)",
+    "comptiaNote": "The company that collects the data for its own purposes is normally the controller, even when a vendor stores and processes all of it.",
+    "tags": [
+      "governance",
+      "roles",
+      "privacy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-004",
+    "objective": "5.1",
+    "front": "Centralized vs decentralized governance",
+    "back": "Centralized: one central body makes and enforces security decisions for the whole organization → consistency and standardization; slower, less local fit\nDecentralized: business units or regions make their own decisions within broad direction → agility and local fit; risk of inconsistency and gaps",
+    "tags": [
+      "governance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-005",
+    "objective": "5.1",
+    "front": "Governance structures listed in 5.1",
+    "back": "Boards: top-level oversight; set direction and risk appetite, hold executives accountable\nCommittees: subgroups with a focused remit (e.g., audit committee, security steering committee)\nGovernment entities: create laws/regulations and can oversee or examine organizations\nCentralized/decentralized: where decision authority sits",
+    "tags": [
+      "governance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-006",
+    "objective": "5.1",
+    "front": "External considerations for governance",
+    "back": "Regulatory\nLegal\nIndustry\nLocal/regional\nNational\nGlobal\n→ Policies must satisfy every jurisdiction and sector requirement that applies (e.g., a state privacy law, a national regulation, GDPR for EU data subjects, PCI DSS for card data)",
+    "comptiaNote": "PCI DSS is an industry standard enforced mainly by contract with the card brands, not by a government law.",
+    "tags": [
+      "governance",
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-007",
+    "objective": "5.1",
+    "front": "Monitoring and revision of governance documents",
+    "back": "Review on a schedule (e.g., annually) AND when triggered by: new laws/regulations, audit findings, incidents, new technology, business changes (e.g., hybrid work, cloud migration)\nRevisions are approved, versioned, and re-communicated to staff",
+    "comptiaNote": "An outdated policy is a governance gap even if it was correct when written.",
+    "tags": [
+      "governance",
+      "policy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-008",
+    "objective": "5.1",
+    "front": "Acceptable use policy (AUP)",
+    "back": "Defines what users may and may not do with the organization's systems, networks, data, and devices\nTypical content: business-use rules, prohibited activities (unapproved software, illegal or offensive content), limits on personal use, monitoring notice, consequences of violations\nUsually signed at onboarding and re-acknowledged periodically",
+    "comptiaNote": "The AUP is often signed as a step of onboarding: the signed document is the AUP, the checklist that collects the signature is the onboarding procedure.",
+    "tags": [
+      "governance",
+      "policy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-009",
+    "objective": "5.1",
+    "front": "BC vs DR vs IR policy",
+    "back": "Business continuity: keep critical business functions running during and after a disruption (manual workarounds, priorities, alternate staffing)\nDisaster recovery: restore IT systems, data, and infrastructure after a disaster (backups, alternate sites, recovery order)\nIncident response: how security incidents are detected, reported, and handled, and who has authority to act",
+    "comptiaNote": "BC = the business keeps operating; DR = the technology comes back. DR is usually treated as part of the broader continuity effort.",
+    "tags": [
+      "governance",
+      "policy",
+      "bcp"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-010",
+    "objective": "5.1",
+    "front": "SDLC policy vs change management policy",
+    "back": "SDLC policy: requires security throughout the software lifecycle (requirements, design, secure coding, code review, testing, deployment, maintenance, retirement)\nChange management policy: requires that changes to production systems are requested, impact-assessed, approved, tested, scheduled, and documented, with a backout plan",
+    "tags": [
+      "governance",
+      "policy",
+      "appsec"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-011",
+    "objective": "5.1",
+    "front": "Onboarding vs offboarding procedures",
+    "back": "Onboarding: provision accounts with least privilege, sign the AUP and NDA, complete security awareness training, issue badge and equipment\nOffboarding: formal HR-to-IT trigger, disable accounts on or before the last day, revoke badges, tokens, keys, and VPN access, recover devices and data, transfer file and mailbox ownership",
+    "comptiaNote": "Accounts left enabled after someone leaves point to a failed offboarding procedure, a common audit finding.",
+    "tags": [
+      "governance",
+      "procedures",
+      "iam"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-012",
+    "objective": "5.1",
+    "front": "The four 5.1 standards, with examples",
+    "back": "Password: minimum length, complexity or passphrases, reuse history, lockout threshold, hashed storage\nAccess control: least privilege, access model (e.g., RBAC), access review frequency, MFA requirements\nPhysical security: badge access, visitor logs and escorts, cameras, locked server rooms\nEncryption: approved algorithms and key lengths (e.g., AES-256, TLS 1.2+), key management",
+    "comptiaNote": "A standard is mandatory and specific ('must' plus a value); it supports a policy. 'Should' or 'consider' signals a guideline.",
+    "tags": [
+      "governance",
+      "standards"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.1-013",
+    "objective": "5.1",
+    "front": "Information security policy: role",
+    "back": "Top-level security policy approved by senior management\nStates security objectives, scope, roles and responsibilities, and authority to enforce\nOther policies, standards, and procedures derive from and support it\nReviewed on a schedule and when laws, threats, or the business change",
+    "tags": [
+      "governance",
+      "policy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-001",
+    "objective": "5.2",
+    "front": "SLE formula",
+    "back": "SLE = AV × EF\nAV = asset value\nEF = exposure factor (percentage of the asset lost in one event)\nExample: $200,000 × 40% = $80,000",
+    "comptiaNote": "EF is the portion of value lost per event, not a probability. SLE is the cost of ONE occurrence.",
+    "tags": [
+      "risk",
+      "quantitative"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-002",
+    "objective": "5.2",
+    "front": "ALE formula and ARO",
+    "back": "ALE = SLE × ARO\nARO = expected occurrences per year\nOnce every 5 years → ARO 0.2\nTwice a year → ARO 2\nExample: $80,000 × 0.2 = $16,000 per year",
+    "comptiaNote": "Trap: \"once every 4 years\" is ARO 0.25, not 4. A control is cost-justified when (ALE before − ALE after) exceeds the control's annual cost.",
+    "tags": [
+      "risk",
+      "quantitative"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-003",
+    "objective": "5.2",
+    "front": "Qualitative vs quantitative risk analysis",
+    "back": "Qualitative: relative ratings of likelihood and impact (low/medium/high, heat map, risk matrix); fast but subjective\nQuantitative: monetary and numeric values (AV, EF, SLE, ARO, ALE); objective but needs reliable data\nBoth combine likelihood/probability with impact",
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-004",
+    "objective": "5.2",
+    "front": "Risk appetite vs risk tolerance",
+    "back": "Appetite: the broad amount and type of risk the organization is willing to accept in pursuit of its objectives (strategic, set by leadership)\nTolerance: the acceptable variance from that appetite for a specific risk or objective before action is required",
+    "comptiaNote": "Study materials word these differently. Exam clues: 'willing to take on risk to pursue goals' = appetite; 'acceptable variance/deviation' = tolerance. The risk threshold in the risk register is the level that triggers a response.",
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-005",
+    "objective": "5.2",
+    "front": "Risk appetite: expansionary vs conservative vs neutral",
+    "back": "Expansionary: willing to accept more risk to pursue growth and innovation\nConservative: risk-averse; prefers lower risk even if it means missed opportunities\nNeutral: balanced; weighs risk and reward evenly",
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-006",
+    "objective": "5.2",
+    "front": "Risk register: what it contains",
+    "back": "Identified risks with description, likelihood, impact and score\nRisk owner: person accountable for managing that risk\nKRIs (key risk indicators): metrics that signal rising exposure (e.g., count of unpatched critical vulnerabilities)\nRisk threshold: level at which the risk requires action or escalation\nPlanned response and status",
+    "comptiaNote": "KRI ≠ KPI: a KRI warns that risk is increasing; a KPI measures performance against a goal.",
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-007",
+    "objective": "5.2",
+    "front": "Risk management strategies (4)",
+    "back": "Transfer: shift the financial impact to a third party (cyber insurance, contract)\nAccept: acknowledge and live with the risk (formalized as an exemption or exception)\nAvoid: stop or never start the risky activity\nMitigate: apply controls to reduce likelihood or impact",
+    "comptiaNote": "Transfer moves the financial impact, not the accountability. Residual risk is what remains after mitigation.",
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-008",
+    "objective": "5.2",
+    "front": "Exemption vs exception",
+    "back": "Both are formal, documented, approved forms of risk ACCEPTANCE (listed under 'Accept' in 5.2)\nCommon framing:\nException: approved deviation from a policy or control for a specific case, usually time-bound and periodically reviewed\nExemption: broader release from having to meet a requirement",
+    "comptiaNote": "SY0-701 does not define the difference, and sources draw the line differently. What the exam tests: both map to the \"accept\" strategy.",
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-009",
+    "objective": "5.2",
+    "front": "RTO vs RPO",
+    "back": "RTO (recovery time objective): maximum acceptable time to restore a system or process after a disruption → drives recovery speed\nRPO (recovery point objective): maximum acceptable data loss, measured as time back to the last good copy → drives backup/replication frequency",
+    "comptiaNote": "RPO of 1 hour means backups or replication must occur at least hourly. Both are set in the BIA.",
+    "tags": [
+      "risk",
+      "bia"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-010",
+    "objective": "5.2",
+    "front": "MTTR vs MTBF",
+    "back": "MTTR (mean time to repair): average time to fix a failed component and return it to service; lower is better\nMTBF (mean time between failures): average operating time between failures of a repairable component; higher is better (reliability)",
+    "comptiaNote": "If MTTR is longer than the RTO, the recovery design cannot meet the BIA requirement.",
+    "tags": [
+      "risk",
+      "bia"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-011",
+    "objective": "5.2",
+    "front": "Risk assessment types (4)",
+    "back": "Ad hoc: performed when needed, triggered by an event (new threat, incident, acquisition)\nRecurring: repeated on a fixed schedule (e.g., annually, quarterly)\nOne-time: for a single project or decision, not repeated\nContinuous: ongoing, often automated, near real-time evaluation",
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-012",
+    "objective": "5.2",
+    "front": "Risk identification",
+    "back": "First step of risk management: find and describe risks before analyzing them\nInputs: asset inventory, threat intelligence, vulnerability scans, penetration tests, audit findings, incident history, interviews and workshops with business owners\nOutput: each risk (asset + threat + vulnerability) recorded in the risk register",
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-013",
+    "objective": "5.2",
+    "front": "Risk reporting",
+    "back": "Communicating risk status to decision makers and stakeholders\nAudience: board, executives, risk owners, auditors and regulators\nContent: top risks and scores, KRI trends, threshold breaches, treatment status, accepted risks and exceptions\nPurpose: informed decisions, accountability, alignment with risk appetite",
+    "tags": [
+      "risk",
+      "risk-register"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-014",
+    "objective": "5.2",
+    "front": "Likelihood vs probability vs impact",
+    "back": "Likelihood: rating of how likely a risk is to occur (e.g., rare, possible, almost certain)\nProbability: numeric chance of occurrence (e.g., 0.25, or 25% in a year); ARO expresses frequency per year\nImpact: magnitude of harm if it occurs (financial, operational, reputational, legal)\nRisk combines likelihood/probability with impact",
+    "comptiaNote": "The terms are often used interchangeably; when contrasted, likelihood is the qualitative term and probability the quantitative one.",
+    "tags": [
+      "risk",
+      "qualitative",
+      "quantitative"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.2-015",
+    "objective": "5.2",
+    "front": "Business impact analysis (BIA)",
+    "back": "Identifies critical business functions, their dependencies, and the impact of disruption over time\nSets recovery priorities and targets: RTO and RPO\nUses reliability data such as MTTR and MTBF to check whether targets are realistic\nFeeds business continuity and disaster recovery planning",
+    "comptiaNote": "RTO and RPO are targets the BIA sets; MTTR and MTBF are measured metrics. A BIA assesses impact; it does not reduce risk by itself.",
+    "tags": [
+      "risk",
+      "bia"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-001",
+    "objective": "5.3",
+    "front": "MOU vs MOA",
+    "back": "MOU (memorandum of understanding): informal statement of shared intent and goals; generally not legally binding\nMOA (memorandum of agreement): more formal; documents the specific responsibilities each party agrees to",
+    "tags": [
+      "vendor",
+      "agreements"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-002",
+    "objective": "5.3",
+    "front": "MSA vs SOW/WO",
+    "back": "MSA (master service agreement): umbrella contract with general terms for all future work (payment, liability, IP, confidentiality)\nSOW/WO (statement of work / work order): one specific project or task under the MSA: scope, deliverables, timeline, cost",
+    "comptiaNote": "Typical pattern: one MSA, many SOWs.",
+    "tags": [
+      "vendor",
+      "agreements"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-003",
+    "objective": "5.3",
+    "front": "SLA vs BPA vs NDA",
+    "back": "SLA (service-level agreement): measurable service commitments (uptime, response time) and penalties if missed\nBPA (business partners agreement): terms between partners: responsibilities, profit/loss sharing, decision-making\nNDA (non-disclosure agreement): obligation to keep shared confidential information private",
+    "tags": [
+      "vendor",
+      "agreements"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-004",
+    "objective": "5.3",
+    "front": "Vendor assessment methods",
+    "back": "Penetration testing (only with vendor permission and agreed rules of engagement)\nRight-to-audit clause: contractual right to audit the vendor's controls\nEvidence of internal audits: vendor shares its own audit results\nIndependent assessments: third-party reports (e.g., SOC 2 Type II, ISO 27001 certification)\nSupply chain analysis: risk from the vendor's own suppliers, components and locations",
+    "comptiaNote": "Independent third-party evidence gives stronger assurance than self-reported questionnaires or the vendor's internal audits.",
+    "tags": [
+      "vendor"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-005",
+    "objective": "5.3",
+    "front": "Vendor selection and monitoring terms",
+    "back": "Due diligence: verify security posture, finances, reputation and compliance before signing\nConflict of interest: a personal or financial tie that could bias selection → disclose and recuse\nVendor monitoring: ongoing review after onboarding (SLA performance, incidents, reassessment)\nQuestionnaires: structured, self-reported security assessments\nRules of engagement: agreed boundaries for interaction and testing (scope, timing, contacts, permitted actions)",
+    "tags": [
+      "vendor"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-006",
+    "objective": "5.3",
+    "front": "Right-to-audit clause vs independent assessment",
+    "back": "Right-to-audit: contract term letting the customer (or its chosen auditor) inspect the vendor's controls and records; must be negotiated into the contract\nIndependent assessment: a third party already evaluated the vendor (e.g., SOC 2 Type II report, ISO 27001 certification); customer reviews the report instead of auditing",
+    "comptiaNote": "When the scenario says the customer lacks staff or access to audit the vendor itself, an independent assessment report is usually the expected answer.",
+    "tags": [
+      "vendor",
+      "assessment"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-007",
+    "objective": "5.3",
+    "front": "Vendor questionnaire: strength and weakness",
+    "back": "Strength: cheap, scalable, standardized way to collect security information from many vendors\nWeakness: answers are self-reported and unverified\nFix: validate key answers with evidence (internal audit results, independent reports, right-to-audit, testing)",
+    "tags": [
+      "vendor",
+      "questionnaire"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-008",
+    "objective": "5.3",
+    "front": "Supply chain analysis: what does it examine?",
+    "back": "The vendor's own suppliers and sub-contractors (fourth parties)\nOrigin of hardware components and firmware (counterfeit or tampered parts)\nSoftware dependencies and third-party libraries\nGeographic and geopolitical exposure of suppliers\nSingle points of failure in the supply path",
+    "tags": [
+      "vendor",
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-009",
+    "objective": "5.3",
+    "front": "Rules of engagement: key elements",
+    "back": "Written authorization from the system owner (the vendor, for vendor systems)\nScope: in-scope and out-of-scope systems\nTiming: dates and allowed testing windows\nPermitted and prohibited techniques\nPoints of contact and escalation path\nHandling of sensitive data found during testing",
+    "comptiaNote": "A right-to-audit clause is not permission to attack vendor systems; active testing still needs agreed rules of engagement.",
+    "tags": [
+      "vendor",
+      "rules-of-engagement",
+      "pentest"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.3-010",
+    "objective": "5.3",
+    "front": "Third-party risk lifecycle: typical stages",
+    "back": "1. Selection: NDA before sharing sensitive data, due diligence, conflict-of-interest checks\n2. Assessment: questionnaires, evidence, independent reports, testing\n3. Contract: agreements (MSA, SOW, SLA) with right-to-audit and security terms\n4. Monitoring: ongoing performance and risk review, periodic reassessment\n5. Offboarding: revoke access, return or destroy data",
+    "tags": [
+      "vendor",
+      "lifecycle"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.4-001",
+    "objective": "5.4",
+    "front": "Due diligence vs due care",
+    "back": "Due diligence: investigating and understanding risks and obligations (research, assessment, ongoing verification) → \"knowing\"\nDue care: acting on that knowledge by implementing and maintaining reasonable protections → \"doing\"",
+    "comptiaNote": "Failing to exercise due care is what exposes an organization to negligence claims.",
+    "tags": [
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.4-002",
+    "objective": "5.4",
+    "front": "Consequences of non-compliance (5)",
+    "back": "Fines\nSanctions\nReputational damage\nLoss of license\nContractual impacts (penalties, termination, loss of the ability to process cards)",
+    "tags": [
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.4-003",
+    "objective": "5.4",
+    "front": "Compliance reporting and monitoring",
+    "back": "Reporting: internal (to management, board) vs external (to regulators, customers, partners)\nMonitoring: due diligence/care; attestation and acknowledgement; internal and external; automation (continuous control checks, compliance dashboards)",
+    "comptiaNote": "Attestation = a formal statement that something is true (e.g., an officer attests controls are in place). Acknowledgement = a person confirms they received and understand something (e.g., signing the AUP).",
+    "tags": [
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.4-004",
+    "objective": "5.4",
+    "front": "Data subject and right to be forgotten",
+    "back": "Data subject: the identifiable person the personal data is about\nRight to be forgotten (GDPR right to erasure): the subject can request deletion of their personal data; the organization must comply unless an exception applies (e.g., a legal obligation to retain it)",
+    "comptiaNote": "The right is not absolute: legally required records (e.g., tax invoices) can be kept, but only for that purpose and period.",
+    "tags": [
+      "compliance",
+      "privacy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.4-005",
+    "objective": "5.4",
+    "front": "Data inventory, retention and ownership",
+    "back": "Data inventory: catalog of what data exists, where it lives, its classification, owner and who processes it\nData retention: keep data only as long as legally or business required, then dispose of it securely\nOwnership: who is accountable for the data's use and protection\nLegal implications: local/regional, national, global",
+    "tags": [
+      "compliance",
+      "privacy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.4-006",
+    "objective": "5.4",
+    "front": "Data controller vs data processor",
+    "back": "Controller: decides why and how personal data is processed; accountable for compliance\nProcessor: processes personal data only on the controller's behalf and instructions (e.g., cloud or payroll provider)",
+    "comptiaNote": "Classic trap: storing or hosting the data does not make a provider the controller; whoever decides the purpose is the controller.",
+    "tags": [
+      "compliance",
+      "privacy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.4-007",
+    "objective": "5.4",
+    "front": "Internal vs external compliance monitoring",
+    "back": "Internal: the organization checks itself (compliance team, internal audit, self-assessments, automated control checks)\nExternal: outside parties check it (regulators, independent auditors, assessors such as a PCI QSA)",
+    "comptiaNote": "Do not confuse monitoring (checking compliance) with reporting (communicating it to an internal or external audience).",
+    "tags": [
+      "compliance",
+      "monitoring"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.4-008",
+    "objective": "5.4",
+    "front": "Privacy law levels (3)",
+    "back": "Local/regional: state or province laws (e.g., California CCPA/CPRA)\nNational: country-wide laws (e.g., US HIPAA for health data)\nGlobal: laws with cross-border reach (e.g., GDPR covers organizations anywhere that offer goods or services to people in the EU)\nSeveral levels can apply to the same organization at once",
+    "tags": [
+      "compliance",
+      "privacy"
+    ],
+    "status": "reviewed",
+    "comptiaNote": "GDPR is EU law; it is the usual 'global' example because it applies to organizations outside the EU that handle EU residents' data."
+  },
+  {
+    "id": "fc-5.4-010",
+    "objective": "5.4",
+    "front": "Data retention: too short vs too long",
+    "back": "Too short: violates legal or regulatory retention requirements, or destroys data under legal hold\nToo long: larger impact if breached, more data exposed in legal discovery, conflicts with privacy rules such as storage limitation\nGoal: a documented schedule per data type, then secure disposal",
+    "tags": [
+      "compliance",
+      "privacy",
+      "retention"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.5-001",
+    "objective": "5.5",
+    "front": "Known vs partially known vs unknown environment",
+    "back": "Known: testers get full information (diagrams, source code, credentials)\nPartially known: testers get some information (e.g., IP ranges, a user account)\nUnknown: testers start with no internal information, like an outside attacker",
+    "comptiaNote": "CompTIA uses these names instead of white box, gray box and black box.",
+    "tags": [
+      "pentest",
+      "audit"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.5-002",
+    "objective": "5.5",
+    "front": "Passive vs active reconnaissance",
+    "back": "Passive: gather information without interacting with the target's systems (OSINT, public records, social media, job postings, archived pages)\nActive: interact directly with target systems (port scans, ping sweeps, banner grabbing); can be detected and logged",
+    "tags": [
+      "pentest"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.5-003",
+    "objective": "5.5",
+    "front": "Penetration testing: physical, offensive, defensive, integrated",
+    "back": "Physical: test locks, badges, tailgating, facility controls\nOffensive: attack the environment to find weaknesses (red team)\nDefensive: detect and respond to the attacks (blue team)\nIntegrated: offense and defense work together and share findings (purple team)",
+    "comptiaNote": "The 701 objectives use offensive/defensive/integrated rather than red/blue/purple.",
+    "tags": [
+      "pentest"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.5-004",
+    "objective": "5.5",
+    "front": "Internal vs external audits and assessments",
+    "back": "Internal: compliance checks, audit committee oversight, self-assessments\nExternal: regulatory audits, examinations, assessments, independent third-party audits\nAttestation: a formal written opinion that controls meet a stated standard",
+    "comptiaNote": "When stakeholders reject reports produced by the organization's own staff, the answer is an independent third-party audit.",
+    "tags": [
+      "audit"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.5-005",
+    "objective": "5.5",
+    "front": "What is an attestation?",
+    "back": "A formal written statement that claims about controls are accurate, usually an independent auditor's signed opinion on management's assertions\nThe audit is the process; the attestation is the signed result\nExample: a SOC 2 report issued by an independent CPA firm",
+    "comptiaNote": "If a question asks for the formal signed statement customers or partners can rely on, the answer is attestation, not assessment.",
+    "tags": [
+      "audit",
+      "attestation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.5-007",
+    "objective": "5.5",
+    "front": "Internal audits and assessments: 3 types",
+    "back": "Compliance: internal checks that the organization follows its policies, laws and contracts\nAudit committee: board group that oversees internal audit, so auditors stay independent of the managers they audit\nSelf-assessment: staff evaluate their own controls (e.g., questionnaires, control reviews); cheap and frequent but not independent",
+    "comptiaNote": "Internal audit keeps its independence by reporting to the audit committee, not to the CIO or CISO.",
+    "tags": [
+      "audit"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.5-008",
+    "objective": "5.5",
+    "front": "Physical penetration testing: what does it test?",
+    "back": "Whether people and facility controls stop unauthorized physical access\nExamples: tailgating, badge cloning, picking or bypassing locks, posing as a contractor, planting a device on the network\nNeeds written authorization and agreed rules of engagement, like any other penetration test",
+    "tags": [
+      "pentest",
+      "physical"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.6-001",
+    "objective": "5.6",
+    "front": "Anomalous behavior: risky vs unexpected vs unintentional",
+    "back": "Risky: actions that bypass or ignore security and put systems or data at risk (disabling security tools, installing unapproved software, sharing credentials)\nUnexpected: departure from a user's normal pattern (unusual hours, location, or resources accessed)\nUnintentional: honest mistakes (wrong email recipient, misconfiguration, accidental click)",
+    "tags": [
+      "awareness"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.6-002",
+    "objective": "5.6",
+    "front": "Security awareness program lifecycle",
+    "back": "Development: assess needs and risks, set objectives, build content per audience\nExecution: deliver training and phishing campaigns (recognizing a phishing attempt, responding to reported suspicious messages)\nReporting and monitoring: initial (baseline) and recurring (trends over time)\nUse results to revise the program",
+    "tags": [
+      "awareness",
+      "phishing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.6-003",
+    "objective": "5.6",
+    "front": "User guidance and training topics (5.6)",
+    "back": "Policy/handbooks\nSituational awareness\nInsider threat\nPassword management\nRemovable media and cables\nSocial engineering\nOperational security\nHybrid/remote work environments",
+    "comptiaNote": "\"Cables\" is there on purpose: malicious USB charging cables can carry implants, just like found USB drives.",
+    "tags": [
+      "awareness"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.6-004",
+    "objective": "5.6",
+    "front": "Recognizing a phishing attempt: key indicators",
+    "back": "Urgency or threats (\"account disabled in 2 hours\")\nSender, reply-to or link domain that does not match the claimed sender (check by hovering)\nLookalike domains (e.g., a zero instead of the letter o)\nUnexpected attachments or requests for credentials, payment or gift cards\nGeneric greeting, unusual tone or writing errors",
+    "comptiaNote": "Logos and correct names are easy to fake; they never prove an email is legitimate.",
+    "tags": [
+      "awareness",
+      "phishing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.6-005",
+    "objective": "5.6",
+    "front": "Responding to reported suspicious messages",
+    "back": "User: report with the report button; do not click, reply or forward\nSecurity: analyze headers, links and attachments (sandbox)\nIf malicious: remove every delivered copy, block sender, domain and URLs\nFind who clicked; reset those credentials and check those endpoints\nGive the reporter feedback to encourage future reports",
+    "tags": [
+      "awareness",
+      "phishing",
+      "ir"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.6-006",
+    "objective": "5.6",
+    "front": "Situational awareness vs operational security (OPSEC)",
+    "back": "Situational awareness: notice what is happening around you (shoulder surfers, tailgaters, strangers without badges, unattended devices)\nOPSEC: avoid leaking sensitive details through everyday activity (social media posts, whiteboards in photos, talking about projects in public)",
+    "tags": [
+      "awareness",
+      "opsec"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.6-007",
+    "objective": "5.6",
+    "front": "Insider threat: warning signs to train users on",
+    "back": "Accessing data or systems unrelated to the job\nTrying to bypass security controls or asking for extra privileges\nCopying large amounts of data, especially before leaving the company\nStrong grudges, unexplained wealth, unusual working hours without a business reason\nReport concerns through the official, confidential channel",
+    "comptiaNote": "An insider already has legitimate access, so perimeter controls do not stop them; trained coworkers are an important detection layer.",
+    "tags": [
+      "awareness",
+      "insider-threat"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.6-008",
+    "objective": "5.6",
+    "front": "Hybrid/remote work: user guidance",
+    "back": "Connect through the company VPN; avoid untrusted public Wi-Fi\nLock the screen when away; use a privacy screen in public\nKeep work and personal devices and accounts separate\nUse only approved storage, printing and collaboration tools\nWatch for shoulder surfing and confidential calls in public spaces",
+    "tags": [
+      "awareness",
+      "remote-work"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-5.6-009",
+    "objective": "5.6",
+    "front": "Policy/handbooks in awareness training",
+    "back": "Training explains the rules users must follow: acceptable use policy, data handling, password and remote work rules\nThe employee handbook collects these rules in one place\nUsers sign an acknowledgement at hire and after major changes\nThe acknowledgement shows users were told the rules; behavior metrics show whether training works",
+    "tags": [
+      "awareness",
+      "policy"
+    ],
+    "status": "reviewed"
+  }
+]

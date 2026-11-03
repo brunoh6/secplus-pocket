@@ -1,0 +1,95 @@
+{
+  "id": "resilience",
+  "title": "Métricas de resiliencia y BIA",
+  "description": "Recovery objectives, reliability metrics, quantitative risk formulas, and recovery site types.",
+  "objectives": [
+    "5.2",
+    "3.4"
+  ],
+  "columns": [
+    "Term",
+    "Meaning",
+    "Formula / rule of thumb",
+    "Exam trap"
+  ],
+  "rows": [
+    [
+      "RTO (Recovery Time Objective)",
+      "Maximum acceptable time to restore a service after a disruption.",
+      "Determines site type and recovery method: a short RTO needs a hot site or high availability.",
+      "RTO is about downtime; RPO is about data loss. Do not swap them."
+    ],
+    [
+      "RPO (Recovery Point Objective)",
+      "Maximum acceptable amount of data loss, expressed as time since the last good copy.",
+      "Backup or replication interval must be at or below the RPO (RPO of 1 hour means at least hourly backups).",
+      "A question about how often to back up is an RPO question."
+    ],
+    [
+      "MTTR (Mean Time to Repair/Recover)",
+      "Average time needed to restore a failed component or system.",
+      "MTTR = total repair time / number of repairs. Lower is better.",
+      "MTTR must fit within the RTO, otherwise the objective cannot be met."
+    ],
+    [
+      "MTBF (Mean Time Between Failures)",
+      "Average operating time between failures of a repairable component.",
+      "MTBF = total operating time / number of failures. Higher is better.",
+      "MTBF applies to repairable items; MTTF applies to items that are replaced."
+    ],
+    [
+      "MTTF (Mean Time to Failure)",
+      "Average expected lifetime of a non-repairable component.",
+      "Higher is better; used to plan replacements and spares.",
+      "Do not use MTTF for something that gets repaired."
+    ],
+    [
+      "EF (Exposure Factor)",
+      "Percentage of an asset's value lost in one occurrence of a threat.",
+      "Expressed from 0 to 100% (or 0.0 to 1.0).",
+      "EF is a percentage, not a dollar amount."
+    ],
+    [
+      "SLE (Single Loss Expectancy)",
+      "Monetary loss from a single occurrence.",
+      "SLE = AV (asset value) x EF.",
+      "Calculate SLE before ALE."
+    ],
+    [
+      "ARO (Annualized Rate of Occurrence)",
+      "Expected number of occurrences per year.",
+      "Once every 4 years = 0.25; three times a year = 3.",
+      "Convert the frequency to a per-year figure before multiplying."
+    ],
+    [
+      "ALE (Annualized Loss Expectancy)",
+      "Expected loss per year from a risk.",
+      "ALE = SLE x ARO.",
+      "A control is cost-justified when its annual cost is lower than the ALE reduction it provides."
+    ],
+    [
+      "Hot site",
+      "Fully equipped alternate site with current data, ready to take over almost immediately.",
+      "Minutes to hours to switch over; highest cost.",
+      "Pick it when the RTO is very short and cost is not the main constraint."
+    ],
+    [
+      "Warm site",
+      "Alternate site with hardware and connectivity but not current data or full configuration.",
+      "Hours to days to become operational; moderate cost.",
+      "The usual middle-ground answer balancing cost and recovery time."
+    ],
+    [
+      "Cold site",
+      "Space with power and cooling only; equipment and data must be brought in.",
+      "Days to weeks to become operational; lowest cost.",
+      "Cheapest option but cannot meet short RTOs."
+    ],
+    [
+      "Geographic dispersion",
+      "Placing alternate sites far enough apart that one regional event cannot affect both.",
+      "Distance should exceed the expected footprint of regional disasters.",
+      "A backup site in the same flood zone or power grid does not provide resilience."
+    ]
+  ]
+}

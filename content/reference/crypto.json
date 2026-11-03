@@ -1,0 +1,192 @@
+{
+  "id": "crypto",
+  "title": "Algoritmos criptográficos",
+  "description": "Common algorithms and block cipher modes with their sizes and whether they are still acceptable.",
+  "objectives": [
+    "1.4",
+    "2.4",
+    "4.1"
+  ],
+  "columns": [
+    "Algorithm",
+    "Type",
+    "Key or output size",
+    "Status & notes"
+  ],
+  "rows": [
+    [
+      "AES",
+      "Symmetric (block)",
+      "128-bit block; 128, 192, or 256-bit key",
+      "Current standard for bulk encryption (TLS, FDE, WPA2/WPA3). AES-256 for the strongest protection."
+    ],
+    [
+      "3DES (Triple DES)",
+      "Symmetric (block)",
+      "64-bit block; 168-bit key (112-bit effective)",
+      "Deprecated and disallowed by NIST for new encryption. Slow and vulnerable to attacks on its small block size."
+    ],
+    [
+      "DES",
+      "Symmetric (block)",
+      "64-bit block; 56-bit key",
+      "Broken: the key space can be brute-forced quickly. Never acceptable."
+    ],
+    [
+      "RC4",
+      "Symmetric (stream)",
+      "40 to 2048-bit key",
+      "Biased keystream; behind the WEP and TKIP weaknesses and prohibited in TLS."
+    ],
+    [
+      "Blowfish",
+      "Symmetric (block)",
+      "64-bit block; 32 to 448-bit key",
+      "Legacy; the small block is a weakness. Its key schedule is the basis of bcrypt."
+    ],
+    [
+      "Twofish",
+      "Symmetric (block)",
+      "128-bit block; up to 256-bit key",
+      "AES finalist; still considered secure but far less common than AES."
+    ],
+    [
+      "IDEA",
+      "Symmetric (block)",
+      "64-bit block; 128-bit key",
+      "Legacy cipher from early PGP versions."
+    ],
+    [
+      "ChaCha20 (with Poly1305)",
+      "Symmetric (stream)",
+      "256-bit key",
+      "Modern AEAD option in TLS 1.3; fast on devices without AES hardware acceleration."
+    ],
+    [
+      "RSA",
+      "Asymmetric",
+      "2048-bit minimum; 3072+ for long-term",
+      "Security rests on factoring large numbers. Used for signatures and key transport; RSA key transport gives no forward secrecy."
+    ],
+    [
+      "ECC / ECDSA",
+      "Asymmetric",
+      "256 to 521-bit curves (256-bit ECC is roughly 3072-bit RSA)",
+      "Same strength with much smaller keys; preferred for mobile, IoT, and certificates. ECDSA is the signature scheme."
+    ],
+    [
+      "DSA",
+      "Asymmetric (signatures only)",
+      "2048 or 3072-bit",
+      "Signs but cannot encrypt. Being retired in favor of ECDSA and EdDSA."
+    ],
+    [
+      "Diffie-Hellman (DH)",
+      "Key exchange",
+      "2048-bit+ groups",
+      "Agrees a shared secret over an untrusted channel; does not encrypt or authenticate by itself, so unauthenticated DH is open to on-path attacks."
+    ],
+    [
+      "DHE / ECDHE",
+      "Key exchange (ephemeral)",
+      "New key pair per session",
+      "Provides perfect forward secrecy; TLS 1.3 removed static RSA and static DH key exchange, so certificate-based handshakes always use (EC)DHE."
+    ],
+    [
+      "MD5",
+      "Hash",
+      "128-bit digest",
+      "Practical collisions exist. Not acceptable for signatures or password storage."
+    ],
+    [
+      "SHA-1",
+      "Hash",
+      "160-bit digest",
+      "Collisions demonstrated publicly in 2017; deprecated for certificates and signatures."
+    ],
+    [
+      "SHA-2 (SHA-256, SHA-384, SHA-512)",
+      "Hash",
+      "224, 256, 384, or 512-bit digest",
+      "Current standard for integrity, signatures, and certificates."
+    ],
+    [
+      "SHA-3",
+      "Hash",
+      "224, 256, 384, or 512-bit digest",
+      "Different internal design (Keccak sponge); an alternative to SHA-2, not a fix for a broken SHA-2."
+    ],
+    [
+      "RIPEMD-160",
+      "Hash",
+      "160-bit digest",
+      "Not broken but rarely used outside niche uses such as Bitcoin address generation."
+    ],
+    [
+      "HMAC",
+      "MAC",
+      "Same size as the underlying hash (e.g., 256-bit with SHA-256)",
+      "Keyed hash proving integrity and authenticity. Shared key means no non-repudiation."
+    ],
+    [
+      "PBKDF2",
+      "KDF (key stretching)",
+      "Configurable output; iterations of salted HMAC",
+      "Slows brute force by repeating HMAC many times. Used in WPA2-Personal to derive the key from the passphrase."
+    ],
+    [
+      "bcrypt",
+      "KDF (password hashing)",
+      "184-bit hash with a tunable cost factor",
+      "Blowfish-based, salted, deliberately slow. Good choice for stored passwords."
+    ],
+    [
+      "scrypt / Argon2",
+      "KDF (memory-hard)",
+      "Configurable output, memory, and time cost",
+      "Memory-hard design resists GPU and ASIC cracking. Argon2id is the current recommendation for new systems."
+    ],
+    [
+      "ECB",
+      "Block cipher mode",
+      "Uses the cipher's block size",
+      "Encrypts each block independently, so identical plaintext blocks produce identical ciphertext and patterns leak. Never use."
+    ],
+    [
+      "CBC",
+      "Block cipher mode",
+      "Uses the cipher's block size; needs an unpredictable IV",
+      "Each block is XORed with the previous ciphertext; encryption cannot be parallelized and is vulnerable to padding-oracle attacks if poorly implemented."
+    ],
+    [
+      "CFB",
+      "Block cipher mode",
+      "Uses the cipher's block size; needs an IV",
+      "Turns a block cipher into a self-synchronizing stream cipher."
+    ],
+    [
+      "CTR (CompTIA: CTM)",
+      "Block cipher mode",
+      "Nonce plus counter",
+      "Encrypts a counter to produce a keystream; parallelizable, but reusing a nonce with the same key is catastrophic."
+    ],
+    [
+      "GCM",
+      "Block cipher mode (authenticated)",
+      "Nonce plus counter; 128-bit authentication tag",
+      "CTR encryption plus a Galois integrity tag (AEAD). Preferred mode in TLS 1.2/1.3."
+    ],
+    [
+      "AES-CCMP",
+      "Wireless encryption protocol",
+      "128-bit AES",
+      "CTR encryption plus CBC-MAC integrity; the WPA2 standard. WPA3 keeps it and adds GCMP-256 in WPA3-Enterprise 192-bit mode."
+    ],
+    [
+      "TKIP",
+      "Wireless encryption protocol",
+      "RC4-based, 128-bit key",
+      "Interim WEP replacement used by original WPA; deprecated."
+    ]
+  ]
+}

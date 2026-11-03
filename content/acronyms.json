@@ -1,0 +1,2781 @@
+[
+  {
+    "id": "acr-AAA",
+    "acronym": "AAA",
+    "expansion": "Authentication, Authorization, and Accounting",
+    "note": "Framework for proving identity, granting rights, and logging what was done; RADIUS and TACACS+ are the classic AAA protocols.",
+    "objectives": [
+      "1.2",
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-ACL",
+    "acronym": "ACL",
+    "expansion": "Access Control List",
+    "note": "Ordered allow/deny rules on a router, firewall, or file object; evaluated top-down with an implicit deny at the end.",
+    "objectives": [
+      "2.5",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-AES",
+    "acronym": "AES",
+    "expansion": "Advanced Encryption Standard",
+    "note": "Symmetric block cipher (128-bit block; 128/192/256-bit keys) and the default choice for bulk encryption.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-AES-256",
+    "acronym": "AES-256",
+    "expansion": "Advanced Encryption Standard 256-bit",
+    "note": "AES with a 256-bit key; the strongest AES key length and a common requirement for data at rest.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-AH",
+    "acronym": "AH",
+    "expansion": "Authentication Header",
+    "note": "IPSec protocol (IP protocol 51) that gives integrity and origin authentication but no encryption.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-AI",
+    "acronym": "AI",
+    "expansion": "Artificial Intelligence"
+  },
+  {
+    "id": "acr-AIS",
+    "acronym": "AIS",
+    "expansion": "Automated Indicator Sharing",
+    "note": "CISA service that exchanges threat indicators between government and private sector, using STIX/TAXII.",
+    "objectives": [
+      "4.3"
+    ]
+  },
+  {
+    "id": "acr-ALE",
+    "acronym": "ALE",
+    "expansion": "Annualized Loss Expectancy",
+    "note": "Expected yearly loss from a risk: ALE = SLE x ARO.",
+    "objectives": [
+      "5.2"
+    ]
+  },
+  {
+    "id": "acr-AP",
+    "acronym": "AP",
+    "expansion": "Access Point",
+    "note": "Device that bridges wireless clients to the wired network; rogue APs are a classic wireless threat.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-API",
+    "acronym": "API",
+    "expansion": "Application Programming Interface",
+    "note": "Programmatic interface between software components; APIs drive automation and are a major web attack surface.",
+    "objectives": [
+      "4.7",
+      "2.2"
+    ]
+  },
+  {
+    "id": "acr-APT",
+    "acronym": "APT",
+    "expansion": "Advanced Persistent Threat",
+    "note": "Well-resourced, usually nation-state, actor that maintains long-term covert access to a target.",
+    "objectives": [
+      "2.1"
+    ]
+  },
+  {
+    "id": "acr-ARO",
+    "acronym": "ARO",
+    "expansion": "Annualized Rate of Occurrence",
+    "note": "How many times per year a threat is expected to materialize (0.1 = once every ten years).",
+    "objectives": [
+      "5.2"
+    ]
+  },
+  {
+    "id": "acr-ARP",
+    "acronym": "ARP",
+    "expansion": "Address Resolution Protocol",
+    "note": "Maps IPv4 addresses to MAC addresses on a LAN; ARP poisoning enables on-path attacks.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-ASLR",
+    "acronym": "ASLR",
+    "expansion": "Address Space Layout Randomization",
+    "note": "OS memory protection that randomizes where code and data load, making memory-corruption exploits less reliable.",
+    "objectives": [
+      "2.3"
+    ]
+  },
+  {
+    "id": "acr-ATT&CK",
+    "acronym": "ATT&CK",
+    "expansion": "Adversarial Tactics, Techniques, and Common Knowledge",
+    "note": "MITRE knowledge base of real-world adversary tactics and techniques, used to map detections and threat hunts.",
+    "objectives": [
+      "4.8",
+      "2.1"
+    ]
+  },
+  {
+    "id": "acr-AUP",
+    "acronym": "AUP",
+    "expansion": "Acceptable Use Policy",
+    "note": "Policy users accept that defines permitted and prohibited use of organizational systems.",
+    "objectives": [
+      "5.1"
+    ]
+  },
+  {
+    "id": "acr-AV",
+    "acronym": "AV",
+    "expansion": "Antivirus",
+    "note": "Signature- and heuristic-based malware protection on endpoints.",
+    "objectives": [
+      "4.4"
+    ]
+  },
+  {
+    "id": "acr-BASH",
+    "acronym": "BASH",
+    "expansion": "Bourne Again Shell",
+    "note": "Default shell on many Linux systems; Bash scripts are both an admin tool and a common attacker technique.",
+    "objectives": [
+      "4.7"
+    ]
+  },
+  {
+    "id": "acr-BCP",
+    "acronym": "BCP",
+    "expansion": "Business Continuity Planning",
+    "note": "Planning to keep essential business functions running during and after a disruption.",
+    "objectives": [
+      "5.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "acr-BGP",
+    "acronym": "BGP",
+    "expansion": "Border Gateway Protocol",
+    "note": "Internet routing protocol between autonomous systems; BGP hijacking can reroute or black-hole traffic.",
+    "objectives": []
+  },
+  {
+    "id": "acr-BIA",
+    "acronym": "BIA",
+    "expansion": "Business Impact Analysis",
+    "note": "Identifies critical functions and the impact of losing them; produces RTO, RPO, and MTD targets.",
+    "objectives": [
+      "5.2"
+    ]
+  },
+  {
+    "id": "acr-BIOS",
+    "acronym": "BIOS",
+    "expansion": "Basic Input/Output System",
+    "note": "Legacy firmware that initializes hardware at boot; replaced by UEFI on modern systems.",
+    "objectives": []
+  },
+  {
+    "id": "acr-BPA",
+    "acronym": "BPA",
+    "expansion": "Business Partners Agreement",
+    "note": "Agreement between partners covering shared responsibilities, profit sharing, and decision-making.",
+    "objectives": [
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-BPDU",
+    "acronym": "BPDU",
+    "expansion": "Bridge Protocol Data Unit",
+    "note": "Spanning Tree Protocol message; BPDU guard shuts access ports that receive BPDUs to stop rogue switches.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-BYOD",
+    "acronym": "BYOD",
+    "expansion": "Bring Your Own Device",
+    "note": "Mobile deployment model where employees use personally owned devices for work.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-CA",
+    "acronym": "CA",
+    "expansion": "Certificate Authority",
+    "note": "Trusted entity that issues and signs digital certificates in a PKI.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-CAPTCHA",
+    "acronym": "CAPTCHA",
+    "expansion": "Completely Automated Public Turing Test to Tell Computers and Humans Apart",
+    "note": "Challenge that separates humans from bots, used against automated credential and form abuse.",
+    "objectives": []
+  },
+  {
+    "id": "acr-CAR",
+    "acronym": "CAR",
+    "expansion": "Corrective Action Report",
+    "note": "Document recording a nonconformity or finding and the actions taken to fix it.",
+    "objectives": []
+  },
+  {
+    "id": "acr-CASB",
+    "acronym": "CASB",
+    "expansion": "Cloud Access Security Broker",
+    "note": "Enforcement point between users and cloud services providing visibility, DLP, and policy control over SaaS use.",
+    "objectives": [
+      "3.1",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-CBC",
+    "acronym": "CBC",
+    "expansion": "Cipher Block Chaining",
+    "note": "Block cipher mode where each plaintext block is XORed with the previous ciphertext block; needs an unpredictable IV.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-CCMP",
+    "acronym": "CCMP",
+    "expansion": "Counter Mode with Cipher Block Chaining Message Authentication Code Protocol",
+    "note": "AES-based encryption and integrity protocol used by WPA2.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-CCTV",
+    "acronym": "CCTV",
+    "expansion": "Closed-circuit Television",
+    "note": "Video surveillance; detective when recording and reviewed, deterrent when visible.",
+    "objectives": [
+      "1.2",
+      "1.1"
+    ]
+  },
+  {
+    "id": "acr-CERT",
+    "acronym": "CERT",
+    "expansion": "Computer Emergency Response Team",
+    "note": "Team that coordinates incident response and vulnerability information for an organization or country.",
+    "objectives": [
+      "4.8"
+    ]
+  },
+  {
+    "id": "acr-CFB",
+    "acronym": "CFB",
+    "expansion": "Cipher Feedback",
+    "note": "Block cipher mode that turns a block cipher into a self-synchronizing stream cipher.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-CHAP",
+    "acronym": "CHAP",
+    "expansion": "Challenge Handshake Authentication Protocol",
+    "note": "PPP authentication using a challenge and hashed response so the password is never sent in cleartext.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-CIA",
+    "acronym": "CIA",
+    "expansion": "Confidentiality, Integrity, Availability",
+    "note": "The core security triad that every control ultimately protects.",
+    "objectives": [
+      "1.2"
+    ]
+  },
+  {
+    "id": "acr-CIO",
+    "acronym": "CIO",
+    "expansion": "Chief Information Officer",
+    "note": "Executive responsible for the organization's IT strategy.",
+    "objectives": []
+  },
+  {
+    "id": "acr-CIRT",
+    "acronym": "CIRT",
+    "expansion": "Computer Incident Response Team",
+    "note": "Team (also CSIRT) that handles security incidents per the incident response plan.",
+    "objectives": [
+      "4.8"
+    ]
+  },
+  {
+    "id": "acr-CMS",
+    "acronym": "CMS",
+    "expansion": "Content Management System",
+    "note": "Platform for publishing web content (e.g., WordPress); plugins are a frequent vulnerability source.",
+    "objectives": []
+  },
+  {
+    "id": "acr-COOP",
+    "acronym": "COOP",
+    "expansion": "Continuity of Operations Planning",
+    "note": "Plan to sustain essential functions during an emergency, often including alternate sites.",
+    "objectives": [
+      "3.4"
+    ]
+  },
+  {
+    "id": "acr-COPE",
+    "acronym": "COPE",
+    "expansion": "Corporate Owned, Personally Enabled",
+    "note": "Company owns and controls the device but allows some personal use.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-CP",
+    "acronym": "CP",
+    "expansion": "Contingency Planning",
+    "note": "Preparing alternate procedures and resources for when normal operations are disrupted.",
+    "objectives": [
+      "3.4",
+      "5.1"
+    ]
+  },
+  {
+    "id": "acr-CRC",
+    "acronym": "CRC",
+    "expansion": "Cyclic Redundancy Check",
+    "note": "Error-detection checksum; detects accidental corruption but is not a cryptographic integrity control.",
+    "objectives": []
+  },
+  {
+    "id": "acr-CRL",
+    "acronym": "CRL",
+    "expansion": "Certificate Revocation List",
+    "note": "CA-signed list of revoked certificate serial numbers that clients download and check.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-CSO",
+    "acronym": "CSO",
+    "expansion": "Chief Security Officer",
+    "note": "Executive accountable for the organization's security program.",
+    "objectives": []
+  },
+  {
+    "id": "acr-CSP",
+    "acronym": "CSP",
+    "expansion": "Cloud Service Provider",
+    "note": "Vendor that delivers IaaS, PaaS, or SaaS; responsibilities are divided per the shared responsibility model.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-CSR",
+    "acronym": "CSR",
+    "expansion": "Certificate Signing Request",
+    "note": "Request containing the public key and subject details, sent to a CA to obtain a certificate.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-CSRF",
+    "acronym": "CSRF",
+    "expansion": "Cross-site Request Forgery",
+    "note": "Attack that makes an authenticated browser send an unwanted request to a trusted site; mitigated with anti-CSRF tokens.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-CSU",
+    "acronym": "CSU",
+    "expansion": "Channel Service Unit",
+    "note": "Telecom device (usually paired as CSU/DSU) that terminates a digital WAN circuit.",
+    "objectives": []
+  },
+  {
+    "id": "acr-CTM",
+    "acronym": "CTM",
+    "expansion": "Counter Mode",
+    "note": "Block cipher mode (usually written CTR) that encrypts a counter to produce a keystream; parallelizable.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-CTO",
+    "acronym": "CTO",
+    "expansion": "Chief Technology Officer",
+    "note": "Executive responsible for technology direction and engineering.",
+    "objectives": []
+  },
+  {
+    "id": "acr-CVE",
+    "acronym": "CVE",
+    "expansion": "Common Vulnerabilities and Exposures",
+    "note": "Public catalog of unique IDs for known vulnerabilities. CompTIA's list expands it as Common Vulnerability Enumeration.",
+    "objectives": [
+      "4.3"
+    ]
+  },
+  {
+    "id": "acr-CVSS",
+    "acronym": "CVSS",
+    "expansion": "Common Vulnerability Scoring System",
+    "note": "Standard 0-10 severity score for vulnerabilities, used to prioritize remediation.",
+    "objectives": [
+      "4.3"
+    ]
+  },
+  {
+    "id": "acr-CYOD",
+    "acronym": "CYOD",
+    "expansion": "Choose Your Own Device",
+    "note": "Users pick from a list of approved devices that the organization owns or supports.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-DAC",
+    "acronym": "DAC",
+    "expansion": "Discretionary Access Control",
+    "note": "Access model where the resource owner decides who gets access (e.g., NTFS permissions).",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-DBA",
+    "acronym": "DBA",
+    "expansion": "Database Administrator",
+    "objectives": []
+  },
+  {
+    "id": "acr-DDoS",
+    "acronym": "DDoS",
+    "expansion": "Distributed Denial of Service",
+    "note": "Availability attack from many sources at once, often amplified or reflected.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-DEP",
+    "acronym": "DEP",
+    "expansion": "Data Execution Prevention",
+    "note": "Marks memory regions as non-executable so injected code in data areas cannot run.",
+    "objectives": [
+      "2.3"
+    ]
+  },
+  {
+    "id": "acr-DES",
+    "acronym": "DES",
+    "expansion": "Data Encryption Standard",
+    "note": "Obsolete 56-bit symmetric cipher, brute-forceable. CompTIA's list expands it as Digital Encryption Standard.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-DHCP",
+    "acronym": "DHCP",
+    "expansion": "Dynamic Host Configuration Protocol",
+    "note": "Automatically assigns IP settings; rogue DHCP servers enable on-path attacks (mitigated with DHCP snooping).",
+    "objectives": []
+  },
+  {
+    "id": "acr-DHE",
+    "acronym": "DHE",
+    "expansion": "Diffie-Hellman Ephemeral",
+    "note": "Diffie-Hellman with a fresh key pair per session, providing perfect forward secrecy.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-DKIM",
+    "acronym": "DKIM",
+    "expansion": "DomainKeys Identified Mail",
+    "note": "Email authentication where the sending domain signs messages and publishes the public key in DNS.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-DLL",
+    "acronym": "DLL",
+    "expansion": "Dynamic Link Library",
+    "note": "Windows shared code library; DLL injection and hijacking are common malware techniques.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-DLP",
+    "acronym": "DLP",
+    "expansion": "Data Loss Prevention",
+    "note": "Controls that detect and block sensitive data leaving endpoints, networks, or cloud apps.",
+    "objectives": [
+      "4.4",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-DMARC",
+    "acronym": "DMARC",
+    "expansion": "Domain-based Message Authentication, Reporting, and Conformance",
+    "note": "DNS policy telling receivers what to do when SPF/DKIM alignment fails, plus reporting back to the domain owner.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-DNAT",
+    "acronym": "DNAT",
+    "expansion": "Destination Network Address Translation",
+    "note": "Rewrites the destination address of inbound traffic, e.g., to publish an internal server.",
+    "objectives": []
+  },
+  {
+    "id": "acr-DNS",
+    "acronym": "DNS",
+    "expansion": "Domain Name System",
+    "note": "Resolves names to IP addresses; targeted by poisoning, hijacking, and amplification, and used for DNS filtering.",
+    "objectives": [
+      "2.4",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-DoS",
+    "acronym": "DoS",
+    "expansion": "Denial of Service",
+    "note": "Attack that degrades or disrupts availability of a system or service.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-DPO",
+    "acronym": "DPO",
+    "expansion": "Data Protection Officer",
+    "note": "Role (required in some cases by GDPR) that oversees privacy compliance. CompTIA's list expands it as Data Privacy Officer.",
+    "objectives": [
+      "5.4",
+      "5.1"
+    ]
+  },
+  {
+    "id": "acr-DRP",
+    "acronym": "DRP",
+    "expansion": "Disaster Recovery Plan",
+    "note": "Technical plan to restore IT systems and data after a disaster.",
+    "objectives": [
+      "3.4",
+      "5.1"
+    ]
+  },
+  {
+    "id": "acr-DSA",
+    "acronym": "DSA",
+    "expansion": "Digital Signature Algorithm",
+    "note": "Asymmetric algorithm used only for digital signatures, not encryption.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-DSL",
+    "acronym": "DSL",
+    "expansion": "Digital Subscriber Line",
+    "objectives": []
+  },
+  {
+    "id": "acr-EAP",
+    "acronym": "EAP",
+    "expansion": "Extensible Authentication Protocol",
+    "note": "Authentication framework used by 802.1X with many methods (EAP-TLS, PEAP, EAP-TTLS).",
+    "objectives": [
+      "3.2",
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-ECB",
+    "acronym": "ECB",
+    "expansion": "Electronic Code Book",
+    "note": "Block cipher mode that encrypts each block independently, so identical plaintext blocks leak as identical ciphertext.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-ECC",
+    "acronym": "ECC",
+    "expansion": "Elliptic Curve Cryptography",
+    "note": "Asymmetric cryptography that gets equivalent strength with much smaller keys than RSA; good for mobile and IoT.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-ECDHE",
+    "acronym": "ECDHE",
+    "expansion": "Elliptic Curve Diffie-Hellman Ephemeral",
+    "note": "Ephemeral key agreement on elliptic curves; the standard way TLS achieves perfect forward secrecy.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-ECDSA",
+    "acronym": "ECDSA",
+    "expansion": "Elliptic Curve Digital Signature Algorithm",
+    "note": "Elliptic-curve version of DSA used for certificates and code signing.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-EDR",
+    "acronym": "EDR",
+    "expansion": "Endpoint Detection and Response",
+    "note": "Endpoint agent that records behavior, detects threats, and enables response such as isolation and rollback.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-EFS",
+    "acronym": "EFS",
+    "expansion": "Encrypting File System",
+    "note": "Windows file- and folder-level encryption tied to the user account (CompTIA's list: Encrypted File System).",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-ERP",
+    "acronym": "ERP",
+    "expansion": "Enterprise Resource Planning",
+    "note": "Integrated business system (finance, HR, supply chain) that often holds highly sensitive data.",
+    "objectives": []
+  },
+  {
+    "id": "acr-ESN",
+    "acronym": "ESN",
+    "expansion": "Electronic Serial Number",
+    "note": "Unique identifier assigned to a mobile device.",
+    "objectives": []
+  },
+  {
+    "id": "acr-ESP",
+    "acronym": "ESP",
+    "expansion": "Encapsulating Security Payload",
+    "note": "IPSec protocol (IP protocol 50) that provides encryption plus integrity and authentication.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-FACL",
+    "acronym": "FACL",
+    "expansion": "File System Access Control List",
+    "note": "Extended per-user/per-group permissions on a file system beyond basic owner/group/other.",
+    "objectives": [
+      "2.5"
+    ]
+  },
+  {
+    "id": "acr-FDE",
+    "acronym": "FDE",
+    "expansion": "Full Disk Encryption",
+    "note": "Encrypts an entire drive so data at rest is protected if the device is lost or stolen.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-FIM",
+    "acronym": "FIM",
+    "expansion": "File Integrity Monitoring",
+    "note": "Detects unauthorized changes to critical files by comparing hashes to a baseline (CompTIA's list: File Integrity Management).",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-FPGA",
+    "acronym": "FPGA",
+    "expansion": "Field Programmable Gate Array",
+    "note": "Reprogrammable chip used in embedded and specialized systems.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-FRR",
+    "acronym": "FRR",
+    "expansion": "False Rejection Rate",
+    "note": "Biometric rate at which legitimate users are wrongly rejected (type I error); trades off against FAR at the CER.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-FTP",
+    "acronym": "FTP",
+    "expansion": "File Transfer Protocol",
+    "note": "Cleartext file transfer on TCP 20/21; replace with SFTP or FTPS.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-FTPS",
+    "acronym": "FTPS",
+    "expansion": "File Transfer Protocol Secure",
+    "note": "FTP protected with TLS (explicit on 21, implicit on 990). CompTIA's list expands it as Secured File Transfer Protocol.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-GCM",
+    "acronym": "GCM",
+    "expansion": "Galois/Counter Mode",
+    "note": "Authenticated encryption mode combining CTR encryption with an integrity tag; used in TLS 1.2/1.3.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-GDPR",
+    "acronym": "GDPR",
+    "expansion": "General Data Protection Regulation",
+    "note": "EU privacy regulation covering data subject rights, controllers/processors, and breach notification.",
+    "objectives": [
+      "5.4",
+      "3.3"
+    ]
+  },
+  {
+    "id": "acr-GPG",
+    "acronym": "GPG",
+    "expansion": "GNU Privacy Guard",
+    "note": "Open-source implementation of the OpenPGP standard for encrypting and signing files and email.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-GPO",
+    "acronym": "GPO",
+    "expansion": "Group Policy Object",
+    "note": "Active Directory policy container used to push security settings and baselines to Windows systems.",
+    "objectives": [
+      "4.5",
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-GPS",
+    "acronym": "GPS",
+    "expansion": "Global Positioning System",
+    "note": "Satellite location service that enables geolocation and geofencing.",
+    "objectives": []
+  },
+  {
+    "id": "acr-GPU",
+    "acronym": "GPU",
+    "expansion": "Graphics Processing Unit",
+    "note": "Parallel processor often used to accelerate password cracking.",
+    "objectives": []
+  },
+  {
+    "id": "acr-GRE",
+    "acronym": "GRE",
+    "expansion": "Generic Routing Encapsulation",
+    "note": "Tunneling protocol (IP protocol 47) with no encryption of its own; used with PPTP and site-to-site tunnels.",
+    "objectives": []
+  },
+  {
+    "id": "acr-HA",
+    "acronym": "HA",
+    "expansion": "High Availability",
+    "note": "Design that minimizes downtime through redundancy, clustering, and load balancing.",
+    "objectives": [
+      "3.4",
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-HDD",
+    "acronym": "HDD",
+    "expansion": "Hard Disk Drive",
+    "objectives": [
+      "4.2"
+    ]
+  },
+  {
+    "id": "acr-HIDS",
+    "acronym": "HIDS",
+    "expansion": "Host-based Intrusion Detection System",
+    "note": "Agent that monitors a single host's logs, files, and activity for signs of intrusion.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-HIPS",
+    "acronym": "HIPS",
+    "expansion": "Host-based Intrusion Prevention System",
+    "note": "Host agent that can actively block malicious activity; listed as an endpoint hardening technique.",
+    "objectives": [
+      "2.5",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-HMAC",
+    "acronym": "HMAC",
+    "expansion": "Hash-based Message Authentication Code",
+    "note": "Keyed hash that proves integrity and authenticity between parties sharing a secret; no non-repudiation.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-HOTP",
+    "acronym": "HOTP",
+    "expansion": "HMAC-based One-time Password",
+    "note": "One-time password generated from a shared secret and an incrementing counter; valid until used.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-HSM",
+    "acronym": "HSM",
+    "expansion": "Hardware Security Module",
+    "note": "Tamper-resistant hardware appliance that generates, stores, and uses keys at scale.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-HTML",
+    "acronym": "HTML",
+    "expansion": "Hypertext Markup Language",
+    "objectives": []
+  },
+  {
+    "id": "acr-HTTP",
+    "acronym": "HTTP",
+    "expansion": "Hypertext Transfer Protocol",
+    "note": "Cleartext web protocol on TCP 80.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-HTTPS",
+    "acronym": "HTTPS",
+    "expansion": "Hypertext Transfer Protocol Secure",
+    "note": "HTTP over TLS on TCP 443.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-HVAC",
+    "acronym": "HVAC",
+    "expansion": "Heating, Ventilation, Air Conditioning",
+    "note": "Environmental systems that protect equipment availability; often networked and part of the OT attack surface.",
+    "objectives": []
+  },
+  {
+    "id": "acr-IaaS",
+    "acronym": "IaaS",
+    "expansion": "Infrastructure as a Service",
+    "note": "Cloud model where the provider supplies compute, storage, and network and the customer manages the OS upward.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-IaC",
+    "acronym": "IaC",
+    "expansion": "Infrastructure as Code",
+    "note": "Defining infrastructure in version-controlled templates for repeatable, auditable deployments.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-IAM",
+    "acronym": "IAM",
+    "expansion": "Identity and Access Management",
+    "note": "Processes and tools for provisioning identities and controlling their access.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-ICMP",
+    "acronym": "ICMP",
+    "expansion": "Internet Control Message Protocol",
+    "note": "Network diagnostic and error protocol (ping, traceroute); abused for floods and reconnaissance.",
+    "objectives": []
+  },
+  {
+    "id": "acr-ICS",
+    "acronym": "ICS",
+    "expansion": "Industrial Control Systems",
+    "note": "Systems that control physical industrial processes; availability and safety come first.",
+    "objectives": [
+      "3.1",
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-IDEA",
+    "acronym": "IDEA",
+    "expansion": "International Data Encryption Algorithm",
+    "note": "Legacy symmetric block cipher with a 128-bit key, used in early PGP.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-IDF",
+    "acronym": "IDF",
+    "expansion": "Intermediate Distribution Frame",
+    "note": "Wiring closet that connects end users on a floor or area back to the MDF.",
+    "objectives": []
+  },
+  {
+    "id": "acr-IdP",
+    "acronym": "IdP",
+    "expansion": "Identity Provider",
+    "note": "Authenticates users and issues assertions or tokens to relying parties in federation and SSO.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-IDS",
+    "acronym": "IDS",
+    "expansion": "Intrusion Detection System",
+    "note": "Monitors traffic or hosts and alerts on suspicious activity; detective, does not block.",
+    "objectives": [
+      "3.2",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-IEEE",
+    "acronym": "IEEE",
+    "expansion": "Institute of Electrical and Electronics Engineers",
+    "note": "Standards body behind 802.1X, 802.11 Wi-Fi, and other networking standards.",
+    "objectives": []
+  },
+  {
+    "id": "acr-IKE",
+    "acronym": "IKE",
+    "expansion": "Internet Key Exchange",
+    "note": "Negotiates IPSec security associations and keys (UDP 500, 4500 with NAT-T).",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-IM",
+    "acronym": "IM",
+    "expansion": "Instant Messaging",
+    "note": "Message-based threat vector alongside email and SMS.",
+    "objectives": [
+      "2.2"
+    ]
+  },
+  {
+    "id": "acr-IMAP",
+    "acronym": "IMAP",
+    "expansion": "Internet Message Access Protocol",
+    "note": "Email retrieval that keeps mail on the server (TCP 143; IMAPS on 993).",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-IoC",
+    "acronym": "IoC",
+    "expansion": "Indicator of Compromise",
+    "note": "Artifact (hash, IP, domain, behavior) that suggests a system has been breached.",
+    "objectives": [
+      "2.4",
+      "4.9"
+    ]
+  },
+  {
+    "id": "acr-IoT",
+    "acronym": "IoT",
+    "expansion": "Internet of Things",
+    "note": "Network-connected consumer and industrial devices, often with weak defaults and limited patching.",
+    "objectives": [
+      "3.1",
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-IP",
+    "acronym": "IP",
+    "expansion": "Internet Protocol",
+    "objectives": []
+  },
+  {
+    "id": "acr-IPS",
+    "acronym": "IPS",
+    "expansion": "Intrusion Prevention System",
+    "note": "Inline device that detects and blocks malicious traffic in real time.",
+    "objectives": [
+      "3.2",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-IPSec",
+    "acronym": "IPSec",
+    "expansion": "Internet Protocol Security",
+    "note": "Suite (AH, ESP, IKE) that secures IP traffic; common for site-to-site VPNs in tunnel mode.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-IR",
+    "acronym": "IR",
+    "expansion": "Incident Response",
+    "note": "Structured handling of security incidents from preparation through lessons learned.",
+    "objectives": [
+      "4.8"
+    ]
+  },
+  {
+    "id": "acr-IRC",
+    "acronym": "IRC",
+    "expansion": "Internet Relay Chat",
+    "note": "Chat protocol historically used as a botnet command-and-control channel.",
+    "objectives": []
+  },
+  {
+    "id": "acr-IRP",
+    "acronym": "IRP",
+    "expansion": "Incident Response Plan",
+    "note": "Documented procedures, roles, and communications for handling incidents.",
+    "objectives": [
+      "4.8",
+      "5.1"
+    ]
+  },
+  {
+    "id": "acr-ISO",
+    "acronym": "ISO",
+    "expansion": "International Organization for Standardization",
+    "note": "Publishes ISO/IEC 27001/27002 and related security standards. CompTIA's list expands it as International Standards Organization.",
+    "objectives": [
+      "5.1"
+    ]
+  },
+  {
+    "id": "acr-ISP",
+    "acronym": "ISP",
+    "expansion": "Internet Service Provider",
+    "objectives": []
+  },
+  {
+    "id": "acr-ISSO",
+    "acronym": "ISSO",
+    "expansion": "Information Systems Security Officer",
+    "note": "Role responsible for the security posture of a specific information system.",
+    "objectives": [
+      "5.1"
+    ]
+  },
+  {
+    "id": "acr-IV",
+    "acronym": "IV",
+    "expansion": "Initialization Vector",
+    "note": "Random or unique value that ensures identical plaintext encrypts differently; IV reuse broke WEP.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-KDC",
+    "acronym": "KDC",
+    "expansion": "Key Distribution Center",
+    "note": "Kerberos server (authentication service plus ticket-granting service) that issues tickets.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-KEK",
+    "acronym": "KEK",
+    "expansion": "Key Encryption Key",
+    "note": "Key used only to encrypt (wrap) other keys.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-L2TP",
+    "acronym": "L2TP",
+    "expansion": "Layer 2 Tunneling Protocol",
+    "note": "VPN tunneling protocol with no encryption of its own; normally paired with IPSec.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-LAN",
+    "acronym": "LAN",
+    "expansion": "Local Area Network",
+    "objectives": []
+  },
+  {
+    "id": "acr-LDAP",
+    "acronym": "LDAP",
+    "expansion": "Lightweight Directory Access Protocol",
+    "note": "Protocol for querying directory services (TCP 389); use LDAPS on 636 or StartTLS.",
+    "objectives": [
+      "4.6",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-LEAP",
+    "acronym": "LEAP",
+    "expansion": "Lightweight Extensible Authentication Protocol",
+    "note": "Cisco proprietary EAP method based on MS-CHAP; vulnerable and deprecated.",
+    "objectives": []
+  },
+  {
+    "id": "acr-MaaS",
+    "acronym": "MaaS",
+    "expansion": "Monitoring as a Service",
+    "note": "Cloud-delivered monitoring of an organization's systems and security events.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-MAC",
+    "acronym": "MAC",
+    "expansion": "Mandatory Access Control",
+    "note": "Access model where the system enforces labels and clearances that users cannot change (e.g., SELinux).",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-MAC-2",
+    "acronym": "MAC",
+    "expansion": "Media Access Control",
+    "note": "Layer 2 hardware address of a network interface; can be spoofed, so MAC filtering is weak.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-MAC-3",
+    "acronym": "MAC",
+    "expansion": "Message Authentication Code",
+    "note": "Tag computed with a shared key that proves message integrity and authenticity.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-MAN",
+    "acronym": "MAN",
+    "expansion": "Metropolitan Area Network",
+    "objectives": []
+  },
+  {
+    "id": "acr-MBR",
+    "acronym": "MBR",
+    "expansion": "Master Boot Record",
+    "note": "First sector of a disk holding the partition table and boot loader; targeted by bootkits.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-MD5",
+    "acronym": "MD5",
+    "expansion": "Message Digest 5",
+    "note": "128-bit hash with practical collisions; unsuitable for security, still seen for basic file checks.",
+    "objectives": [
+      "1.4",
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-MDF",
+    "acronym": "MDF",
+    "expansion": "Main Distribution Frame",
+    "note": "Central wiring and network room where external lines terminate and IDFs connect.",
+    "objectives": []
+  },
+  {
+    "id": "acr-MDM",
+    "acronym": "MDM",
+    "expansion": "Mobile Device Management",
+    "note": "Centralized enforcement of policy, configuration, and remote wipe on mobile devices.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-MFA",
+    "acronym": "MFA",
+    "expansion": "Multifactor Authentication",
+    "note": "Authentication requiring factors from two or more different categories (know, have, are, somewhere).",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-MFD",
+    "acronym": "MFD",
+    "expansion": "Multifunction Device",
+    "note": "Combined print/scan/copy/fax device; stores data and is an often-overlooked network endpoint.",
+    "objectives": []
+  },
+  {
+    "id": "acr-MFP",
+    "acronym": "MFP",
+    "expansion": "Multifunction Printer",
+    "note": "Printer with scan/copy/fax functions; may cache documents on internal storage.",
+    "objectives": []
+  },
+  {
+    "id": "acr-ML",
+    "acronym": "ML",
+    "expansion": "Machine Learning",
+    "objectives": []
+  },
+  {
+    "id": "acr-MMS",
+    "acronym": "MMS",
+    "expansion": "Multimedia Message Service",
+    "note": "Mobile messaging with media attachments; a message-based threat vector.",
+    "objectives": [
+      "2.2"
+    ]
+  },
+  {
+    "id": "acr-MOA",
+    "acronym": "MOA",
+    "expansion": "Memorandum of Agreement",
+    "note": "Agreement defining the specific conditions under which parties will cooperate; more formal than an MOU.",
+    "objectives": [
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-MOU",
+    "acronym": "MOU",
+    "expansion": "Memorandum of Understanding",
+    "note": "Statement of intent and shared goals between parties; generally not legally binding.",
+    "objectives": [
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-MPLS",
+    "acronym": "MPLS",
+    "expansion": "Multiprotocol Label Switching",
+    "note": "Carrier WAN technology that forwards packets using labels; often replaced by SD-WAN.",
+    "objectives": []
+  },
+  {
+    "id": "acr-MSA",
+    "acronym": "MSA",
+    "expansion": "Master Service Agreement",
+    "note": "Umbrella contract with general terms; individual work is then defined in SOWs or work orders.",
+    "objectives": [
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-MSCHAP",
+    "acronym": "MSCHAP",
+    "expansion": "Microsoft Challenge Handshake Authentication Protocol",
+    "note": "Microsoft variant of CHAP; MS-CHAPv2 is cryptographically weak.",
+    "objectives": []
+  },
+  {
+    "id": "acr-MSP",
+    "acronym": "MSP",
+    "expansion": "Managed Service Provider",
+    "note": "Third party that runs IT services for a customer; a supply-chain threat vector.",
+    "objectives": [
+      "2.2",
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-MSSP",
+    "acronym": "MSSP",
+    "expansion": "Managed Security Service Provider",
+    "note": "Third party that delivers outsourced security operations such as monitoring and response.",
+    "objectives": [
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-MTBF",
+    "acronym": "MTBF",
+    "expansion": "Mean Time Between Failures",
+    "note": "Average operating time between failures of a repairable component; higher is better.",
+    "objectives": [
+      "5.2"
+    ]
+  },
+  {
+    "id": "acr-MTTF",
+    "acronym": "MTTF",
+    "expansion": "Mean Time to Failure",
+    "note": "Average lifetime of a non-repairable component before it fails.",
+    "objectives": [
+      "5.2"
+    ]
+  },
+  {
+    "id": "acr-MTTR",
+    "acronym": "MTTR",
+    "expansion": "Mean Time to Repair",
+    "note": "Average time to restore a failed component to service; lower is better. Objective 5.2 says mean time to repair; CompTIA's acronym list says Mean Time to Recover.",
+    "objectives": [
+      "5.2"
+    ]
+  },
+  {
+    "id": "acr-MU-MIMO",
+    "acronym": "MU-MIMO",
+    "expansion": "Multi-user Multiple Input, Multiple Output",
+    "note": "Wi-Fi technology letting an AP talk to several clients simultaneously.",
+    "objectives": []
+  },
+  {
+    "id": "acr-NAC",
+    "acronym": "NAC",
+    "expansion": "Network Access Control",
+    "note": "Checks device identity and posture before allowing network access, often via 802.1X.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-NAT",
+    "acronym": "NAT",
+    "expansion": "Network Address Translation",
+    "note": "Maps private addresses to public ones; hides internal addressing but is not a security control by itself.",
+    "objectives": []
+  },
+  {
+    "id": "acr-NDA",
+    "acronym": "NDA",
+    "expansion": "Non-disclosure Agreement",
+    "note": "Contract that legally binds parties to keep shared information confidential.",
+    "objectives": [
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-NFC",
+    "acronym": "NFC",
+    "expansion": "Near Field Communication",
+    "note": "Very short-range wireless used for tap-to-pay and badges; subject to skimming and relay.",
+    "objectives": []
+  },
+  {
+    "id": "acr-NGFW",
+    "acronym": "NGFW",
+    "expansion": "Next-generation Firewall",
+    "note": "Application-aware (layer 7) firewall with integrated IPS and identity awareness.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-NIDS",
+    "acronym": "NIDS",
+    "expansion": "Network-based Intrusion Detection System",
+    "note": "Sensor that passively monitors network traffic (often via tap or SPAN) and raises alerts.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-NIPS",
+    "acronym": "NIPS",
+    "expansion": "Network-based Intrusion Prevention System",
+    "note": "Inline network device that can drop malicious traffic.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-NIST",
+    "acronym": "NIST",
+    "expansion": "National Institute of Standards and Technology",
+    "note": "U.S. agency publishing the CSF, SP 800-series, and FIPS standards.",
+    "objectives": [
+      "5.1"
+    ]
+  },
+  {
+    "id": "acr-NTFS",
+    "acronym": "NTFS",
+    "expansion": "New Technology File System",
+    "note": "Windows file system supporting ACL permissions, EFS, and alternate data streams.",
+    "objectives": []
+  },
+  {
+    "id": "acr-NTLM",
+    "acronym": "NTLM",
+    "expansion": "New Technology LAN Manager",
+    "note": "Legacy Windows challenge-response authentication; vulnerable to pass-the-hash and relay.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-NTP",
+    "acronym": "NTP",
+    "expansion": "Network Time Protocol",
+    "note": "Synchronizes clocks (UDP 123); accurate time is vital for log correlation and Kerberos.",
+    "objectives": []
+  },
+  {
+    "id": "acr-OAUTH",
+    "acronym": "OAUTH",
+    "expansion": "Open Authorization",
+    "note": "Delegated authorization framework that grants apps scoped access tokens without sharing passwords.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-OCSP",
+    "acronym": "OCSP",
+    "expansion": "Online Certificate Status Protocol",
+    "note": "Real-time query to a CA responder for a single certificate's revocation status; stapling improves it.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-OID",
+    "acronym": "OID",
+    "expansion": "Object Identifier",
+    "note": "Dotted numeric identifier for objects such as certificate fields, policies, and SNMP MIB entries.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-OS",
+    "acronym": "OS",
+    "expansion": "Operating System",
+    "objectives": []
+  },
+  {
+    "id": "acr-OSINT",
+    "acronym": "OSINT",
+    "expansion": "Open-source Intelligence",
+    "note": "Intelligence gathered from publicly available sources.",
+    "objectives": [
+      "4.3"
+    ]
+  },
+  {
+    "id": "acr-OSPF",
+    "acronym": "OSPF",
+    "expansion": "Open Shortest Path First",
+    "note": "Link-state interior routing protocol.",
+    "objectives": []
+  },
+  {
+    "id": "acr-OT",
+    "acronym": "OT",
+    "expansion": "Operational Technology",
+    "note": "Hardware and software that monitor and control physical processes (ICS/SCADA).",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-OTA",
+    "acronym": "OTA",
+    "expansion": "Over the Air",
+    "note": "Wireless delivery of firmware and software updates to mobile and IoT devices.",
+    "objectives": []
+  },
+  {
+    "id": "acr-OVAL",
+    "acronym": "OVAL",
+    "expansion": "Open Vulnerability and Assessment Language",
+    "note": "SCAP language for describing system state checks used in vulnerability and compliance scans.",
+    "objectives": [
+      "4.4"
+    ]
+  },
+  {
+    "id": "acr-P12",
+    "acronym": "P12",
+    "expansion": "PKCS #12",
+    "note": "Password-protected certificate archive (.p12/.pfx) that can hold a private key and its chain.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-P2P",
+    "acronym": "P2P",
+    "expansion": "Peer to Peer",
+    "objectives": []
+  },
+  {
+    "id": "acr-PaaS",
+    "acronym": "PaaS",
+    "expansion": "Platform as a Service",
+    "note": "Cloud model where the provider runs the OS and runtime and the customer manages apps and data.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-PAC",
+    "acronym": "PAC",
+    "expansion": "Proxy Auto-configuration",
+    "note": "File that tells browsers which proxy to use for which URLs.",
+    "objectives": []
+  },
+  {
+    "id": "acr-PAM",
+    "acronym": "PAM",
+    "expansion": "Privileged Access Management",
+    "note": "Tools that vault, broker, and monitor privileged credentials (JIT access, password vaulting, ephemeral credentials).",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-PAM-2",
+    "acronym": "PAM",
+    "expansion": "Pluggable Authentication Modules",
+    "note": "Linux/Unix framework that lets admins plug authentication methods into services.",
+    "objectives": []
+  },
+  {
+    "id": "acr-PAP",
+    "acronym": "PAP",
+    "expansion": "Password Authentication Protocol",
+    "note": "PPP authentication that sends credentials in cleartext.",
+    "objectives": []
+  },
+  {
+    "id": "acr-PAT",
+    "acronym": "PAT",
+    "expansion": "Port Address Translation",
+    "note": "NAT overload: many internal hosts share one public IP, distinguished by port.",
+    "objectives": []
+  },
+  {
+    "id": "acr-PBKDF2",
+    "acronym": "PBKDF2",
+    "expansion": "Password-Based Key Derivation Function 2",
+    "note": "Key-stretching function that applies a salted HMAC many times to slow brute force.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-PBX",
+    "acronym": "PBX",
+    "expansion": "Private Branch Exchange",
+    "note": "Organization's private telephone switching system; target of toll fraud.",
+    "objectives": []
+  },
+  {
+    "id": "acr-PCAP",
+    "acronym": "PCAP",
+    "expansion": "Packet Capture",
+    "note": "Recorded network traffic used as an investigation data source.",
+    "objectives": [
+      "4.9"
+    ]
+  },
+  {
+    "id": "acr-PCIDSS",
+    "acronym": "PCI DSS",
+    "expansion": "Payment Card Industry Data Security Standard",
+    "note": "Industry standard governing protection of cardholder data.",
+    "objectives": [
+      "5.4",
+      "3.3"
+    ]
+  },
+  {
+    "id": "acr-PDU",
+    "acronym": "PDU",
+    "expansion": "Power Distribution Unit",
+    "note": "Rack device distributing power to equipment; managed PDUs allow remote monitoring and control.",
+    "objectives": [
+      "3.4"
+    ]
+  },
+  {
+    "id": "acr-PE",
+    "acronym": "PE",
+    "expansion": "Portable Executable",
+    "note": "Windows executable file format (.exe, .dll).",
+    "objectives": []
+  },
+  {
+    "id": "acr-PEAP",
+    "acronym": "PEAP",
+    "expansion": "Protected Extensible Authentication Protocol",
+    "note": "EAP method that wraps inner authentication (usually MS-CHAPv2) in a TLS tunnel using a server certificate.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-PED",
+    "acronym": "PED",
+    "expansion": "Personal Electronic Device",
+    "objectives": []
+  },
+  {
+    "id": "acr-PEM",
+    "acronym": "PEM",
+    "expansion": "Privacy-Enhanced Mail",
+    "note": "Base64 text encoding for certificates and keys (-----BEGIN CERTIFICATE-----).",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-PFS",
+    "acronym": "PFS",
+    "expansion": "Perfect Forward Secrecy",
+    "note": "Ephemeral session keys so compromise of a long-term key does not expose past sessions.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-PGP",
+    "acronym": "PGP",
+    "expansion": "Pretty Good Privacy",
+    "note": "Email and file encryption/signing using a web of trust.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-PHI",
+    "acronym": "PHI",
+    "expansion": "Protected Health Information",
+    "note": "Health data regulated by HIPAA. CompTIA's list expands it as Personal Health Information.",
+    "objectives": [
+      "3.3"
+    ]
+  },
+  {
+    "id": "acr-PII",
+    "acronym": "PII",
+    "expansion": "Personally Identifiable Information",
+    "note": "Data that can identify an individual; a regulated data type.",
+    "objectives": [
+      "3.3",
+      "5.4"
+    ]
+  },
+  {
+    "id": "acr-PIV",
+    "acronym": "PIV",
+    "expansion": "Personal Identity Verification",
+    "note": "U.S. federal smart card standard for identity and multifactor authentication.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-PKCS",
+    "acronym": "PKCS",
+    "expansion": "Public Key Cryptography Standards",
+    "note": "Family of standards for public key formats and operations (e.g., PKCS #10 CSR, PKCS #12).",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-PKI",
+    "acronym": "PKI",
+    "expansion": "Public Key Infrastructure",
+    "note": "CAs, RAs, certificates, policies, and revocation that bind public keys to identities.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-POP",
+    "acronym": "POP",
+    "expansion": "Post Office Protocol",
+    "note": "Email retrieval that downloads mail to the client (POP3 on TCP 110; POP3S on 995).",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-POTS",
+    "acronym": "POTS",
+    "expansion": "Plain Old Telephone Service",
+    "objectives": []
+  },
+  {
+    "id": "acr-PPP",
+    "acronym": "PPP",
+    "expansion": "Point-to-Point Protocol",
+    "note": "Layer 2 protocol for direct links that supports PAP/CHAP authentication.",
+    "objectives": []
+  },
+  {
+    "id": "acr-PPTP",
+    "acronym": "PPTP",
+    "expansion": "Point-to-Point Tunneling Protocol",
+    "note": "Legacy VPN protocol (TCP 1723 plus GRE) considered insecure.",
+    "objectives": []
+  },
+  {
+    "id": "acr-PSK",
+    "acronym": "PSK",
+    "expansion": "Pre-shared Key",
+    "note": "Shared secret configured on both ends (e.g., WPA2/WPA3-Personal, IPSec).",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-PTZ",
+    "acronym": "PTZ",
+    "expansion": "Pan-tilt-zoom",
+    "note": "Remotely steerable camera type.",
+    "objectives": [
+      "1.2"
+    ]
+  },
+  {
+    "id": "acr-PUP",
+    "acronym": "PUP",
+    "expansion": "Potentially Unwanted Program",
+    "note": "Software (adware, toolbars, bloatware) that is not strictly malicious but unwanted and risky.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-RA",
+    "acronym": "RA",
+    "expansion": "Registration Authority",
+    "note": "Verifies requesters' identities on behalf of a CA before certificates are issued.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-RAD",
+    "acronym": "RAD",
+    "expansion": "Rapid Application Development",
+    "note": "Iterative software development approach focused on fast prototyping.",
+    "objectives": []
+  },
+  {
+    "id": "acr-RADIUS",
+    "acronym": "RADIUS",
+    "expansion": "Remote Authentication Dial-in User Service",
+    "note": "AAA protocol over UDP (1812/1813) used for VPN, Wi-Fi, and 802.1X; encrypts only the password.",
+    "objectives": [
+      "4.1",
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-RAID",
+    "acronym": "RAID",
+    "expansion": "Redundant Array of Inexpensive Disks",
+    "note": "Disk redundancy/striping (also 'Independent Disks'); provides fault tolerance, not a backup.",
+    "objectives": [
+      "3.4"
+    ]
+  },
+  {
+    "id": "acr-RAS",
+    "acronym": "RAS",
+    "expansion": "Remote Access Server",
+    "note": "Server that accepts remote connections into a network.",
+    "objectives": []
+  },
+  {
+    "id": "acr-RAT",
+    "acronym": "RAT",
+    "expansion": "Remote Access Trojan",
+    "note": "Malware that gives an attacker covert remote control of a host.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-RBAC",
+    "acronym": "RBAC",
+    "expansion": "Role-based Access Control",
+    "note": "Permissions assigned to job roles and users placed in roles.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-RBAC-2",
+    "acronym": "RBAC",
+    "expansion": "Rule-based Access Control",
+    "note": "Access decided by system-wide rules (e.g., firewall rules, time-of-day restrictions).",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-RC4",
+    "acronym": "RC4",
+    "expansion": "Rivest Cipher 4",
+    "note": "Stream cipher with keystream biases; used in WEP and TKIP and banned from TLS.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-RDP",
+    "acronym": "RDP",
+    "expansion": "Remote Desktop Protocol",
+    "note": "Windows remote desktop on TCP 3389; exposed RDP is a top ransomware entry point.",
+    "objectives": [
+      "2.2"
+    ]
+  },
+  {
+    "id": "acr-RFID",
+    "acronym": "RFID",
+    "expansion": "Radio Frequency Identification",
+    "note": "Wireless tags used for badges and asset tracking; badges can be cloned.",
+    "objectives": [
+      "2.4",
+      "4.2"
+    ]
+  },
+  {
+    "id": "acr-RIPEMD",
+    "acronym": "RIPEMD",
+    "expansion": "RACE Integrity Primitives Evaluation Message Digest",
+    "note": "Hash family; RIPEMD-160 produces a 160-bit digest.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-ROI",
+    "acronym": "ROI",
+    "expansion": "Return on Investment",
+    "note": "Measure of the benefit of a control relative to its cost.",
+    "objectives": []
+  },
+  {
+    "id": "acr-RPO",
+    "acronym": "RPO",
+    "expansion": "Recovery Point Objective",
+    "note": "Maximum tolerable data loss measured in time; drives backup frequency.",
+    "objectives": [
+      "5.2"
+    ]
+  },
+  {
+    "id": "acr-RSA",
+    "acronym": "RSA",
+    "expansion": "Rivest, Shamir, and Adleman",
+    "note": "Asymmetric algorithm based on factoring, used for signatures and key transport.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-RTBH",
+    "acronym": "RTBH",
+    "expansion": "Remotely Triggered Black Hole",
+    "note": "Routing technique that drops traffic to/from a target at the edge to absorb a DDoS.",
+    "objectives": []
+  },
+  {
+    "id": "acr-RTO",
+    "acronym": "RTO",
+    "expansion": "Recovery Time Objective",
+    "note": "Maximum tolerable time to restore a service after an outage.",
+    "objectives": [
+      "5.2"
+    ]
+  },
+  {
+    "id": "acr-RTOS",
+    "acronym": "RTOS",
+    "expansion": "Real-time Operating System",
+    "note": "OS with deterministic timing used in embedded and industrial systems; hard to patch.",
+    "objectives": [
+      "3.1",
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-RTP",
+    "acronym": "RTP",
+    "expansion": "Real-time Transport Protocol",
+    "note": "Carries voice and video media streams; secure variant is SRTP.",
+    "objectives": []
+  },
+  {
+    "id": "acr-S/MIME",
+    "acronym": "S/MIME",
+    "expansion": "Secure/Multipurpose Internet Mail Extensions",
+    "note": "Certificate-based email encryption and signing.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-SaaS",
+    "acronym": "SaaS",
+    "expansion": "Software as a Service",
+    "note": "Cloud model where the provider runs the entire application and the customer manages data and access.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-SAE",
+    "acronym": "SAE",
+    "expansion": "Simultaneous Authentication of Equals",
+    "note": "WPA3-Personal handshake (Dragonfly) that resists offline dictionary attacks on the passphrase.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-SAML",
+    "acronym": "SAML",
+    "expansion": "Security Assertion Markup Language",
+    "note": "XML-based standard for exchanging authentication assertions between an IdP and a service provider.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-SAN",
+    "acronym": "SAN",
+    "expansion": "Storage Area Network",
+    "note": "Dedicated high-speed network providing block-level storage.",
+    "objectives": []
+  },
+  {
+    "id": "acr-SAN-2",
+    "acronym": "SAN",
+    "expansion": "Subject Alternative Name",
+    "note": "Certificate extension listing additional hostnames the certificate is valid for.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-SASE",
+    "acronym": "SASE",
+    "expansion": "Secure Access Service Edge",
+    "note": "Cloud-delivered convergence of SD-WAN with security services such as SWG, CASB, and ZTNA.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-SCADA",
+    "acronym": "SCADA",
+    "expansion": "Supervisory Control and Data Acquisition",
+    "note": "System that monitors and controls geographically distributed industrial processes.",
+    "objectives": [
+      "3.1",
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-SCAP",
+    "acronym": "SCAP",
+    "expansion": "Security Content Automation Protocol",
+    "note": "NIST suite of standards (CVE, CVSS, OVAL, XCCDF) for automated configuration and vulnerability checking.",
+    "objectives": [
+      "4.4"
+    ]
+  },
+  {
+    "id": "acr-SCEP",
+    "acronym": "SCEP",
+    "expansion": "Simple Certificate Enrollment Protocol",
+    "note": "Protocol for automated certificate enrollment, common with network devices and MDM.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-SD-WAN",
+    "acronym": "SD-WAN",
+    "expansion": "Software-defined Wide Area Network",
+    "note": "Centrally managed WAN overlay that steers traffic across multiple links such as broadband and LTE.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-SDK",
+    "acronym": "SDK",
+    "expansion": "Software Development Kit",
+    "note": "Libraries and tools for building apps; third-party SDKs are a supply-chain risk.",
+    "objectives": []
+  },
+  {
+    "id": "acr-SDLC",
+    "acronym": "SDLC",
+    "expansion": "Software Development Life Cycle",
+    "note": "Phased process for building software; security should be embedded throughout.",
+    "objectives": [
+      "5.1"
+    ]
+  },
+  {
+    "id": "acr-SDLM",
+    "acronym": "SDLM",
+    "expansion": "Software Development Life Cycle Methodology",
+    "note": "The specific model (waterfall, agile, etc.) used to run the SDLC.",
+    "objectives": []
+  },
+  {
+    "id": "acr-SDN",
+    "acronym": "SDN",
+    "expansion": "Software-defined Networking",
+    "note": "Separates the control plane from the data plane so the network is centrally programmable.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-SELinux",
+    "acronym": "SE Linux",
+    "expansion": "Security-Enhanced Linux",
+    "note": "Linux kernel module implementing mandatory access control.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-SED",
+    "acronym": "SED",
+    "expansion": "Self-encrypting Drive",
+    "note": "Drive with built-in hardware encryption of all data.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-SEH",
+    "acronym": "SEH",
+    "expansion": "Structured Exception Handler",
+    "note": "Windows exception-handling mechanism; overwriting SEH records is a classic exploit technique.",
+    "objectives": []
+  },
+  {
+    "id": "acr-SFTP",
+    "acronym": "SFTP",
+    "expansion": "SSH File Transfer Protocol",
+    "note": "File transfer over an SSH session (TCP 22). CompTIA's list expands it as Secured File Transfer Protocol.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-SHA",
+    "acronym": "SHA",
+    "expansion": "Secure Hash Algorithm",
+    "note": "NIST hash family: SHA-1 is deprecated; SHA-2 and SHA-3 are current.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-SHTTP",
+    "acronym": "SHTTP",
+    "expansion": "Secure Hypertext Transfer Protocol",
+    "note": "Obsolete alternative to HTTPS that secured individual messages; effectively never used today.",
+    "objectives": []
+  },
+  {
+    "id": "acr-SIEM",
+    "acronym": "SIEM",
+    "expansion": "Security Information and Event Management",
+    "note": "Aggregates and correlates logs from many sources to generate alerts and reports.",
+    "objectives": [
+      "4.4"
+    ]
+  },
+  {
+    "id": "acr-SIM",
+    "acronym": "SIM",
+    "expansion": "Subscriber Identity Module",
+    "note": "Card binding a phone to a carrier account; SIM swapping defeats SMS-based MFA.",
+    "objectives": []
+  },
+  {
+    "id": "acr-SLA",
+    "acronym": "SLA",
+    "expansion": "Service-level Agreement",
+    "note": "Contract defining measurable service levels (uptime, response time) and penalties.",
+    "objectives": [
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-SLE",
+    "acronym": "SLE",
+    "expansion": "Single Loss Expectancy",
+    "note": "Monetary loss from one occurrence: SLE = asset value x exposure factor.",
+    "objectives": [
+      "5.2"
+    ]
+  },
+  {
+    "id": "acr-SMS",
+    "acronym": "SMS",
+    "expansion": "Short Message Service",
+    "note": "Text messaging; vector for smishing and a weak MFA channel.",
+    "objectives": [
+      "2.2"
+    ]
+  },
+  {
+    "id": "acr-SMTP",
+    "acronym": "SMTP",
+    "expansion": "Simple Mail Transfer Protocol",
+    "note": "Sends and relays email (TCP 25; submission on 587).",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-SMTPS",
+    "acronym": "SMTPS",
+    "expansion": "Simple Mail Transfer Protocol Secure",
+    "note": "SMTP protected with TLS (implicit TLS on 465).",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-SNMP",
+    "acronym": "SNMP",
+    "expansion": "Simple Network Management Protocol",
+    "note": "Device monitoring (UDP 161, traps on 162); only SNMPv3 provides authentication and encryption.",
+    "objectives": [
+      "4.4",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-SOAP",
+    "acronym": "SOAP",
+    "expansion": "Simple Object Access Protocol",
+    "note": "XML-based messaging protocol for web services.",
+    "objectives": []
+  },
+  {
+    "id": "acr-SOAR",
+    "acronym": "SOAR",
+    "expansion": "Security Orchestration, Automation, and Response",
+    "note": "Platform that automates and orchestrates response playbooks across security tools.",
+    "objectives": [
+      "4.7"
+    ]
+  },
+  {
+    "id": "acr-SOC",
+    "acronym": "SOC",
+    "expansion": "Security Operations Center",
+    "note": "Team and facility that monitors, detects, and responds to security events.",
+    "objectives": [
+      "4.4"
+    ]
+  },
+  {
+    "id": "acr-SoC",
+    "acronym": "SoC",
+    "expansion": "System on Chip",
+    "note": "Single chip integrating CPU, memory, and peripherals, common in mobile and embedded devices.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-SOW",
+    "acronym": "SOW",
+    "expansion": "Statement of Work",
+    "note": "Document defining a specific project's deliverables, timeline, and acceptance criteria.",
+    "objectives": [
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-SPF",
+    "acronym": "SPF",
+    "expansion": "Sender Policy Framework",
+    "note": "DNS TXT record listing the servers allowed to send mail for a domain.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-SPIM",
+    "acronym": "SPIM",
+    "expansion": "Spam over Instant Messaging",
+    "note": "Unsolicited messages delivered through IM platforms.",
+    "objectives": [
+      "2.2"
+    ]
+  },
+  {
+    "id": "acr-SQL",
+    "acronym": "SQL",
+    "expansion": "Structured Query Language",
+    "objectives": []
+  },
+  {
+    "id": "acr-SQLi",
+    "acronym": "SQLi",
+    "expansion": "SQL Injection",
+    "note": "Injecting SQL through unsanitized input; prevented with parameterized queries and input validation.",
+    "objectives": [
+      "2.3",
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-SRTP",
+    "acronym": "SRTP",
+    "expansion": "Secure Real-time Transport Protocol",
+    "note": "Adds encryption, integrity, and replay protection to RTP voice/video streams.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-SSD",
+    "acronym": "SSD",
+    "expansion": "Solid State Drive",
+    "note": "Flash storage; wear leveling makes overwriting unreliable, so sanitize with secure erase or destruction.",
+    "objectives": [
+      "4.2"
+    ]
+  },
+  {
+    "id": "acr-SSH",
+    "acronym": "SSH",
+    "expansion": "Secure Shell",
+    "note": "Encrypted remote administration on TCP 22; replaces Telnet.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-SSL",
+    "acronym": "SSL",
+    "expansion": "Secure Sockets Layer",
+    "note": "Deprecated predecessor of TLS; all SSL versions are insecure.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-SSO",
+    "acronym": "SSO",
+    "expansion": "Single Sign-on",
+    "note": "One authentication grants access to multiple systems.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-STIX",
+    "acronym": "STIX",
+    "expansion": "Structured Threat Information Expression",
+    "note": "Standard language for describing threat intelligence (CompTIA's list: Structured Threat Information eXchange).",
+    "objectives": [
+      "4.3"
+    ]
+  },
+  {
+    "id": "acr-SWG",
+    "acronym": "SWG",
+    "expansion": "Secure Web Gateway",
+    "note": "Filters outbound web traffic for malware and policy violations.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-TACACS+",
+    "acronym": "TACACS+",
+    "expansion": "Terminal Access Controller Access-Control System Plus",
+    "note": "Cisco AAA protocol over TCP 49 that encrypts the full payload and separates authorization; preferred for device admin.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-TAXII",
+    "acronym": "TAXII",
+    "expansion": "Trusted Automated Exchange of Intelligence Information",
+    "note": "Transport protocol for sharing STIX data (CompTIA's list: Trusted Automated eXchange of Indicator Information).",
+    "objectives": [
+      "4.3"
+    ]
+  },
+  {
+    "id": "acr-TCP/IP",
+    "acronym": "TCP/IP",
+    "expansion": "Transmission Control Protocol/Internet Protocol",
+    "objectives": []
+  },
+  {
+    "id": "acr-TGT",
+    "acronym": "TGT",
+    "expansion": "Ticket Granting Ticket",
+    "note": "Kerberos ticket obtained at logon and used to request service tickets.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-TKIP",
+    "acronym": "TKIP",
+    "expansion": "Temporal Key Integrity Protocol",
+    "note": "WPA's RC4-based stopgap for WEP; deprecated.",
+    "objectives": []
+  },
+  {
+    "id": "acr-TLS",
+    "acronym": "TLS",
+    "expansion": "Transport Layer Security",
+    "note": "Protocol securing data in transit; use TLS 1.2 or 1.3.",
+    "objectives": [
+      "1.4",
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-TOC",
+    "acronym": "TOC",
+    "expansion": "Time-of-check",
+    "note": "Moment a condition is verified; the gap before use enables TOC/TOU race conditions.",
+    "objectives": [
+      "2.3"
+    ]
+  },
+  {
+    "id": "acr-TOTP",
+    "acronym": "TOTP",
+    "expansion": "Time-based One-time Password",
+    "note": "One-time code derived from a shared secret and the current time, typically valid for 30 seconds.",
+    "objectives": [
+      "4.6"
+    ]
+  },
+  {
+    "id": "acr-TOU",
+    "acronym": "TOU",
+    "expansion": "Time-of-use",
+    "note": "Moment a resource is used after being checked; part of the TOC/TOU race condition.",
+    "objectives": [
+      "2.3"
+    ]
+  },
+  {
+    "id": "acr-TPM",
+    "acronym": "TPM",
+    "expansion": "Trusted Platform Module",
+    "note": "Motherboard chip that stores keys and measures boot integrity; anchors FDE and attestation.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-TSIG",
+    "acronym": "TSIG",
+    "expansion": "Transaction Signature",
+    "note": "Shared-key HMAC authentication of DNS messages such as zone transfers and dynamic updates.",
+    "objectives": []
+  },
+  {
+    "id": "acr-TTP",
+    "acronym": "TTP",
+    "expansion": "Tactics, Techniques, and Procedures",
+    "note": "Description of how an adversary operates; harder to change than IoCs.",
+    "objectives": [
+      "2.1",
+      "4.8"
+    ]
+  },
+  {
+    "id": "acr-UAT",
+    "acronym": "UAT",
+    "expansion": "User Acceptance Testing",
+    "note": "Testing by end users to confirm software meets requirements before release.",
+    "objectives": []
+  },
+  {
+    "id": "acr-UAV",
+    "acronym": "UAV",
+    "expansion": "Unmanned Aerial Vehicle",
+    "note": "Drone; relevant to physical reconnaissance and wireless attacks.",
+    "objectives": []
+  },
+  {
+    "id": "acr-UDP",
+    "acronym": "UDP",
+    "expansion": "User Datagram Protocol",
+    "note": "Connectionless transport protocol; easily spoofed, which enables reflection attacks.",
+    "objectives": []
+  },
+  {
+    "id": "acr-UEFI",
+    "acronym": "UEFI",
+    "expansion": "Unified Extensible Firmware Interface",
+    "note": "Modern firmware replacing BIOS; supports Secure Boot.",
+    "objectives": []
+  },
+  {
+    "id": "acr-UEM",
+    "acronym": "UEM",
+    "expansion": "Unified Endpoint Management",
+    "note": "Single platform to manage desktops, laptops, mobile, and IoT endpoints.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-UPS",
+    "acronym": "UPS",
+    "expansion": "Uninterruptible Power Supply",
+    "note": "Battery power that bridges short outages until generators start or systems shut down cleanly.",
+    "objectives": [
+      "3.4"
+    ]
+  },
+  {
+    "id": "acr-URI",
+    "acronym": "URI",
+    "expansion": "Uniform Resource Identifier",
+    "objectives": []
+  },
+  {
+    "id": "acr-URL",
+    "acronym": "URL",
+    "expansion": "Uniform Resource Locator",
+    "note": "Web address; URL scanning and categorization drive web filtering. CompTIA's list expands it as Universal Resource Locator.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-USB",
+    "acronym": "USB",
+    "expansion": "Universal Serial Bus",
+    "note": "Removable devices are a threat vector and an exfiltration path.",
+    "objectives": [
+      "2.2"
+    ]
+  },
+  {
+    "id": "acr-UTM",
+    "acronym": "UTM",
+    "expansion": "Unified Threat Management",
+    "note": "All-in-one appliance combining firewall, IPS, AV, filtering, and VPN.",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-UTP",
+    "acronym": "UTP",
+    "expansion": "Unshielded Twisted Pair",
+    "objectives": []
+  },
+  {
+    "id": "acr-VBA",
+    "acronym": "VBA",
+    "expansion": "Visual Basic for Applications",
+    "note": "Office macro language frequently used to deliver malware.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-VDE",
+    "acronym": "VDE",
+    "expansion": "Virtual Desktop Environment",
+    "note": "Hosted desktop session delivered to a user's device.",
+    "objectives": []
+  },
+  {
+    "id": "acr-VDI",
+    "acronym": "VDI",
+    "expansion": "Virtual Desktop Infrastructure",
+    "note": "Infrastructure hosting user desktops centrally so data stays in the data center.",
+    "objectives": []
+  },
+  {
+    "id": "acr-VLAN",
+    "acronym": "VLAN",
+    "expansion": "Virtual Local Area Network",
+    "note": "Logical layer 2 segmentation on shared switches.",
+    "objectives": [
+      "2.5",
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-VLSM",
+    "acronym": "VLSM",
+    "expansion": "Variable Length Subnet Masking",
+    "note": "Subnetting with different mask lengths to use address space efficiently.",
+    "objectives": []
+  },
+  {
+    "id": "acr-VM",
+    "acronym": "VM",
+    "expansion": "Virtual Machine",
+    "note": "Guest system on a hypervisor; VM escape and resource reuse are virtualization vulnerabilities.",
+    "objectives": [
+      "2.3",
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-VoIP",
+    "acronym": "VoIP",
+    "expansion": "Voice over IP",
+    "note": "Telephony over IP networks (SIP, RTP); vector for vishing and eavesdropping.",
+    "objectives": [
+      "2.2"
+    ]
+  },
+  {
+    "id": "acr-VPC",
+    "acronym": "VPC",
+    "expansion": "Virtual Private Cloud",
+    "note": "Logically isolated network inside a public cloud.",
+    "objectives": [
+      "3.1"
+    ]
+  },
+  {
+    "id": "acr-VPN",
+    "acronym": "VPN",
+    "expansion": "Virtual Private Network",
+    "note": "Encrypted tunnel over an untrusted network (IPSec or TLS based).",
+    "objectives": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "acr-VTC",
+    "acronym": "VTC",
+    "expansion": "Video Teleconferencing",
+    "objectives": []
+  },
+  {
+    "id": "acr-WAF",
+    "acronym": "WAF",
+    "expansion": "Web Application Firewall",
+    "note": "Layer 7 filter that inspects HTTP traffic to block attacks such as SQLi and XSS.",
+    "objectives": [
+      "3.2",
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-WAP",
+    "acronym": "WAP",
+    "expansion": "Wireless Access Point",
+    "note": "Device that provides Wi-Fi connectivity to the wired network.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-WEP",
+    "acronym": "WEP",
+    "expansion": "Wired Equivalent Privacy",
+    "note": "Original broken Wi-Fi encryption (RC4 with short IVs); never use.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-WIDS",
+    "acronym": "WIDS",
+    "expansion": "Wireless Intrusion Detection System",
+    "note": "Monitors RF for rogue APs, deauth floods, and other wireless attacks.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-WIPS",
+    "acronym": "WIPS",
+    "expansion": "Wireless Intrusion Prevention System",
+    "note": "WIDS that can also actively contain rogue APs and attacks.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-WO",
+    "acronym": "WO",
+    "expansion": "Work Order",
+    "note": "Authorization for a specific task under an existing contract such as an MSA.",
+    "objectives": [
+      "5.3"
+    ]
+  },
+  {
+    "id": "acr-WPA",
+    "acronym": "WPA",
+    "expansion": "Wi-Fi Protected Access",
+    "note": "Wi-Fi security family; WPA3 is current, WPA2 acceptable, original WPA/TKIP deprecated.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-WPS",
+    "acronym": "WPS",
+    "expansion": "Wi-Fi Protected Setup",
+    "note": "Push-button/PIN Wi-Fi onboarding; the PIN method is brute-forceable, so disable it.",
+    "objectives": [
+      "4.1"
+    ]
+  },
+  {
+    "id": "acr-WTLS",
+    "acronym": "WTLS",
+    "expansion": "Wireless Transport Layer Security",
+    "note": "Legacy TLS variant for the WAP mobile protocol stack.",
+    "objectives": []
+  },
+  {
+    "id": "acr-XDR",
+    "acronym": "XDR",
+    "expansion": "Extended Detection and Response",
+    "note": "Correlates telemetry across endpoint, network, cloud, and email for unified detection and response.",
+    "objectives": [
+      "4.5"
+    ]
+  },
+  {
+    "id": "acr-XML",
+    "acronym": "XML",
+    "expansion": "Extensible Markup Language",
+    "note": "Markup format behind SAML and SOAP; subject to XML injection and XXE.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-XOR",
+    "acronym": "XOR",
+    "expansion": "Exclusive Or",
+    "note": "Bitwise operation at the heart of stream ciphers and many block cipher modes.",
+    "objectives": [
+      "1.4"
+    ]
+  },
+  {
+    "id": "acr-XSRF",
+    "acronym": "XSRF",
+    "expansion": "Cross-site Request Forgery",
+    "note": "Alternate abbreviation for CSRF.",
+    "objectives": [
+      "2.4"
+    ]
+  },
+  {
+    "id": "acr-XSS",
+    "acronym": "XSS",
+    "expansion": "Cross-site Scripting",
+    "note": "Injecting script into pages viewed by other users; mitigated with output encoding and input validation.",
+    "objectives": [
+      "2.3",
+      "2.4"
+    ]
+  }
+]

@@ -1,0 +1,655 @@
+[
+  {
+    "id": "fc-2.1-001",
+    "objective": "2.1",
+    "front": "Three threat actor attributes CompTIA uses",
+    "back": "1. Internal vs external (inside or outside the organization)\n2. Resources/funding (money, staff, time, tooling)\n3. Level of sophistication/capability (from reusing public tools to writing custom exploits)",
+    "comptiaNote": "Expect questions that describe an actor by these three attributes and ask you to name the actor type, or the reverse.",
+    "tags": [
+      "threat-actors"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.1-002",
+    "objective": "2.1",
+    "front": "Unskilled attacker vs hacktivist",
+    "back": "Unskilled attacker: low sophistication, little funding, runs tools or scripts others built; often driven by curiosity, notoriety or chaos.\nHacktivist: driven by philosophical/political beliefs; typical actions are defacement, DDoS and leaking data to embarrass a target. Skill can range from low to high.",
+    "comptiaNote": "SY0-701 uses \"unskilled attacker\" where older exams said \"script kiddie\". Motivation, not skill, is what separates a hacktivist.",
+    "tags": [
+      "threat-actors"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.1-003",
+    "objective": "2.1",
+    "front": "Nation-state vs organized crime",
+    "back": "Nation-state: external, highest resources and sophistication, long-term persistent campaigns (APT). Motivations: espionage, war, service disruption, political goals.\nOrganized crime: external, well funded and capable, run like a business. Motivation: financial gain (ransomware, fraud, data theft for resale, blackmail).",
+    "comptiaNote": "A long dwell time with quiet exfiltration and no ransom demand points to a nation-state; a ransom or monetized data points to organized crime.",
+    "tags": [
+      "threat-actors",
+      "apt"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.1-004",
+    "objective": "2.1",
+    "front": "Insider threat vs shadow IT",
+    "back": "Insider threat: internal actor (employee, contractor, partner) with legitimate access who misuses it, intentionally or not. Common motivations: revenge, financial gain, data exfiltration.\nShadow IT: internal staff deploying hardware, software or cloud services without IT/security approval, usually to get work done faster rather than to cause harm.",
+    "comptiaNote": "CompTIA lists shadow IT as a threat actor type in its own right, even though in practice it is usually treated as a governance risk.",
+    "tags": [
+      "threat-actors",
+      "insider"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.1-005",
+    "objective": "2.1",
+    "front": "Threat actor motivations (SY0-701 list)",
+    "back": "Data exfiltration\nEspionage\nService disruption\nBlackmail\nFinancial gain\nPhilosophical/political beliefs\nEthical\nRevenge\nDisruption/chaos\nWar",
+    "comptiaNote": "\"Ethical\" means authorized or well-intentioned hacking (for example, finding and reporting flaws), not a criminal motive.",
+    "tags": [
+      "threat-actors",
+      "motivations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.1-006",
+    "objective": "2.1",
+    "front": "Motivations: ethical vs revenge vs disruption/chaos",
+    "back": "Ethical: good-faith hacking to improve security (authorized testing, responsible disclosure, bug bounties).\nRevenge: harming a specific person or organization after a perceived wrong; classic for a disgruntled insider.\nDisruption/chaos: causing damage for its own sake, with no specific gain; common with unskilled attackers.",
+    "comptiaNote": "Revenge has a specific target and a grievance; chaos has neither.",
+    "tags": [
+      "threat-actors",
+      "motivations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.1-007",
+    "objective": "2.1",
+    "front": "Motivations: espionage vs service disruption vs war",
+    "back": "Espionage: covertly gathering secrets (IP, government or military data) while staying hidden as long as possible.\nService disruption: taking systems or services offline (DDoS, wipers, ransomware) to cause harm.\nWar: cyber operations that support military conflict, such as attacking another country's critical infrastructure.",
+    "comptiaNote": "All three are typical nation-state motivations. Stealth and long dwell time = espionage; an outage = service disruption.",
+    "tags": [
+      "threat-actors",
+      "motivations",
+      "apt"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-001",
+    "objective": "2.2",
+    "front": "Phishing vs vishing vs smishing",
+    "back": "Phishing: fraudulent email (message-based) that lures the target to click, open or disclose.\nVishing: the same lure delivered over a voice call, including VoIP and spoofed caller ID.\nSmishing: the same lure delivered by SMS/text message.",
+    "comptiaNote": "Name the delivery channel: email = phishing, voice = vishing, SMS = smishing.",
+    "tags": [
+      "social-engineering"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-002",
+    "objective": "2.2",
+    "front": "Misinformation vs disinformation",
+    "back": "Misinformation: false or inaccurate information spread without intent to deceive (the sharer believes it).\nDisinformation: false information created and spread deliberately to deceive or manipulate.",
+    "comptiaNote": "The difference is intent. A coordinated fake-news campaign by an adversary is disinformation.",
+    "tags": [
+      "social-engineering"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-003",
+    "objective": "2.2",
+    "front": "Watering hole vs typosquatting vs brand impersonation",
+    "back": "Watering hole: compromise a legitimate site the target group already visits, then wait for them.\nTyposquatting: register a look-alike domain (misspelling or wrong TLD) to catch users who mistype.\nBrand impersonation: copy a known company's logos and style in emails or sites to borrow its trust.",
+    "comptiaNote": "Watering hole = attacker goes to where victims already are. Typosquatting = victims land on the attacker's domain by mistake.",
+    "tags": [
+      "social-engineering",
+      "web"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-004",
+    "objective": "2.2",
+    "front": "BEC vs pretexting vs impersonation",
+    "back": "Business email compromise (BEC): attacker uses a compromised or spoofed corporate mailbox (often an executive or vendor) to get payments or data sent.\nPretexting: building a believable invented story/context to justify the request.\nImpersonation: pretending to be a specific trusted person or role.",
+    "comptiaNote": "These often appear together; BEC is the answer when the key detail is a real or convincingly spoofed business email account used for fraud.",
+    "tags": [
+      "social-engineering",
+      "bec"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-005",
+    "objective": "2.2",
+    "front": "Vulnerable software: client-based vs agentless",
+    "back": "Client-based: software installed on the endpoint (agent, thick client); its flaws sit on every device where it is installed and must be patched there.\nAgentless: nothing installed locally; accessed remotely (for example through a browser), so the vulnerable code sits on the server side and is patched centrally.",
+    "tags": [
+      "attack-surface"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-006",
+    "objective": "2.2",
+    "front": "Supply chain threat vectors",
+    "back": "Managed service providers (MSPs): hold privileged remote access into many customers at once.\nVendors: software or services you rely on can be compromised before they reach you.\nSuppliers: hardware and components can be tampered with or counterfeit.",
+    "comptiaNote": "Compromising one MSP can give an attacker a path into every one of its clients.",
+    "tags": [
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-007",
+    "objective": "2.2",
+    "front": "Attack surface items: unsecure networks, open ports, default credentials, unsupported systems",
+    "back": "Unsecure networks: wireless, wired and Bluetooth connections without proper authentication or encryption.\nOpen service ports: every listening service is a potential entry point.\nDefault credentials: factory usernames/passwords that are publicly documented.\nUnsupported systems and applications: no more security patches.",
+    "comptiaNote": "The last three map directly to 2.5 mitigations: disable ports/protocols, change default passwords, decommission or isolate unsupported systems.",
+    "tags": [
+      "attack-surface"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-008",
+    "objective": "2.2",
+    "front": "Message-based vectors: email, SMS, IM",
+    "back": "Email: phishing, malicious links and attachments, spoofed senders.\nSMS: smishing links and fake alerts on mobile devices, outside corporate mail filtering.\nInstant messaging (Teams, Slack, WhatsApp): lures from external or compromised accounts; users tend to trust chat more than email.",
+    "comptiaNote": "SY0-701 groups all three under \"message-based\". IM and SMS often bypass the email security gateway entirely.",
+    "tags": [
+      "social-engineering",
+      "email"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-009",
+    "objective": "2.2",
+    "front": "Image-based vs file-based vectors",
+    "back": "Image-based: the lure or payload is in image content: QR codes leading to malicious sites, text rendered as an image to evade filters, images carrying embedded code (for example, scripted SVGs).\nFile-based: the payload is in a file the victim opens: macro-enabled documents, malicious PDFs, archives, ISO/LNK files, executables.",
+    "comptiaNote": "Text and URL filters cannot read an image; that is the point of image-based lures.",
+    "tags": [
+      "social-engineering",
+      "malware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-010",
+    "objective": "2.2",
+    "front": "Removable device vector",
+    "back": "Attack: USB drives dropped or handed out to infect whoever plugs them in; malicious USB devices that act as keyboards and type commands; also a route for data exfiltration and for reaching air-gapped systems.\nDefenses: device control that blocks unknown USB storage, autorun disabled, endpoint scanning, awareness training.",
+    "comptiaNote": "A \"found\" USB drive with an enticing label is a removable device vector that relies on social engineering (curiosity).",
+    "tags": [
+      "removable-media"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.2-011",
+    "objective": "2.2",
+    "front": "Unsecure networks: wireless vs wired vs Bluetooth",
+    "back": "Wireless: open or weakly encrypted Wi-Fi, rogue access points and evil twins, eavesdropping on traffic.\nWired: live wall jacks in public areas with no port security, 802.1X or NAC, letting anyone plug in.\nBluetooth: discoverable devices and weak pairing; bluejacking (unsolicited messages) and bluesnarfing (data theft).",
+    "comptiaNote": "Bluejacking sends, bluesnarfing steals.",
+    "tags": [
+      "attack-surface",
+      "wireless"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-001",
+    "objective": "2.3",
+    "front": "Race condition: TOC vs TOU",
+    "back": "Time-of-check (TOC): the moment a program validates something (permissions, balance, file state).\nTime-of-use (TOU): the moment it acts on that result.\nIf an attacker changes the resource in the gap between the two, the check no longer holds (a TOCTOU race condition).",
+    "tags": [
+      "application"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-002",
+    "objective": "2.3",
+    "front": "Buffer overflow vs memory injection",
+    "back": "Buffer overflow: writing more data than a buffer holds, overwriting adjacent memory (can crash the app or redirect execution).\nMemory injection: placing malicious code into the memory space of a running, often legitimate, process so it executes there (commonly fileless).",
+    "comptiaNote": "Memory injection is often how fileless malware avoids leaving anything on disk.",
+    "tags": [
+      "application",
+      "memory"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-003",
+    "objective": "2.3",
+    "front": "VM escape vs resource reuse",
+    "back": "VM escape: code in a guest VM breaks out to the hypervisor or host, and from there can reach other VMs.\nResource reuse: memory or storage released by one VM is handed to another without being cleared, leaking the previous tenant's data.",
+    "tags": [
+      "virtualization",
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-004",
+    "objective": "2.3",
+    "front": "Sideloading vs jailbreaking",
+    "back": "Sideloading: installing an app from outside the official app store (for example, a downloaded APK), which bypasses store vetting.\nJailbreaking: removing the OS-level restrictions on iOS to gain full control (the Android equivalent is rooting), which disables built-in protections.",
+    "comptiaNote": "Sideloading does not require jailbreaking. MDM can detect both and block the device.",
+    "tags": [
+      "mobile"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-005",
+    "objective": "2.3",
+    "front": "Hardware vulnerabilities: firmware, end-of-life, legacy",
+    "back": "Firmware: low-level code on the device; flaws persist across OS reinstalls and are often patched rarely.\nEnd-of-life (EOL): the manufacturer has stopped selling it and support is ending or over; once support ends, no new patches are released.\nLegacy: outdated platforms still in use because the business depends on them; often hard to patch or replace.",
+    "tags": [
+      "hardware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-006",
+    "objective": "2.3",
+    "front": "Zero-day vulnerability",
+    "back": "A flaw that attackers exploit before the vendor knows about it or has released a fix, so no patch exists when exploitation begins.\nSignature-based tools usually miss it; behavior-based detection, least privilege and segmentation limit the damage.",
+    "tags": [
+      "zero-day"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-007",
+    "objective": "2.3",
+    "front": "SQL injection vs cross-site scripting (XSS)",
+    "back": "SQL injection: input changes a database query on the server (read, modify or delete data, bypass logins). Fix: parameterized queries.\nXSS: input is returned in a web page and runs as script in other users' browsers (steal sessions, deface, redirect). Fix: output encoding, CSP.",
+    "comptiaNote": "Ask where the payload runs: in the database means SQLi, in the victim's browser means XSS.",
+    "tags": [
+      "web",
+      "application"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-008",
+    "objective": "2.3",
+    "front": "Stored vs reflected XSS",
+    "back": "Stored (persistent): the script is saved by the site (comment, profile) and runs for everyone who views it.\nReflected: the script is in a crafted link or request and is echoed back once to the victim who clicks it.",
+    "tags": [
+      "web",
+      "application"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-009",
+    "objective": "2.3",
+    "front": "OS-based vulnerabilities",
+    "back": "Flaws in the operating system's own code: kernel, drivers, built-in services.\nEvery host on the affected version is exposed, often enabling privilege escalation or remote code execution.\nMain control: timely OS patching (and testing patches before broad rollout).",
+    "tags": [
+      "os",
+      "patching"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-010",
+    "objective": "2.3",
+    "front": "Cloud-specific vulnerabilities",
+    "back": "Examples: insecure or exposed management APIs, weak IAM and over-permissive roles, publicly exposed storage, gaps in the shared responsibility model, limited visibility and logging, multitenancy issues.",
+    "comptiaNote": "Under the shared responsibility model, securing your data, identities and configuration stays with the customer.",
+    "tags": [
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-011",
+    "objective": "2.3",
+    "front": "Supply chain: service vs hardware vs software provider",
+    "back": "Service provider: a third party (MSP, cloud, contractor) with access to your systems is compromised and used as a path in.\nHardware provider: devices are counterfeit or tampered with before you receive them.\nSoftware provider: vendor code, libraries or updates contain flaws or malicious code.",
+    "tags": [
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-012",
+    "objective": "2.3",
+    "front": "Cryptographic vulnerabilities",
+    "back": "Weak or deprecated algorithms (DES, RC4, MD5, SHA-1), short keys, unsalted password hashes, outdated protocols (SSL, early TLS), poor key management, and bad or reused random values.\nResult: data or credentials can be decrypted, forged or cracked.",
+    "tags": [
+      "cryptography"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-013",
+    "objective": "2.3",
+    "front": "Misconfiguration examples",
+    "back": "Default credentials left unchanged, unnecessary open ports and services, overly broad permissions, public cloud storage, verbose error messages, directory listing enabled, disabled logging.\nPatching does not fix these; hardening baselines and configuration scans do.",
+    "tags": [
+      "misconfiguration",
+      "hardening"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.3-014",
+    "objective": "2.3",
+    "front": "Malicious update",
+    "back": "Attacker code delivered through a legitimate, trusted update channel, often validly signed because the vendor's build or update system was compromised.\nMitigations: test updates before broad deployment, stage rollouts, monitor behavior after updates.",
+    "comptiaNote": "A valid code signature proves who published the code, not that it is safe.",
+    "tags": [
+      "application",
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-001",
+    "objective": "2.4",
+    "front": "Virus vs worm",
+    "back": "Virus: attaches to a file or program and needs a user action (opening/running it) to execute and spread.\nWorm: standalone code that spreads across the network on its own, usually by exploiting a vulnerability, with no user action.",
+    "comptiaNote": "Fast spread across many hosts with no user interaction = worm.",
+    "tags": [
+      "malware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-002",
+    "objective": "2.4",
+    "front": "Trojan vs rootkit vs logic bomb",
+    "back": "Trojan: malware disguised as legitimate software the user installs willingly.\nRootkit: hides itself and other malware by modifying the OS or kernel, often with high privileges; very hard to detect from inside the infected system.\nLogic bomb: code that stays dormant until a trigger (date, event, account removal) fires its payload.",
+    "comptiaNote": "A logic bomb planted by an admin that fires when their account is deleted is a classic insider threat scenario.",
+    "tags": [
+      "malware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-003",
+    "objective": "2.4",
+    "front": "Spyware vs keylogger vs bloatware",
+    "back": "Spyware: covertly gathers information about the user and their activity.\nKeylogger: records keystrokes (passwords, messages); a specific kind of information-stealing malware.\nBloatware: unwanted software preinstalled by the manufacturer; wastes resources and adds attack surface rather than being designed to harm.",
+    "tags": [
+      "malware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-004",
+    "objective": "2.4",
+    "front": "Reflected vs amplified DDoS",
+    "back": "Reflected: attacker spoofs the victim's IP as the source, so third-party servers send their replies to the victim.\nAmplified: the reply is much larger than the request (for example, DNS or NTP), multiplying the attacker's bandwidth.\nMost large attacks are both.",
+    "tags": [
+      "network",
+      "ddos"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-005",
+    "objective": "2.4",
+    "front": "Password spraying vs brute force",
+    "back": "Spraying: one or a few common passwords tried against many accounts, staying under the lockout threshold.\nBrute force: many passwords tried against one account (online), or every combination against a stolen hash (offline).\nIndicator: brute force against one account tends to trigger account lockout; spraying shows one failure per account across many users.",
+    "tags": [
+      "password"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-006",
+    "objective": "2.4",
+    "front": "Downgrade vs collision vs birthday attack",
+    "back": "Downgrade: an on-path attacker forces both sides to negotiate an older, weaker protocol or cipher.\nCollision: finding two different inputs that produce the same hash value.\nBirthday: the probability math that makes collisions far easier to find than brute force suggests; the basis for collision attacks.",
+    "tags": [
+      "cryptographic"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-007",
+    "objective": "2.4",
+    "front": "Impossible travel vs concurrent session usage",
+    "back": "Impossible travel: consecutive logins for one account from locations too far apart to travel between in the elapsed time.\nConcurrent session usage: the same account is active in more than one session at the same time (often from different devices or locations).",
+    "comptiaNote": "If the first session ended before the second began, it is impossible travel, not concurrent usage.",
+    "tags": [
+      "indicators"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-008",
+    "objective": "2.4",
+    "front": "Out-of-cycle logging vs missing logs vs published/documented",
+    "back": "Out-of-cycle logging: log activity at unexpected times or frequencies (for example, admin events at 3 a.m., or a sudden burst).\nMissing logs: gaps or deleted entries, often an attacker covering tracks.\nPublished/documented: the attack or leak is reported publicly (by a researcher, the press, or the attacker) before you detected it.",
+    "tags": [
+      "indicators",
+      "logging"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-009",
+    "objective": "2.4",
+    "front": "Physical: brute force vs RFID cloning vs environmental",
+    "back": "Brute force: forcing entry, such as breaking a lock, prying a door or smashing through a barrier.\nRFID cloning: covertly reading a proximity badge or key fob at close range and copying its ID to another card.\nEnvironmental: attacking the conditions systems depend on (power, HVAC/cooling, humidity, fire suppression) to cause outages or damage.",
+    "comptiaNote": "A badge event while the owner was elsewhere and still holds the badge points to RFID cloning.",
+    "tags": [
+      "physical"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-010",
+    "objective": "2.4",
+    "front": "DNS cache poisoning vs domain hijacking",
+    "back": "DNS cache poisoning: forged records are placed in a resolver's cache, so a correct name resolves to the attacker's IP for that resolver's clients.\nDomain hijacking: the attacker takes over the domain's registration (registrar account) and changes its name servers or records for everyone.\nTell-tale: authoritative answers still correct = poisoning; authoritative answers changed = hijacking.",
+    "comptiaNote": "DNSSEC helps against forged DNS records; registrar account MFA and registry lock help against hijacking.",
+    "tags": [
+      "network",
+      "dns"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-011",
+    "objective": "2.4",
+    "front": "Evil twin vs rogue access point",
+    "back": "Evil twin: an attacker's AP that imitates a legitimate SSID to lure clients, often paired with deauthentication frames to knock them off the real AP; used to steal credentials or intercept traffic.\nRogue AP: an unauthorized AP connected to the organization's own network (for example, an employee's personal router), creating a backdoor around perimeter controls.",
+    "comptiaNote": "Impersonates your network = evil twin. Plugged into your network without approval = rogue AP.",
+    "tags": [
+      "network",
+      "wireless"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-012",
+    "objective": "2.4",
+    "front": "Ransomware: key indicators",
+    "back": "Mass file changes or renames with a new extension\nRansom notes appearing in many folders\nSpike in disk I/O and CPU (resource consumption)\nUsers unable to open files or shares (resource inaccessibility)\nBackups and volume shadow copies deleted (for example, vssadmin delete shadows)",
+    "comptiaNote": "Many groups steal data before encrypting (double extortion), so a leak-site listing (published/documented) can follow.",
+    "tags": [
+      "malware",
+      "ransomware",
+      "indicators"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-013",
+    "objective": "2.4",
+    "front": "Credential replay vs replay attack",
+    "back": "Credential replay: reusing a captured credential artifact, such as an NTLM hash (pass-the-hash) or a Kerberos ticket, to authenticate without knowing or cracking the password.\nReplay attack (application): capturing a valid message or session token and resending it to repeat a transaction or take over a session.\nDefenses: nonces, timestamps and short-lived tokens (replay); limiting where privileged accounts log on and protecting credential memory (credential replay).",
+    "comptiaNote": "Successful logons with no failures and a strong password the attacker never cracked = credential replay.",
+    "tags": [
+      "network",
+      "application",
+      "credential-replay"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-014",
+    "objective": "2.4",
+    "front": "Injection vs buffer overflow",
+    "back": "Injection: untrusted input is passed to an interpreter and executed as code or commands (SQL, OS command, LDAP, XML).\nBuffer overflow: input larger than a fixed-size memory buffer overwrites adjacent memory, causing a crash or letting the attacker redirect execution.\nDefenses: input validation and parameterized queries (injection); bounds checking, memory-safe languages, DEP and ASLR (overflow).",
+    "comptiaNote": "' OR 1=1-- in a field = SQL injection. A long run of repeated characters followed by a crash = buffer overflow.",
+    "tags": [
+      "application"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-015",
+    "objective": "2.4",
+    "front": "Request forgery: CSRF vs SSRF",
+    "back": "CSRF (cross-site request forgery): a malicious page makes the victim's browser send an authenticated request to a site where the victim is signed in; the browser adds the session cookie.\nSSRF (server-side request forgery): the attacker makes a vulnerable server send requests for them, often to internal systems or cloud metadata services.\nDefenses: anti-CSRF tokens and SameSite cookies (CSRF); validating and allow-listing destination URLs (SSRF).",
+    "tags": [
+      "application",
+      "forgery",
+      "web"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-016",
+    "objective": "2.4",
+    "front": "Privilege escalation: vertical vs horizontal",
+    "back": "Vertical: gaining higher privileges than assigned (standard user to admin, root or SYSTEM), for example through a kernel exploit or a misconfigured service.\nHorizontal: accessing another user's resources at the same privilege level (for example, changing an account ID in a URL to view someone else's data).\nIndicators: unexpected group membership changes, new admin accounts, SYSTEM-level processes started by standard users.",
+    "tags": [
+      "application",
+      "privilege-escalation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-017",
+    "objective": "2.4",
+    "front": "Resource consumption vs resource inaccessibility",
+    "back": "Resource consumption: unusual CPU, memory, disk or bandwidth use, for example cryptomining, a DDoS, or data being staged for exfiltration.\nResource inaccessibility: systems, files or services cannot be reached or opened, for example ransomware encryption, a DoS, or an attacker changing permissions or credentials.",
+    "comptiaNote": "Slow but reachable = consumption. Cannot reach or open = inaccessibility.",
+    "tags": [
+      "indicators"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.4-018",
+    "objective": "2.4",
+    "front": "Account lockout vs blocked content (indicators)",
+    "back": "Account lockout: accounts locked by failed logins the user did not make; points to brute force against that account, or an attacker deliberately denying access.\nBlocked content: security controls (web proxy, email gateway, DLP, EDR) log blocked attempts to reach malicious sites, download files or send data out; repeated blocks from one host suggest an infection or insider activity.",
+    "tags": [
+      "indicators"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.5-001",
+    "objective": "2.5",
+    "front": "Segmentation vs isolation",
+    "back": "Segmentation: divide the network into zones (VLANs, subnets, firewalls) so traffic between them is controlled and a breach is contained.\nIsolation: fully separate a system or device (no connectivity, or only to a tightly controlled area), for example quarantining an infected host or air-gapping critical systems.",
+    "comptiaNote": "For a system that cannot be patched but must keep running, segmentation or isolation is the usual best answer.",
+    "tags": [
+      "mitigation",
+      "network"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.5-002",
+    "objective": "2.5",
+    "front": "Hardening techniques (SY0-701 list)",
+    "back": "Encryption\nInstallation of endpoint protection\nHost-based firewall\nHost-based intrusion prevention system (HIPS)\nDisabling ports/protocols\nDefault password changes\nRemoval of unnecessary software",
+    "tags": [
+      "mitigation",
+      "hardening"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.5-003",
+    "objective": "2.5",
+    "front": "Host-based firewall vs HIPS",
+    "back": "Host-based firewall: allows or blocks traffic to/from the host by port, protocol, address or application.\nHIPS: monitors host activity (processes, files, registry, traffic) for malicious behavior or signatures and actively blocks it.",
+    "comptiaNote": "Firewall = which connections are allowed. HIPS = whether what is happening looks like an attack.",
+    "tags": [
+      "mitigation",
+      "hardening"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.5-004",
+    "objective": "2.5",
+    "front": "Configuration enforcement vs decommissioning",
+    "back": "Configuration enforcement: continuously applying and checking a secure baseline (for example, GPO, MDM or configuration management tools) so systems do not drift from it.\nDecommissioning: retiring an asset securely: remove it from the network and inventory, revoke its accounts and access, and sanitize or destroy its data.",
+    "tags": [
+      "mitigation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.5-005",
+    "objective": "2.5",
+    "front": "Access control: ACL vs permissions",
+    "back": "ACL: a list of entries attached to a resource or interface that allows or denies subjects or traffic. Network ACLs filter by IP, port and protocol, are processed top-down and end with an implicit deny.\nPermissions: the specific rights granted on an object to a user or group (read, write, execute, modify, full control).",
+    "comptiaNote": "Both should be set by least privilege: grant only what the role needs, and deny by default.",
+    "tags": [
+      "mitigation",
+      "access-control"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.5-006",
+    "objective": "2.5",
+    "front": "Monitoring as a mitigation technique",
+    "back": "Purpose: detect attacks and misuse that preventive controls miss, and confirm other mitigations keep working.\nExamples: SIEM log correlation, EDR telemetry, file integrity monitoring, NetFlow/traffic analysis.\nOften paired with segmentation or isolation as a compensating control for systems that cannot be patched.",
+    "comptiaNote": "Monitoring detects; it does not prevent. If a question asks to stop or block something, look for a preventive control.",
+    "tags": [
+      "mitigation",
+      "monitoring"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.5-007",
+    "objective": "2.5",
+    "front": "Patching: purpose and good practice",
+    "back": "Purpose: remove known vulnerabilities in operating systems, applications and firmware.\nPractice: know your asset inventory, prioritize by severity and active exploitation, test before production, deploy through change management, verify installation.\nCritical, actively exploited flaws may justify an emergency (out-of-band) patch.\nCannot patch yet: use compensating controls such as segmentation, isolation and monitoring.",
+    "tags": [
+      "mitigation",
+      "patching"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-2.5-008",
+    "objective": "2.5",
+    "front": "Disable ports vs remove software vs endpoint protection",
+    "back": "Disabling ports/protocols: turn off services and listeners the system does not need (Telnet, FTP, SMBv1) and prefer secure alternatives (SSH, SFTP).\nRemoval of unnecessary software: uninstall applications, tools and bloatware the system's role does not require; each one adds vulnerabilities to patch.\nInstallation of endpoint protection: add antimalware or EDR to detect and block threats on what remains.",
+    "comptiaNote": "The first two shrink the attack surface; endpoint protection defends the surface that is left.",
+    "tags": [
+      "mitigation",
+      "hardening"
+    ],
+    "status": "reviewed"
+  }
+]

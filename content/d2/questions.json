@@ -1,0 +1,2310 @@
+[
+  {
+    "id": "q-2.1-001",
+    "objective": "2.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Shortly after a mining company announced a new project in a protected forest, its public website was defaced with a statement condemning the project, and a DDoS attack took its customer portal offline. No ransom or payment was demanded. Which of the following threat actors is MOST likely responsible?",
+    "options": [
+      {
+        "text": "Hacktivist",
+        "why": "Correct: the timing, the political/environmental message and the lack of any financial demand point to an actor motivated by philosophical or political beliefs."
+      },
+      {
+        "text": "Organized crime",
+        "why": "Organized crime is driven by financial gain; with no ransom, extortion or monetized data, that motive is absent here."
+      },
+      {
+        "text": "Nation-state",
+        "why": "Nation-states usually pursue espionage or strategic disruption quietly; a public protest message about one company's project does not fit their typical goals."
+      },
+      {
+        "text": "Insider threat",
+        "why": "Nothing suggests the attacker had internal access; defacing a public site and launching a DDoS can be done entirely from outside."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Identify the actor by motivation. Defacement plus DDoS with a cause-driven message and no payment demand is the textbook hacktivist profile. Skill level does not decide it: hacktivists range from low to high sophistication.",
+    "industryVsComptia": null,
+    "tags": [
+      "threat-actors",
+      "motivations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.1-002",
+    "objective": "2.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "An incident response team finds that attackers had been inside an aerospace contractor's network for over a year. They used custom implants, exploited a previously unknown flaw in a VPN appliance, and slowly exfiltrated engineering designs. No ransom note was left and no data appeared for sale. Which of the following BEST describes the threat actor and motivation?",
+    "options": [
+      {
+        "text": "Nation-state motivated by espionage",
+        "why": "Correct: long dwell time, custom tooling, a zero-day and quiet theft of defense-related designs reflect high resources and sophistication with an intelligence-gathering goal."
+      },
+      {
+        "text": "Organized crime motivated by financial gain",
+        "why": "A criminal group would normally monetize the access through ransom, extortion or selling the data, none of which happened."
+      },
+      {
+        "text": "Hacktivist motivated by political beliefs",
+        "why": "Hacktivists want visibility for a cause; a silent, year-long theft with no public message is the opposite of their usual approach."
+      },
+      {
+        "text": "Insider threat motivated by revenge",
+        "why": "Revenge-driven insiders typically cause visible damage or leaks; the evidence here shows external custom implants and an exploited perimeter device."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Combine the attributes: external, very well funded, highly sophisticated (custom implants and a zero-day), patient, and focused on intellectual property with no monetization. That combination maps to a nation-state (APT) pursuing espionage.",
+    "industryVsComptia": null,
+    "tags": [
+      "threat-actors",
+      "apt",
+      "motivations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.1-003",
+    "objective": "2.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A teenager downloads a ready-made DDoS tool from a forum, points it at a popular online gaming server for an evening, and posts screenshots bragging about the outage. He cannot write code, belongs to no group and made no demands. Which of the following threat actors BEST fits this description?",
+    "options": [
+      {
+        "text": "Unskilled attacker",
+        "why": "Correct: low sophistication, no funding and reliance on tools someone else built, used for notoriety or chaos, is the profile of an unskilled attacker."
+      },
+      {
+        "text": "Hacktivist",
+        "why": "A hacktivist acts to promote a political or philosophical cause; there is no message or cause behind this outage."
+      },
+      {
+        "text": "Organized crime",
+        "why": "Organized crime is motivated by financial gain; nothing was demanded, stolen or monetized."
+      },
+      {
+        "text": "Nation-state",
+        "why": "Nation-states have high resources and sophistication and pursue strategic goals, not short bragging-rights outages with downloaded tools."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Classify the actor by attributes and motivation: a lone, unfunded actor running someone else's tool for bragging rights is an unskilled attacker (the SY0-701 term for what older material called a script kiddie). Motivation here is disruption/chaos and notoriety.",
+    "industryVsComptia": null,
+    "tags": [
+      "threat-actors",
+      "motivations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.1-004",
+    "objective": "2.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A database administrator is told she will be terminated after a long dispute with her manager. That evening, using credentials that were not yet disabled, she logs in from home, drops several production tables, deletes the backups and messages her manager that he will regret the decision. No data was copied out and no payment was requested. Which of the following BEST describes the threat actor and motivation?",
+    "options": [
+      {
+        "text": "Insider threat motivated by revenge",
+        "why": "Correct: she is an internal actor abusing legitimate access, and the destruction aimed at the manager and employer after a perceived wrong is revenge."
+      },
+      {
+        "text": "Insider threat motivated by financial gain",
+        "why": "The actor is an insider, but nothing was sold, stolen for resale or ransomed, so financial gain does not fit."
+      },
+      {
+        "text": "Hacktivist motivated by political beliefs",
+        "why": "There is no cause or public message; the action targets a personal grievance with her employer."
+      },
+      {
+        "text": "Unskilled attacker motivated by disruption/chaos",
+        "why": "The attack used her own privileged insider access and targeted a specific grievance, not random chaos by an outsider running tools."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Two decisions: internal vs external (she used legitimate access, so insider) and motivation (a personal grievance with a threat to the manager, no gain, so revenge). This is also why access must be revoked at or before the moment of termination.",
+    "industryVsComptia": null,
+    "tags": [
+      "threat-actors",
+      "insider",
+      "motivations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.1-005",
+    "objective": "2.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "To meet a campaign deadline, a marketing manager pays for an online file-sharing service with a corporate card, without IT or security approval, and uploads customer lists to it. The security team learns about the service only when the provider announces a breach. Which of the following threat actor types BEST describes the manager's actions?",
+    "options": [
+      {
+        "text": "Shadow IT",
+        "why": "Correct: staff deploying an unapproved cloud service to get work done, outside IT and security oversight, is shadow IT."
+      },
+      {
+        "text": "Hacktivist",
+        "why": "The manager was not promoting any cause; the goal was meeting a business deadline."
+      },
+      {
+        "text": "Unskilled attacker",
+        "why": "An unskilled attacker is an outsider attacking with borrowed tools; the manager attacked nothing."
+      },
+      {
+        "text": "Organized crime",
+        "why": "Organized crime seeks profit through attacks; the manager's actions were well-intentioned and unsanctioned, not criminal."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "CompTIA lists shadow IT as its own threat actor type: internal, usually low resources and sophistication, and usually not malicious. The risk is that data and systems sit outside the organization's controls and visibility.",
+    "industryVsComptia": "In practice shadow IT is usually handled as a governance and asset-visibility problem rather than an \"actor\"; on the exam, treat it as a threat actor type.",
+    "tags": [
+      "threat-actors",
+      "shadow-it"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.1-006",
+    "objective": "2.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A ransomware group runs an affiliate program, operates a negotiation portal with a support chat for victims, and publishes stolen data from organizations that refuse to pay. Its latest victim, a regional hospital, received a demand payable in cryptocurrency. Which of the following threat actors is MOST likely behind these attacks?",
+    "options": [
+      {
+        "text": "Organized crime",
+        "why": "Correct: a business-like structure (affiliates, support desk, leak site) and repeated extortion for payment reflect organized crime motivated by financial gain."
+      },
+      {
+        "text": "Nation-state",
+        "why": "Nation-states favor espionage or strategic disruption; a long-running, profit-driven extortion business points elsewhere."
+      },
+      {
+        "text": "Hacktivist",
+        "why": "Hacktivists pursue a cause and rarely demand payment; this group's objective is consistently money."
+      },
+      {
+        "text": "Insider threat",
+        "why": "Nothing suggests the attackers held legitimate access to the hospital; they are an external group hitting many victims."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Organized crime: external, well funded, capable and run like a business. Publishing data of non-payers is blackmail used in service of the underlying motive, financial gain.",
+    "industryVsComptia": null,
+    "tags": [
+      "threat-actors",
+      "ransomware",
+      "motivations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.1-007",
+    "objective": "2.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A university researcher finds an authentication bypass in a vendor's IP camera firmware. She privately reports it to the vendor, asks for nothing in return and agrees to wait 90 days before publishing details so a patch can ship. Which of the following BEST describes her motivation?",
+    "options": [
+      {
+        "text": "Ethical",
+        "why": "Correct: good-faith research disclosed privately so the flaw can be fixed, with no personal gain sought, is the ethical motivation."
+      },
+      {
+        "text": "Blackmail",
+        "why": "Blackmail requires a threat tied to a demand; she asked for nothing, and the delayed publication is standard coordinated disclosure."
+      },
+      {
+        "text": "Espionage",
+        "why": "Espionage means covertly gathering intelligence for an advantage; she shared the finding with the vendor instead."
+      },
+      {
+        "text": "Philosophical/political beliefs",
+        "why": "There is no political or ideological message; the goal is getting a security flaw fixed."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SY0-701 includes \"ethical\" in its list of motivations: hacking done to improve security, such as responsible or coordinated disclosure and bug bounty work.",
+    "industryVsComptia": null,
+    "tags": [
+      "threat-actors",
+      "motivations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.1-008",
+    "objective": "2.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "During threat modeling, a security architect argues that the perimeter firewall and network IDS will do little against one particular threat actor, because that actor already holds a badge, a domain account and VPN access. Which of the following threat actor attributes is the architect PRIMARILY considering?",
+    "options": [
+      {
+        "text": "Internal/external",
+        "why": "Correct: the argument rests on the actor being internal, already inside the trust boundary with legitimate access that perimeter controls are not designed to stop."
+      },
+      {
+        "text": "Resources/funding",
+        "why": "Nothing in the argument depends on how much money, staff or time the actor has."
+      },
+      {
+        "text": "Level of sophistication/capability",
+        "why": "The architect's point holds even for a low-skill actor; it is about position and access, not skill."
+      },
+      {
+        "text": "Motivation",
+        "why": "Motivation explains why an actor attacks, and SY0-701 lists it separately from the actor attributes; the argument is about where the actor sits."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SY0-701 describes threat actors by three attributes: internal/external, resources/funding, and level of sophistication/capability. An internal actor bypasses perimeter controls by design, which is why insiders call for least privilege, monitoring and prompt deprovisioning.",
+    "industryVsComptia": null,
+    "tags": [
+      "threat-actors",
+      "insider"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-001",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Several employees receive a text message on their company phones saying a parcel could not be delivered and asking them to follow a link to reschedule and pay a small fee. Which of the following BEST describes this attack?",
+    "options": [
+      {
+        "text": "Smishing",
+        "why": "Correct: a social engineering lure delivered by SMS/text message is smishing."
+      },
+      {
+        "text": "Vishing",
+        "why": "Vishing uses voice calls; this lure arrived as a text message."
+      },
+      {
+        "text": "Watering hole",
+        "why": "A watering hole compromises a site the victims already visit; here the victims are contacted directly with a link."
+      },
+      {
+        "text": "Typosquatting",
+        "why": "The link may point to a look-alike domain, but the attack being described is the text-message lure itself, not domain registration."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Name the delivery channel: SMS = smishing, voice = vishing, email = phishing.",
+    "industryVsComptia": null,
+    "tags": [
+      "social-engineering"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-002",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Threat intelligence reports that attackers compromised a niche industry forum used by chemical plant engineers and injected a script that delivers malware only to visitors from specific corporate IP ranges. Which of the following attack types does this describe?",
+    "options": [
+      {
+        "text": "Brand impersonation",
+        "why": "Brand impersonation copies a trusted company's look to deceive; here the attackers used the real forum, not a copy."
+      },
+      {
+        "text": "Watering hole",
+        "why": "Correct: the attackers compromised a legitimate site that the target group already visits and waited for victims to arrive."
+      },
+      {
+        "text": "Typosquatting",
+        "why": "Typosquatting relies on users mistyping a domain; the victims went to the correct, legitimate site."
+      },
+      {
+        "text": "Pretexting",
+        "why": "Pretexting is an invented story used to persuade someone directly; no one is being persuaded here, visitors are infected silently."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "The key clue is a legitimate, trusted site frequented by a specific group being compromised. Filtering by corporate IP range is a common way watering hole operators avoid detection and focus on their intended targets.",
+    "industryVsComptia": null,
+    "tags": [
+      "social-engineering",
+      "web"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-003",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "An accounts payable clerk receives an email from the CFO's actual corporate mailbox asking that a vendor's bank details be updated before an urgent payment run. Investigation shows the CFO's account had been accessed from an unfamiliar country, and an inbox rule was hiding vendor replies. Which of the following BEST describes this attack?",
+    "options": [
+      {
+        "text": "Typosquatting",
+        "why": "Typosquatting uses a look-alike domain; this message came from the CFO's real mailbox on the legitimate domain."
+      },
+      {
+        "text": "Brand impersonation",
+        "why": "Brand impersonation imitates a company's visual identity to gain trust; here the attacker controlled a genuine internal account."
+      },
+      {
+        "text": "Watering hole",
+        "why": "A watering hole infects visitors to a compromised website; no website was involved in this payment fraud."
+      },
+      {
+        "text": "Business email compromise",
+        "why": "Correct: a compromised executive mailbox used to redirect payments, with inbox rules to hide replies, is the defining pattern of BEC."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "BEC is about abusing a real or convincingly spoofed business email account to commit financial fraud. The inbox rule that hides replies is a common BEC persistence trick. Urgency and a change of bank details are classic red flags; the procedural fix is out-of-band verification of payment changes.",
+    "industryVsComptia": null,
+    "tags": [
+      "social-engineering",
+      "bec"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-004",
+    "objective": "2.2",
+    "type": "multi",
+    "difficulty": 2,
+    "stem": "A scan of newly installed network printers on a wired office LAN shows each one listening on Telnet and FTP, and the scanner logs in to their management interface with the manufacturer's admin/admin login. Which of the following threat vectors does this expose? (Choose TWO.)",
+    "options": [
+      {
+        "text": "Open service ports",
+        "why": "Correct: Telnet and FTP listening on every printer are exposed services an attacker can connect to."
+      },
+      {
+        "text": "Default credentials",
+        "why": "Correct: the factory admin/admin login is publicly documented and lets anyone take over the devices."
+      },
+      {
+        "text": "Removable device",
+        "why": "Removable devices are a vector when media such as USB drives are introduced; nothing in the scan involves physical media."
+      },
+      {
+        "text": "Unsecure wireless network",
+        "why": "The printers are on a wired LAN; the finding concerns services on the devices, not the wireless network."
+      },
+      {
+        "text": "Message-based",
+        "why": "Message-based vectors are email, SMS or instant messaging used to deliver attacks; this is a device configuration finding."
+      }
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "The scan shows two separate attack surface problems: unnecessary listening services (open service ports) and unchanged factory passwords (default credentials). Their 2.5 mitigations are disabling ports/protocols and changing default passwords.",
+    "industryVsComptia": null,
+    "tags": [
+      "attack-surface"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-005",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company outsources endpoint management to an MSP. Attackers phish an MSP technician, log in to the MSP's remote monitoring and management platform, and use it to push a ransomware script to the endpoints of several of the MSP's customers, including this company. Which of the following threat vectors BEST describes how the attackers reached the company?",
+    "options": [
+      {
+        "text": "Vulnerable client-based software on the endpoints",
+        "why": "No software flaw was exploited on the endpoints; the legitimate management tool worked as designed under the attackers' control."
+      },
+      {
+        "text": "Supply chain through a managed service provider",
+        "why": "Correct: the attackers reached the company by compromising a trusted third party that already had privileged access to it and to other customers."
+      },
+      {
+        "text": "Default credentials on the company's endpoints",
+        "why": "The attackers used the MSP's stolen login and its existing access, not factory passwords on the company's devices."
+      },
+      {
+        "text": "Watering hole targeting MSP staff",
+        "why": "The technician was phished directly; no trusted website was compromised to infect visitors."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Phishing explains how the MSP was breached, but the question asks how the attackers reached the company: through its supplier's trusted access. MSPs are a high-value supply chain target because one compromise opens a path into many customers.",
+    "industryVsComptia": null,
+    "tags": [
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-006",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Users report an email asking them to re-enroll in MFA. The mail gateway did not flag it because the entire message body is one embedded picture: the instructions are rendered as pixels and include a QR code that leads to a credential-harvesting page, so there is no text or clickable link to inspect. Which of the following threat vectors BEST describes the evasion technique?",
+    "options": [
+      {
+        "text": "Image-based",
+        "why": "Correct: the lure and the malicious destination are carried inside image content (rendered text and a QR code), which text-based filters cannot read."
+      },
+      {
+        "text": "File-based",
+        "why": "File-based vectors rely on a malicious document, archive or executable that exploits or runs code when opened; this picture executes nothing, and the danger is only what it displays."
+      },
+      {
+        "text": "Smishing",
+        "why": "Smishing arrives by SMS; this lure arrived as an email."
+      },
+      {
+        "text": "Watering hole",
+        "why": "A watering hole compromises a site the victims already visit; here the victims are sent the lure directly."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Image-based vectors hide the payload or lure in images: QR codes (\"quishing\"), text rendered as pictures to defeat keyword filters, or images that carry embedded code. Defenses include gateways with OCR/QR decoding and user awareness that a QR code is just a link.",
+    "industryVsComptia": null,
+    "tags": [
+      "social-engineering",
+      "email"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-007",
+    "objective": "2.2",
+    "type": "multi",
+    "difficulty": 2,
+    "stem": "A user receives an email that appears to come from a shipping partner, with an attached macro-enabled spreadsheet named Customs_Invoice.xlsm. Opening it and selecting Enable Content runs a script that downloads a remote access trojan. Which of the following threat vectors BEST describe this attack? (Choose TWO.)",
+    "options": [
+      {
+        "text": "Message-based",
+        "why": "Correct: the lure was delivered by email, a message-based vector."
+      },
+      {
+        "text": "File-based",
+        "why": "Correct: the malicious code lived in a document file whose macros ran once the user enabled content."
+      },
+      {
+        "text": "Image-based",
+        "why": "The payload was in spreadsheet macros, not in an image or QR code."
+      },
+      {
+        "text": "Voice call",
+        "why": "No phone call was involved; the whole attack ran through the email and its attachment."
+      },
+      {
+        "text": "Removable device",
+        "why": "The file arrived over email, not on a USB drive or other physical media."
+      }
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "Attacks often chain vectors: the message is the delivery channel and the file carries the payload. Mitigations map to each: email filtering and awareness for the message, macro blocking and attachment sandboxing for the file.",
+    "industryVsComptia": null,
+    "tags": [
+      "social-engineering",
+      "email",
+      "malware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-008",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Several USB flash drives labeled \"Executive Bonuses 2026\" are found in a company parking lot. An employee plugs one into a workstation, and EDR alerts that a hidden executable from the drive has started beaconing to an external IP address. Which of the following threat vectors BEST describes this incident?",
+    "options": [
+      {
+        "text": "Removable device",
+        "why": "Correct: the malware was introduced on physical media that the employee connected to a workstation."
+      },
+      {
+        "text": "Watering hole",
+        "why": "A watering hole infects visitors to a compromised website; the infection came from a USB drive."
+      },
+      {
+        "text": "Unsecure wired network",
+        "why": "The attacker never connected to the network; an employee carried the payload inside on a drive."
+      },
+      {
+        "text": "Default credentials",
+        "why": "No login was involved; the employee ran the malware by connecting the drive."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A USB drop relies on curiosity (the enticing label) to get removable media past the perimeter. Controls include device control policies that block unknown USB storage, disabling autorun and awareness training.",
+    "industryVsComptia": null,
+    "tags": [
+      "removable-media",
+      "social-engineering"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-009",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A factory's line-control workstation runs an operating system version that reached end of life three years ago, because the machine-vision application on it is certified only for that version. A remote code execution flaw affecting that version is published, and the vendor confirms no fix will be released. Which of the following BEST describes this attack surface?",
+    "options": [
+      {
+        "text": "Unsupported systems and applications",
+        "why": "Correct: end-of-support software receives no more security patches, so newly found flaws remain permanently exploitable."
+      },
+      {
+        "text": "Vulnerable agentless software",
+        "why": "Agentless refers to software reached remotely without a local install; the issue here is an installed OS with no vendor support."
+      },
+      {
+        "text": "Supply chain compromise through a vendor",
+        "why": "The vendor was not compromised and delivered nothing malicious; it simply ended support for the product."
+      },
+      {
+        "text": "Default credentials",
+        "why": "Nothing in the scenario involves factory-default usernames or passwords; the exposure comes from an unpatchable flaw."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Unsupported systems and applications are a distinct attack surface because the normal fix, patching, is gone. Expect compensating controls on the exam: segmentation or isolation, strict allow lists and a plan to replace the system.",
+    "industryVsComptia": null,
+    "tags": [
+      "attack-surface",
+      "legacy",
+      "ics"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-010",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A privilege-escalation flaw is disclosed in the VPN client that IT installed as a local service on 2,500 corporate laptops. The vendor has released a fixed version, but many laptops rarely connect to the corporate network to receive updates. Which of the following BEST describes the vulnerable software?",
+    "options": [
+      {
+        "text": "Client-based, because the flawed code is installed on each laptop",
+        "why": "Correct: client-based software runs on every endpoint where it is installed, so each device stays exposed until it is individually updated."
+      },
+      {
+        "text": "Agentless, because the VPN is reached over the network",
+        "why": "Agentless software has nothing installed locally; this VPN client is installed as a service on every laptop."
+      },
+      {
+        "text": "Unsupported, because many laptops are still unpatched",
+        "why": "The product is supported and a fix exists; delayed deployment does not make software unsupported."
+      },
+      {
+        "text": "Supply chain, because the flaw originated with the vendor",
+        "why": "An ordinary coding flaw in a vendor product is not a supply chain compromise; nothing was tampered with on its way to the company."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SY0-701 splits vulnerable software into client-based (installed agents and applications, patched on every device) and agentless (nothing local, so the flaw sits on the server side and is fixed centrally). Client-based flaws widen the attack surface by the number of endpoints and depend on reliable patch distribution.",
+    "industryVsComptia": null,
+    "tags": [
+      "attack-surface",
+      "patching"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-011",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "At a trade show, an attacker standing near a company booth connects to staff phones that are left discoverable and accept pairing without a PIN, then silently copies their contacts and calendar entries. Which of the following threat vectors BEST describes this attack?",
+    "options": [
+      {
+        "text": "Unsecure Bluetooth connection",
+        "why": "Correct: discoverable devices that pair without authentication let a nearby attacker connect over Bluetooth and pull data (bluesnarfing)."
+      },
+      {
+        "text": "Unsecure Wi-Fi network",
+        "why": "No Wi-Fi network or access point was involved; the attacker connected directly to the phones over a short-range Bluetooth link."
+      },
+      {
+        "text": "Removable device",
+        "why": "Nothing was physically plugged into the phones; the connection was wireless."
+      },
+      {
+        "text": "Open service ports",
+        "why": "Open ports describe network services listening on TCP/UDP; this attack abused Bluetooth pairing settings."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SY0-701 lists wireless, wired and Bluetooth separately under unsecure networks. Bluetooth risks come from discoverable mode and weak or no pairing authentication; mitigations are disabling discoverability, requiring authenticated pairing and turning Bluetooth off when not needed.",
+    "industryVsComptia": null,
+    "tags": [
+      "attack-surface",
+      "wireless",
+      "mobile"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-012",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A treasury analyst receives a phone call that displays the CEO's mobile number. The caller sounds exactly like the CEO, mentions a confidential acquisition and urgently asks for a wire transfer before the market opens. Later analysis shows the caller ID was spoofed and the voice was AI-generated. Which of the following BEST describes this attack?",
+    "options": [
+      {
+        "text": "Vishing",
+        "why": "Correct: the social engineering lure was delivered through a voice call, here using caller ID spoofing and a cloned voice."
+      },
+      {
+        "text": "Business email compromise",
+        "why": "BEC relies on a compromised or spoofed business email account; this request came entirely by phone."
+      },
+      {
+        "text": "Smishing",
+        "why": "Smishing uses SMS/text messages; the analyst was contacted by a live voice call."
+      },
+      {
+        "text": "Watering hole",
+        "why": "A watering hole compromises a website the target visits; no website played a part."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Identify the delivery channel first: voice call = vishing. Deepfake voices and spoofed caller ID make the call convincing, so the defense is procedural: verify payment requests through a separate, known channel such as calling back a number from the directory.",
+    "industryVsComptia": null,
+    "tags": [
+      "social-engineering",
+      "voice",
+      "deepfake"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.2-013",
+    "objective": "2.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Help desk tickets show that several employees reached a fake payroll login page after typing the company's payroll portal address directly into their browsers. Investigation finds an outside party registered a domain identical to the real one except for two transposed letters. No email or text message was sent to the victims. Which of the following BEST describes this technique?",
+    "options": [
+      {
+        "text": "Typosquatting",
+        "why": "Correct: registering a misspelled version of a legitimate domain to catch users who mistype the address is typosquatting."
+      },
+      {
+        "text": "Watering hole",
+        "why": "A watering hole compromises the legitimate site itself; here the real portal was untouched and users landed on a different domain."
+      },
+      {
+        "text": "Pretexting",
+        "why": "Pretexting needs an invented story told to the victim; nobody contacted these users at all."
+      },
+      {
+        "text": "Smishing",
+        "why": "Smishing delivers the lure by text message; the stem states no messages were sent."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Typosquatting (URL hijacking) depends on user typing errors rather than on any message. Defenses include registering common misspellings of your own domains, DNS filtering of newly registered domains, and bookmarks or SSO portals for critical apps.",
+    "industryVsComptia": null,
+    "tags": [
+      "social-engineering",
+      "web",
+      "dns"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-001",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A privileged backup utility checks that a user owns a file and then, a few milliseconds later, opens and copies that file. A tester repeatedly swaps the file for a symbolic link to a protected system file between those two steps and eventually gets the protected file copied. Which of the following vulnerabilities is being exploited?",
+    "options": [
+      {
+        "text": "Buffer overflow",
+        "why": "A buffer overflow writes past the end of a memory buffer; the tester never sends oversized input."
+      },
+      {
+        "text": "Memory injection",
+        "why": "Memory injection places code into a running process's memory; here the tester only manipulates which file is opened."
+      },
+      {
+        "text": "Race condition",
+        "why": "Correct: the tester changes the resource between time-of-check and time-of-use, so the earlier ownership check no longer applies."
+      },
+      {
+        "text": "Directory traversal",
+        "why": "Directory traversal uses ../ sequences in a path to escape a folder; the exploit relies on timing, not path manipulation in the input."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "A check followed by a separate use, with the attacker winning the gap between them, is a TOC/TOU race condition. The fix is to make check and use atomic, for example by operating on the already-opened file handle.",
+    "industryVsComptia": null,
+    "tags": [
+      "application"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-002",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A cloud provider issues an advisory: an attacker running code inside a customer's virtual machine could exploit a flaw in the emulated network adapter to execute commands on the underlying hypervisor host. Which of the following vulnerability types BEST describes this issue?",
+    "options": [
+      {
+        "text": "Resource reuse",
+        "why": "Resource reuse is leftover data in memory or storage reassigned to another VM; this advisory describes code execution on the host."
+      },
+      {
+        "text": "VM escape",
+        "why": "Correct: breaking out of the guest to run code on the hypervisor host is VM escape, which can expose every other VM on that host."
+      },
+      {
+        "text": "Misconfiguration",
+        "why": "The flaw is in the hypervisor's emulated device code itself, not in how a customer or admin configured it."
+      },
+      {
+        "text": "Memory injection",
+        "why": "Memory injection puts code into another process on the same system; the defining issue here is crossing the guest-to-host boundary."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Any flaw that lets guest code reach the hypervisor or host is a VM escape. It is the most serious virtualization vulnerability because isolation between tenants depends on the hypervisor.",
+    "industryVsComptia": null,
+    "tags": [
+      "virtualization",
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-003",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A user downloads an APK from a website and installs a modified game on a corporate Android phone, without using the official app store and without rooting the device. Which of the following BEST describes this risk?",
+    "options": [
+      {
+        "text": "Jailbreaking",
+        "why": "Jailbreaking removes OS restrictions on iOS; the user did not modify the operating system."
+      },
+      {
+        "text": "Zero-day",
+        "why": "A zero-day is an unpatched, unknown flaw; nothing here exploits a vulnerability in the OS."
+      },
+      {
+        "text": "Malicious update",
+        "why": "A malicious update arrives through a legitimate update channel; the user installed the app manually from an outside source."
+      },
+      {
+        "text": "Sideloading",
+        "why": "Correct: installing an app from outside the official store bypasses the store's vetting, which is sideloading."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Sideloading does not require rooting or jailbreaking; it simply skips the app store. MDM policies can block installs from unknown sources.",
+    "industryVsComptia": null,
+    "tags": [
+      "mobile"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-004",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Attackers breach a software vendor's build server and insert a backdoor into the next release of its monitoring agent. The release is signed with the vendor's legitimate code-signing key and installed automatically by thousands of customers. Which of the following vulnerability types BEST describes what the customers were exposed to?",
+    "options": [
+      {
+        "text": "Cryptographic",
+        "why": "The signature was valid and the cryptography worked as designed; the code was malicious before it was signed."
+      },
+      {
+        "text": "Malicious update",
+        "why": "Correct: customers trusted and installed an official, signed update that already contained attacker code."
+      },
+      {
+        "text": "Misconfiguration",
+        "why": "The customers' systems were configured to accept updates as intended; the problem was the content of the update itself."
+      },
+      {
+        "text": "Zero-day",
+        "why": "A zero-day is an unknown flaw exploited before a patch exists; here no flaw was exploited on the customers' systems; the backdoor arrived inside an update they chose to trust."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Code signing proves who published the code and that it was not altered afterward; it cannot prove the code is safe. A compromised build pipeline produces a validly signed malicious update. Mitigations include testing updates before deployment and monitoring agent behavior after updates.",
+    "industryVsComptia": null,
+    "tags": [
+      "supply-chain",
+      "application"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-005",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During fuzz testing of an in-house network service written in C, a tester submits a 5,000-character value in the username field. The service crashes, and the debugger shows the instruction pointer now holds 0x41414141, matching the repeated 'A' characters that were sent. Which of the following vulnerabilities did the tester MOST likely find?",
+    "options": [
+      {
+        "text": "Buffer overflow",
+        "why": "Correct: the oversized input ran past the end of a fixed-size buffer and overwrote adjacent memory, including the saved return address that loads into the instruction pointer."
+      },
+      {
+        "text": "Memory injection",
+        "why": "Memory injection writes code into another running process's memory; here the tester only sent a long field to the service's own input handler."
+      },
+      {
+        "text": "SQL injection",
+        "why": "SQL injection alters a database query with crafted syntax; the crash and overwritten register point to unchecked memory writes, not a query."
+      },
+      {
+        "text": "Race condition",
+        "why": "A race condition depends on timing between two operations; a single oversized input caused the crash every time."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Control of the instruction pointer by attacker-supplied bytes is the classic sign of a stack-based buffer overflow. Bounds checking, memory-safe languages, and protections such as ASLR and DEP reduce the risk.",
+    "industryVsComptia": null,
+    "tags": [
+      "application",
+      "memory"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-006",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "EDR alerts on a workstation: a macro-enabled document launched a script that opened a handle to explorer.exe, allocated space inside it, wrote a payload there, and started a remote thread there. No new executable was written to disk. Which of the following BEST describes this activity?",
+    "options": [
+      {
+        "text": "Buffer overflow",
+        "why": "No oversized input overran a buffer; the script used normal OS functions to place code deliberately into another process."
+      },
+      {
+        "text": "Memory injection",
+        "why": "Correct: placing a payload into the memory of a legitimate running process and executing it there is memory injection, a common fileless technique."
+      },
+      {
+        "text": "OS-based vulnerability",
+        "why": "The functions used are documented OS features working as designed; no flaw in the operating system itself was exploited."
+      },
+      {
+        "text": "Malicious update",
+        "why": "Nothing arrived through a trusted update channel; the payload came from a macro-enabled document."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Allocate, write, then create a remote thread in another process is the textbook memory injection (process injection) sequence. Running inside a trusted process like explorer.exe helps malware hide and avoid leaving files on disk, so behavior-based detection is needed.",
+    "industryVsComptia": null,
+    "tags": [
+      "application",
+      "memory"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-007",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A tester enters admin' -- in the username field of a web application's login page, leaves the password blank, and is logged in as the administrator. Which of the following vulnerabilities does this BEST demonstrate?",
+    "options": [
+      {
+        "text": "Cross-site scripting",
+        "why": "XSS injects script that runs in other users' browsers; this input changed how the server built its query."
+      },
+      {
+        "text": "Directory traversal",
+        "why": "Directory traversal uses ../ sequences to reach files outside the web root; no file path was involved."
+      },
+      {
+        "text": "SQL injection",
+        "why": "Correct: the quote closes the username string and -- comments out the password check, so the database query authenticates without a password."
+      },
+      {
+        "text": "Buffer overflow",
+        "why": "The input is short and the application did not crash; its meaning as query syntax is what caused the bypass."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "When user input is concatenated into a SQL statement, characters like ' and -- become code. Parameterized queries (prepared statements) and input validation are the primary defenses.",
+    "industryVsComptia": null,
+    "tags": [
+      "web",
+      "application"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-008",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A user posts a comment on a company forum that includes an image tag with an onerror attribute. Afterward, every employee who views that thread has their session cookie silently sent to an external domain, and attackers use those cookies to hijack the sessions. Which of the following vulnerabilities is the forum MOST likely affected by?",
+    "options": [
+      {
+        "text": "Cross-site scripting",
+        "why": "Correct: the forum stored the attacker's script and served it to every viewer, where it ran in their browsers in the forum's context (stored XSS)."
+      },
+      {
+        "text": "SQL injection",
+        "why": "SQL injection targets the database behind the application; here the payload executed in other users' browsers."
+      },
+      {
+        "text": "Request forgery",
+        "why": "Request forgery tricks a browser or server into sending an unwanted request; it does not plant script in page content that reads cookies."
+      },
+      {
+        "text": "Directory traversal",
+        "why": "Directory traversal reads files outside the intended folder on the server; nothing here accessed server files."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "XSS happens when a site includes untrusted input in its pages without encoding it. Output encoding, input validation, a Content Security Policy, and HttpOnly cookies all reduce the impact.",
+    "industryVsComptia": null,
+    "tags": [
+      "web",
+      "application"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-009",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A vendor releases an emergency patch for a flaw in the kernel of its desktop platform. Any logged-in standard user on an unpatched workstation can exploit it to run code with SYSTEM privileges, regardless of which applications are installed. Which of the following vulnerability types BEST describes this flaw?",
+    "options": [
+      {
+        "text": "Firmware",
+        "why": "Firmware is code stored on the hardware itself, such as UEFI; the kernel is part of the operating system loaded from disk."
+      },
+      {
+        "text": "OS-based",
+        "why": "Correct: the flaw lives in a built-in component of the operating system, so every system running that OS version is exposed until patched."
+      },
+      {
+        "text": "Zero-day",
+        "why": "The vendor already knows about the flaw and has released a patch, so it is no longer a zero-day."
+      },
+      {
+        "text": "Misconfiguration",
+        "why": "The service is vulnerable in its default state because of a code flaw; no setting was changed incorrectly."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "OS-based vulnerabilities affect the operating system's own code (kernel, built-in services, drivers), so they apply to every host on that version. Timely OS patching is the primary control.",
+    "industryVsComptia": null,
+    "tags": [
+      "os",
+      "patching"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-010",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A hardware vendor publishes an advisory for a line of laptops: a flaw in the UEFI code lets malicious code persist even after the drive is wiped and the operating system is reinstalled. The fix requires flashing an update supplied by the vendor. Which of the following vulnerability types does this advisory BEST describe?",
+    "options": [
+      {
+        "text": "OS-based",
+        "why": "Reinstalling the operating system does not remove the issue, which shows the flaw is below the OS."
+      },
+      {
+        "text": "Legacy",
+        "why": "Legacy refers to outdated platforms kept in service; these laptops are a current line that the vendor still supports and patches."
+      },
+      {
+        "text": "Firmware",
+        "why": "Correct: UEFI is firmware stored on the device's hardware, so flaws there survive disk wipes and OS reinstalls and need a firmware update."
+      },
+      {
+        "text": "Malicious update",
+        "why": "No tampered update was distributed; the vendor's update is the fix, not the attack."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Firmware vulnerabilities sit beneath the OS, which makes them persistent and hard to detect. Organizations often overlook firmware patching, so it should be part of the patch management process.",
+    "industryVsComptia": null,
+    "tags": [
+      "hardware",
+      "firmware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-011",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A customer of an IaaS provider attaches a newly provisioned block storage volume to a VM. Running a file-carving tool on it, an analyst recovers fragments of database records that belong to a different company. Which of the following vulnerability types BEST describes this issue?",
+    "options": [
+      {
+        "text": "VM escape",
+        "why": "VM escape is guest code breaking out to the hypervisor; the analyst simply read leftover data on storage that was assigned to them."
+      },
+      {
+        "text": "Resource reuse",
+        "why": "Correct: storage released by a previous tenant was reassigned without being sanitized, so its old data was exposed to the next tenant."
+      },
+      {
+        "text": "Memory injection",
+        "why": "Memory injection places code into a running process; here nothing executed, and the exposure came from leftover data."
+      },
+      {
+        "text": "Cryptographic",
+        "why": "No encryption was broken or weakened; the root issue is that the provider reassigned storage without wiping it."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "In shared virtualized or cloud infrastructure, memory and storage are constantly reallocated. If they are not cleared between tenants, data leaks across customers. Encrypting your own data at rest limits the damage if this happens.",
+    "industryVsComptia": null,
+    "tags": [
+      "virtualization",
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-012",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A penetration tester finds that a newly deployed web server's administration console is reachable from the internet, still accepts the vendor's default username and password, and has directory listing turned on. The software is fully patched. Which of the following vulnerability types BEST describes these findings?",
+    "options": [
+      {
+        "text": "Zero-day",
+        "why": "The software is fully patched and the tester used no unknown flaw; every finding is a setting that was left unsafe."
+      },
+      {
+        "text": "Misconfiguration",
+        "why": "Correct: default credentials, an exposed admin interface, and directory listing are all insecure settings, not code flaws."
+      },
+      {
+        "text": "Legacy",
+        "why": "The server is newly deployed and current, not an outdated platform kept in service."
+      },
+      {
+        "text": "Cryptographic",
+        "why": "Nothing in the findings involves weak algorithms, keys, or protocols."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Patching fixes code flaws but not settings. Hardening baselines, changing defaults, disabling unneeded features, and configuration scanning address misconfiguration.",
+    "industryVsComptia": null,
+    "tags": [
+      "misconfiguration",
+      "hardening"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-013",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "To save money, an organization buys network switches from an unauthorized online reseller. During a pre-deployment inspection, engineers find an extra unlabeled chip soldered onto each board that does not appear in the manufacturer's design. Which of the following BEST describes this vulnerability?",
+    "options": [
+      {
+        "text": "Supply chain vulnerability through a hardware provider",
+        "why": "Correct: the physical devices were tampered with somewhere in the path from manufacturer to buyer, which is a hardware supply chain risk."
+      },
+      {
+        "text": "Supply chain vulnerability through a software provider",
+        "why": "No vendor software or update was involved; the problem is a physical component added to the hardware."
+      },
+      {
+        "text": "Supply chain vulnerability through a service provider",
+        "why": "No third party has ongoing access to the organization's network; the reseller only sold the devices."
+      },
+      {
+        "text": "Firmware vulnerability",
+        "why": "The issue is an added physical component, not a flaw in the code stored on the switch."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Buying hardware outside authorized channels raises the risk of counterfeit or tampered devices. Mitigations include purchasing from authorized distributors, verifying provenance, and inspecting equipment before deployment.",
+    "industryVsComptia": null,
+    "tags": [
+      "supply-chain",
+      "hardware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-015",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Attackers obtain a copy of a web application's user database from a stolen backup. Within hours they recover most users' plaintext passwords, because the application stored them as unsalted MD5 hashes. Which of the following vulnerability types BEST describes the weakness that made the passwords recoverable?",
+    "options": [
+      {
+        "text": "SQL injection",
+        "why": "The database came from a stolen backup, not from crafted queries; the issue is how the passwords were protected."
+      },
+      {
+        "text": "Cryptographic",
+        "why": "Correct: MD5 is fast and outdated, and without salts identical passwords share hashes, so precomputed tables and brute force recover them quickly."
+      },
+      {
+        "text": "Resource reuse",
+        "why": "Resource reuse is leftover data on reassigned memory or storage; the backup was stolen, not inherited."
+      },
+      {
+        "text": "Buffer overflow",
+        "why": "No input overran a buffer; the attackers worked offline on the stolen hashes."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Using weak or outdated algorithms, missing salts, or poor key management are cryptographic vulnerabilities. Passwords should be stored with a salted, deliberately slow algorithm such as bcrypt, scrypt, Argon2, or PBKDF2.",
+    "industryVsComptia": null,
+    "tags": [
+      "cryptography",
+      "passwords"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.3-016",
+    "objective": "2.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "The MDM platform flags an employee's iPhone: the user ran an exploit tool that removed iOS's built-in restrictions and gave the user root-level control of the operating system. Which of the following BEST describes this risk?",
+    "options": [
+      {
+        "text": "Sideloading",
+        "why": "Sideloading installs an app from outside the official store; this user modified the operating system itself."
+      },
+      {
+        "text": "Malicious update",
+        "why": "No tampered update was delivered through a trusted channel; the user deliberately ran an exploit tool."
+      },
+      {
+        "text": "Zero-day",
+        "why": "The user deliberately unlocked the device; the risk the MDM is reporting is the removed OS restrictions, not an unknown flaw."
+      },
+      {
+        "text": "Jailbreaking",
+        "why": "Correct: removing iOS restrictions to gain full control of the OS is jailbreaking, which disables protections such as app sandboxing and signature checks."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Jailbreaking (rooting on Android) weakens the device's built-in security model. MDM can detect jailbroken devices and block them from corporate resources.",
+    "industryVsComptia": null,
+    "tags": [
+      "mobile"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-001",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Over 40 minutes, the identity provider logs a single failed login for each of 2,300 different user accounts, all from the same small group of IP addresses and all using the password Spring2026!. No account reaches the lockout threshold. Which of the following attacks is MOST likely occurring?",
+    "options": [
+      {
+        "text": "Brute force",
+        "why": "Brute force tries many passwords against an account and would normally trigger lockout; here each account sees only one attempt."
+      },
+      {
+        "text": "Password spraying",
+        "why": "Correct: one common password tried once against many accounts, deliberately staying under the lockout threshold, is password spraying."
+      },
+      {
+        "text": "Credential replay",
+        "why": "Credential replay reuses captured credentials or tokens that already work; these are guesses that fail."
+      },
+      {
+        "text": "Birthday attack",
+        "why": "A birthday attack looks for hash collisions; it has nothing to do with guessing passwords at a login page."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Many accounts, one password, one attempt each, no lockouts: that is spraying. Brute force concentrates on a single account and tends to produce account lockout as an indicator.",
+    "industryVsComptia": null,
+    "tags": [
+      "password",
+      "indicators"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-002",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A user signs in to the corporate VPN from Lima at 09:00 and signs out at 09:05. At 09:25 the same account signs in successfully from Frankfurt. Which of the following indicators does this represent?",
+    "options": [
+      {
+        "text": "Concurrent session usage",
+        "why": "The first session ended before the second began, so the account was never active in two sessions at once."
+      },
+      {
+        "text": "Out-of-cycle logging",
+        "why": "Out-of-cycle logging is log activity at unexpected times or frequencies; the clue here is the distance between login locations, not the logging pattern."
+      },
+      {
+        "text": "Account lockout",
+        "why": "Both logins succeeded and no lockout occurred."
+      },
+      {
+        "text": "Impossible travel",
+        "why": "Correct: no one can travel from Lima to Frankfurt in 20 minutes, so at least one login is likely not the real user."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Impossible travel compares the distance between login locations with the time between them. Check whether sessions overlap: if they do not, concurrent session usage is not the answer.",
+    "industryVsComptia": null,
+    "tags": [
+      "indicators",
+      "identity"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-003",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Within an hour of one laptop connecting to the network, EDR alerts fire on dozens of unpatched servers. Each infected host begins scanning for other systems with the same SMB vulnerability and copying itself to them. No user opened files or clicked links on the affected servers. Which of the following types of malware is MOST likely involved?",
+    "options": [
+      {
+        "text": "Worm",
+        "why": "Correct: self-propagation across the network by exploiting a vulnerability, with no user action, is what defines a worm."
+      },
+      {
+        "text": "Virus",
+        "why": "A virus needs a user to run an infected file or program to spread; the servers were infected with no user interaction."
+      },
+      {
+        "text": "Trojan",
+        "why": "A trojan relies on a user installing software that looks legitimate; it does not scan for and exploit other hosts on its own."
+      },
+      {
+        "text": "Logic bomb",
+        "why": "A logic bomb waits dormant for a trigger condition; this code is actively and immediately spreading."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Speed of spread plus no user interaction plus vulnerability exploitation means worm. Mitigations are patching and segmentation to limit lateral movement.",
+    "industryVsComptia": null,
+    "tags": [
+      "malware"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-004",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A web application firewall logs repeated requests such as GET /reports/view?doc=..%2f..%2f..%2f..%2fetc%2fpasswd from a single external address. Which of the following attacks is being attempted?",
+    "options": [
+      {
+        "text": "Request forgery",
+        "why": "Request forgery tricks a victim's browser or the server into sending a request on someone else's behalf; this attacker is directly requesting a file path."
+      },
+      {
+        "text": "Buffer overflow",
+        "why": "A buffer overflow sends oversized input to overwrite memory; the request is short and manipulates a file path."
+      },
+      {
+        "text": "Directory traversal",
+        "why": "Correct: URL-encoded ../ sequences (%2f is a slash) try to step out of the web folder to read a system file."
+      },
+      {
+        "text": "Replay",
+        "why": "A replay resends captured valid traffic, such as a session token; these are crafted requests, not captured ones."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Repeated ../ sequences, often URL-encoded to evade filters, aimed at well-known files such as /etc/passwd are the signature of directory traversal. Input validation and running the app with least privilege mitigate it.",
+    "industryVsComptia": null,
+    "tags": [
+      "application",
+      "web"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-005",
+    "objective": "2.4",
+    "type": "multi",
+    "difficulty": 3,
+    "stem": "A company's internet link is saturated by DNS responses it never requested. Analysis shows the attacker sent small DNS queries to thousands of open resolvers using the company's IP address as the spoofed source, and each response was roughly 50 times larger than the query. Which of the following BEST describe this attack? (Choose TWO.)",
+    "options": [
+      {
+        "text": "Reflected DDoS",
+        "why": "Correct: spoofing the victim's address makes third-party resolvers send their replies to the victim instead of the attacker."
+      },
+      {
+        "text": "Amplified DDoS",
+        "why": "Correct: responses about 50 times larger than the queries multiply the attacker's bandwidth against the victim."
+      },
+      {
+        "text": "DNS poisoning",
+        "why": "DNS poisoning corrupts cached records to redirect users; here legitimate responses are being used as flood traffic."
+      },
+      {
+        "text": "On-path attack",
+        "why": "An on-path attacker intercepts or alters traffic between two parties; this attacker never sits between the company and anyone."
+      },
+      {
+        "text": "Credential replay",
+        "why": "Credential replay reuses captured authentication data; no credentials are involved in a bandwidth flood."
+      }
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "Spoofed source address = reflected. Response much larger than request = amplified. DNS and NTP are classic protocols for this because small queries can produce large answers.",
+    "industryVsComptia": null,
+    "tags": [
+      "network",
+      "ddos",
+      "dns"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-006",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Both a company's laptops and its web server support TLS 1.3, yet sessions from a hotel network are negotiating an obsolete protocol version with weak ciphers. Packet captures show a device on that network modifying the initial handshake messages. Which of the following attacks is MOST likely taking place?",
+    "options": [
+      {
+        "text": "Replay attack",
+        "why": "A replay resends captured traffic later; here the attacker modifies the handshake live to change what is negotiated."
+      },
+      {
+        "text": "Collision attack",
+        "why": "A collision attack looks for two inputs with the same hash; it does not explain both sides agreeing to an older protocol."
+      },
+      {
+        "text": "Downgrade attack",
+        "why": "Correct: an on-path device tampering with the handshake so both ends fall back to a weaker protocol or cipher is a downgrade attack."
+      },
+      {
+        "text": "Birthday attack",
+        "why": "A birthday attack is the statistical method for finding hash collisions, not a way to force protocol negotiation."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "When both endpoints support a strong protocol but end up using a weak one, and something in the middle is altering negotiation, think downgrade. The mitigation is to disable legacy protocols and ciphers on both clients and servers.",
+    "industryVsComptia": null,
+    "tags": [
+      "cryptographic",
+      "tls"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-007",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "While investigating a suspected compromise of a domain controller, an analyst notices the SIEM received no Security events from it between 01:40 and 03:10, although its other logs kept arriving. The host's local Security log has also been cleared. Which of the following indicators BEST describes this finding?",
+    "options": [
+      {
+        "text": "Out-of-cycle logging",
+        "why": "Out-of-cycle logging is activity logged at unusual times or frequencies; the problem here is that events are absent."
+      },
+      {
+        "text": "Missing logs",
+        "why": "Correct: a gap in one log source plus a cleared local log suggests someone removed evidence to cover their tracks."
+      },
+      {
+        "text": "Resource inaccessibility",
+        "why": "Resource inaccessibility means users or services cannot reach a system or data; the domain controller stayed up and kept sending other logs."
+      },
+      {
+        "text": "Blocked content",
+        "why": "Blocked content is a security control stopping a download, site or message; nothing was blocked here."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "A selective gap in one log type, while the host stays online and keeps sending others, together with a cleared local log, points to deliberate log tampering rather than an outage.",
+    "industryVsComptia": "SOC teams usually call this defense evasion or indicator removal (MITRE ATT&CK T1070, for example clearing Windows event logs). CompTIA calls the observable indicator \"missing logs\".",
+    "tags": [
+      "indicators",
+      "logging"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-008",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Two weeks after a database administrator was terminated, several tables on the payroll server are deleted overnight. Investigators find a scheduled script he added months earlier that checks every night whether his own account still exists and, once it no longer does, runs the deletion. The script had done nothing until his account was removed. Which of the following BEST describes this malware?",
+    "options": [
+      {
+        "text": "Logic bomb",
+        "why": "Correct: dormant code that fires its payload when a specific condition is met (here, the removal of the author's account)."
+      },
+      {
+        "text": "Trojan",
+        "why": "A Trojan is malicious software disguised as a legitimate program that a user installs; this script was planted directly by an insider and waited for a trigger."
+      },
+      {
+        "text": "Rootkit",
+        "why": "A rootkit hides itself and other malware by modifying the OS; nothing here was concealed at the kernel level, and the defining feature is the trigger condition."
+      },
+      {
+        "text": "Worm",
+        "why": "A worm self-propagates across the network; this script stayed on one server and only acted when its condition was met."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The giveaway is the trigger: code that stays inactive until a date, event or condition occurs is a logic bomb. A terminated admin whose code fires when their account disappears is the classic insider-threat logic bomb scenario.",
+    "industryVsComptia": null,
+    "tags": [
+      "malware",
+      "insider"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-009",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A network sensor shows a file server making regular outbound connections on TCP 8443. On the server itself, Task Manager, netstat and the installed antivirus show no matching process or listening port. When the disk is scanned after booting from trusted external media, analysts find an unknown kernel driver that intercepts system calls. Which of the following is MOST likely present?",
+    "options": [
+      {
+        "text": "Trojan",
+        "why": "A Trojan may have been the delivery method, but a disguised program alone does not explain why the OS's own tools cannot see the process or port."
+      },
+      {
+        "text": "Rootkit",
+        "why": "Correct: a kernel-level component that intercepts system calls to hide processes and connections from the running OS is the defining behavior of a rootkit."
+      },
+      {
+        "text": "Keylogger",
+        "why": "A keylogger records keystrokes; nothing here points to keystroke capture, and keylogging does not by itself hide processes from system tools."
+      },
+      {
+        "text": "Worm",
+        "why": "A worm spreads itself to other hosts; the evidence is about concealment on one server, not self-propagation."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "When activity is visible from outside (network sensor) but invisible from inside the host, suspect a rootkit. Scanning from trusted boot media works because the infected kernel is not running to hide anything.",
+    "industryVsComptia": null,
+    "tags": [
+      "malware",
+      "rootkit"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-010",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "An employee downloads a free PDF converter from a file-sharing site. The tool converts documents exactly as advertised, but EDR later discovers that it also installed a hidden component giving an external host remote control of the laptop. Which of the following BEST describes this malware?",
+    "options": [
+      {
+        "text": "Bloatware",
+        "why": "Bloatware is unwanted software preinstalled by the manufacturer; it is not designed to give an attacker remote control."
+      },
+      {
+        "text": "Worm",
+        "why": "A worm spreads on its own by exploiting vulnerabilities; this was installed by the user, who believed it was legitimate."
+      },
+      {
+        "text": "Trojan",
+        "why": "Correct: malware disguised as useful, legitimate software that the user installs willingly, here carrying a remote access component."
+      },
+      {
+        "text": "Logic bomb",
+        "why": "A logic bomb waits for a trigger condition before acting; nothing here depends on a date or event."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Working as advertised while doing something malicious in the background is the essence of a Trojan. A Trojan that opens remote control is often called a RAT (remote access Trojan).",
+    "industryVsComptia": null,
+    "tags": [
+      "malware",
+      "trojan"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-011",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Access logs show an engineer's proximity badge opened the server room door at 02:14 on a Saturday. The engineer was at home that night and still has her badge. She remembers a stranger standing unusually close to her in a crowded elevator on Friday, holding a bag against her hip where the badge hangs. Which of the following attacks MOST likely occurred?",
+    "options": [
+      {
+        "text": "Tailgating",
+        "why": "Tailgating means following an authorized person through a door; the engineer was not present, yet her badge ID was used."
+      },
+      {
+        "text": "Shoulder surfing",
+        "why": "Shoulder surfing captures what someone types or views; a proximity badge has no PIN or screen to observe in this scenario."
+      },
+      {
+        "text": "Physical brute force",
+        "why": "Brute force means forcing a lock or door; the log shows the door opened with a valid badge credential."
+      },
+      {
+        "text": "RFID cloning",
+        "why": "Correct: a concealed reader held close to the badge can copy its ID onto another card, which then opens doors as her badge."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "A badge event while the owner was elsewhere and still holds the original points to a copied credential. Close-range covert reading followed by reuse is RFID cloning; mitigations include shielded badge holders and badges that use cryptographic challenge-response.",
+    "industryVsComptia": null,
+    "tags": [
+      "physical",
+      "rfid"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-012",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Users who type the correct URL of the company's payroll portal are reaching a convincing copy hosted at an unfamiliar IP address. The company's internal recursive resolver returns that IP for the portal's hostname, while public resolvers and the domain's authoritative name servers return the correct address. Hosts files on affected machines are unmodified. Which of the following attacks is MOST likely occurring?",
+    "options": [
+      {
+        "text": "Domain hijacking",
+        "why": "Hijacking the domain registration would change the authoritative records, so every resolver would return the wrong address; here the authoritative servers are correct."
+      },
+      {
+        "text": "DNS cache poisoning",
+        "why": "Correct: a false record inserted into one resolver's cache misdirects only that resolver's clients, while authoritative data stays correct."
+      },
+      {
+        "text": "Typosquatting",
+        "why": "Typosquatting relies on users mistyping a domain; these users are typing the correct URL."
+      },
+      {
+        "text": "ARP poisoning",
+        "why": "ARP poisoning redirects LAN traffic at layer 2; it would not place a wrong record in the resolver's DNS cache."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Locate where the bad answer lives. Wrong only in one resolver's cache = cache poisoning. Wrong at the authoritative servers for everyone = domain hijacking. Wrong only on one host with a modified hosts file = local poisoning. DNSSEC validation helps prevent forged records from being accepted.",
+    "industryVsComptia": null,
+    "tags": [
+      "network",
+      "dns"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-013",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Employees in a branch office are repeatedly dropped from the corporate Wi-Fi. A wireless survey finds a flood of deauthentication frames and a second access point, in a car parked outside, broadcasting the corporate SSID with a captive portal that asks for domain credentials. Which of the following attacks is MOST likely taking place?",
+    "options": [
+      {
+        "text": "Evil twin",
+        "why": "Correct: an attacker-controlled AP impersonates the legitimate SSID, and deauthentication pushes clients off the real AP so they reconnect to the fake one."
+      },
+      {
+        "text": "Rogue access point",
+        "why": "A rogue AP is an unauthorized AP connected to the organization's own network; this device is outside and impersonates the network rather than extending it."
+      },
+      {
+        "text": "Jamming",
+        "why": "Jamming is RF interference that disrupts the channel; it would not explain a second AP offering the corporate SSID and harvesting credentials."
+      },
+      {
+        "text": "Bluejacking",
+        "why": "Bluejacking sends unsolicited messages over Bluetooth; it has nothing to do with Wi-Fi association or captive portals."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Deauthentication plus a look-alike SSID is the evil twin pattern. Users should be trained never to enter domain credentials into a Wi-Fi captive portal; 802.1X (WPA2/WPA3-Enterprise) with server certificate validation also helps, because properly configured clients will not complete authentication unless the network presents the trusted RADIUS server certificate.",
+    "industryVsComptia": null,
+    "tags": [
+      "network",
+      "wireless"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-014",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During an investigation, an analyst finds that several workstations' ARP caches map the default gateway's IP address to the MAC address of another employee's workstation on the same VLAN. That workstation is forwarding the traffic it receives to the real gateway. Which of the following attacks is MOST likely occurring?",
+    "options": [
+      {
+        "text": "MAC flooding",
+        "why": "MAC flooding overloads the switch's CAM table so it floods frames; it does not map the gateway's IP to one specific host's MAC."
+      },
+      {
+        "text": "VLAN hopping",
+        "why": "VLAN hopping gains access to traffic on another VLAN; here everything happens within one VLAN."
+      },
+      {
+        "text": "On-path attack",
+        "why": "Correct: by poisoning ARP caches, the attacker's host sits between victims and the gateway, relaying traffic it can read or alter."
+      },
+      {
+        "text": "DNS poisoning",
+        "why": "DNS poisoning corrupts name-to-IP answers; this evidence is a corrupted IP-to-MAC mapping in ARP caches."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "ARP poisoning is a common technique for an on-path attack on a LAN. Forwarding traffic to the real gateway keeps victims online so they do not notice. Dynamic ARP inspection on switches is a typical mitigation.",
+    "industryVsComptia": "SY0-701 uses 'on-path attack' for what is widely still called man-in-the-middle (MitM).",
+    "tags": [
+      "network",
+      "on-path"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-015",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "After a phishing compromise of one workstation, logs show successful NTLM logons to six file servers using a privileged service account. The account's password is 30 random characters and was never typed on that workstation, but the account's NTLM hash was present in the workstation's memory. No failed logons for the account were recorded. Which of the following attacks is MOST likely?",
+    "options": [
+      {
+        "text": "Offline brute force",
+        "why": "Cracking a 30-character random password from its hash is impractical, and with the hash in hand the attacker does not need the plaintext to use NTLM."
+      },
+      {
+        "text": "Password spraying",
+        "why": "Spraying tries common passwords across many accounts and normally leaves failed logons; there were none, and a random password would not be guessed."
+      },
+      {
+        "text": "Credential replay",
+        "why": "Correct: the captured hash is reused directly to authenticate (pass-the-hash), so the password strength and the lack of failed logons are irrelevant."
+      },
+      {
+        "text": "Birthday attack",
+        "why": "A birthday attack finds hash collisions between different inputs; here the attacker reused the real hash rather than finding another input."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Strong password, no failures, and a hash taken from memory point to credential replay. Mitigations include restricting where privileged accounts log on, protecting credential memory and reducing NTLM use.",
+    "industryVsComptia": null,
+    "tags": [
+      "network",
+      "credential-replay",
+      "identity"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-016",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During a fuzzing test of a legacy network service, the tester sends a 6,000-character value in the username field. The service crashes, and the debugger shows the instruction pointer set to 0x41414141, the hex encoding of \"AAAA\" from the input. Which of the following vulnerabilities does this MOST likely reveal?",
+    "options": [
+      {
+        "text": "SQL injection",
+        "why": "SQL injection inserts query syntax that a database executes; a plain run of the letter A contains no SQL and the result is a memory crash."
+      },
+      {
+        "text": "Buffer overflow",
+        "why": "Correct: input larger than its buffer overwrote adjacent memory, including the saved return address, so the attacker's data now controls execution."
+      },
+      {
+        "text": "Directory traversal",
+        "why": "Directory traversal uses ../ sequences to reach files outside the intended path; nothing here involves file paths."
+      },
+      {
+        "text": "Command injection",
+        "why": "Command injection passes OS commands through input to a shell; the input contains no commands, only repeated characters."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "A long string of repeated characters followed by a crash, and especially the instruction pointer holding those characters, is the textbook buffer overflow indicator. Bounds checking, memory-safe languages, DEP and ASLR are the usual defenses.",
+    "industryVsComptia": null,
+    "tags": [
+      "application",
+      "buffer-overflow"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-017",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A customer who is signed in to an online banking site opens a forum post in another browser tab. The post contains a hidden image tag whose source is the bank's funds-transfer URL with the attacker's account as the destination. The bank completes the transfer because the browser automatically sent the customer's session cookie with the request. Which of the following attacks MOST likely occurred?",
+    "options": [
+      {
+        "text": "Cross-site scripting",
+        "why": "XSS runs attacker script inside the vulnerable site's pages; here no script was injected into the bank's site, only a request was triggered from another site."
+      },
+      {
+        "text": "Server-side request forgery",
+        "why": "SSRF tricks a server into making requests for the attacker; here the victim's browser, not a server, sent the forged request."
+      },
+      {
+        "text": "Session replay",
+        "why": "Replaying a session requires the attacker to capture and resend the token; the attacker never saw the cookie, the browser attached it itself."
+      },
+      {
+        "text": "Cross-site request forgery",
+        "why": "Correct: a malicious page makes the victim's browser send an authenticated request to a site where the victim is already signed in."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "CSRF abuses the trust a site places in the user's browser. Anti-CSRF tokens, SameSite cookies and re-authentication for sensitive actions are standard mitigations. Remember the split: client-side forgery = CSRF, server-side forgery = SSRF.",
+    "industryVsComptia": null,
+    "tags": [
+      "application",
+      "forgery",
+      "web"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-018",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Developers complain that a Linux build server has become extremely slow. Monitoring shows CPU usage near 100% around the clock from a process with a random name, plus constant outbound connections to a known cryptocurrency mining pool. Which of the following indicators does this BEST represent?",
+    "options": [
+      {
+        "text": "Resource consumption",
+        "why": "Correct: abnormal, sustained use of CPU and bandwidth by an unknown process is a resource consumption indicator, typical of cryptomining."
+      },
+      {
+        "text": "Resource inaccessibility",
+        "why": "The server is slow but still reachable and usable; inaccessibility means systems or data cannot be reached or opened at all."
+      },
+      {
+        "text": "Blocked content",
+        "why": "Blocked content means a control stopped a request; here the mining connections are succeeding, not being blocked."
+      },
+      {
+        "text": "Out-of-cycle logging",
+        "why": "Out-of-cycle logging is log activity at unusual times or volumes; the evidence here is performance and traffic, not logging patterns."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Unexplained CPU, memory, disk or network usage is a resource consumption indicator. Pinned CPU plus mining-pool traffic is the classic cryptojacking picture.",
+    "industryVsComptia": null,
+    "tags": [
+      "indicators",
+      "cryptomining"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-019",
+    "objective": "2.4",
+    "type": "multi",
+    "difficulty": 2,
+    "stem": "On Monday morning the CFO reports that her account has been locked three times since Friday, although she has not tried to sign in. The identity provider shows hundreds of failed logons for her account only, each with a different password, all from one external IP address. Which of the following BEST describe the indicator and the attack? (Choose TWO.)",
+    "options": [
+      {
+        "text": "Account lockout",
+        "why": "Correct: repeated lockouts the user did not cause are the indicator that someone is failing logons against her account."
+      },
+      {
+        "text": "Brute force",
+        "why": "Correct: many different passwords against a single account is an online brute force attack."
+      },
+      {
+        "text": "Password spraying",
+        "why": "Spraying tries one or a few passwords across many accounts to avoid lockout; here one account received hundreds of guesses."
+      },
+      {
+        "text": "Concurrent session usage",
+        "why": "Concurrent usage requires successful sessions running at the same time; every attempt here failed."
+      },
+      {
+        "text": "Credential replay",
+        "why": "Replay reuses a captured hash or token and succeeds without guessing; this attack is guessing passwords and failing."
+      }
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "Many guesses against one account trips the lockout threshold, so account lockout is the indicator of brute force. Spraying is designed to avoid exactly this, showing one failure per account across many users instead.",
+    "industryVsComptia": null,
+    "tags": [
+      "indicators",
+      "password"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.4-020",
+    "objective": "2.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A security researcher emails a company a link to a criminal leak site that lists the company by name and offers samples of its HR records for sale. None of the company's monitoring tools had alerted on data exfiltration. Which of the following indicators does this BEST represent?",
+    "options": [
+      {
+        "text": "Missing logs",
+        "why": "Missing logs are gaps or deletions in the company's own logging; the evidence here comes from an outside public source."
+      },
+      {
+        "text": "Blocked content",
+        "why": "Blocked content means a control stopped something; nothing was stopped, the data left undetected."
+      },
+      {
+        "text": "Published/documented",
+        "why": "Correct: the compromise became known because it was publicly posted or reported by a third party before internal detection."
+      },
+      {
+        "text": "Out-of-cycle logging",
+        "why": "Out-of-cycle logging is unusual log timing or volume; no internal log anomaly was observed."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Learning about a breach from a leak site, researcher, journalist or the attacker's own announcement is the published/documented indicator. It usually means internal detection failed, so the next step is to scope the incident with your own data sources.",
+    "industryVsComptia": null,
+    "tags": [
+      "indicators"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.5-001",
+    "objective": "2.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A retailer's self-service kiosks should only ever run the point-of-sale application and a few OS components. The security team wants any other executable, including new malware with no known signature, to be prevented from launching. Which of the following is the BEST mitigation?",
+    "options": [
+      {
+        "text": "Host-based firewall",
+        "why": "A host-based firewall controls network connections; it does not stop an unapproved program from launching locally."
+      },
+      {
+        "text": "Removal of unnecessary software",
+        "why": "Removing extra software shrinks the attack surface today but does nothing to stop a new executable from running later."
+      },
+      {
+        "text": "Application allow list",
+        "why": "Correct: only approved executables can run, so anything else, known or unknown, is blocked by default."
+      },
+      {
+        "text": "HIPS",
+        "why": "HIPS blocks activity it recognizes as malicious by behavior or signature; it does not deny everything that is merely unapproved."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Default-deny execution is the job of an application allow list. It is especially practical on single-purpose systems such as kiosks, where the set of approved software is small and rarely changes.",
+    "industryVsComptia": null,
+    "tags": [
+      "mitigation",
+      "hardening"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.5-002",
+    "objective": "2.5",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A manufacturing plant relies on a control workstation running an operating system that is end-of-life and no longer receives security updates. The equipment vendor will not support newer OS versions or third-party security agents, and replacing the line will take two years. Which of the following is the BEST way to reduce risk in the meantime?",
+    "options": [
+      {
+        "text": "Isolate it on its own segment with strict ACLs",
+        "why": "Correct: when a system cannot be patched or protected locally, limiting what can reach it contains the risk without breaking production."
+      },
+      {
+        "text": "Install the latest OS security patches on it",
+        "why": "An end-of-life OS no longer receives security patches, so there is nothing current to apply."
+      },
+      {
+        "text": "Deploy a third-party endpoint protection agent",
+        "why": "The vendor does not support third-party agents on this system, so installing one could void support or disrupt the line."
+      },
+      {
+        "text": "Decommission and remove the workstation now",
+        "why": "The plant depends on it for two more years; decommissioning would halt production rather than manage the risk."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "For legacy or EOL systems that must stay in service, CompTIA's expected answer is segmentation or isolation (often with monitoring) as a compensating control. Read the constraints in the stem: they eliminate patching, agents and removal.",
+    "industryVsComptia": null,
+    "tags": [
+      "mitigation",
+      "segmentation",
+      "legacy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.5-003",
+    "objective": "2.5",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Help desk staff need to reset passwords for standard users. Instead of adding them to the Domain Admins group, an administrator delegates only the password-reset permission on the user OUs. Which of the following mitigation techniques does this apply?",
+    "options": [
+      {
+        "text": "Configuration enforcement",
+        "why": "Configuration enforcement keeps systems on a secure baseline; this change is about what rights a group of people has."
+      },
+      {
+        "text": "Least privilege",
+        "why": "Correct: the staff receive only the specific permission their job requires, rather than full administrative rights."
+      },
+      {
+        "text": "Segmentation",
+        "why": "Segmentation divides networks into controlled zones; it does not decide which directory permissions a user holds."
+      },
+      {
+        "text": "Monitoring",
+        "why": "Monitoring watches for and alerts on activity; it does not restrict what the help desk is able to do."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Granting the minimum rights needed for a role is least privilege. Delegating a single permission instead of a powerful group also limits the damage if a help desk account is compromised.",
+    "industryVsComptia": null,
+    "tags": [
+      "mitigation",
+      "access-control"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.5-004",
+    "objective": "2.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An audit finds that many servers built from a hardened image no longer match it: administrators have re-enabled SMBv1, turned off the host firewall and added local admin accounts while troubleshooting. Management wants deviations to be corrected automatically going forward. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Patching",
+        "why": "Patching fixes software vulnerabilities through vendor updates; it does not undo setting changes made by administrators."
+      },
+      {
+        "text": "Decommissioning",
+        "why": "Decommissioning retires assets securely; these servers are still needed and only need to return to their baseline."
+      },
+      {
+        "text": "Monitoring",
+        "why": "Monitoring could detect the drift, but on its own it does not automatically put the settings back."
+      },
+      {
+        "text": "Configuration enforcement",
+        "why": "Correct: tools such as GPO or configuration management continuously reapply the secure baseline and revert deviations."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "The key words are \"corrected automatically\". Detection alone is monitoring; continuously reapplying the baseline is configuration enforcement.",
+    "industryVsComptia": "In practice this is usually called desired state configuration or drift remediation (for example, GPO, Intune, Ansible, Puppet). CompTIA's term is \"configuration enforcement\".",
+    "tags": [
+      "mitigation",
+      "hardening"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.5-005",
+    "objective": "2.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A vendor discloses a critical remote code execution flaw in the firmware of the company's VPN appliance, confirms it is being actively exploited, and releases a fixed firmware version. The appliance must stay internet-facing for remote staff. Which of the following mitigations BEST addresses the vulnerability itself?",
+    "options": [
+      {
+        "text": "Increase monitoring of the appliance's logs",
+        "why": "Monitoring can help detect exploitation, but the flaw would remain exploitable."
+      },
+      {
+        "text": "Install the vendor's patch on the appliance",
+        "why": "Correct: patching removes the vulnerability; an actively exploited critical flaw justifies an emergency change."
+      },
+      {
+        "text": "Restrict management access with an ACL",
+        "why": "The flaw is in the internet-facing VPN service, so limiting the management interface leaves the exposed service vulnerable."
+      },
+      {
+        "text": "Move the appliance to an isolated segment",
+        "why": "It must remain reachable from the internet, so isolation is not workable, and it would not fix the flaw anyway."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "When a fix exists and the system must stay exposed, patching is the mitigation that removes the weakness. Monitoring, ACLs and segmentation are compensating controls for when a patch cannot be applied yet. Use the emergency change process rather than waiting for the next window.",
+    "industryVsComptia": null,
+    "tags": [
+      "mitigation",
+      "patching"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.5-006",
+    "objective": "2.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "After an application moved to a cloud platform, its old on-premises server was left powered on and joined to the domain because no team took ownership of it. Eighteen months later, attackers exploit an unpatched service on that server and use credentials cached on it to move laterally. Which of the following mitigation techniques would have BEST prevented this by eliminating the attack surface entirely?",
+    "options": [
+      {
+        "text": "Patching",
+        "why": "Patching would have closed this one flaw, but the unowned server and its cached credentials would still be an unmanaged attack surface."
+      },
+      {
+        "text": "Application allow list",
+        "why": "An allow list limits which programs run; it does not remove an unneeded server that still exposes services and holds credentials."
+      },
+      {
+        "text": "Encryption",
+        "why": "Encrypting the server's data would not stop exploitation of a running service or the use of credentials on a live host."
+      },
+      {
+        "text": "Decommissioning",
+        "why": "Correct: securely retiring the server (removing it from the network and domain, revoking access, sanitizing its data) removes the target altogether."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Assets that are no longer needed should be decommissioned, not abandoned. The key phrase is 'eliminating the attack surface entirely': only removing the system removes all of its attack surface; the other options reduce specific risks on a system that should not exist.",
+    "industryVsComptia": null,
+    "tags": [
+      "mitigation",
+      "decommissioning",
+      "asset-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.5-007",
+    "objective": "2.5",
+    "type": "multi",
+    "difficulty": 2,
+    "stem": "A facilities team installs 40 new IP cameras. A vulnerability scan shows that each camera exposes Telnet in addition to its HTTPS management page, and the vendor's documented admin/admin login works on all of them. The cameras cannot run third-party software. Which of the following hardening techniques BEST address these findings? (Choose TWO.)",
+    "options": [
+      {
+        "text": "Change the default passwords",
+        "why": "Correct: vendor default credentials are publicly documented, so anyone who reaches the camera can log in until they are changed."
+      },
+      {
+        "text": "Disable unneeded ports and protocols",
+        "why": "Correct: Telnet is an unneeded, cleartext management protocol; disabling unnecessary ports and protocols removes that exposure."
+      },
+      {
+        "text": "Install endpoint protection",
+        "why": "The cameras cannot run third-party software, and an agent would not fix default credentials or an open Telnet port."
+      },
+      {
+        "text": "Enable full-disk encryption",
+        "why": "Encryption protects stored data at rest; it does nothing about a working default login or an exposed management protocol."
+      },
+      {
+        "text": "Configure an application allow list",
+        "why": "An allow list controls which programs execute; the risk here is who can log in and which services listen, not which code runs."
+      }
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "Match each finding to its hardening technique: default credentials -> default password changes; unnecessary cleartext service -> disabling ports/protocols. IoT devices rarely support agents, so these configuration changes (plus segmentation) are the usual answer.",
+    "industryVsComptia": null,
+    "tags": [
+      "mitigation",
+      "hardening",
+      "iot"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.5-008",
+    "objective": "2.5",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A sales team carries laptops that store customer contracts. Management's main concern is that a lost or stolen laptop would let whoever finds it read those files. Which of the following hardening techniques BEST addresses this concern?",
+    "options": [
+      {
+        "text": "Host-based firewall",
+        "why": "A host firewall controls network connections; someone holding the laptop can remove the drive and read it directly."
+      },
+      {
+        "text": "Full-disk encryption",
+        "why": "Correct: encrypting the entire drive keeps data at rest unreadable without the key, even if the drive is removed."
+      },
+      {
+        "text": "Host-based intrusion prevention",
+        "why": "HIPS blocks malicious activity on a running system; it offers no protection when the drive is read offline."
+      },
+      {
+        "text": "Removal of unnecessary software",
+        "why": "Reducing installed software shrinks the attack surface but leaves the contract files readable on the disk."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Lost or stolen device = protect data at rest = encryption (for example, full-disk encryption with a TPM). The other hardening techniques protect a running, connected system.",
+    "industryVsComptia": null,
+    "tags": [
+      "mitigation",
+      "hardening",
+      "encryption"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-2.5-009",
+    "objective": "2.5",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Attackers are sending documents whose macros make Word launch PowerShell, which then writes a persistence entry to the registry Run key and connects out over ordinary HTTPS. Administrators need PowerShell on every endpoint for management. The security team wants a control on each endpoint that recognizes this sequence of actions and stops it as it happens. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Host-based firewall",
+        "why": "A host firewall filters connections by port, address or application; outbound HTTPS is normal and allowed, and it does not judge process behavior."
+      },
+      {
+        "text": "Application allow list",
+        "why": "Word and PowerShell are both approved applications, so an allow list would still let them run and perform these actions."
+      },
+      {
+        "text": "Host-based intrusion prevention system",
+        "why": "Correct: HIPS watches process, file and registry activity on the host and blocks behavior that matches an attack, such as Office spawning PowerShell to set persistence."
+      },
+      {
+        "text": "Network-based intrusion detection system",
+        "why": "A NIDS is not on the endpoint, only alerts rather than blocks, and cannot inspect encrypted HTTPS content without decryption."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "The requirement has three parts: on the endpoint, behavior-based, and preventive. Only HIPS meets all three. Read constraints in the stem carefully: 'administrators need PowerShell' rules out allow listing, and 'ordinary HTTPS' rules out port-based filtering.",
+    "industryVsComptia": "In practice this capability is usually delivered by an EDR or endpoint protection platform with behavioral rules; CompTIA's list names it HIPS.",
+    "tags": [
+      "mitigation",
+      "hardening",
+      "hips"
+    ],
+    "status": "reviewed"
+  }
+]

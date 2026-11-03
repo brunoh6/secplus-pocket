@@ -1,0 +1,965 @@
+[
+  {
+    "id": "fc-4.1-001",
+    "objective": "4.1",
+    "front": "Secure baseline lifecycle (3 steps)",
+    "back": "Establish: define the hardened configuration (vendor guides, CIS Benchmarks).\nDeploy: push it consistently (GPO, MDM, configuration management, golden images).\nMaintain: monitor for drift, rescan, and update the baseline as patches and threats change.",
+    "comptiaNote": "CompTIA's three verbs are establish, deploy, maintain. Hardening targets include mobile devices, workstations, switches, routers, cloud infrastructure, servers, ICS/SCADA, embedded systems, RTOS and IoT.",
+    "tags": [
+      "hardening",
+      "baseline"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.1-002",
+    "objective": "4.1",
+    "front": "WPA3 improvements over WPA2",
+    "back": "SAE (Simultaneous Authentication of Equals) replaces WPA2's PSK-based authentication (the 4-way handshake still follows): resists offline dictionary attacks on captured handshakes and adds forward secrecy.\nProtected Management Frames are mandatory.\nWPA3-Enterprise 192-bit mode uses stronger suites (GCMP-256).\nWPA2 uses CCMP (AES); a captured WPA2-PSK handshake can be cracked offline.",
+    "comptiaNote": "If a question asks how to stop offline cracking of a Wi-Fi passphrase, think WPA3 / SAE.",
+    "tags": [
+      "wireless"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.1-003",
+    "objective": "4.1",
+    "front": "Wireless AAA: 802.1X + EAP + RADIUS",
+    "back": "Supplicant (client) -> authenticator (AP or switch) -> authentication server (RADIUS).\nEAP carries the credentials inside 802.1X; RADIUS checks them against the directory and returns accept/reject.\nResult: per-user authentication and accounting (WPA2/WPA3-Enterprise) instead of one shared passphrase.",
+    "comptiaNote": "EAP methods to recognize: EAP-TLS (certificates on client and server), PEAP and EAP-TTLS (server certificate plus a TLS tunnel protecting the inner credentials).",
+    "tags": [
+      "wireless",
+      "aaa"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.1-004",
+    "objective": "4.1",
+    "front": "Static code analysis vs code signing vs sandboxing",
+    "back": "Static code analysis: reviews source code without running it to find flaws (injection, unsafe functions).\nCode signing: a signature with the publisher's private key proves origin and that the code was not altered.\nSandboxing: runs code in an isolated environment so it cannot affect the host or other apps.",
+    "comptiaNote": "Classic trap: signed code can still be vulnerable or malicious. Signing = integrity + authenticity, not safety.",
+    "tags": [
+      "appsec"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.1-005",
+    "objective": "4.1",
+    "front": "Wireless site survey vs heat map",
+    "back": "Site survey: measuring the RF environment before (and after) installation: coverage, interference sources, channel use, neighboring and rogue networks.\nHeat map: the visual result, signal strength color-coded over the floor plan.\nUsed together to decide AP placement, channels and power levels.",
+    "comptiaNote": "Both are listed under 'installation considerations'. Survey = the process; heat map = the picture it produces.",
+    "tags": [
+      "wireless",
+      "site-survey"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.1-006",
+    "objective": "4.1",
+    "front": "BYOD vs COPE vs CYOD",
+    "back": "BYOD: employee owns the device; least company control, privacy concerns, usually containerization.\nCOPE: corporate-owned, personally enabled; company owns and manages it, personal use allowed.\nCYOD: choose your own device; employee picks from an approved list of supported models. CompTIA treats it like COPE with a choice of model (company-owned); some references have the employee buy it.",
+    "comptiaNote": "Ask who owns the device and who chooses it. Ownership decides how far the company can go (e.g., full wipe vs selective wipe).",
+    "tags": [
+      "mobile",
+      "deployment-models"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.1-007",
+    "objective": "4.1",
+    "front": "MDM: key security capabilities",
+    "back": "Enforce policies: passcode, screen lock, encryption, OS version.\nRemote wipe (full) or selective wipe of corporate data.\nContainerization: separate corporate apps and data from personal.\nApp control: allow/deny lists, push managed apps.\nLocation features: geolocation, geofencing.\nBlock jailbroken/rooted devices.",
+    "comptiaNote": "BYOD plus 'keep personal data' -> containerization + selective wipe. Lost corporate device -> full remote wipe.",
+    "tags": [
+      "mobile",
+      "mdm"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.1-008",
+    "objective": "4.1",
+    "front": "Mobile connection methods: risks and controls",
+    "back": "Cellular: traffic carried by the carrier, generally safer than public Wi-Fi; risks include rogue base stations and SIM swapping.\nWi-Fi: rogue APs, evil twins, eavesdropping on open networks; use WPA3, VPN, avoid auto-join.\nBluetooth: bluejacking (unsolicited messages), bluesnarfing (data theft); disable discoverable mode, turn off when unused, pair only known devices.",
+    "comptiaNote": "The 701 objectives list the connection methods as cellular, Wi-Fi and Bluetooth.",
+    "tags": [
+      "mobile",
+      "wireless",
+      "bluetooth"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.1-009",
+    "objective": "4.1",
+    "front": "Hardening ICS/SCADA, embedded, RTOS and IoT",
+    "back": "Common limits: little CPU/memory, no endpoint agents, long lifecycles, patching depends on the vendor and may require downtime.\nControls: change default credentials, disable unused services, apply vendor firmware updates, segment or isolate the network (strict ACLs, sometimes air gap), and monitor traffic at the network level.",
+    "comptiaNote": "When the device itself cannot be hardened further, the expected answer is usually network segmentation.",
+    "tags": [
+      "hardening",
+      "ics",
+      "iot",
+      "embedded"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.1-010",
+    "objective": "4.1",
+    "front": "Hardening servers and cloud infrastructure",
+    "back": "Servers: remove unneeded services and software, patch, least privilege, host firewall, EDR, secure configuration from a baseline, central logging.\nCloud: least-privilege IAM, MFA on admin/root accounts, no publicly exposed storage by default, encryption, security groups, logging and CSPM to detect misconfigurations.\nBoth: monitor continuously for configuration drift.",
+    "comptiaNote": "In the cloud, misconfiguration (e.g., a public storage bucket) is the classic hardening failure, not missing patches.",
+    "tags": [
+      "hardening",
+      "cloud",
+      "servers",
+      "monitoring"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.2-001",
+    "objective": "4.2",
+    "front": "Sanitization vs destruction",
+    "back": "Sanitization: removes data so the media can be reused or resold (overwriting, secure erase, cryptographic erase by destroying the encryption key).\nDestruction: makes the media physically unusable (shredding, pulverizing, incineration; degaussing for magnetic media).\nDegaussing does not work on SSDs or other flash media.",
+    "comptiaNote": "Device must be reused, returned or resold -> sanitization. Media will never be reused -> destruction.",
+    "tags": [
+      "asset-management",
+      "disposal"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.2-002",
+    "objective": "4.2",
+    "front": "Disposal: certification and data retention",
+    "back": "Certification: documented proof (e.g., a certificate of destruction from a third-party vendor) that media was sanitized or destroyed; used as audit evidence.\nData retention: before disposal, keep data the organization must retain for legal, regulatory or business reasons; dispose only when the retention period ends.",
+    "comptiaNote": "A legal hold overrides normal retention and disposal schedules.",
+    "tags": [
+      "asset-management",
+      "disposal"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.2-003",
+    "objective": "4.2",
+    "front": "Asset inventory vs enumeration",
+    "back": "Inventory: the maintained record of assets (type, owner, classification, location), e.g., a CMDB.\nEnumeration: actively discovering and identifying assets (discovery scans, agent or MDM reports) to find what really exists, including unknown devices.\nComparing the two reveals unmanaged assets.",
+    "comptiaNote": "Assignment/accounting means every asset has an owner (accountable person) and a classification that drives how it is handled.",
+    "tags": [
+      "asset-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.2-004",
+    "objective": "4.2",
+    "front": "Security in acquisition/procurement",
+    "back": "Buy only from approved vendors and authorized resellers (avoid counterfeit or tampered hardware).\nVet suppliers and include security requirements in contracts.\nCheck software licensing and support lifecycle before purchase.\nAt receipt: tag the asset and record it in the inventory before deployment.",
+    "comptiaNote": "Security starts at procurement: later stages (tracking, disposal) cannot fix a compromised purchase.",
+    "tags": [
+      "asset-management",
+      "procurement",
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.2-005",
+    "objective": "4.2",
+    "front": "Asset management lifecycle (CompTIA's 4 stages)",
+    "back": "1. Acquisition/procurement: approved sources, security requirements.\n2. Assignment/accounting: assign an owner (accountable person) and a classification (handling rules).\n3. Monitoring/asset tracking: keep the inventory current; enumerate to find unknown assets; asset tags, MDM or agent check-ins.\n4. Disposal/decommissioning: retention check, sanitization or destruction, certification.",
+    "comptiaNote": "Owner = accountable and approves access; classification = how sensitive the asset is. Both are part of assignment/accounting.",
+    "tags": [
+      "asset-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-001",
+    "objective": "4.3",
+    "front": "Vulnerability scan: false positive vs false negative",
+    "back": "False positive: the scanner reports a vulnerability that is not actually present (e.g., version banner matches but the fix was backported).\nFalse negative: a real vulnerability the scanner misses; more dangerous because it creates false confidence.\nConfirmation = validating findings before acting on them.",
+    "comptiaNote": "Credentialed scans and manual verification generally reduce false positives and false negatives.",
+    "tags": [
+      "vuln-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-002",
+    "objective": "4.3",
+    "front": "CVE vs CVSS",
+    "back": "CVE: a unique identifier for a specific publicly known vulnerability (CVE-YYYY-NNNN, four or more digits after the year), program run by MITRE.\nCVSS: a 0-10 severity score; v3.x uses base, temporal and environmental metric groups (v4 renames temporal to threat).\nCVE says which vulnerability; CVSS says how severe.",
+    "comptiaNote": "CVSS v3 ratings: 0.1-3.9 Low, 4.0-6.9 Medium, 7.0-8.9 High, 9.0-10.0 Critical.",
+    "tags": [
+      "vuln-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-003",
+    "objective": "4.3",
+    "front": "Exposure factor and environmental variables",
+    "back": "Exposure factor (EF): percentage of an asset's value lost if the vulnerability is exploited (SLE = asset value x EF).\nEnvironmental variables: characteristics of your environment (internet-facing vs isolated, data sensitivity, existing controls) that raise or lower the real risk compared with the base score.",
+    "comptiaNote": "Same CVSS base score does not mean same priority: environmental variables, industry/organizational impact and risk tolerance decide the order.",
+    "tags": [
+      "vuln-management",
+      "prioritization"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-004",
+    "objective": "4.3",
+    "front": "Vulnerability response and remediation options",
+    "back": "Patching: apply the vendor fix (preferred).\nInsurance: transfer the financial impact.\nSegmentation: isolate the vulnerable system to limit who can reach it.\nCompensating controls: alternative safeguards when the fix is not possible (ACLs, WAF rule).\nExceptions/exemptions: formally approved, documented decision not to remediate.",
+    "comptiaNote": "An exception or exemption is risk acceptance: documented, approved by the risk owner and periodically reviewed, never an informal decision to ignore a finding.",
+    "tags": [
+      "vuln-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-005",
+    "objective": "4.3",
+    "front": "Validating remediation (3 methods)",
+    "back": "Rescanning: scan again to confirm the finding is gone.\nAudit: review records and configurations to confirm remediation followed policy.\nVerification: confirm the fix actually works (e.g., manual test) and nothing broke.\nThen reporting: open/closed findings, trends and exceptions for stakeholders.",
+    "comptiaNote": "'Patch deployed' is not the same as 'vulnerability fixed' (failed installs, pending reboots). Validation closes the loop.",
+    "tags": [
+      "vuln-management"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-006",
+    "objective": "4.3",
+    "front": "Static vs dynamic analysis vs package monitoring",
+    "back": "Static analysis: examines source code without running it.\nDynamic analysis: tests the running application (e.g., DAST scanners, fuzzing) to see how it actually behaves.\nPackage monitoring: tracks third-party libraries and versions and alerts when new vulnerabilities affect them (SCA, SBOM).",
+    "comptiaNote": "'Not yet compiled or run' -> static. 'Running in staging' -> dynamic. 'Open-source dependency' -> package monitoring.",
+    "tags": [
+      "vuln-management",
+      "appsec"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-007",
+    "objective": "4.3",
+    "front": "Threat feed types (4)",
+    "back": "OSINT: free, public sources (advisories, government alerts, blogs, social media).\nProprietary/third-party: commercial, paid feeds curated by a vendor.\nInformation-sharing organization: sector communities such as ISACs; members share indicators with trusted peers.\nDark web: monitoring underground forums and marketplaces for leaked credentials, data or attack planning.",
+    "comptiaNote": "'Same industry' + 'share with peers' -> ISAC. 'Free/public' -> OSINT. 'Credentials for sale' -> dark web.",
+    "tags": [
+      "vuln-management",
+      "threat-intel"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-008",
+    "objective": "4.3",
+    "front": "Responsible disclosure program vs bug bounty",
+    "back": "Responsible disclosure: published channel and rules for outside researchers to report flaws privately (contact, safe harbor, coordinated timeline before public release); no payment required.\nBug bounty: same idea plus monetary rewards for valid, in-scope findings, with defined scope and rules of engagement.",
+    "comptiaNote": "Both invite external researchers. Rewards = bug bounty.",
+    "tags": [
+      "vuln-management",
+      "disclosure",
+      "bug-bounty"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-009",
+    "objective": "4.3",
+    "front": "Vuln scan vs pentest vs system/process audit",
+    "back": "Vulnerability scan: automated detection of known weaknesses; reports, does not exploit.\nPenetration test: authorized attempt to exploit and chain weaknesses to show real impact.\nSystem/process audit: reviews configurations, records and procedures against policy or standards (e.g., is patching done within SLA).",
+    "comptiaNote": "'Could an attacker actually reach X?' -> penetration test. 'Are we following our own process?' -> audit.",
+    "tags": [
+      "vuln-management",
+      "pentest",
+      "audit"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.3-011",
+    "objective": "4.3",
+    "front": "Vulnerability reporting: contents and audiences",
+    "back": "Contents: findings by severity, affected assets and owners, remediation status, open exceptions, trends (e.g., mean time to remediate, SLA compliance).\nTechnical teams: detailed, per-host findings and fix steps.\nManagement/executives: summarized risk posture and trends.\nReports also feed audits and compliance evidence.",
+    "comptiaNote": "Reporting is the last step of the vulnerability management cycle: identify, analyze, respond, validate, report.",
+    "tags": [
+      "vuln-management",
+      "reporting"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.4-001",
+    "objective": "4.4",
+    "front": "SCAP",
+    "back": "Security Content Automation Protocol (NIST): a suite of standards that lets tools describe and check vulnerabilities and configurations in a common, machine-readable way.\nComponents include CVE, CVSS, CPE (platform names), CCE (configuration items), XCCDF (checklists) and OVAL (system state tests).",
+    "comptiaNote": "Benchmarks (e.g., CIS Benchmarks) define the hardened settings; SCAP is how tools automate checking systems against them.",
+    "tags": [
+      "monitoring",
+      "scap"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.4-002",
+    "objective": "4.4",
+    "front": "Agent vs agentless monitoring",
+    "back": "Agent: software installed on the host; deep visibility, works off-network, can act locally (e.g., quarantine). Must be deployed, updated and consumes resources.\nAgentless: collects remotely (WMI, SSH, SNMP, APIs, network scans); nothing to install, but less detail and depends on network reachability and credentials.",
+    "tags": [
+      "monitoring"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.4-003",
+    "objective": "4.4",
+    "front": "SNMP traps vs NetFlow",
+    "back": "SNMP trap: unsolicited alert sent by the device to the manager when an event occurs (UDP 162). Polling is manager-initiated (UDP 161). Use SNMPv3 for authentication and encryption.\nNetFlow: exported flow metadata (source/destination IP and port, protocol, byte and packet counts, timestamps), no payload.",
+    "comptiaNote": "Need the content of the traffic? That is a packet capture, not NetFlow.",
+    "tags": [
+      "monitoring",
+      "network"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.4-004",
+    "objective": "4.4",
+    "front": "Monitoring activities (CompTIA list)",
+    "back": "Log aggregation, alerting, scanning, reporting, archiving.\nAlert response and remediation/validation:\n- Quarantine: isolate a suspicious file or host pending analysis.\n- Alert tuning: adjust rules and thresholds to cut false positives without losing true detections.",
+    "comptiaNote": "Disabling a noisy rule is rarely the BEST answer; tuning it is.",
+    "tags": [
+      "monitoring",
+      "siem"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.4-005",
+    "objective": "4.4",
+    "front": "SIEM core functions",
+    "back": "Aggregation: collect logs from many sources.\nNormalization: put events in a common format.\nCorrelation: link related events across sources into one alert.\nAlerting and dashboards.\nReporting and retention for compliance and investigations.",
+    "comptiaNote": "A central log server aggregates; only a SIEM correlates. 'Correlate' in a stem points to SIEM.",
+    "tags": [
+      "siem",
+      "log-aggregation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.4-006",
+    "objective": "4.4",
+    "front": "Security benchmarks",
+    "back": "Published hardened-configuration baselines for an OS, application or device.\nSources: CIS Benchmarks, vendor security guides, DISA STIGs.\nMonitoring use: scan systems against the benchmark and report deviations (configuration drift).",
+    "comptiaNote": "A system that no longer matches the benchmark has drifted; the fix is to reapply the baseline, not to update the benchmark.",
+    "tags": [
+      "benchmarks",
+      "hardening",
+      "scanning"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.4-007",
+    "objective": "4.4",
+    "front": "Monitoring: systems vs applications vs infrastructure",
+    "back": "Systems: servers and endpoints (CPU, memory, disk, OS and security logs, services, logins).\nApplications: app logs, errors, availability, response time, authentication events.\nInfrastructure: network devices and services (switches, routers, firewalls, links, bandwidth), via SNMP, NetFlow, syslog.",
+    "tags": [
+      "monitoring",
+      "infrastructure"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.4-008",
+    "objective": "4.4",
+    "front": "Reporting vs archiving",
+    "back": "Reporting: summarize monitoring data for people (trends, compliance status, open alerts, metrics) on a schedule or on demand.\nArchiving: move older logs to long-term, lower-cost storage to meet retention requirements and support later investigations; protect integrity (hashes, WORM).",
+    "comptiaNote": "A report is not a substitute for retained raw logs.",
+    "tags": [
+      "reporting",
+      "archiving"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.4-009",
+    "objective": "4.4",
+    "front": "Antivirus vs vulnerability scanner",
+    "back": "Antivirus: detects malicious code on a host (signatures, heuristics, behavior) and blocks, cleans or quarantines it.\nVulnerability scanner: finds weaknesses (missing patches, misconfigurations, open ports, weak settings) and reports them by severity, e.g. CVSS. It does not remove malware.",
+    "comptiaNote": "After remediation, rescanning with the vulnerability scanner is how you validate the fix.",
+    "tags": [
+      "antivirus",
+      "vulnerability-scanner"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-001",
+    "objective": "4.5",
+    "front": "SPF vs DKIM vs DMARC",
+    "back": "SPF: DNS TXT record listing the servers allowed to send mail for the domain.\nDKIM: sending server signs messages; receivers verify with the public key published in DNS.\nDMARC: DNS policy telling receivers what to do when a message has no SPF or DKIM pass aligned with the From domain (none, quarantine, reject), plus reporting.",
+    "comptiaNote": "Only DMARC gives receivers instructions and sends reports; SPF and DKIM alone only produce pass/fail signals.",
+    "tags": [
+      "email-security"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-002",
+    "objective": "4.5",
+    "front": "Web filter: agent-based vs centralized proxy",
+    "back": "Agent-based: filtering software on each endpoint; enforces policy anywhere (home, hotel, off VPN).\nCentralized proxy: web traffic passes through a proxy; simple to manage but only covers traffic routed through it.\nCommon features: URL scanning, content categorization, block rules, reputation.",
+    "tags": [
+      "web-filter"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-003",
+    "objective": "4.5",
+    "front": "Firewall rule processing",
+    "back": "Rules (access list entries) are evaluated top-down; the first match wins.\nPlace specific rules above broad ones.\nAn implicit deny at the end blocks anything not explicitly allowed.\nRules match on source, destination, port and protocol.",
+    "comptiaNote": "If a deny rule 'is not working', look for a broader allow rule above it.",
+    "tags": [
+      "firewall"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-004",
+    "objective": "4.5",
+    "front": "Insecure protocol -> secure replacement",
+    "back": "Telnet 23 -> SSH 22\nHTTP 80 -> HTTPS 443\nFTP 20/21 -> SFTP 22 or FTPS 989/990\nLDAP 389 -> LDAPS 636\nSNMPv1/v2c -> SNMPv3\nPOP3 110 -> POP3S 995\nIMAP 143 -> IMAPS 993\nSMTP 25 -> SMTP over TLS 465 / STARTTLS 587",
+    "comptiaNote": "CompTIA frames this as protocol selection, port selection and transport method.",
+    "tags": [
+      "secure-protocols",
+      "ports"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-005",
+    "objective": "4.5",
+    "front": "EDR vs XDR vs UBA",
+    "back": "EDR: endpoint agent that records behavior, detects threats and enables response (isolate host, kill process).\nXDR: extends detection and response across endpoints, network, cloud, email and identity with correlated telemetry.\nUBA: baselines normal user behavior and flags deviations (odd hours, impossible travel, unusual data volume).",
+    "tags": [
+      "edr",
+      "xdr",
+      "uba"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-006",
+    "objective": "4.5",
+    "front": "Group Policy vs SELinux",
+    "back": "Group Policy: centralized security and configuration settings for Windows domain users and computers through Active Directory (password policy, software restrictions, firewall settings).\nSELinux: Linux kernel security module enforcing mandatory access control; security contexts can confine what processes access, even processes running as root.",
+    "comptiaNote": "SELinux = MAC on Linux. Group Policy = centralized Windows configuration.",
+    "tags": [
+      "os-security"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-007",
+    "objective": "4.5",
+    "front": "FIM vs DLP vs NAC",
+    "back": "FIM: detects changes to critical files (system binaries, configs) by comparing hashes with a known-good baseline.\nDLP: detects or blocks sensitive data leaving through endpoints, network, email or cloud (content inspection, patterns).\nNAC: checks device identity and posture (patches, AV, compliance) before granting network access; can quarantine to a remediation network.",
+    "tags": [
+      "fim",
+      "dlp",
+      "nac"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-008",
+    "objective": "4.5",
+    "front": "Screened subnet",
+    "back": "Network segment for internet-facing services (web, mail relay, reverse proxy), located between the internet and the internal network.\nThe internet can reach it; firewall rules tightly limit what it can initiate toward the internal network.\nIf a public server is compromised, the internal network is not directly exposed.",
+    "comptiaNote": "SY0-701 uses 'screened subnet'; older material calls it a DMZ.",
+    "tags": [
+      "firewall",
+      "screened-subnet"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-009",
+    "objective": "4.5",
+    "front": "IDS vs IPS",
+    "back": "IDS: passive, receives a copy of traffic (tap or SPAN port); detects and alerts, cannot block.\nIPS: inline in the traffic path; detects and blocks or drops in real time.\nInline trade-off: false positives block legitimate traffic, and a failure means choosing fail-open (availability) or fail-closed (security).",
+    "comptiaNote": "Requirement says 'stop automatically' = IPS inline.",
+    "tags": [
+      "ids-ips",
+      "network"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-010",
+    "objective": "4.5",
+    "front": "Signature vs anomaly (trend) detection",
+    "back": "Signature: matches known attack patterns; precise with few false positives, but misses new attacks until a signature exists. Keep signatures updated.\nAnomaly/behavior (trend): learns a baseline of normal activity and flags deviations; can catch unknown attacks but produces more false positives and needs tuning.",
+    "tags": [
+      "ids-ips",
+      "signatures",
+      "anomaly"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-011",
+    "objective": "4.5",
+    "front": "Web filter features",
+    "back": "URL scanning: check each requested URL (and often page content) against threat data.\nContent categorization: classify sites (gambling, social media, malware) and allow or block by category.\nBlock rules: admin-defined allow/deny lists by URL, category or file type.\nReputation: score sites by risk and block low-reputation ones.",
+    "tags": [
+      "web-filter"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-012",
+    "objective": "4.5",
+    "front": "DNS filtering",
+    "back": "The resolver refuses to resolve (or sinkholes) domains on block lists: malware, phishing, C2, unwanted categories.\nPros: covers every device that uses the resolver, no agent needed; blocks before any connection is made.\nLimits: no visibility into full URLs or content; bypassed by hard-coded resolvers or encrypted DNS unless outbound DNS is restricted.",
+    "tags": [
+      "dns-filtering"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-013",
+    "objective": "4.5",
+    "front": "Secure email gateway",
+    "back": "Inspects inbound and outbound mail before delivery.\nInbound: spam and phishing filtering, attachment scanning and sandboxing, URL rewriting and checks, sender reputation, SPF/DKIM/DMARC verification.\nOutbound: DLP, encryption, blocking malware sent from compromised accounts.",
+    "comptiaNote": "SPF, DKIM and DMARC authenticate the sending domain; a look-alike domain can pass all three. Content inspection is the gateway's job.",
+    "tags": [
+      "email-security",
+      "gateway"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.5-014",
+    "objective": "4.5",
+    "front": "Common ports for firewall rules",
+    "back": "SSH/SFTP TCP 22 · SMTP TCP 25 · DNS UDP/TCP 53\nHTTP TCP 80 · Kerberos 88 · NTP UDP 123\nLDAP 389 · HTTPS TCP 443 · SMB TCP 445\nSyslog UDP 514 · LDAPS TCP 636 · RDP TCP 3389",
+    "comptiaNote": "DNS uses TCP 53 too (zone transfers, large responses); a rule allowing only UDP 53 can break it.",
+    "tags": [
+      "firewall",
+      "ports"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-001",
+    "objective": "4.6",
+    "front": "Mandatory vs discretionary access control",
+    "back": "Mandatory (MAC): the system enforces access by comparing security labels (classification/clearance) of subject and object; set by administrators, users cannot change them.\nDiscretionary (DAC): the resource owner decides who gets access (e.g., NTFS file permissions).",
+    "comptiaNote": "Labels and clearances -> MAC. 'The owner grants access' -> DAC.",
+    "tags": [
+      "access-control"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-002",
+    "objective": "4.6",
+    "front": "Role-based vs rule-based vs attribute-based",
+    "back": "Role-based: permissions attached to job roles; users are assigned roles.\nRule-based: administrator-defined rules applied to everyone regardless of identity (ACLs, time-of-day restrictions).\nAttribute-based: policy evaluates multiple attributes of the user, resource, action and environment (department, device posture, location, time).",
+    "comptiaNote": "Role-based and rule-based both abbreviate to RBAC; read the full term in the question.",
+    "tags": [
+      "access-control"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-003",
+    "objective": "4.6",
+    "front": "SAML vs OAuth vs LDAP",
+    "back": "SAML: XML-based federation; the IdP sends signed assertions to the service provider for web SSO.\nOAuth: authorization framework; gives an app delegated, scoped access to resources via access tokens without sharing the password (OpenID Connect adds authentication on top).\nLDAP: protocol to query and update a directory such as Active Directory (TCP 389, LDAPS 636).",
+    "comptiaNote": "OAuth is authorization, not authentication.",
+    "tags": [
+      "federation",
+      "sso"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-004",
+    "objective": "4.6",
+    "front": "MFA factors",
+    "back": "Something you know: password, PIN.\nSomething you have: hard/soft token, smart card, security key.\nSomething you are: biometrics (fingerprint, face).\nSomewhere you are: location (GPS, IP geolocation).\nMFA = two or more DIFFERENT factor types.",
+    "comptiaNote": "Password + security question is still single-factor: both are something you know.",
+    "tags": [
+      "mfa"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-005",
+    "objective": "4.6",
+    "front": "PAM tools (3)",
+    "back": "Just-in-time (JIT) permissions: elevated rights granted only when needed, for a limited time, often with approval; no standing admin access.\nPassword vaulting: privileged credentials stored in a vault, checked out, rotated, and sessions logged.\nEphemeral credentials: short-lived accounts or keys created for one task and expired automatically.",
+    "comptiaNote": "'Eliminate standing privileges' points to JIT.",
+    "tags": [
+      "pam"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-006",
+    "objective": "4.6",
+    "front": "Attestation (IAM)",
+    "back": "Periodic formal review in which managers or resource owners confirm (attest) that each user's access is still needed and appropriate; unneeded access is removed.\nRelated: provisioning (create and grant), deprovisioning (remove at role change or termination), identity proofing (verify a person's identity before issuing credentials).",
+    "comptiaNote": "Industry usually calls this a user access review or access recertification; CompTIA uses 'attestation'.",
+    "tags": [
+      "iam",
+      "lifecycle"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-007",
+    "objective": "4.6",
+    "front": "MFA implementations",
+    "back": "Biometrics: something you are (fingerprint, face, iris, voice).\nHard authentication token: dedicated physical device, e.g. a key fob showing a rotating code.\nSoft authentication token: software on a device, e.g. an authenticator app generating TOTP codes or push approvals.\nSecurity key: hardware device (FIDO2/WebAuthn, USB/NFC) that signs a challenge; phishing-resistant.",
+    "comptiaNote": "Hard and soft tokens and security keys are all 'something you have'. Of the three, only the security key resists real-time phishing relays, because its response is bound to the site's origin.",
+    "tags": [
+      "mfa",
+      "tokens"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-008",
+    "objective": "4.6",
+    "front": "Password policy settings",
+    "back": "Length: minimum number of characters (the strongest single factor).\nComplexity: character classes required (upper, lower, digit, symbol).\nReuse / history: number of previous passwords that cannot be reused.\nExpiration (maximum age): how long a password may be used before it must change.\nMinimum age: how long a password must be kept before it can change again.",
+    "comptiaNote": "Users cycling through the history to get back an old password -> set a minimum password age.",
+    "tags": [
+      "passwords",
+      "password-policy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-009",
+    "objective": "4.6",
+    "front": "Password manager vs passwordless",
+    "back": "Password manager: encrypted vault, unlocked by one master password, that generates and stores a unique strong password per site; solves reuse.\nPasswordless: no password at all; the user authenticates with a security key, biometrics on a trusted device, or a passkey (FIDO2/WebAuthn).",
+    "comptiaNote": "A password manager still uses passwords; passwordless removes them.",
+    "tags": [
+      "passwords",
+      "passwordless"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-010",
+    "objective": "4.6",
+    "front": "Time-of-day restrictions",
+    "back": "Access control that allows sign-in or resource use only during defined hours or days, e.g. contractors 08:00-18:00 Monday to Friday.\nLimits the window in which a stolen credential can be used and flags off-hours activity.",
+    "comptiaNote": "Listed as its own access control in SY0-701, and also the textbook example of a rule-based control: an administrator-defined rule applied to everyone.",
+    "tags": [
+      "access-control",
+      "rule-based"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-011",
+    "objective": "4.6",
+    "front": "SSO vs federation",
+    "back": "SSO: authenticate once and access many applications without logging in again, usually within one organization.\nFederation: a trust relationship between separate organizations or domains; the service provider accepts authentication done by the user's identity provider (e.g. via SAML or OpenID Connect).",
+    "comptiaNote": "Federation is what extends SSO across organizational boundaries, such as corporate credentials for a SaaS app.",
+    "tags": [
+      "sso",
+      "federation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.6-012",
+    "objective": "4.6",
+    "front": "Interoperability (IAM)",
+    "back": "Ability of identity systems from different vendors and platforms to work together, e.g. an on-premises directory, a cloud IdP and SaaS apps.\nAchieved through open standards: SAML, OAuth, OpenID Connect, LDAP.",
+    "comptiaNote": "Stem cue: identities must work across products from different vendors -> rely on open standards; a proprietary, single-vendor authentication method is what blocks interoperability.",
+    "tags": [
+      "iam",
+      "federation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.7-001",
+    "objective": "4.7",
+    "front": "Automation and orchestration: benefits",
+    "back": "Efficiency / time saving\nEnforcing baselines\nStandard infrastructure configurations\nScaling in a secure manner\nEmployee retention\nReaction time\nWorkforce multiplier",
+    "comptiaNote": "Listed use cases: user and resource provisioning, guard rails, security groups, ticket creation, escalation, enabling/disabling services and access, continuous integration and testing, integrations and APIs.",
+    "tags": [
+      "automation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.7-002",
+    "objective": "4.7",
+    "front": "Automation: other considerations",
+    "back": "Complexity: more moving parts to design and troubleshoot.\nCost: tools, licensing, development time.\nSingle point of failure: if the orchestrator breaks, everything it runs stops.\nTechnical debt: quick scripts and shortcuts that need rework later.\nOngoing supportability: someone must maintain the integrations as APIs and systems change.",
+    "tags": [
+      "automation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.7-003",
+    "objective": "4.7",
+    "front": "Guard rails vs security groups",
+    "back": "Guard rails: automated policies that keep self-service actions within safe limits, e.g. blocking deployment of a public storage bucket.\nSecurity groups: virtual firewall rules on cloud resources; automation creates and updates them so traffic rules stay consistent.",
+    "comptiaNote": "Blocking a noncompliant deployment -> guard rails. Allowing or denying ports and sources -> security groups.",
+    "tags": [
+      "automation",
+      "guard-rails",
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.7-005",
+    "objective": "4.7",
+    "front": "Technical debt vs ongoing supportability",
+    "back": "Technical debt: shortcuts taken to deliver fast (hard-coded values, no error handling, no documentation) that create rework later.\nOngoing supportability: the continuing need for staff, skills and time to maintain automation as APIs, systems and requirements change.",
+    "comptiaNote": "'We'll clean it up later' -> technical debt. 'Who maintains this after the vendor changes its API?' -> ongoing supportability.",
+    "tags": [
+      "automation",
+      "considerations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.7-006",
+    "objective": "4.7",
+    "front": "Automated user provisioning/deprovisioning",
+    "back": "An authoritative source (e.g. the HR system) triggers automation through integrations and APIs:\nHire -> create accounts and assign role-based groups.\nTransfer -> swap old-role access for new-role access.\nTermination -> disable accounts and revoke access immediately across all systems.",
+    "comptiaNote": "Benefits: consistent least privilege, no forgotten accounts after termination, and less help-desk effort.",
+    "tags": [
+      "automation",
+      "provisioning",
+      "iam"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-001",
+    "objective": "4.8",
+    "front": "CompTIA incident response process (order)",
+    "back": "1. Preparation\n2. Detection\n3. Analysis\n4. Containment\n5. Eradication\n6. Recovery\n7. Lessons learned",
+    "comptiaNote": "NIST SP 800-61 Rev. 2 groups these into four phases (detection and analysis together; containment, eradication and recovery together); Rev. 3 (2025) maps IR to the CSF 2.0 functions. The exam uses CompTIA's seven separate steps.",
+    "tags": [
+      "ir"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-002",
+    "objective": "4.8",
+    "front": "Tabletop exercise vs simulation",
+    "back": "Tabletop: discussion-based; participants talk through a scenario step by step; low cost, no systems touched.\nSimulation: hands-on exercise that mimics a real incident (e.g., a simulated phishing campaign or attack) to test people, tools and procedures in practice.",
+    "comptiaNote": "Both appear under 'testing' in the IR objective, alongside training.",
+    "tags": [
+      "ir",
+      "exercises"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-003",
+    "objective": "4.8",
+    "front": "Legal hold vs e-discovery",
+    "back": "Legal hold: instruction to preserve all potentially relevant data (suspend deletion and retention purges) when litigation is reasonably anticipated.\nE-discovery: the process of identifying, collecting and producing electronically stored information (ESI) for legal proceedings.",
+    "comptiaNote": "A legal hold overrides normal retention and destruction schedules; it comes before collection.",
+    "tags": [
+      "forensics",
+      "legal"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-004",
+    "objective": "4.8",
+    "front": "Forensics: acquisition, preservation, chain of custody",
+    "back": "Acquisition: collect evidence (memory capture, bit-for-bit disk image) in order of volatility, hashing it to prove integrity.\nPreservation: protect originals (write blockers, work on copies, secure storage).\nChain of custody: documented record of who handled the evidence, when, where and why.\nReporting: document methods, findings and conclusions.",
+    "comptiaNote": "A gap in the chain of custody can make evidence inadmissible.",
+    "tags": [
+      "forensics"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-005",
+    "objective": "4.8",
+    "front": "Order of volatility (most -> least)",
+    "back": "CPU registers and cache\nRouting and ARP tables, process table, kernel statistics, RAM (running processes, network connections)\nTemporary file systems and swap/page file\nLocal disk\nRemote logs and monitoring data\nPhysical configuration and network topology\nArchival and backup media",
+    "comptiaNote": "Collect the most volatile evidence first (based on RFC 3227).",
+    "tags": [
+      "forensics"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-006",
+    "objective": "4.8",
+    "front": "Threat hunting vs root cause analysis",
+    "back": "Threat hunting: proactive, hypothesis-driven search for threats that evaded existing detections, using threat intelligence, IoCs and TTPs.\nRoot cause analysis: after an incident, determine the underlying cause (e.g., unpatched VPN, missing MFA) so it can be fixed and not recur; feeds lessons learned.",
+    "comptiaNote": "Hunting starts without an alert and assumes compromise; detection reacts to alerts.",
+    "tags": [
+      "ir",
+      "threat-hunting"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-007",
+    "objective": "4.8",
+    "front": "IR detection vs analysis",
+    "back": "Detection: noticing that an event may be an incident (SIEM/IDS alerts, log reviews, user reports, threat feeds).\nAnalysis: confirming it is a real incident, determining its type, scope and impact, and prioritizing it by severity.",
+    "comptiaNote": "CompTIA lists these as two separate steps; NIST SP 800-61 Rev. 2 merges them into one phase.",
+    "tags": [
+      "ir"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-008",
+    "objective": "4.8",
+    "front": "Containment vs eradication vs recovery",
+    "back": "Containment: limit the spread (isolate hosts, segment, block IoCs, disable accounts).\nEradication: remove the threat (delete malware, remove persistence and attacker accounts, reimage).\nRecovery: return systems to normal operation (restore from known-good backups, validate, monitor for reinfection).",
+    "comptiaNote": "\"Restore and monitor\" = recovery. \"Remove\" = eradication. \"Stop the spread\" = containment.",
+    "tags": [
+      "ir"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-009",
+    "objective": "4.8",
+    "front": "Lessons learned (IR)",
+    "back": "Post-incident review held soon after recovery while details are fresh.\nAsks: what happened, what went well, what failed, what to change.\nOutputs: after-action report and updates to the IR plan, playbooks, controls and training.",
+    "comptiaNote": "Last step of the process; its outputs feed back into preparation.",
+    "tags": [
+      "ir",
+      "lessons-learned"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.8-010",
+    "objective": "4.8",
+    "front": "IR preparation phase and training",
+    "back": "Preparation: IR plan and policies, defined team and roles, communication and escalation plan, playbooks, tools and access ready before an incident.\nTraining: role-based instruction so responders, IT staff and managers know the plan and their duties; repeated as plans and staff change.",
+    "comptiaNote": "Training and testing (tabletop, simulation) are listed beside the IR process in the objectives; both strengthen preparation.",
+    "tags": [
+      "ir",
+      "training"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.9-001",
+    "objective": "4.9",
+    "front": "Investigation data sources: what each answers",
+    "back": "Firewall logs: allowed/blocked connections, rule hits.\nIDS/IPS logs: signature or anomaly alerts.\nEndpoint and OS-specific security logs: logons, process creation, privilege use.\nApplication logs: app-level events and errors.\nNetwork logs / NetFlow: who talked to whom, when, how much.\nMetadata: data about data (email headers, file properties).\nPacket captures: full traffic content.\nVulnerability scans, automated reports, dashboards: context and trends.",
+    "comptiaNote": "Question asks WHAT was sent -> packet capture. WHO/WHEN/HOW MUCH -> logs, NetFlow, metadata.",
+    "tags": [
+      "investigation",
+      "logs"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.9-002",
+    "objective": "4.9",
+    "front": "Firewall logs vs IDS/IPS logs",
+    "back": "Firewall logs: connections evaluated against the rule base (source/destination IP, port, protocol, rule matched, allow or deny).\nIDS/IPS logs: only traffic that matched a signature or anomaly rule, with the alert name, severity and action (alert or drop).",
+    "comptiaNote": "\"Was the connection allowed?\" -> firewall. \"Did traffic match an exploit signature?\" -> IDS/IPS.",
+    "tags": [
+      "investigation",
+      "logs"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.9-003",
+    "objective": "4.9",
+    "front": "OS-specific security logs: examples",
+    "back": "Windows Security event log: 4624 logon success, 4625 logon failure, 4688 process created, 4720 user account created, 1102 audit log cleared.\nLinux: /var/log/auth.log (Debian/Ubuntu) or /var/log/secure (RHEL): sudo, SSH and authentication events.\nmacOS: unified log.",
+    "comptiaNote": "Use them for logons, privilege use and account changes on a specific host.",
+    "tags": [
+      "investigation",
+      "os-logs"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.9-004",
+    "objective": "4.9",
+    "front": "Dashboards vs automated reports",
+    "back": "Dashboards: live, visual, at-a-glance status (alert volume, open incidents, top talkers); someone must look at them.\nAutomated reports: generated on a schedule or trigger and distributed without manual effort (weekly compliance summaries, trend reports).",
+    "comptiaNote": "Both are summary data sources: good for trends and context, not for per-event detail.",
+    "tags": [
+      "investigation",
+      "siem"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.9-005",
+    "objective": "4.9",
+    "front": "Metadata in investigations: examples",
+    "back": "Email headers: relay path, sender IPs, SPF/DKIM/DMARC results.\nFile metadata: author, created, modified and accessed times.\nImage EXIF: camera model, timestamp, GPS coordinates.",
+    "comptiaNote": "Metadata = data about data. It tells you who, when and where, not the content itself.",
+    "tags": [
+      "investigation",
+      "metadata"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.9-006",
+    "objective": "4.9",
+    "front": "Network device and service logs: what each shows",
+    "back": "Routers and switches: interface changes, ACL hits, configuration changes.\nDHCP: which MAC/host held an IP address and when.\nDNS: which domains hosts resolved (C2, DGA domains).\nVPN and wireless: who connected, from where and when.",
+    "comptiaNote": "To tie a dynamic IP to a device at a past time, use DHCP lease logs, not the current ARP table.",
+    "tags": [
+      "investigation",
+      "network-logs"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-4.9-007",
+    "objective": "4.9",
+    "front": "Vulnerability scans in investigations",
+    "back": "Show which weaknesses (missing patches, exposed services, misconfigurations) existed on a host.\nCorrelate with IPS alerts: an exploit attempt against a host the scan shows as vulnerable deserves priority.\nHelp identify the initial access vector and support root cause analysis.",
+    "comptiaNote": "Scans show what could be exploited, not that it was; confirm with logs.",
+    "tags": [
+      "investigation",
+      "vulnerability-scans"
+    ],
+    "status": "reviewed"
+  }
+]

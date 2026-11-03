@@ -1,0 +1,43 @@
+{
+  "$ref": "#/definitions/acronyms",
+  "definitions": {
+    "acronyms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^acr-[A-Za-z0-9&./+-]+$"
+          },
+          "acronym": {
+            "type": "string",
+            "minLength": 2
+          },
+          "expansion": {
+            "type": "string",
+            "minLength": 3
+          },
+          "note": {
+            "type": "string"
+          },
+          "objectives": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[1-5]\\.[1-9]$"
+            },
+            "default": []
+          }
+        },
+        "required": [
+          "id",
+          "acronym",
+          "expansion"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

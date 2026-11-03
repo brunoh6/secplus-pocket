@@ -1,0 +1,55 @@
+{
+  "$ref": "#/definitions/flashcards",
+  "definitions": {
+    "flashcards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^fc-[1-5]\\.[1-9]-\\d{3}$"
+          },
+          "objective": {
+            "type": "string",
+            "pattern": "^[1-5]\\.[1-9]$"
+          },
+          "front": {
+            "type": "string",
+            "minLength": 3
+          },
+          "back": {
+            "type": "string",
+            "minLength": 1
+          },
+          "comptiaNote": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "reviewed"
+            ],
+            "default": "reviewed"
+          }
+        },
+        "required": [
+          "id",
+          "objective",
+          "front",
+          "back"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

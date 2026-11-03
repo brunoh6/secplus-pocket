@@ -1,0 +1,585 @@
+[
+  {
+    "id": "fc-3.1-001",
+    "objective": "3.1",
+    "front": "Cloud responsibility matrix: IaaS vs PaaS vs SaaS",
+    "back": "IaaS: provider = facilities, hardware, network, hypervisor. Customer = guest OS, patching, apps, data, identities.\nPaaS: provider also runs the OS and runtime. Customer = application code, data, access.\nSaaS: provider runs the whole application. Customer = data, user accounts/access, tenant configuration.\nIn every model the customer keeps responsibility for its data and who can access it.",
+    "comptiaNote": "SY0-701 calls this the 'responsibility matrix' (shared responsibility model). Classic trap: assuming the provider patches the guest OS in IaaS.",
+    "tags": [
+      "cloud",
+      "shared-responsibility"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-002",
+    "objective": "3.1",
+    "front": "Physical isolation (air-gapped) vs logical segmentation",
+    "back": "Air-gapped: no wired or wireless path to any other network; data moves only by removable media or manual transfer. Strongest isolation, but costly and the risk shifts to USB media and insiders.\nLogical segmentation: separation on shared hardware using VLANs, ACLs, firewalls, or SDN policy. Cheaper and flexible, but a misconfiguration can bridge segments.",
+    "comptiaNote": "An air gap defeats network-borne attacks only; malware can still cross it on removable media (Stuxnet is the textbook example).",
+    "tags": [
+      "network",
+      "segmentation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-003",
+    "objective": "3.1",
+    "front": "SDN: control plane vs data plane",
+    "back": "Control plane: decides where traffic goes (routing, policy); in SDN it is centralized in a software controller.\nData plane: actually forwards packets/frames based on the controller's instructions.\nManagement plane: configuring and monitoring devices.\nSecurity implications: network-wide policy changes from one place, but the controller and its APIs become a high-value target that must be hardened and access-controlled.",
+    "tags": [
+      "sdn",
+      "network"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-004",
+    "objective": "3.1",
+    "front": "Infrastructure as code (IaC): security pros and cons",
+    "back": "Infrastructure is defined in version-controlled templates and deployed automatically.\nPros: consistent, repeatable builds; less configuration drift; changes can be peer-reviewed, tested, and rolled back; fast recovery by redeploying.\nCons: one flawed template replicates the misconfiguration everywhere; secrets hard-coded in templates; the code repository and pipeline become critical assets.",
+    "tags": [
+      "iac",
+      "cloud",
+      "automation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-005",
+    "objective": "3.1",
+    "front": "Virtualization vs containerization",
+    "back": "Virtual machine: full guest OS on a hypervisor; strong isolation between VMs; heavier and slower to start. Key risk: VM escape, VM sprawl.\nContainer: packages the app and its dependencies but shares the host OS kernel; lightweight, fast, portable. Key risks: weaker isolation (a kernel flaw affects every container on the host), untrusted or outdated images.",
+    "comptiaNote": "If a scenario demands kernel-level isolation between tenants, VMs beat containers.",
+    "tags": [
+      "virtualization",
+      "containers"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-006",
+    "objective": "3.1",
+    "front": "Serverless and microservices: security implications",
+    "back": "Serverless: the provider runs servers, OS, and runtime; the customer deploys functions. Smaller patching burden, but less visibility and no host agents. Customer still owns code, function permissions, and secrets.\nMicroservices: an app split into small, independently deployed services talking over APIs. A failure or compromise can be contained to one service, but many APIs mean a larger attack surface and a need for service-to-service authentication.",
+    "tags": [
+      "cloud",
+      "serverless",
+      "microservices"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-007",
+    "objective": "3.1",
+    "front": "ICS/SCADA, IoT, RTOS, embedded: why are they hard to secure?",
+    "back": "Patch availability: the vendor may never release fixes, or the product is end-of-life.\nInability to patch: firmware may be fixed in silicon, or patching would break certification or require unacceptable downtime.\nLimited power and compute: no room for agents or strong crypto.\nCompensating controls: isolate or segment the network, allow only required protocols, monitor traffic, restrict physical access, and plan replacement.",
+    "comptiaNote": "SY0-701 lists 'patch availability', 'inability to patch', 'power' and 'compute' as separate architecture considerations. When patching is impossible, the expected answer is usually segmentation/isolation.",
+    "tags": [
+      "ics",
+      "iot",
+      "embedded"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-008",
+    "objective": "3.1",
+    "front": "Hybrid cloud: key security considerations",
+    "back": "Hybrid = on-premises (or private cloud) combined with public cloud, with data and workloads moving between them.\n- Keep security policy consistent across both environments\n- Identity: federate or synchronize one identity source instead of separate silos\n- Protect data in transit on the interconnect (VPN or dedicated link)\n- Unify logging and visibility across both sides\n- Responsibility differs per workload: on-premises = all yours; cloud = shared",
+    "comptiaNote": "The typical exam answer for the main hybrid risk is inconsistent controls and visibility across environments.",
+    "tags": [
+      "cloud",
+      "hybrid"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-009",
+    "objective": "3.1",
+    "front": "Third-party vendors in cloud architectures",
+    "back": "Cloud services depend on other parties: the provider's subprocessors, marketplace apps, SaaS integrations, managed service providers.\n- Their weaknesses become your supply chain risk\n- Integrations hold API keys or OAuth access to your data: scope them to least privilege\n- Gain assurance through contracts, SLAs, right-to-audit clauses, and attestation reports (e.g. SOC 2)\n- Plan the exit: data portability, deletion on termination, avoiding lock-in",
+    "comptiaNote": "Outsourcing transfers operations, not accountability: the customer remains accountable for its data.",
+    "tags": [
+      "cloud",
+      "third-party"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-010",
+    "objective": "3.1",
+    "front": "Centralized vs decentralized architecture",
+    "back": "Centralized: one point of control (single directory, central firewall management, one SIEM).\n+ consistent policy, easier monitoring and auditing\n- single point of failure, high-value target, possible bottleneck\n\nDecentralized: control spread across sites or teams.\n+ no single point of failure, local autonomy\n- inconsistent policy, weaker visibility, more privileged admins",
+    "tags": [
+      "centralized",
+      "decentralized"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-011",
+    "objective": "3.1",
+    "front": "On-premises vs cloud: security trade-offs",
+    "back": "On-premises: the organization owns and secures everything (facilities, power, hardware, OS, apps, data).\n+ full control and visibility; known data location\n- high up-front cost (capex); scaling needs new hardware; recovery depends on your own sites and staff\n\nCloud: responsibilities are shared with the provider.\n+ pay-as-you-go (opex); fast scaling and deployment; built-in redundancy options\n- less control and visibility; dependence on the provider; shared-responsibility misunderstandings",
+    "tags": [
+      "on-premises",
+      "cloud",
+      "considerations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-012",
+    "objective": "3.1",
+    "front": "High availability vs resilience vs ease of recovery",
+    "back": "High availability: the service stays up with minimal downtime (often stated in nines, e.g. 99.999%) by removing single points of failure: redundancy, clustering, load balancing, multiple sites or zones.\nResilience: the ability to absorb a failure or attack and keep operating, possibly degraded.\nEase of recovery: how quickly and simply service and data can be restored (backups, snapshots, redeploying from IaC).\nMore availability usually costs more and adds complexity.",
+    "tags": [
+      "high-availability",
+      "considerations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-013",
+    "objective": "3.1",
+    "front": "Risk transference, responsiveness, deployment, power, compute",
+    "back": "Risk transference: shifting financial impact to another party (cloud SLA, insurance, contract).\nResponsiveness: how quickly the system answers requests and reacts to changing load.\nEase of deployment: how fast and repeatably it can be stood up (cloud, IaC, containers score high).\nPower: energy available; battery-powered IoT and embedded devices have very little.\nCompute: processing and memory; constrained devices cannot run agents or heavy cryptography.",
+    "comptiaNote": "Risk transference moves the financial impact, never the accountability for the data.",
+    "tags": [
+      "considerations"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.1-014",
+    "objective": "3.1",
+    "front": "Embedded vs RTOS vs IoT vs ICS/SCADA",
+    "back": "Embedded system: a dedicated computer built into a device for one function (printer, smart TV, infusion pump).\nRTOS: an OS that guarantees tasks finish within strict time limits (vehicle braking, industrial robots); security add-ons must not break timing.\nIoT: network-connected consumer or business devices (cameras, thermostats, sensors); often default credentials and weak update support.\nICS/SCADA: systems that monitor and control industrial processes (PLCs, HMIs, RTUs) across plants and utilities; availability and safety come first.",
+    "tags": [
+      "embedded",
+      "rtos",
+      "iot",
+      "ics"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-001",
+    "objective": "3.2",
+    "front": "Fail-open vs fail-closed",
+    "back": "Fail-open: on failure, traffic keeps flowing. Availability is preserved; security enforcement is lost.\nFail-closed: on failure, traffic is blocked. Security is preserved; availability is lost.\nPick based on what matters more for the asset the device protects.",
+    "comptiaNote": "Fail-closed is also described as fail-secure. Exam scenarios usually state the priority (confidentiality vs uptime); match the failure mode to it.",
+    "tags": [
+      "failure-modes",
+      "network"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-002",
+    "objective": "3.2",
+    "front": "Active vs passive; inline vs tap/monitor",
+    "back": "Active: can act on traffic (drop, block, reset), e.g. IPS.\nPassive: only observes and alerts, e.g. IDS.\nInline: traffic physically passes through the device, so it can block, but it adds latency and can be a point of failure.\nTap/monitor: the device receives a copy of traffic from a network TAP or SPAN (port mirror); no impact on the live flow, but it cannot block in-line.",
+    "tags": [
+      "ids",
+      "ips",
+      "device-placement"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-003",
+    "objective": "3.2",
+    "front": "Jump server",
+    "back": "A hardened host placed between a less trusted network and a protected zone. Administrators connect to it first, then from it to the protected systems (SSH/RDP).\nBenefits: single controlled entry point, smaller attack surface, central MFA, logging, and session recording.\nRisk: if it is compromised, the attacker gets a path to everything behind it, so it must be tightly hardened and monitored.",
+    "comptiaNote": "CompTIA uses 'jump server'; in the industry you also hear jump box, bastion host, or a PAM session broker.",
+    "tags": [
+      "network-appliances",
+      "admin-access"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-004",
+    "objective": "3.2",
+    "front": "Forward proxy vs reverse proxy",
+    "back": "Forward proxy: sits in front of internal clients and makes outbound requests on their behalf. Used for URL/content filtering, caching, logging, hiding client addresses.\nReverse proxy: sits in front of servers and receives inbound requests from the internet. Used for load distribution, TLS offload, WAF functions, hiding server details.",
+    "tags": [
+      "proxy",
+      "network-appliances"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-005",
+    "objective": "3.2",
+    "front": "802.1X: the three roles",
+    "back": "Supplicant: the device or user requesting access.\nAuthenticator: the switch or wireless AP that controls the port.\nAuthentication server: usually RADIUS, which makes the decision.\nEAP messages travel from supplicant to authenticator (EAPoL) and are relayed to RADIUS. The port passes no normal traffic until authentication succeeds (port-based NAC).",
+    "comptiaNote": "EAP is a framework, not a single method: EAP-TLS (certificates on both sides) is the strongest common variant.",
+    "tags": [
+      "802.1x",
+      "eap",
+      "port-security"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-006",
+    "objective": "3.2",
+    "front": "WAF vs NGFW vs UTM",
+    "back": "WAF: protects web applications by inspecting HTTP/S (layer 7) for attacks like SQL injection and XSS; placed in front of web servers.\nNGFW: application-aware firewall that identifies apps and users regardless of port, often with integrated IPS and TLS inspection.\nUTM: all-in-one appliance (firewall, IPS, anti-malware, URL filter, VPN, spam filter); simple for smaller sites but a single point of failure and performance bottleneck.",
+    "comptiaNote": "Layer 4 firewalls decide on IP, port, and protocol only; layer 7 firewalls can tell two applications apart on the same port.",
+    "tags": [
+      "firewall",
+      "waf",
+      "ngfw",
+      "utm"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-007",
+    "objective": "3.2",
+    "front": "IPSec tunnel mode vs transport mode",
+    "back": "Transport mode: protects only the payload; the original IP header stays visible. Typical for host-to-host.\nTunnel mode: encapsulates and protects the entire original packet inside a new IP header. Typical for site-to-site VPN between gateways.\nAH: integrity and authentication, no encryption.\nESP: encryption plus integrity/authentication.",
+    "tags": [
+      "ipsec",
+      "vpn",
+      "tunneling"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-008",
+    "objective": "3.2",
+    "front": "SD-WAN vs SASE",
+    "back": "SD-WAN: software-defined control of WAN links between sites; picks the best path across broadband, LTE, or MPLS and lets branches reach cloud services directly instead of through the data center.\nSASE: a cloud-delivered framework that combines networking (often SD-WAN) with security services such as SWG, CASB, ZTNA, and firewall-as-a-service, enforced close to the user wherever they are.",
+    "comptiaNote": "SD-WAN is about connectivity; SASE adds the security stack. Remote users plus SaaS plus 'enforce policy near the user' points to SASE.",
+    "tags": [
+      "sd-wan",
+      "sase",
+      "remote-access"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-009",
+    "objective": "3.2",
+    "front": "EAP methods: EAP-TLS vs PEAP vs EAP-TTLS vs EAP-FAST",
+    "back": "EAP-TLS: certificates on both server and client (mutual authentication). Strongest, but every device needs a certificate.\nPEAP: server certificate only; builds a TLS tunnel, then the user authenticates inside it (usually MSCHAPv2 password).\nEAP-TTLS: like PEAP (server certificate + tunnel) but supports more inner methods, including legacy ones such as PAP.\nEAP-FAST: Cisco-developed; uses a Protected Access Credential (PAC) instead of certificates to build the tunnel.",
+    "comptiaNote": "EAP is an authentication framework, not a single protocol. A requirement for client certificates points to EAP-TLS.",
+    "tags": [
+      "eap",
+      "802.1x",
+      "port-security"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-010",
+    "objective": "3.2",
+    "front": "Security zones and device placement",
+    "back": "Security zone: a group of systems with the same trust level and policy (internet/untrusted, screened subnet, internal, restricted/management).\n- Place controls (firewall, IPS, proxy) at the boundaries between zones\n- Internet-facing servers go in the screened subnet, never the internal zone\n- Sensitive data and admin interfaces go in the most restricted zones\n- Allow only the specific traffic each pair of zones needs: fewer paths = smaller attack surface",
+    "tags": [
+      "security-zones",
+      "device-placement",
+      "attack-surface"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-011",
+    "objective": "3.2",
+    "front": "Layer 4 vs layer 7 firewall",
+    "back": "Layer 4: filters on IP addresses, ports, and protocol (TCP/UDP), usually stateful. Fast, but blind to content: anything on an allowed port passes.\nLayer 7: understands the application and its content (HTTP methods, URLs, app identity). Can block one app or attack on an allowed port, at the cost of more processing and often TLS inspection.\nNGFWs and WAFs are layer 7 devices.",
+    "comptiaNote": "If the scenario's traffic uses an allowed port such as 443, a layer 4 rule cannot stop it without blocking everything on that port.",
+    "tags": [
+      "firewall",
+      "layer4",
+      "layer7"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-012",
+    "objective": "3.2",
+    "front": "Load balancer: modes and security role",
+    "back": "Distributes client requests across a pool of servers.\nActive/active: all nodes serve traffic at once.\nActive/passive: a standby node takes over when the active one fails.\nScheduling: round-robin, weighted, least connections.\nHealth checks pull failed servers from the pool; persistence (affinity) keeps a user on the same server.\nSecurity role: availability, absorbing load, TLS offloading, hiding back-end servers.",
+    "tags": [
+      "load-balancer",
+      "network-appliances"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.2-013",
+    "objective": "3.2",
+    "front": "Remote access VPN: IPSec vs TLS; full vs split tunnel",
+    "back": "IPSec VPN: layer 3; uses IKE (UDP 500), ESP, and NAT traversal (UDP 4500); usually needs a client; often blocked on restrictive guest networks.\nTLS (SSL) VPN: runs over TCP 443, so it passes almost any firewall; can be clientless through a browser.\nFull tunnel: all user traffic goes through the VPN for corporate inspection.\nSplit tunnel: only corporate-bound traffic uses the VPN; saves bandwidth, but internet traffic bypasses corporate controls.",
+    "tags": [
+      "vpn",
+      "remote-access",
+      "tunneling"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-001",
+    "objective": "3.3",
+    "front": "Data states and typical protections",
+    "back": "At rest: stored on disk, database, backup media. Protect with full-disk, file, or database encryption and permission restrictions.\nIn transit: moving across a network. Protect with TLS, IPSec, VPN.\nIn use: loaded in memory or being processed by the CPU. Hardest to protect; use secure enclaves/trusted execution, memory protections, and access controls on the host.",
+    "tags": [
+      "data-states",
+      "encryption"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-002",
+    "objective": "3.3",
+    "front": "Tokenization vs masking",
+    "back": "Tokenization: replaces a sensitive value with a random token; the real value lives only in a protected token vault. The token has no mathematical relationship to the original and cannot be decrypted. Common for card numbers to reduce PCI DSS scope.\nMasking: hides all or part of a value (e.g. ***-**-6789) for display or test data. The masked copy cannot be turned back into the original.",
+    "comptiaNote": "Tokenization is not encryption: there is no key that reverses a token, only a vault lookup.",
+    "tags": [
+      "tokenization",
+      "masking",
+      "pci"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-003",
+    "objective": "3.3",
+    "front": "Data sovereignty vs geolocation",
+    "back": "Data sovereignty: data is subject to the laws of the country where it is stored or collected, which affects where cloud data may be placed or replicated.\nGeolocation: determining the physical location of a user, device, or data, used to enforce geographic restrictions such as blocking access from outside approved countries.",
+    "tags": [
+      "sovereignty",
+      "geolocation",
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-004",
+    "objective": "3.3",
+    "front": "Data classifications in SY0-701",
+    "back": "Sensitive: needs protection because disclosure could cause harm (e.g. PII, PHI, financial data).\nConfidential: limited to authorized people with a need to know.\nPublic: approved for release; little or no impact if disclosed.\nRestricted: access tightly limited, often by law, contract, or specific approval.\nPrivate: about individuals or internal matters; not for public release.\nCritical: essential to keeping the business running; loss or unavailability causes major impact.",
+    "comptiaNote": "SY0-701 lists these six labels without ranking them. Each organization defines its own scheme and order; the exam tests that labels drive handling and protection, not a universal ranking.",
+    "tags": [
+      "classification"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-005",
+    "objective": "3.3",
+    "front": "Data types: regulated vs trade secret vs intellectual property",
+    "back": "Regulated: governed by laws or standards (PII, PHI, cardholder data under GDPR, HIPAA, PCI DSS).\nTrade secret: confidential business know-how (formulas, processes) protected by keeping it secret, not by registration.\nIntellectual property: creations protected by patents, copyrights, or trademarks.\nAlso: legal and financial data.\nHuman-readable (documents, email) vs non-human-readable (binary, encoded, barcodes) - the latter needs decoding before DLP can inspect it.",
+    "tags": [
+      "data-types"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-006",
+    "objective": "3.3",
+    "front": "Obfuscation as a data protection method",
+    "back": "Makes data or code hard to understand while it stays usable (e.g. scrambled source code, encoded values, steganography).\nRaises the effort for reverse engineering or casual viewing.\nMasking and tokenization are specific ways to obscure data; obfuscation is the broader idea.\nWeak on its own: it does not rely on a secret key, so a determined analyst can undo it.",
+    "comptiaNote": "Obfuscation is security through difficulty, not cryptographic protection. If a question needs data to be unreadable without a key, the answer is encryption.",
+    "tags": [
+      "obfuscation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-007",
+    "objective": "3.3",
+    "front": "Hashing vs encryption for stored data",
+    "back": "Hashing: one-way digest of fixed length; cannot be reversed. Use when you only need to verify a value (passwords, integrity checks). Add a salt for passwords.\nEncryption: reversible with the key. Use when the original value must be read again later.\nTrap: hashing low-entropy values (card numbers, ID numbers) is weak, because every possible value can be hashed and compared.",
+    "tags": [
+      "hashing",
+      "encryption"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-008",
+    "objective": "3.3",
+    "front": "Segmentation as a data protection method",
+    "back": "Keep sensitive data in separate network segments, storage, or databases with controlled access between them.\nLimits who and what can reach the data and contains a breach to one segment.\nReduces compliance scope (e.g. an isolated cardholder data environment for PCI DSS).",
+    "tags": [
+      "segmentation",
+      "pci"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-009",
+    "objective": "3.3",
+    "front": "Data types: legal vs financial",
+    "back": "Legal information: contracts, court and litigation records, attorney-client communications, compliance filings. Often confidential and may be subject to legal hold.\nFinancial information: bank and account records, financial statements, payment card data, payroll. Often regulated (PCI DSS, SOX) and a prime target for fraud.",
+    "comptiaNote": "A single record can be several data types at once: a cardholder's statement is both financial and regulated. The type tells you which laws and controls apply.",
+    "tags": [
+      "data-types"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-010",
+    "objective": "3.3",
+    "front": "Geographic restrictions: how they are enforced",
+    "back": "Allow or deny access based on the user's or device's location.\nLocation comes from geolocation: IP address lookup, GPS, Wi-Fi or cellular data.\nImplemented through conditional access policies, firewall geo-blocking, or geofencing on mobile devices.\nLimit: IP-based location can be evaded with a VPN or proxy, so combine it with authentication and permission restrictions.",
+    "tags": [
+      "geolocation",
+      "access-control"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.3-011",
+    "objective": "3.3",
+    "front": "Static vs dynamic data masking",
+    "back": "Static masking: creates a permanently altered copy of the data (e.g. a test or dev database with realistic but fake values). The original stays in production.\nDynamic masking: data is stored intact and masked at query or display time based on the user's role (e.g. agents see only the last four digits).",
+    "tags": [
+      "masking"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-001",
+    "objective": "3.4",
+    "front": "Hot vs warm vs cold site",
+    "back": "Hot site: fully equipped, systems and data kept current; take over in minutes to hours. Most expensive.\nWarm site: hardware and connectivity in place, but data and systems need restoring/configuring; hours to days.\nCold site: space, power, and cooling only; equipment must be brought in; days to weeks. Cheapest.",
+    "comptiaNote": "Match the site to the stated recovery time and budget. Geographic dispersion means the alternate site should be far enough away not to share the same disaster.",
+    "tags": [
+      "dr",
+      "sites"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-002",
+    "objective": "3.4",
+    "front": "Load balancing vs clustering",
+    "back": "Load balancing: a front-end device spreads requests across multiple independent servers; a failed server is removed from the pool. Improves scalability and availability.\nClustering: several servers work together as one logical system, often sharing storage or state, and fail over to each other (active/active or active/passive).",
+    "tags": [
+      "high-availability"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-003",
+    "objective": "3.4",
+    "front": "Snapshots vs replication vs journaling",
+    "back": "Snapshot: point-in-time image of a VM or volume; quick rollback to that moment.\nReplication: copies data to another system or site continuously or on a schedule; fast recovery, but corruption, deletions, and ransomware are replicated too.\nJournaling: records changes in a log before committing them, so data can be replayed or rolled back to a consistent state after a failure.",
+    "comptiaNote": "Replication is not a backup substitute: keep point-in-time, isolated (offsite/offline), encrypted backups as well.",
+    "tags": [
+      "backups",
+      "replication"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-004",
+    "objective": "3.4",
+    "front": "UPS vs generator",
+    "back": "UPS: battery-based, takes over instantly; covers short outages and smooths spikes/sags. Runtime is minutes, enough for a clean shutdown or for a generator to start.\nGenerator: fuel-powered, runs for hours or days, but needs time to start and stabilize.\nTypical design: UPS bridges the gap until the generator carries the load.",
+    "tags": [
+      "power"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-005",
+    "objective": "3.4",
+    "front": "Resilience testing: tabletop vs simulation vs fail over",
+    "back": "Tabletop exercise: discussion-based walk-through of a scenario; participants talk through their roles, no systems are touched. Cheapest.\nSimulation: a realistic, hands-on practice of the scenario in a controlled way (e.g. a mock incident) without a real outage.\nFail over test: actually switch production to the redundant system or alternate site to prove it works. Most realistic, highest risk.",
+    "comptiaNote": "The fourth SY0-701 testing item, parallel processing, is described differently across study sources: either running workloads across multiple processors/systems so work continues if one fails, or running the alternate system alongside production and comparing results. Expect it as a resilience concept, not a discussion exercise.",
+    "tags": [
+      "testing",
+      "dr"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-006",
+    "objective": "3.4",
+    "front": "Capacity planning: people, technology, infrastructure",
+    "back": "People: enough trained staff for normal and peak demand and during a disruption; cross-training, succession, no single person holding critical knowledge.\nTechnology: applications and systems that can scale with demand.\nInfrastructure: the underlying foundation (network bandwidth, data center space and power, cloud resources) able to absorb growth or surges.",
+    "comptiaNote": "Capacity planning matches resources to expected demand before it arrives. Too little causes outages; too much wastes money. Cloud elasticity is a common way to handle surges.",
+    "tags": [
+      "capacity-planning"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-007",
+    "objective": "3.4",
+    "front": "Continuity of operations vs disaster recovery",
+    "back": "Continuity of operations: keeps essential business functions running during a disruption, including alternate processes and manual workarounds (e.g. paper forms).\nDisaster recovery: restores IT systems, data, and facilities after the disruption.\nBoth are planned and tested in advance and usually run at the same time.",
+    "comptiaNote": "Business still running = continuity. Systems being restored = disaster recovery.",
+    "tags": [
+      "continuity",
+      "dr"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-008",
+    "objective": "3.4",
+    "front": "Platform diversity",
+    "back": "Using different operating systems, vendors, or technologies for the same function (e.g. firewalls from two vendors, Windows and Linux servers).\nA single vulnerability, bad update, or vendor failure cannot take down every system.\nTrade-off: more complexity, more skills to maintain, and more configurations to secure.",
+    "tags": [
+      "platform-diversity"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-009",
+    "objective": "3.4",
+    "front": "Multi-cloud systems: pros and cons",
+    "back": "Pros: no single provider's outage or flaw affects every workload; less vendor lock-in; can place workloads where each provider is strongest.\nCons: more complexity, different security tools and IAM models per provider, harder consistent monitoring, and staff need skills on each platform.",
+    "comptiaNote": "Multiple availability zones or regions within one provider is not multi-cloud: they still depend on a single provider.",
+    "tags": [
+      "multi-cloud",
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-010",
+    "objective": "3.4",
+    "front": "Onsite vs offsite backups",
+    "back": "Onsite: stored at the same location. Fast to restore and always available, but lost in a fire, flood, or site-wide ransomware event.\nOffsite: stored at another location (vault, another data center, cloud). Survives site disasters, but restores are slower and the media must be transported or downloaded.\nBest practice: keep both.",
+    "comptiaNote": "Offsite backups should be far enough away to avoid the same disaster (geographic dispersion), and an offline or immutable copy protects against ransomware.",
+    "tags": [
+      "backups"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-011",
+    "objective": "3.4",
+    "front": "Backup frequency and recovery testing",
+    "back": "Frequency: how often backups run. It sets the maximum amount of data you can lose (more frequent = less loss), balanced against cost, storage, and performance.\nRecovery: the ability to actually restore. Test restores regularly to confirm backups are complete, uncorrupted, and can be restored within the required time.",
+    "comptiaNote": "A backup job that reports success does not prove the data is recoverable. Only a test restore does.",
+    "tags": [
+      "backups",
+      "recovery"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "fc-3.4-012",
+    "objective": "3.4",
+    "front": "Backup encryption",
+    "back": "Backups hold the same sensitive data as production, so encrypt them in storage and when moved offsite.\nProtects against lost or stolen tapes, drives, and cloud copies.\nStore and manage the keys separately from the backups and protect them: if the key is lost, the backup cannot be restored.",
+    "tags": [
+      "backups",
+      "encryption"
+    ],
+    "status": "reviewed"
+  }
+]

@@ -1,0 +1,2098 @@
+[
+  {
+    "id": "q-5.1-001",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "The CISO publishes a document stating that every company laptop must use AES-256 full-disk encryption and that removable drives must be encrypted before use. The document supports the existing information security policy. Which of the following BEST describes this document?",
+    "options": [
+      {
+        "text": "Standard",
+        "why": "Correct: it sets a mandatory, specific technical requirement (AES-256, full-disk) that supports a higher-level policy; encryption standards are a listed example."
+      },
+      {
+        "text": "Policy",
+        "why": "A policy states management intent at a high level; this document says it supports the existing policy and adds specific technical values."
+      },
+      {
+        "text": "Guideline",
+        "why": "Guidelines are recommendations that can be deviated from; this document uses \"must\" and is mandatory."
+      },
+      {
+        "text": "Procedure",
+        "why": "A procedure gives step-by-step instructions for performing a task; this document states what is required, not how to do it."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Policies say what the organization intends, standards make it measurable and mandatory, procedures say how to do it step by step, and guidelines are optional advice. Specific algorithms and settings point to a standard.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance",
+      "policy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-002",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "The VP of Finance decides that the general ledger database is classified as confidential and approves who may access it. A database administrator in IT configures the permissions, runs nightly backups, and applies patches according to the VP's requirements. Which role does the database administrator hold?",
+    "options": [
+      {
+        "text": "Data owner",
+        "why": "The VP of Finance is the owner: the person accountable for the data who sets classification and approves access."
+      },
+      {
+        "text": "Data custodian",
+        "why": "Correct: the custodian (steward) implements and maintains the protections the owner defines, such as permissions, backups and patching."
+      },
+      {
+        "text": "Data controller",
+        "why": "Controller is a privacy-law role for the entity that determines the purpose and means of processing personal data, not an internal IT administrator."
+      },
+      {
+        "text": "Data processor",
+        "why": "A processor is an entity that processes personal data on a controller's behalf, typically an outside service provider, not an internal administrator applying the owner's controls."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Owner = accountable and decides; custodian/steward = implements and operates. Controller and processor are privacy-regulation roles that describe organizations handling personal data, which is a different axis from internal data ownership.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance",
+      "roles"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-003",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A multinational company operates subsidiaries in eight countries. Headquarters sets broad security objectives, but each regional business unit writes and enforces its own security policies so it can respond quickly to local regulations. Which governance structure does this describe?",
+    "options": [
+      {
+        "text": "Centralized governance",
+        "why": "Centralized governance keeps decision-making and policy authority in one central body; here the regions write and enforce their own policies."
+      },
+      {
+        "text": "Decentralized governance",
+        "why": "Correct: decision authority is distributed to business units that act within broad direction from headquarters, trading consistency for local agility."
+      },
+      {
+        "text": "Board-level governance",
+        "why": "A board provides top-level oversight and direction; the scenario is about where day-to-day policy authority sits, which is the regions."
+      },
+      {
+        "text": "Government entity oversight",
+        "why": "Government entities create or enforce regulations externally; they do not explain how the company distributes its own policy authority."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Centralized vs decentralized describes where security decision authority sits. Distributing it to regions gives agility and local fit at the cost of possible inconsistency.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-004",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "SOC analysts are handling ransomware alerts inconsistently. The SOC manager wants a document that lists the exact, ordered steps an analyst must follow when that alert fires. Which of the following BEST meets this need?",
+    "options": [
+      {
+        "text": "An incident response policy",
+        "why": "The IR policy states high-level intent, authority and responsibilities; it does not give alert-specific, step-by-step actions."
+      },
+      {
+        "text": "A security guideline",
+        "why": "Guidelines are optional recommendations; the manager needs mandatory, consistent steps."
+      },
+      {
+        "text": "A playbook",
+        "why": "Correct: a playbook is a procedure that lays out the ordered steps to follow for a specific scenario such as a ransomware alert."
+      },
+      {
+        "text": "An access control standard",
+        "why": "A standard sets specific mandatory requirements for a control area; it does not describe response steps."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "In the 5.1 objectives, playbooks are listed under procedures. Need for ordered, repeatable steps points to a procedure.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance",
+      "policy",
+      "ir"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-005",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "On their first day, every new hire must read and sign a document stating that company laptops, email, and internet access are for business purposes, that unapproved software may not be installed, and that activity on company systems may be monitored. Which of the following documents did the employee MOST likely sign?",
+    "options": [
+      {
+        "text": "Acceptable use policy",
+        "why": "Correct: an AUP defines permitted and prohibited use of the organization's systems and devices, includes the monitoring notice, and is typically acknowledged by signature."
+      },
+      {
+        "text": "Information security policy",
+        "why": "The information security policy is the top-level statement of management's security objectives and authority; it is not the user-facing rules of behavior that staff sign."
+      },
+      {
+        "text": "Onboarding procedure",
+        "why": "The onboarding procedure is the set of steps HR and IT follow to bring a hire in; having the AUP signed is one of those steps, but the signed document is the AUP."
+      },
+      {
+        "text": "Access control standard",
+        "why": "An access control standard sets specific technical requirements such as least privilege and review frequency, not rules of acceptable behavior for users."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Rules of behavior for using company resources, a monitoring notice, and a user signature are the hallmarks of an acceptable use policy. It is usually signed at onboarding and re-acknowledged periodically.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance",
+      "policy"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-006",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A security team is splitting its password program into a policy, a standard, a procedure, and a guideline. Which of the following statements MOST appropriately belongs in the password standard?",
+    "options": [
+      {
+        "text": "Passwords must be at least 14 characters, and accounts lock after five failed attempts",
+        "why": "Correct: a standard states specific, measurable, mandatory requirements that support the policy."
+      },
+      {
+        "text": "The organization will protect its information systems against unauthorized access",
+        "why": "This is a high-level statement of management intent, which belongs in a policy."
+      },
+      {
+        "text": "Help desk staff verify identity, reset the password, and force a change at next logon",
+        "why": "These are ordered, step-by-step actions for a task, which belong in a procedure."
+      },
+      {
+        "text": "Employees are encouraged to build passphrases from several unrelated words",
+        "why": "This is a recommendation rather than a requirement, which belongs in a guideline."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Policy = intent (mandatory, high level). Standard = specific mandatory values that implement the policy (length, lockout thresholds). Procedure = step-by-step how-to. Guideline = recommended, optional advice. Words like 'must' plus a concrete number point to a standard.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance",
+      "policy",
+      "standards"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-007",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An internal audit finds that accounts belonging to employees who left the company stayed enabled for an average of 12 days. IT learned about departures only through informal emails from managers. Which of the following documents should be revised to BEST address the root cause?",
+    "options": [
+      {
+        "text": "The offboarding procedure",
+        "why": "Correct: the offboarding procedure should require HR to notify IT through a formal trigger so accounts, badges, and tokens are revoked on or before the departure date."
+      },
+      {
+        "text": "The password standard",
+        "why": "Stronger password requirements do nothing to disable accounts that should no longer exist."
+      },
+      {
+        "text": "The acceptable use policy",
+        "why": "The AUP governs how current users may use resources; it does not define the steps for removing access when someone leaves."
+      },
+      {
+        "text": "The incident response playbook",
+        "why": "A playbook guides the response after an incident is detected; the finding is a gap in a routine HR-to-IT process, not in incident handling."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Onboarding and offboarding procedures are listed under 5.1 procedures. An audit finding is a classic trigger for monitoring and revision: the procedure that failed (no formal HR notification step) is the one to fix.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance",
+      "procedures",
+      "iam"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-008",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Developers at a fintech company release in-house applications without threat modeling or security testing. The CISO wants a mandatory, high-level document requiring that security requirements, secure coding, code review, and security testing be built into every phase of an application's life, from design through retirement. Which of the following BEST fits this need?",
+    "options": [
+      {
+        "text": "Software development lifecycle (SDLC) policy",
+        "why": "Correct: an SDLC policy mandates how security is integrated across every phase of building and maintaining software."
+      },
+      {
+        "text": "Change management policy",
+        "why": "Change management governs how changes to production systems are requested, approved, and scheduled; it does not define how software is designed, coded, and tested."
+      },
+      {
+        "text": "Acceptable use policy (AUP)",
+        "why": "An AUP sets rules for how users may use company resources, not how applications must be built."
+      },
+      {
+        "text": "Incident response (IR) policy",
+        "why": "An IR policy defines how security incidents are handled after they occur, not how secure software is produced."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The scenario spans the full lifecycle of in-house software (design, build, test, retire), which is the scope of an SDLC policy. Change management overlaps only at the deployment step.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance",
+      "policy",
+      "appsec"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-009",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A regional power failure has taken a company's order system offline for several days. A company policy directs the order desk to keep taking customer orders by phone on paper forms and tells finance to prioritize payroll and supplier payments until normal operations resume. A separate document covers rebuilding and restoring the servers. Which policy are the staff MOST likely following?",
+    "options": [
+      {
+        "text": "Business continuity policy",
+        "why": "Correct: business continuity keeps critical business functions operating during a disruption, including manual workarounds and priorities for essential processes."
+      },
+      {
+        "text": "Disaster recovery policy",
+        "why": "Disaster recovery focuses on restoring IT systems and data, which the stem says is covered by a separate document."
+      },
+      {
+        "text": "Incident response policy",
+        "why": "Incident response governs detecting and handling security incidents; a power failure handled with manual workarounds is a continuity matter."
+      },
+      {
+        "text": "Change management policy",
+        "why": "Change management controls planned changes to systems; it does not tell the business how to keep operating during an outage."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Business continuity = keep the business running (manual processes, priorities, alternate staffing). Disaster recovery = bring the technology back. DR is usually treated as a component of the broader continuity effort.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance",
+      "policy",
+      "bcp"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-010",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company forms a group of senior leaders from IT, legal, HR, finance, and operations. The group meets monthly to prioritize security initiatives, approve policy exceptions, and present its recommendations to the board of directors. Which governance structure does this group BEST represent?",
+    "options": [
+      {
+        "text": "Committee",
+        "why": "Correct: a committee is a cross-functional group with a focused remit, such as a security steering committee, that reports to the board."
+      },
+      {
+        "text": "Board",
+        "why": "The board sits above this group and receives its recommendations; it provides top-level oversight rather than monthly operational prioritization."
+      },
+      {
+        "text": "Government entity",
+        "why": "Government entities create laws and regulations and may oversee organizations; this group is internal to the company."
+      },
+      {
+        "text": "Decentralized governance",
+        "why": "Decentralized governance lets individual business units make their own security decisions; here a single group decides for the whole company."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Boards set direction and risk appetite and hold executives accountable; committees are subgroups with a defined focus that do detailed work and report upward. A cross-functional steering group reporting to the board is a committee.",
+    "industryVsComptia": null,
+    "tags": [
+      "governance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.1-011",
+    "objective": "5.1",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An online retailer that accepts credit cards must segment its cardholder data environment and complete an annual compliance assessment. The requirement comes from a standard published by a council formed by the major card brands and is enforced through merchant agreements, not by statute or a government agency. Which type of external consideration BEST describes this requirement?",
+    "options": [
+      {
+        "text": "Industry",
+        "why": "Correct: PCI DSS is published by the PCI Security Standards Council and enforced by the card brands, a sector body rather than a government, which makes it an industry consideration."
+      },
+      {
+        "text": "Regulatory",
+        "why": "Regulatory requirements are issued by government agencies with legal authority; the stem says no government agency is the source."
+      },
+      {
+        "text": "National",
+        "why": "National considerations are country-level laws and requirements; this requirement applies to card merchants worldwide and is not set by a government."
+      },
+      {
+        "text": "Local/regional",
+        "why": "Local or regional considerations are state, provincial, or municipal requirements, which this is not."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "5.1 lists regulatory, legal, industry, local/regional, national, and global external considerations. Identify the source: a sector body (card brands) points to industry; a government agency points to regulatory; a statute points to legal.",
+    "industryVsComptia": "In practice many teams loosely call PCI DSS a 'regulation', and some jurisdictions reference it in law. For the exam, classify it by its source: an industry standard.",
+    "tags": [
+      "governance",
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-001",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A warehouse management server is valued at $300,000. A fire in its server room is expected to destroy 20% of its value, and such a fire is expected once every three years. What is the annualized loss expectancy (ALE) for this risk?",
+    "options": [
+      {
+        "text": "$20,000",
+        "why": "Correct: SLE = $300,000 × 0.20 = $60,000; ARO = 1/3; ALE = $60,000 × 1/3 = $20,000."
+      },
+      {
+        "text": "$60,000",
+        "why": "This is the SLE, the loss from a single fire; it has not yet been multiplied by the ARO."
+      },
+      {
+        "text": "$180,000",
+        "why": "This treats \"once every three years\" as an ARO of 3; the correct ARO is 1/3 (about 0.33)."
+      },
+      {
+        "text": "$100,000",
+        "why": "This multiplies the asset value by the ARO and skips the exposure factor, as if the whole server were lost every time."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SLE = AV × EF, then ALE = SLE × ARO. ARO is occurrences per year, so an event every three years has an ARO of 1/3, not 3.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk",
+      "quantitative"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-002",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A data center valued at $400,000 would lose 30% of its value in a flood, and a flood is expected once every four years. A flood barrier costing $45,000 per year would reduce the expected frequency to once every 20 years. Which of the following is the BEST conclusion from a quantitative analysis?",
+    "options": [
+      {
+        "text": "Cost-justified: a single flood costs $120,000, more than the barrier's annual cost",
+        "why": "This compares the SLE to an annual cost; the right comparison is the annual reduction in ALE against the annual cost of the control."
+      },
+      {
+        "text": "Not cost-justified: the barrier costs $45,000 yearly but cuts the ALE by only $24,000",
+        "why": "Correct: SLE = $120,000; ALE drops from $30,000 (ARO 0.25) to $6,000 (ARO 0.05), saving $24,000 per year, less than the $45,000 cost."
+      },
+      {
+        "text": "Cost-justified: the current ALE of $480,000 far exceeds the barrier's annual cost",
+        "why": "This uses an ARO of 4 instead of 0.25; the actual current ALE is $30,000."
+      },
+      {
+        "text": "Cost-justified: an 80% reduction in ARO exceeds any reasonable risk threshold",
+        "why": "A percentage reduction in frequency says nothing about cost; quantitative analysis compares the dollar ALE reduction with the control's cost."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "SLE = $400,000 × 0.30 = $120,000. ALE before = $120,000 × 0.25 = $30,000; ALE after = $120,000 × 0.05 = $6,000. Value of the control = $24,000 per year, which is below its $45,000 annual cost, so it is not justified on cost alone.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk",
+      "quantitative"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-003",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "After a risk assessment, leadership decides that the financial impact of a ransomware outage exceeds what the company can absorb. It purchases a cyber insurance policy that covers recovery costs and business interruption. Which risk management strategy is this?",
+    "options": [
+      {
+        "text": "Mitigate",
+        "why": "Mitigation applies controls that reduce likelihood or impact; insurance does not make ransomware less likely or less disruptive."
+      },
+      {
+        "text": "Accept",
+        "why": "Acceptance means absorbing the risk as-is; buying insurance is an active step to shift its cost."
+      },
+      {
+        "text": "Avoid",
+        "why": "Avoidance stops the activity that creates the risk; the company keeps operating the same systems."
+      },
+      {
+        "text": "Transfer",
+        "why": "Correct: insurance shifts the financial impact of the risk to a third party."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Insurance and contractual risk-shifting are the classic examples of transference. The organization still remains accountable for the incident itself.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-004",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A legacy manufacturing controller cannot run the EDR agent required by the endpoint security standard, and replacing it is not possible until next year. The CISO signs a documented exception allowing it to operate without EDR until replacement, and the residual risk is recorded in the risk register. Which risk management strategy does this represent?",
+    "options": [
+      {
+        "text": "Acceptance",
+        "why": "Correct: SY0-701 lists exception and exemption under the accept strategy; the organization knowingly operates with the documented risk."
+      },
+      {
+        "text": "Avoidance",
+        "why": "Avoidance would mean retiring or disconnecting the controller so the risk no longer exists; it keeps running."
+      },
+      {
+        "text": "Transference",
+        "why": "No third party takes on the financial impact; the company keeps the risk itself."
+      },
+      {
+        "text": "Mitigation",
+        "why": "No new control is added to reduce likelihood or impact; the decision is to run without the required control."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "CompTIA lists exemption and exception as sub-items of the accept strategy. Watch for distractors that add controls (mitigation) or remove the system (avoidance).",
+    "industryVsComptia": "Many organizations use \"exception\", \"exemption\" and \"waiver\" interchangeably and track them in a GRC tool. The exam simply expects you to map them to risk acceptance.",
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-005",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During strategic planning, a startup's board states it is willing to take on higher security and operational risk to launch new cloud products quickly and gain market share. Which of the following BEST describes the board's position?",
+    "options": [
+      {
+        "text": "Conservative risk appetite",
+        "why": "A conservative appetite is risk-averse and would delay launches to reduce risk; the board is doing the opposite."
+      },
+      {
+        "text": "Neutral risk appetite",
+        "why": "A neutral appetite balances risk and reward evenly; the board explicitly favors more risk for growth."
+      },
+      {
+        "text": "Expansionary risk appetite",
+        "why": "Correct: an expansionary appetite accepts more risk to pursue growth and opportunity."
+      },
+      {
+        "text": "Low risk tolerance",
+        "why": "Low tolerance means little acceptable variance from targets, which contradicts a willingness to take on more risk."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "The 5.2 objectives list three appetite postures: expansionary, conservative and neutral. Growth at the cost of more risk is expansionary.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-006",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A BIA sets an RTO of 4 hours and an RPO of 1 hour for the payment database. The database is backed up nightly at midnight, and the last restore test completed in 2 hours. Which of the following BEST describes the current state?",
+    "options": [
+      {
+        "text": "The RPO is met, but the RTO is not, because a restore takes longer than one hour",
+        "why": "This mixes up the metrics: the 2-hour restore is measured against the 4-hour RTO, which it meets."
+      },
+      {
+        "text": "Both objectives are met because the restore completes within the four-hour window",
+        "why": "Restore speed satisfies only the RTO; nightly backups can lose almost 24 hours of data, far beyond the 1-hour RPO."
+      },
+      {
+        "text": "The RTO is met, but the RPO is not, because up to 24 hours of data could be lost",
+        "why": "Correct: the 2-hour restore meets the 4-hour RTO, but nightly backups allow up to a day of data loss against a 1-hour RPO."
+      },
+      {
+        "text": "Neither objective is met because the MTTR exceeds the RPO",
+        "why": "MTTR is a repair-time measure and is compared with the RTO, not the RPO; the RTO is in fact met."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "RTO = how fast you must be back (compare with restore time). RPO = how much data you can lose (compare with backup frequency). To meet a 1-hour RPO, backups or replication must run at least hourly.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk",
+      "bia"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-007",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A risk manager adds a metric to the risk register that tracks the number of critical vulnerabilities left unpatched for more than 30 days. A rising count warns that exposure to exploitation is increasing. Which of the following BEST describes this metric?",
+    "options": [
+      {
+        "text": "Key risk indicator",
+        "why": "Correct: a KRI is a measurable signal, tracked over time, that warns when exposure to a risk is rising."
+      },
+      {
+        "text": "Risk threshold",
+        "why": "A threshold is the level at which action or escalation is triggered; the metric itself is what gets compared with that level."
+      },
+      {
+        "text": "Annualized loss expectancy",
+        "why": "ALE is a monetary estimate of yearly loss (SLE × ARO), not a count used to show trends."
+      },
+      {
+        "text": "Risk owner",
+        "why": "The risk owner is the person accountable for managing the risk, not a metric."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The risk register tracks KRIs, risk owners and risk thresholds. A KRI is the measured indicator; the threshold is the trigger value set for it.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-008",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A branch office's network equipment is valued at $250,000. A flood would damage 40% of the equipment's value, and floods at that site are expected once every two years. What is the single loss expectancy (SLE) for ONE flood?",
+    "options": [
+      {
+        "text": "$100,000",
+        "why": "Correct: SLE = AV × EF = $250,000 × 0.40 = $100,000."
+      },
+      {
+        "text": "$50,000",
+        "why": "This is the ALE: $100,000 × an ARO of 0.5. The question asks for the loss from one event."
+      },
+      {
+        "text": "$150,000",
+        "why": "This is the value that would remain after the flood ($250,000 − $100,000), not the loss."
+      },
+      {
+        "text": "$200,000",
+        "why": "This multiplies the SLE by 2, treating 'once every two years' as an ARO of 2 instead of 0.5."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SLE = asset value × exposure factor. The ARO is only needed for the ALE: once every two years is an ARO of 0.5, so ALE = $100,000 × 0.5 = $50,000. Read which value the question asks for before calculating.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk",
+      "quantitative"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-009",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A risk analyst is ranking four risks for next year's budget using annualized loss expectancy alone. Which of the following risks has the GREATEST ALE?",
+    "options": [
+      {
+        "text": "Data center fire: SLE $1,000,000, ARO 0.01",
+        "why": "ALE = $1,000,000 × 0.01 = $10,000. The largest SLE does not mean the largest annual loss."
+      },
+      {
+        "text": "Laptop theft: SLE $8,000, ARO 2",
+        "why": "Correct: ALE = $8,000 × 2 = $16,000, the highest of the four."
+      },
+      {
+        "text": "File server ransomware: SLE $200,000, ARO 0.05",
+        "why": "ALE = $200,000 × 0.05 = $10,000, lower than the laptop theft risk."
+      },
+      {
+        "text": "Website defacement: SLE $50,000, ARO 0.1",
+        "why": "ALE = $50,000 × 0.1 = $5,000, the lowest of the four."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "ALE = SLE × ARO. A frequent, low-cost event ($8,000 twice a year = $16,000) can outrank a rare catastrophe ($1,000,000 once a century = $10,000). Calculate every option instead of choosing the biggest SLE.",
+    "industryVsComptia": "Real prioritization also weighs worst-case impact and risk appetite, so a rare catastrophic risk may still get funding first. The question limits the decision to ALE alone.",
+    "tags": [
+      "risk",
+      "quantitative"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-010",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Over the past year, failed controllers in a storage array took an average of 6 hours to diagnose, replace, and return to service. The infrastructure manager is adding this historical figure to the business impact analysis. Which metric does it BEST represent?",
+    "options": [
+      {
+        "text": "MTTR",
+        "why": "Correct: mean time to repair is the measured average time to fix a failed component and return it to service."
+      },
+      {
+        "text": "MTBF",
+        "why": "Mean time between failures measures average operating time between failures, not how long a repair takes."
+      },
+      {
+        "text": "RTO",
+        "why": "The recovery time objective is a target the business sets for the maximum acceptable downtime, not a measured historical average."
+      },
+      {
+        "text": "RPO",
+        "why": "The recovery point objective is the maximum acceptable data loss measured in time, unrelated to repair duration."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "MTTR and MTBF are measured reliability metrics; RTO and RPO are targets the BIA sets. If the MTTR is longer than the RTO, the business cannot meet its recovery target without redundancy or spares.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk",
+      "bia"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-011",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A risk assessment shows that a retailer's practice of storing customers' full card numbers for one-click reordering creates major breach and compliance exposure. Leadership decides to stop storing card numbers and remove the one-click feature entirely. Which risk management strategy BEST describes this decision?",
+    "options": [
+      {
+        "text": "Avoid",
+        "why": "Correct: ending the activity that creates the risk eliminates the exposure, which is risk avoidance."
+      },
+      {
+        "text": "Mitigate",
+        "why": "Mitigation would keep the feature and add controls such as tokenization or encryption to reduce likelihood or impact."
+      },
+      {
+        "text": "Transfer",
+        "why": "Transference shifts the financial impact to a third party, such as an insurer, while the activity continues."
+      },
+      {
+        "text": "Accept",
+        "why": "Acceptance would keep the feature and its risk unchanged, documented as acceptable."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Avoid = stop doing (or never start) the risky activity. Mitigate = keep doing it with controls. Removing the feature entirely is avoidance.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-012",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A risk register entry tracks the monthly click rate in phishing simulations. The entry states that if the click rate rises above 8%, the risk owner must escalate to the security steering committee and fund additional training. What does the 8% value BEST represent?",
+    "options": [
+      {
+        "text": "Risk threshold",
+        "why": "Correct: the threshold is the defined level at which a risk requires action or escalation."
+      },
+      {
+        "text": "Key risk indicator",
+        "why": "The monthly click rate itself is the KRI; the 8% value is the trigger point applied to that indicator."
+      },
+      {
+        "text": "Risk appetite",
+        "why": "Risk appetite is the organization's broad willingness to take on risk, set by leadership, not a trigger value on one metric."
+      },
+      {
+        "text": "Exposure factor",
+        "why": "Exposure factor is the percentage of an asset's value lost in a single event, used to calculate SLE."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "In a risk register, the KRI is the metric being watched, the risk owner is the person accountable, and the threshold is the value that triggers escalation or a response.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk",
+      "risk-register"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-013",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A newly formed security team must rank 40 identified risks within two weeks. No reliable asset valuations or historical loss data are available. Which of the following approaches is BEST?",
+    "options": [
+      {
+        "text": "Qualitative analysis rating likelihood and impact on a heat map",
+        "why": "Correct: qualitative analysis uses relative ratings such as low, medium, and high and does not need monetary data."
+      },
+      {
+        "text": "Quantitative analysis calculating SLE, ARO, and ALE for each risk",
+        "why": "Quantitative analysis depends on reliable asset values and loss frequencies, which the team does not have."
+      },
+      {
+        "text": "A business impact analysis setting the RTO and RPO for each system",
+        "why": "A BIA determines the impact of disruption and recovery targets; it does not rank a list of identified risks."
+      },
+      {
+        "text": "Cyber insurance coverage purchased to transfer each identified risk",
+        "why": "Insurance is a risk response, not a method of analyzing and ranking risks."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Without dependable numbers, quantitative results would be guesses dressed up as precision. Qualitative analysis is fast and works with expert judgment; quantitative analysis can follow for top risks once data is available.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk",
+      "qualitative"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.2-014",
+    "objective": "5.2",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company's GRC platform ingests vulnerability scanner results, EDR alerts, and configuration drift data. It recalculates risk scores automatically as new data arrives and notifies risk owners when a score changes. Which type of risk assessment does this BEST represent?",
+    "options": [
+      {
+        "text": "Continuous",
+        "why": "Correct: continuous assessment is ongoing and typically automated, updating risk in near real time as conditions change."
+      },
+      {
+        "text": "Recurring",
+        "why": "Recurring assessments repeat on a fixed schedule, such as quarterly or annually, rather than updating whenever new data arrives."
+      },
+      {
+        "text": "Ad hoc",
+        "why": "Ad hoc assessments are performed when a specific event triggers them, such as a new threat or an acquisition."
+      },
+      {
+        "text": "One-time",
+        "why": "A one-time assessment is done for a single project or decision and is not repeated."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The clue is 'automatically as new data arrives': there is no schedule and no single triggering event, so the assessment is continuous.",
+    "industryVsComptia": null,
+    "tags": [
+      "risk",
+      "assessment"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-001",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "Before signing a contract with a payroll processor, the legal team wants the company to have the contractual right to inspect the vendor's security controls and records at any point during the contract term. Which of the following should be included?",
+    "options": [
+      {
+        "text": "A non-disclosure agreement",
+        "why": "An NDA protects confidential information shared between parties; it does not grant the right to inspect the vendor's controls."
+      },
+      {
+        "text": "A right-to-audit clause",
+        "why": "Correct: this clause gives the customer the contractual right to audit or inspect the vendor's controls and records."
+      },
+      {
+        "text": "A service-level agreement",
+        "why": "An SLA defines measurable service levels such as uptime and response times, not audit rights."
+      },
+      {
+        "text": "A memorandum of understanding",
+        "why": "An MOU is a generally non-binding statement of intent; it cannot guarantee an enforceable right to audit."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "The right-to-audit clause is a listed vendor assessment method. It must be negotiated into the contract before signing.",
+    "industryVsComptia": null,
+    "tags": [
+      "vendor",
+      "agreements"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-002",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Two universities want to document their shared goal of exchanging threat intelligence. At this stage they do not want legally binding obligations or detailed responsibilities, only a written statement of mutual intent. Which document BEST fits?",
+    "options": [
+      {
+        "text": "Memorandum of agreement",
+        "why": "An MOA is more formal and spells out each party's specific responsibilities, which the universities want to avoid for now."
+      },
+      {
+        "text": "Business partners agreement",
+        "why": "A BPA governs a business partnership, including responsibilities and profit or loss sharing; that is far more than a statement of intent."
+      },
+      {
+        "text": "Memorandum of understanding",
+        "why": "Correct: an MOU records mutual intent and shared goals and is generally not legally binding."
+      },
+      {
+        "text": "Master service agreement",
+        "why": "An MSA is a binding umbrella contract for services between a customer and a provider, not an informal statement of intent."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "From least to most formal: MOU (intent) → MOA (specific responsibilities) → contracts such as MSA, SOW and BPA.",
+    "industryVsComptia": null,
+    "tags": [
+      "vendor",
+      "agreements"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-003",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company signed a contract with a managed service provider last year that sets payment terms, liability, and intellectual property rules for all work between them. The company now needs the provider to migrate its firewalls, with defined deliverables, a timeline, and a fixed price. Which document should be created for this project?",
+    "options": [
+      {
+        "text": "Statement of work",
+        "why": "Correct: an SOW (or work order) defines the scope, deliverables, timeline and cost of a specific project under an existing MSA."
+      },
+      {
+        "text": "Master service agreement",
+        "why": "The MSA already exists; it holds the general terms, and individual projects are added under it."
+      },
+      {
+        "text": "Service-level agreement",
+        "why": "An SLA sets ongoing service performance targets such as uptime, not a one-time project's deliverables and price."
+      },
+      {
+        "text": "Business partners agreement",
+        "why": "A BPA describes a partnership relationship, not a customer engaging a provider for a defined project."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The usual pattern is one MSA with general terms and many SOWs or WOs, one per project or task.",
+    "industryVsComptia": null,
+    "tags": [
+      "vendor",
+      "agreements"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-004",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A SaaS vendor answered the company's annual security questionnaire and stated that MFA is enforced on all administrative accounts. The risk team wants stronger assurance than self-reported answers but does not have the staff to audit the vendor itself. Which of the following is the BEST next step?",
+    "options": [
+      {
+        "text": "Send a longer questionnaire that asks for more detailed answers about MFA",
+        "why": "A more detailed questionnaire is still self-reported by the vendor, so it does not add independent assurance."
+      },
+      {
+        "text": "Request evidence of the vendor's own internal audit results",
+        "why": "Internal audit evidence is better than a questionnaire, but it is produced by the vendor's own staff and is not independent."
+      },
+      {
+        "text": "Run a penetration test against the vendor's production platform",
+        "why": "Testing a vendor requires its permission and agreed rules of engagement, and it is the team doing its own testing, which it lacks resources for."
+      },
+      {
+        "text": "Request a recent independent assessment report, such as a SOC 2 Type II",
+        "why": "Correct: an independent third-party assessment verifies the vendor's controls without the company performing the audit itself."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Assurance strength rises with independence: questionnaire (self-reported) < evidence of internal audits < independent assessment. The scenario rules out the company doing its own audit or testing.",
+    "industryVsComptia": null,
+    "tags": [
+      "vendor"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-005",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A hospital is choosing a supplier of networked infusion pumps. The supplier assembles the devices from boards and firmware provided by several overseas sub-contractors, and the security team is concerned about counterfeit components and tampered firmware entering the product before delivery. Which vendor assessment activity BEST addresses this concern?",
+    "options": [
+      {
+        "text": "Supply chain analysis",
+        "why": "Correct: it examines the vendor's own suppliers, component origins and manufacturing path to find where counterfeit or tampered parts could be introduced."
+      },
+      {
+        "text": "A right-to-audit clause",
+        "why": "It gives the hospital the right to audit the supplier's controls, but by itself it does not evaluate the sub-contractors that build the components."
+      },
+      {
+        "text": "A penetration test of the device",
+        "why": "Testing a finished unit can reveal exploitable flaws, but it does not assess where components come from or whether other batches were tampered with."
+      },
+      {
+        "text": "A vendor security questionnaire",
+        "why": "Self-reported answers from the supplier give little assurance about what happens at its overseas sub-contractors."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The risk described sits upstream of the vendor, at its suppliers (fourth parties). Supply chain analysis is the assessment method aimed at that layer: component provenance, sub-contractors, locations and opportunities for tampering.",
+    "industryVsComptia": null,
+    "tags": [
+      "vendor",
+      "supply-chain"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-006",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During vendor selection for a new SIEM, a member of the evaluation committee reveals that her spouse is a senior sales executive at one of the three shortlisted vendors. Which of the following is the BEST action?",
+    "options": [
+      {
+        "text": "Get the vendor's written confirmation that her spouse is excluded from the bid",
+        "why": "Vendor-side assurances do not remove the evaluator's own bias; she would still be scoring her spouse's employer."
+      },
+      {
+        "text": "Record her disclosure and remove her from the evaluation",
+        "why": "Correct: disclosing the conflict and removing the affected person from the decision keeps the selection objective and defensible."
+      },
+      {
+        "text": "Disqualify that vendor from the selection process",
+        "why": "Excluding a possibly qualified vendor is unnecessary; the conflict lies with the evaluator and is resolved by recusal."
+      },
+      {
+        "text": "Let her continue but weight her scores at half value",
+        "why": "Her scores and influence would still affect the outcome, so the conflict of interest remains unresolved."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Conflict of interest is a listed vendor selection concern. The BEST handling is disclosure plus recusal of the conflicted person, not seeking assurances from the vendor, penalizing the vendor or partially discounting the evaluator's input.",
+    "industryVsComptia": null,
+    "tags": [
+      "vendor",
+      "selection"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-007",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A company's contract with a SaaS provider includes a right-to-audit clause. The internal red team now wants to run an active penetration test against the provider's hosted customer portal. Which of the following should the company do FIRST?",
+    "options": [
+      {
+        "text": "Begin with non-intrusive scans under the right-to-audit clause",
+        "why": "A right-to-audit clause does not by itself authorize active testing of the provider's systems; scanning without agreement could disrupt the service or breach the contract."
+      },
+      {
+        "text": "Send the provider a security questionnaire about the portal",
+        "why": "A questionnaire collects self-reported answers; it is not a prerequisite for, or a substitute for, the requested test."
+      },
+      {
+        "text": "Agree written rules of engagement with the provider",
+        "why": "Correct: testing a third party's systems requires its documented permission plus agreed scope, timing, permitted techniques, contacts and escalation paths before any activity starts."
+      },
+      {
+        "text": "Notify the provider's support desk of the planned test dates",
+        "why": "Notification is not authorization: the provider has not agreed to the test, its scope or the techniques, so the test would still be unauthorized."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Penetration testing is a vendor assessment method, but only with the vendor's permission and agreed rules of engagement. FIRST points to the authorization step that must precede any active testing; simply informing the provider or relying on an audit clause is not enough.",
+    "industryVsComptia": "In practice, many SaaS providers do not allow customer penetration tests at all, or only under a published testing policy, and offer independent assessment reports instead.",
+    "tags": [
+      "vendor",
+      "pentest",
+      "rules-of-engagement"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-008",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A payment gateway passed the company's due diligence review three years ago and has not been reviewed since. In that time it was acquired by another firm, moved its hosting to a new provider, and appeared in news reports about a data breach. Which process gap does this situation MOST clearly reveal?",
+    "options": [
+      {
+        "text": "Missing conflict of interest checks during vendor selection",
+        "why": "Nothing in the scenario suggests a biased selection; the issue is what happened after onboarding."
+      },
+      {
+        "text": "Lack of a non-disclosure agreement with the gateway",
+        "why": "An NDA protects shared information but would not detect the vendor's changed risk profile."
+      },
+      {
+        "text": "An incomplete statement of work for the integration",
+        "why": "A SOW defines a project's deliverables; it is not the mechanism for tracking a vendor's ongoing risk."
+      },
+      {
+        "text": "Absence of ongoing vendor monitoring and periodic reassessment",
+        "why": "Correct: vendor risk changes over time; monitoring and reassessment would have flagged the acquisition, hosting change and breach."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Due diligence is a point-in-time check before signing. Vendor monitoring continues for the life of the relationship: performance, incidents, ownership changes and scheduled reassessments.",
+    "industryVsComptia": null,
+    "tags": [
+      "vendor",
+      "monitoring"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-009",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "As part of a request for proposal, a company plans to share its network diagrams and current security architecture with bidding managed security providers. Which agreement should each bidder sign BEFORE receiving these documents?",
+    "options": [
+      {
+        "text": "Service-level agreement",
+        "why": "An SLA sets measurable service commitments for a provider that is already delivering a service, not confidentiality during bidding."
+      },
+      {
+        "text": "Non-disclosure agreement",
+        "why": "Correct: an NDA legally obligates the bidders to keep the shared confidential information private."
+      },
+      {
+        "text": "Memorandum of understanding",
+        "why": "An MOU is a generally non-binding statement of intent, so it offers weak protection for sensitive documents."
+      },
+      {
+        "text": "Business partners agreement",
+        "why": "A BPA governs an ongoing partnership's responsibilities and profit sharing; bidders are not yet partners."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Whenever sensitive information is shared with a party before or outside a full contract, an NDA is the agreement that protects confidentiality.",
+    "industryVsComptia": null,
+    "tags": [
+      "vendor",
+      "agreements"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.3-010",
+    "objective": "5.3",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A software company and a hardware manufacturer will jointly sell a bundled appliance. They need a binding document that sets how profits and losses are shared, who makes key decisions, and which party handles customer support and security incidents. Which document BEST fits?",
+    "options": [
+      {
+        "text": "Memorandum of understanding",
+        "why": "An MOU records shared intent and is generally not binding, so it cannot settle profit sharing and responsibilities."
+      },
+      {
+        "text": "Master service agreement",
+        "why": "An MSA sets general terms for services one party provides to another, not a joint partnership with shared profits."
+      },
+      {
+        "text": "Business partners agreement",
+        "why": "Correct: a BPA defines partners' responsibilities, decision-making and how profits and losses are divided."
+      },
+      {
+        "text": "Service-level agreement",
+        "why": "An SLA defines measurable service targets such as uptime, not how a partnership is run or how profits are split."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "The key words are partners, profit and loss sharing, and decision-making: those define a business partners agreement.",
+    "industryVsComptia": null,
+    "tags": [
+      "vendor",
+      "agreements"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.4-001",
+    "objective": "5.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A US retailer collects email addresses and purchase history from EU customers and decides which marketing campaigns to run. It uses a cloud email platform that stores the data and sends messages only as the retailer instructs. Under GDPR, which role does the email platform hold?",
+    "options": [
+      {
+        "text": "Data controller",
+        "why": "The retailer is the controller because it decides the purpose and means of processing; the platform only follows instructions."
+      },
+      {
+        "text": "Data processor",
+        "why": "Correct: the platform processes personal data on the controller's behalf and according to its instructions."
+      },
+      {
+        "text": "Data owner",
+        "why": "Data owner is an internal governance role accountable for classification and access, not the privacy-law role of an outside service provider."
+      },
+      {
+        "text": "Data subject",
+        "why": "The data subjects are the EU customers whose personal data is being processed."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Who decides why and how = controller. Who processes on their behalf = processor. Holding or storing the data does not make the vendor the controller.",
+    "industryVsComptia": null,
+    "tags": [
+      "privacy",
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.4-002",
+    "objective": "5.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "An EU customer submits a request under the right to be forgotten asking a retailer to delete all of their personal data. Tax law requires the retailer to keep invoices for seven years. Which of the following is the BEST response?",
+    "options": [
+      {
+        "text": "Delete every record immediately, including invoices, because erasure rights override other laws",
+        "why": "The right to erasure is not absolute; a legal obligation to retain records is a recognized exception, so deleting invoices would break tax law."
+      },
+      {
+        "text": "Deny the request because the customer accepted the privacy policy when signing up",
+        "why": "Accepting a privacy policy does not waive a data subject's legal right to request erasure."
+      },
+      {
+        "text": "Delete the data not subject to legal retention and keep only the invoices for the required period",
+        "why": "Correct: honor erasure for everything that can be deleted, and keep only what the law requires, for that purpose and period."
+      },
+      {
+        "text": "Move all of the customer's records to archive storage outside production systems",
+        "why": "Archiving still retains the personal data, so it does not satisfy the erasure request."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Privacy compliance balances data subject rights with legal retention requirements. A current data inventory and retention schedule are what make this kind of targeted response possible.",
+    "industryVsComptia": null,
+    "tags": [
+      "privacy",
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.4-003",
+    "objective": "5.4",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "To show auditors that staff are aware of their obligations, every employee must sign each year to confirm they have read and understood the acceptable use policy. Which compliance monitoring element does this represent?",
+    "options": [
+      {
+        "text": "Automation",
+        "why": "Automation refers to tools that continuously check control status; a yearly signed statement from staff is not an automated check."
+      },
+      {
+        "text": "External compliance reporting",
+        "why": "External reporting is sending compliance status to regulators or other outside parties; this is an internal employee activity."
+      },
+      {
+        "text": "Due care",
+        "why": "Due care is the organization acting responsibly by implementing protections; the signature specifically documents staff acknowledgement."
+      },
+      {
+        "text": "Attestation and acknowledgement",
+        "why": "Correct: employees formally confirm they received and understood the policy, creating evidence for compliance."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Under 5.4 compliance monitoring, CompTIA groups attestation and acknowledgement together: people formally confirming awareness or that a statement is true.",
+    "industryVsComptia": "In audit practice, \"attestation\" usually means a formal opinion issued by an independent auditor (for example a SOC 2 report). CompTIA also uses the term for internal sign-offs by staff and officers.",
+    "tags": [
+      "compliance"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.4-004",
+    "objective": "5.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "An online retailer fails its annual PCI DSS assessment and does not fix the findings by the agreed deadline. As a result, its acquiring bank terminates the merchant agreement and the retailer can no longer accept card payments. Which consequence of non-compliance does this BEST illustrate?",
+    "options": [
+      {
+        "text": "Loss of license",
+        "why": "Loss of license is a regulator or government revoking authorization to operate; here a bank ended a commercial contract."
+      },
+      {
+        "text": "Sanctions",
+        "why": "Sanctions are penalties or restrictions imposed by a government or regulatory authority, not the termination of a private agreement."
+      },
+      {
+        "text": "Contractual impacts",
+        "why": "Correct: PCI DSS is enforced through contracts, and the consequence here is the termination of the merchant agreement."
+      },
+      {
+        "text": "Reputational damage",
+        "why": "Customers may lose trust later, but the direct consequence described is the termination of a contract."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "PCI DSS is an industry standard imposed contractually by the card brands through acquiring banks, not a law. Penalties for failing it therefore show up as contractual impacts, such as termination or added fees.",
+    "industryVsComptia": null,
+    "tags": [
+      "compliance",
+      "pci-dss"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.4-005",
+    "objective": "5.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "Each quarter, the compliance manager summarizes control test results, open audit findings and remediation progress, and presents them to the board's audit committee. Which of the following BEST describes this activity?",
+    "options": [
+      {
+        "text": "External compliance reporting",
+        "why": "External reporting goes to parties outside the organization, such as regulators, customers or partners; the board's audit committee is part of the organization's own governance."
+      },
+      {
+        "text": "Internal compliance reporting",
+        "why": "Correct: compliance status is reported to the organization's own management and board to support oversight and decisions."
+      },
+      {
+        "text": "Attestation and acknowledgement",
+        "why": "That is a formal confirmation of compliance or of having read a policy, not a periodic status report to the board."
+      },
+      {
+        "text": "Automated compliance monitoring",
+        "why": "Automation is how controls can be checked continuously; the scenario describes a manually prepared presentation of results."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Compliance reporting is split by audience: internal (management, board, audit committee) versus external (regulators, auditors, customers, partners).",
+    "industryVsComptia": null,
+    "tags": [
+      "compliance",
+      "reporting"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.4-006",
+    "objective": "5.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company runs hundreds of cloud accounts. Its annual audit keeps finding storage buckets and security groups that drifted out of compliance months earlier. Leadership wants violations detected within minutes rather than once a year. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Ask cloud administrators to attest to their configurations each quarter",
+        "why": "Attestation is a periodic statement by people; it would still miss drift that occurs between attestations."
+      },
+      {
+        "text": "Engage an external auditor to perform semiannual assessments",
+        "why": "More frequent external audits remain point-in-time checks, months apart, so they cannot detect violations within minutes."
+      },
+      {
+        "text": "Add more questions about cloud settings to the annual internal audit",
+        "why": "A more detailed annual audit is still yearly and would not meet a detection time measured in minutes."
+      },
+      {
+        "text": "Deploy automated checks that continuously evaluate settings against policy",
+        "why": "Correct: automation evaluates every account continuously and alerts as soon as a configuration violates the defined policy."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Automation is a listed element of compliance monitoring. When the requirement is continuous or near real-time detection at scale, automated checks (for example policy-as-code or posture management tools) are the answer rather than more frequent manual reviews.",
+    "industryVsComptia": null,
+    "tags": [
+      "compliance",
+      "monitoring",
+      "automation",
+      "cloud"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.4-007",
+    "objective": "5.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A US-based online store has no offices, staff or servers in Europe, but it actively markets to and ships orders for customers in France and Germany. The legal team is assessing which privacy laws apply. Which of the following statements is MOST accurate?",
+    "options": [
+      {
+        "text": "GDPR applies because the store offers goods to people in the EU, even though it has no EU presence",
+        "why": "Correct: GDPR has extraterritorial reach and covers organizations outside the EU that offer goods or services to people in the EU."
+      },
+      {
+        "text": "Only US laws apply because the company is headquartered and hosts its data in the United States",
+        "why": "Headquarters location does not limit GDPR, which applies based on whose data is processed and why."
+      },
+      {
+        "text": "GDPR applies only to the orders whose personal data is stored on servers located inside the EU",
+        "why": "GDPR does not depend on where data is stored; targeting EU customers is enough to bring the processing into scope."
+      },
+      {
+        "text": "Only the privacy laws of the US state where the company is incorporated apply",
+        "why": "State laws may apply, but they do not displace national or global obligations triggered by serving EU customers."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Privacy legal implications span local/regional, national and global levels, and several can apply at once. GDPR is the classic example of a law with global reach based on the data subjects involved, not the organization's location.",
+    "industryVsComptia": null,
+    "tags": [
+      "compliance",
+      "privacy",
+      "gdpr"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.4-008",
+    "objective": "5.4",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A new privacy regulation will soon apply to a company. The privacy officer realizes nobody can say which systems hold personal data, what types of personal data are collected, who owns each dataset, or which third parties process it. Which of the following should the privacy officer do FIRST?",
+    "options": [
+      {
+        "text": "Publish a retention schedule for each category of personal data",
+        "why": "Retention periods cannot be applied correctly until the organization knows what personal data it has and where it lives."
+      },
+      {
+        "text": "Deploy DLP rules on email and web gateways to block leaks",
+        "why": "DLP needs to know what data to protect; deploying it blind does not answer the questions the officer raised."
+      },
+      {
+        "text": "Create an inventory mapping personal data to systems and owners",
+        "why": "Correct: an inventory (data map) records what personal data exists, where it lives, who owns it and which third parties process it, answering exactly the open questions."
+      },
+      {
+        "text": "Encrypt every database that might contain personal data",
+        "why": "Encryption protects data but does not reveal what is collected, who owns it or which third parties process it."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "A data inventory (data map) comes first: you cannot set retention, honor subject requests or apply controls to data you do not know you have. FIRST questions often reward this kind of discovery step.",
+    "industryVsComptia": null,
+    "tags": [
+      "compliance",
+      "privacy",
+      "data-inventory"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.4-009",
+    "objective": "5.4",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A risk assessment showed that sales laptops were not encrypted. In response, the company deployed full-disk encryption to every laptop and trained the sales team on device handling. After a laptop is later stolen, a regulator asks whether the company acted as a reasonable organization would. Which concept do the encryption rollout and training BEST demonstrate?",
+    "options": [
+      {
+        "text": "Due diligence",
+        "why": "Due diligence is the investigation that identified the risk, here the risk assessment; the rollout and training are the actions taken afterwards."
+      },
+      {
+        "text": "Attestation",
+        "why": "Attestation is a formal statement that controls are in place; the scenario describes implementing controls, not declaring them."
+      },
+      {
+        "text": "External compliance monitoring",
+        "why": "External monitoring is performed by outside parties such as regulators or auditors; these actions were taken by the company itself."
+      },
+      {
+        "text": "Due care",
+        "why": "Correct: implementing reasonable protections in response to a known risk is acting with due care."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Due diligence is knowing (assessing and understanding the risk); due care is doing (implementing and maintaining reasonable safeguards). Regulators and courts look for due care when judging negligence.",
+    "industryVsComptia": "Some frameworks (e.g., ISC2 CISSP material) frame due diligence as the ongoing activities that maintain due care. For Security+, use the knowing (due diligence) vs doing (due care) split.",
+    "tags": [
+      "compliance",
+      "due-care"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.5-001",
+    "objective": "5.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company hires a penetration testing firm and gives the testers its external IP ranges and one standard user account, but no network diagrams, source code or administrator credentials. Which type of test environment is this?",
+    "options": [
+      {
+        "text": "Known environment",
+        "why": "A known environment gives full details such as diagrams, source code and privileged credentials, which are withheld here."
+      },
+      {
+        "text": "Unknown environment",
+        "why": "An unknown environment gives testers no internal information; here they receive IP ranges and a user account."
+      },
+      {
+        "text": "Partially known environment",
+        "why": "Correct: testers receive some information (IP ranges, a low-privilege account) but not full details."
+      },
+      {
+        "text": "Integrated environment",
+        "why": "Integrated testing describes offensive and defensive teams working together, not how much information testers receive."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "The amount of information given to testers decides the environment type: all (known), some (partially known) or none (unknown).",
+    "industryVsComptia": "In industry these are usually called white box, gray box and black box testing. SY0-701 uses known, partially known and unknown environment.",
+    "tags": [
+      "pentest"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.5-002",
+    "objective": "5.5",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "In the first phase of an engagement, a tester collects employee names from social media, technology details from job postings, and old pages from a web archive, without sending any traffic to the client's systems. Which activity is the tester performing?",
+    "options": [
+      {
+        "text": "Active reconnaissance",
+        "why": "Active reconnaissance interacts directly with the target's systems (for example port scans), which the tester avoids."
+      },
+      {
+        "text": "Passive reconnaissance",
+        "why": "Correct: gathering information from public sources without touching the target's systems is passive reconnaissance."
+      },
+      {
+        "text": "Defensive penetration testing",
+        "why": "Defensive testing is about detecting and responding to attacks, not gathering information about a target."
+      },
+      {
+        "text": "Physical penetration testing",
+        "why": "Physical testing targets facilities, locks and badges; this activity is online research."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Passive = no interaction with the target (OSINT). Active = direct interaction that can be detected and logged.",
+    "industryVsComptia": null,
+    "tags": [
+      "pentest"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.5-003",
+    "objective": "5.5",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "Enterprise customers demand proof that a SaaS provider's security controls are designed and operating effectively. The provider has done several self-assessments, but customers refuse to accept reports produced by its own employees. Which of the following BEST addresses the customers' concern?",
+    "options": [
+      {
+        "text": "Have the internal audit department audit the controls and report to the audit committee",
+        "why": "Internal audit is still the provider's own staff, which is exactly what the customers reject."
+      },
+      {
+        "text": "Run another self-assessment using an industry-standard control questionnaire",
+        "why": "A better questionnaire is still a self-assessment produced internally, so it does not address independence."
+      },
+      {
+        "text": "Request a regulatory examination from the relevant government agency",
+        "why": "Regulators examine regulated entities on their own authority and schedule; an examination is not a service a provider requests for customer assurance."
+      },
+      {
+        "text": "Engage an independent third-party auditor to audit the controls and issue a report",
+        "why": "Correct: an independent third-party audit provides an external, unbiased opinion that customers can rely on."
+      }
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "Internal assessments (compliance, audit committee, self-assessments) are useful but not independent. When outside stakeholders need assurance, an external independent third-party audit, often resulting in an attestation, is the answer.",
+    "industryVsComptia": null,
+    "tags": [
+      "audit"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.5-004",
+    "objective": "5.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "During a two-week exercise, the attack team runs one technique at a time against production systems. After each technique, the attackers and the SOC analysts meet to check whether it was detected, and the SOC tunes its detection rules before the next technique is run. Which type of penetration testing BEST describes this exercise?",
+    "options": [
+      {
+        "text": "Integrated",
+        "why": "Correct: offensive and defensive teams working together and sharing results to improve detection is integrated testing."
+      },
+      {
+        "text": "Offensive",
+        "why": "Offensive testing is the attack side alone; here the attackers and defenders collaborate after every technique."
+      },
+      {
+        "text": "Defensive",
+        "why": "Defensive testing focuses on detection and response by the defenders; it does not describe the joint attacker-defender loop in this scenario."
+      },
+      {
+        "text": "Physical",
+        "why": "Physical testing targets facilities, locks and badges; this exercise runs techniques against systems and detection rules."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "SY0-701 lists physical, offensive, defensive and integrated penetration testing. The giveaway for integrated is collaboration: attackers and defenders share findings in real time so defenses improve during the test.",
+    "industryVsComptia": "In industry this is usually called purple teaming; the SY0-701 objectives use the term integrated.",
+    "tags": [
+      "pentest"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.5-005",
+    "objective": "5.5",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "A penetration tester is mapping a client's internet-facing footprint. Which of the following activities is the BEST example of active reconnaissance?",
+    "options": [
+      {
+        "text": "Querying public WHOIS records for the client's domains",
+        "why": "WHOIS data is held by registrars, not the client, so querying it does not touch the target's systems."
+      },
+      {
+        "text": "Grabbing service banners from the client's web servers",
+        "why": "Correct: banner grabbing connects directly to the target's servers, which can be detected and logged."
+      },
+      {
+        "text": "Searching certificate transparency logs for subdomains",
+        "why": "Certificate transparency logs are public third-party records; searching them sends no traffic to the client."
+      },
+      {
+        "text": "Reviewing the client's job postings for technology names",
+        "why": "Job postings are public information gathered without interacting with the client's systems."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Ask whether the activity sends traffic to the target's own systems. If it does (banner grabbing, port scans, ping sweeps), it is active reconnaissance; if it only uses third-party or public sources, it is passive.",
+    "industryVsComptia": null,
+    "tags": [
+      "pentest",
+      "recon"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.5-006",
+    "objective": "5.5",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A company's directors want its internal audit team to review IT and security controls without pressure from the managers who own those controls. To protect the internal auditors' independence, to whom should the internal audit function BEST report its findings?",
+    "options": [
+      {
+        "text": "The chief information officer",
+        "why": "The CIO owns many of the IT controls being audited, so reporting to the CIO creates the conflict of interest the board wants to avoid."
+      },
+      {
+        "text": "The chief information security officer",
+        "why": "The CISO is responsible for the security controls under review, so this line would also compromise independence."
+      },
+      {
+        "text": "The audit committee of the board",
+        "why": "Correct: the audit committee is a board group that oversees internal audit, which keeps auditors independent of the managers they audit."
+      },
+      {
+        "text": "The company's external auditor",
+        "why": "The external auditor runs a separate engagement and may rely on internal audit's work, but it is not internal audit's reporting line; the company's own governance body oversees internal audit."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Internal audits and assessments include compliance work, audit committee oversight and self-assessments. Internal audit stays independent by reporting to the audit committee rather than to the management being audited.",
+    "industryVsComptia": null,
+    "tags": [
+      "audit"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.5-007",
+    "objective": "5.5",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A payroll provider hires an independent accounting firm to review its controls. At the end of the engagement, the firm issues a signed report stating its formal opinion that the controls described by management are suitably designed and operated effectively during the review period. Which term BEST describes the firm's signed statement?",
+    "options": [
+      {
+        "text": "Self-assessment",
+        "why": "A self-assessment is carried out by the organization's own staff, not by an outside firm issuing an opinion."
+      },
+      {
+        "text": "Acknowledgement",
+        "why": "An acknowledgement is a person confirming they received and understood a policy; it is not an outside firm's opinion on controls."
+      },
+      {
+        "text": "Attestation",
+        "why": "Correct: an attestation is a formal written statement, here the independent firm's signed opinion, that management's claims about its controls are accurate."
+      },
+      {
+        "text": "Assessment",
+        "why": "An assessment evaluates controls and reports findings and recommendations, but the formal signed opinion on management's claims is the attestation."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "The audit is the process; the attestation is its formal output, the auditor's signed opinion on management's assertions. SOC 2 reports are a common example of an attestation that customers rely on.",
+    "industryVsComptia": null,
+    "tags": [
+      "audit",
+      "attestation"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.6-001",
+    "objective": "5.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A sales employee preparing a quote for a supplier attaches the wrong spreadsheet, one that contains the company's full customer contact list, and sends it. They report the mistake to the help desk within minutes. Which type of anomalous behavior does this represent?",
+    "options": [
+      {
+        "text": "Risky behavior",
+        "why": "Risky behavior describes actions that put systems or data at risk by bypassing or ignoring security, such as disabling a security tool or uploading files to personal storage; here the employee simply made a mistake."
+      },
+      {
+        "text": "Unexpected behavior",
+        "why": "Unexpected behavior is a departure from a user's normal pattern, such as unusual hours or locations; sending quotes to suppliers is part of this user's normal work."
+      },
+      {
+        "text": "Unintentional behavior",
+        "why": "Correct: the employee made an honest mistake while doing a normal task, which is unintentional behavior."
+      },
+      {
+        "text": "Malicious insider activity",
+        "why": "There is no intent to harm; the quick self-report points to an accident, not insider abuse."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "The 5.6 objective names three types of anomalous behavior: risky (actions that bypass or ignore security), unexpected (out of the normal pattern) and unintentional (honest mistakes). Training should encourage fast reporting like this.",
+    "industryVsComptia": null,
+    "tags": [
+      "awareness"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.6-002",
+    "objective": "5.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A security team ran its first simulated phishing campaign, and 22% of users clicked the link. Leadership wants to know whether the new awareness training actually reduces susceptibility over time. Which of the following BEST meets this requirement?",
+    "options": [
+      {
+        "text": "Track how many employees completed the annual computer-based training module",
+        "why": "Completion rates show attendance, not whether user behavior has changed."
+      },
+      {
+        "text": "Run recurring phishing campaigns and compare the results with the initial baseline",
+        "why": "Correct: recurring reporting and monitoring against the initial result shows whether susceptibility is trending down."
+      },
+      {
+        "text": "Send the same phishing template every month so results are directly comparable",
+        "why": "Users learn to spot one template, so results measure memory of that email rather than real phishing awareness."
+      },
+      {
+        "text": "Require users to acknowledge the phishing policy after each training session",
+        "why": "Acknowledgement documents that users read the policy; it does not measure whether they can spot phishing."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Awareness reporting and monitoring is initial (baseline) and recurring (trends). Effectiveness is measured by behavior over varied campaigns, such as lower click rates and higher report rates.",
+    "industryVsComptia": null,
+    "tags": [
+      "awareness",
+      "phishing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.6-003",
+    "objective": "5.6",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "An employee finds a USB flash drive labeled \"Q4 Bonuses\" in the company parking lot. Based on security awareness training, what should the employee do FIRST?",
+    "options": [
+      {
+        "text": "Plug it into a personal laptop at home to find out who owns it",
+        "why": "A personal device is still exposed to malware, and it may later connect to company resources; unknown media must not be connected at all."
+      },
+      {
+        "text": "Hand it to the security team without connecting it to any device",
+        "why": "Correct: unknown removable media is a classic baiting attack, so it should go to security for safe handling without being plugged in."
+      },
+      {
+        "text": "Plug it into a work computer, since endpoint protection will scan it",
+        "why": "Some malicious devices act as keyboards or exploit unknown flaws, so endpoint protection cannot be relied on to stop them."
+      },
+      {
+        "text": "Leave it at reception so the owner can claim it from lost and found",
+        "why": "This leaves a possible attack device where someone else may plug it in, and security is never told about a possible attack."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Removable media and cables is a listed training topic. Found drives and unknown charging cables can carry malware or keystroke-injection implants; the safe action is to report them and never connect them.",
+    "industryVsComptia": null,
+    "tags": [
+      "awareness",
+      "social-engineering"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.6-004",
+    "objective": "5.6",
+    "type": "single",
+    "difficulty": 1,
+    "stem": "An employee receives an email signed \"IT Service Desk\" saying their mailbox will be disabled in two hours unless they sign in through the included link. Which detail is the STRONGEST indicator that the message is a phishing attempt?",
+    "options": [
+      {
+        "text": "Hovering over the link shows a domain the company does not own",
+        "why": "Correct: a link whose real destination differs from the claimed sender's domain is a strong sign of a credential-harvesting page."
+      },
+      {
+        "text": "The message includes the company logo in its signature block",
+        "why": "Logos are easy to copy, so their presence proves nothing either way about whether the email is legitimate."
+      },
+      {
+        "text": "The message arrived during normal business hours on a weekday",
+        "why": "Attackers often send during business hours to blend in; the timing does not separate real IT notices from phishing."
+      },
+      {
+        "text": "The message greets the employee by their correct first name",
+        "why": "A correct name is easy to get from public sources and does not show that the email is real."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Recognizing a phishing attempt means checking where links and replies really go, plus urgency and unusual requests. Branding and personalization are easy to fake and are not reliable signs of legitimacy.",
+    "industryVsComptia": null,
+    "tags": [
+      "awareness",
+      "phishing"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.6-005",
+    "objective": "5.6",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "An employee uses the report button to flag an email. The security team analyzes it and confirms that it links to a credential-harvesting page, and mail logs show that the same message was delivered to 300 other mailboxes. Which action should the team take FIRST to limit the impact?",
+    "options": [
+      {
+        "text": "Block the sender's address at the email gateway",
+        "why": "Blocking stops new messages from that sender, but the 300 copies already delivered stay in inboxes and can still be clicked."
+      },
+      {
+        "text": "Force password resets for all 300 recipients",
+        "why": "Resetting everyone is disruptive and does nothing about the message itself; resets are for users shown to have clicked or entered credentials."
+      },
+      {
+        "text": "Search for and remove the message from all mailboxes",
+        "why": "Correct: purging the delivered copies removes the threat from every inbox before more users can click the link."
+      },
+      {
+        "text": "Send a company-wide warning describing the email",
+        "why": "A warning helps, but some users will miss or ignore it while the message is still in their inbox."
+      }
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "Responding to reported suspicious messages: triage the message, then contain it by finding and removing every copy, block its indicators, find who clicked and reset only those credentials, and give the reporter feedback. FIRST after confirmation means containing the delivered messages.",
+    "industryVsComptia": null,
+    "tags": [
+      "awareness",
+      "phishing",
+      "ir"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.6-006",
+    "objective": "5.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A new training module teaches employees to notice and report coworkers who repeatedly access data unrelated to their role, try to get around security controls, or express strong grudges against the company. Which user guidance and training topic does this module PRIMARILY cover?",
+    "options": [
+      {
+        "text": "Situational awareness",
+        "why": "Situational awareness is about noticing your surroundings, such as shoulder surfers or tailgaters, not a coworker's pattern of behavior over time."
+      },
+      {
+        "text": "Insider threat",
+        "why": "Correct: these are classic warning signs of an insider threat, and training teaches staff to recognize and report them."
+      },
+      {
+        "text": "Social engineering",
+        "why": "Social engineering training covers attackers manipulating employees into giving up information or access; this module is about trusted staff misusing their own access."
+      },
+      {
+        "text": "Operational security",
+        "why": "Operational security is about not exposing sensitive information through everyday actions, not about spotting a coworker's warning signs."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "The warning signs describe people who already have legitimate access misusing it, so the module is PRIMARILY insider threat training. It helps employees recognize behavioral and technical warning signs and explains how to report them confidentially.",
+    "industryVsComptia": null,
+    "tags": [
+      "awareness",
+      "insider-threat"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.6-007",
+    "objective": "5.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "A security team finds that employees often post office photos on social media showing whiteboards with network diagrams and visible ID badges, and that some share the travel schedules of executives. Which user guidance and training topic BEST addresses this behavior?",
+    "options": [
+      {
+        "text": "Operational security",
+        "why": "Correct: OPSEC training teaches users not to leak sensitive details through routine activity, such as social media posts, that attackers can collect and combine."
+      },
+      {
+        "text": "Insider threat",
+        "why": "The employees have no harmful intent and are not misusing access; they are leaking information carelessly."
+      },
+      {
+        "text": "Password management",
+        "why": "No credentials are being exposed or reused here; the issue is sharing information about facilities, networks and people."
+      },
+      {
+        "text": "Hybrid/remote work environments",
+        "why": "Remote-work guidance covers working securely outside the office; these photos are taken in the office, and the problem is what they reveal."
+      }
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Operational security means protecting small pieces of information (diagrams, badge designs, schedules) that seem harmless alone but help attackers plan phishing, impersonation or physical intrusion when combined.",
+    "industryVsComptia": null,
+    "tags": [
+      "awareness",
+      "opsec"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.6-008",
+    "objective": "5.6",
+    "type": "single",
+    "difficulty": 2,
+    "stem": "After a breach at a popular shopping site, attackers used the leaked passwords to sign in to several employees' corporate accounts. The help desk also reports that many users keep passwords on sticky notes. Which user guidance BEST addresses both problems?",
+    "options": [
+      {
+        "text": "Change every password once a month",
+        "why": "Frequent forced changes push users toward small variations and more written notes, and do not stop reuse across sites."
+      },
+      {
+        "text": "Keep unique passwords in a password manager",
+        "why": "Correct: a password manager creates and stores a unique password for each account, which stops reuse and removes the need for written notes."
+      },
+      {
+        "text": "Reuse one base password with a site-specific suffix",
+        "why": "The pattern is easy to guess once one password leaks, so attackers can predict the corporate password."
+      },
+      {
+        "text": "Add special characters to each existing password",
+        "why": "More complex passwords that are still reused across sites remain exposed to credential stuffing."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Password management training focuses on unique passwords for every account, stored in an approved password manager, ideally with MFA. Reuse is what made the outside breach dangerous.",
+    "industryVsComptia": null,
+    "tags": [
+      "awareness",
+      "passwords"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "q-5.6-009",
+    "objective": "5.6",
+    "type": "single",
+    "difficulty": 3,
+    "stem": "A remote employee who always works from home during normal hours finds the VPN too slow. They disconnect it, then email several customer contract files to their personal webmail account so they can print them on a home printer. They intend no harm. How should the security team BEST classify this behavior?",
+    "options": [
+      {
+        "text": "Unexpected behavior",
+        "why": "The employee's location and working hours match their normal pattern; what stands out is the deliberate bypass of controls, not an unusual pattern."
+      },
+      {
+        "text": "Risky behavior",
+        "why": "Correct: knowingly bypassing the VPN and moving company data to personal email puts data at risk, even without malicious intent."
+      },
+      {
+        "text": "Unintentional behavior",
+        "why": "Unintentional behavior is an honest mistake; this employee made a deliberate choice to get around controls."
+      },
+      {
+        "text": "Malicious insider activity",
+        "why": "The employee wants to get work done and intends no harm, so this is not malicious insider activity."
+      }
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Risky behavior is deliberate but not malicious: the user knowingly ignores or bypasses security for convenience. Hybrid/remote work guidance should explain why the VPN and approved printing or storage options exist.",
+    "industryVsComptia": null,
+    "tags": [
+      "awareness",
+      "remote-work"
+    ],
+    "status": "reviewed"
+  }
+]
